@@ -2,6 +2,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import morgan from "morgan";
+import chalk from "chalk";
 import database from "./databse/index.js";
 import * as CONST from "./constants/index.js";
 
@@ -9,7 +10,7 @@ import * as CONST from "./constants/index.js";
 const app = express();
 
 dotenv.config();
-database();
+database(chalk);
 
 // Middleware
 app.use(express.json());
@@ -25,7 +26,7 @@ app.use("/", roomRoutes);
 app.use("/", adminRoutes);
 
 // App port
-const PORT = process.env.APP_PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 // Lunching App
-app.listen(PORT, () => console.log(CONST.APP_LISTEN_FEEDBACK + PORT));
+app.listen(PORT, () => console.log(chalk.yellow(CONST.APP_LISTEN_FEEDBACK + PORT)));
