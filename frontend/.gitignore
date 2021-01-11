@@ -4,6 +4,10 @@
 /node_modules
 ../backend/node_modules
 
+/public/img
+/public/img/rooms
+/public/img/svg
+
 /.pnp
 .pnp.js
 
