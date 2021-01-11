@@ -5,10 +5,13 @@ import { Helmet } from "react-helmet";
 // Styles components
 import { HomeHeaderStyled } from "./styles";
 import { MainStyled } from "../../../components/elements/styles";
+
 // Components
 import PageHeader from "../../../components/layout/Header";
 import ButtonStyled from "../../../components/elements/Button";
 import Features from "../../../components/layout/Features";
+import Reviews from "../../../components/layout/Reviews";
+
 const Home = (props) => {
   return (
     <>
@@ -33,6 +36,7 @@ const Home = (props) => {
       </PageHeader>
       <MainStyled>
         <Features />
+        <Reviews />
       </MainStyled>
     </>
   );

@@ -13,7 +13,7 @@ const Features = () => {
         </FeatureHeaderStyled>
         <FeatureMainStyled>
           <figure>
-            <img src="/img/public-area/featured-room.jpg" alt="featured-image" />
+            <img src="/img/public-area/featured-room.jpg" alt="featured" />
           </figure>
         </FeatureMainStyled>
         <FeatureFooterStyled>
@@ -26,11 +26,11 @@ const Features = () => {
         </FeatureHeaderStyled>
         <FeatureMainStyled>
           <figure>
-            <img src="/img/public-area/security-camera.jpg" alt="featured-image" />
+            <img src="/img/public-area/security-camera.jpg" alt="featured" />
           </figure>
         </FeatureMainStyled>
         <FeatureFooterStyled>
-          <p>No importa el tipo the unidad que elijas. Todas nuestras unidades te proveen una sostification y un comforte impecable</p>
+          <p>No importa el tipo the unidad que elijas. Todas nuestras unidades te proveen una sostification.</p>
         </FeatureFooterStyled>
       </FeaturesArticleStyled>
       <FeaturesArticleStyled>
@@ -39,11 +39,11 @@ const Features = () => {
         </FeatureHeaderStyled>
         <FeatureMainStyled>
           <figure>
-            <img src="/img/public-area/roof-top.jpg" alt="featured-image" />
+            <img src="/img/public-area/roof-top.jpg" alt="featured" />
           </figure>
         </FeatureMainStyled>
         <FeatureFooterStyled>
-          <p>No importa el tipo the unidad que elijas. Todas nuestras unidades te proveen una sostification y un comforte impecable</p>
+          <p>No importa el tipo the unidad que elijas. Todas nuestras unidades te proveen.</p>
         </FeatureFooterStyled>
       </FeaturesArticleStyled>
       <FeaturesArticleStyled>
@@ -52,11 +52,11 @@ const Features = () => {
         </FeatureHeaderStyled>
         <FeatureMainStyled>
           <figure>
-            <img src="/img/public-area/featured-room.jpg" alt="featured-image" />
+            <img src="/img/public-area/featured-room.jpg" alt="featured" />
           </figure>
         </FeatureMainStyled>
         <FeatureFooterStyled>
-          <p>No importa el tipo the unidad que elijas. Todas nuestras unidades te proveen una sostification y un comforte impecable</p>
+          <p>No importa el tipo the unidad que elijas. Todas nuestras unidades</p>
         </FeatureFooterStyled>
       </FeaturesArticleStyled>
     </FeaturesSectionStyled>

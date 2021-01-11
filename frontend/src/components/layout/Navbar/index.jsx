@@ -1,5 +1,8 @@
+// Dependencis
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+
+// Styled Components
 import { NavBarNav, BrandDiv, NavBarUl, NavBarLi } from "./styles.js";
 
 const Navbar = ({ toggleNavBar }) => {

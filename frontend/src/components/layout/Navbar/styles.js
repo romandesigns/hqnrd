@@ -1,3 +1,4 @@
+// Dependencies
 import styled from "styled-components";
 
 export const NavBarNav = styled.nav`
@@ -70,10 +71,7 @@ export const NavBarNav = styled.nav`
     div a {
       margin-bottom: 1rem;
       padding: 1.5rem 1rem;
-      /* border-radius: 2rem; */
-      /* background-color: white; */
-      /* box-shadow: ${({ theme }) => theme.layout.boxShadow}; */
-
+      font-size: 1.5rem;
       img {
         display: flex;
         max-width: 11rem;
