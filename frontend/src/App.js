@@ -4,16 +4,16 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 // Page Component
 import Home from "./page/guest/Home";
 
-import { RootAppStyled } from "./global-styles";
+import { AppStyled } from "./global-styles";
 
 const App = function () {
   return (
     <BrowserRouter>
-      <RootAppStyled>
+      <AppStyled>
         <Switch>
           <Route exact path="/" component={Home} />
         </Switch>
-      </RootAppStyled>
+      </AppStyled>
     </BrowserRouter>
   );
 };
