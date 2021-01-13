@@ -1,0 +1,30 @@
+:root {
+  /* Color Palette */
+  --primary: #318ebe;
+  --success: #31b0be;
+  --danger: #be316e;
+  --warning: #9fa936;
+  --gradient_prime: linear-gradient(28deg, rgb(49 142 190 / 0.4) 0%, rgb(49 142 190 / 40%) 41%, rgb(49 176 190 / 0.4) 100%);
+  --gradient_sec: linear-gradient(28deg, rgb(49 78 190 / 40%) 0%, rgb(49 109 190 / 40%) 41%, rgb(49 176 190 / 55%) 100%);
+  --text-color: #444444;
+  --border-color: #cccbcb;
+  --light: #ffffff;
+  --light-gray: #f8f8f8;
+  --gray: #f0f0f0;
+  --darkgray: #e8e8e8;
+  --dark: #030303;
+
+  /* Dimension */
+  --radius: 2.5rem;
+  --shadow: 0 5px 3px -4px rgba(0, 0, 0, 0.25);
+  --padding: 2rem;
+  --margin: 2rem;
+  --transition: 0.5s ease;
+  --blur: blur(20px);
+
+  /* Typography */
+  --serif: "Bree Serif", serif;
+  --sans: Poppins, serif;
+  --font-size: 1.4rem;
+  --line-height: 1.5;
+}

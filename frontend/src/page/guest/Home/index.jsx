@@ -1,7 +1,16 @@
+//  Dependencies
 import React from "react";
 
+// Styled Components
+
 const Home = () => {
-  return <div>Home Page</div>;
+  return (
+    <>
+      <header></header>
+      <main></main>
+      <footer></footer>
+    </>
+  );
 };
 
 export default Home;

@@ -4,12 +4,8 @@ import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 
 // Styles
+import "./index.css";
 import { global as Global } from "./global-styles/global";
-import variables from "./global-styles/variables";
-import { ThemeProvider } from "styled-components";
-
-// Components
-import App from "./App";
 
 // Redux files
 import { Provider } from "react-redux";
@@ -19,16 +15,17 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import rootReducer from "../src/redux/reducers";
 
+// Components
+import App from "./App";
+
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={variables}>
-      <Provider store={store}>
-        <Global />
-        <App />
-      </Provider>
-    </ThemeProvider>
+    <Provider store={store}>
+      <Global />
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
