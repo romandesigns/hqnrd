@@ -17,6 +17,7 @@ const variables = {
     gray4: "#979797",
     gray5: "#ececec",
     gray6: "#F9F9F9",
+    gray7: "#f5f5f5",
     white: "#ffffff",
     dark: "#545252",
     border: "#cccbcb",
