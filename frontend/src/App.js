@@ -1,9 +1,13 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-// Page Component
+// Page
 import Home from "./page/guest/Home";
 
+// Page component
+import Footer from "./components/layout/Footer";
+
+// Style Component
 import { AppStyled } from "./global-styles";
 
 const App = function () {
@@ -13,6 +17,7 @@ const App = function () {
         <Switch>
           <Route exact path="/" component={Home} />
         </Switch>
+        <Footer />
       </AppStyled>
     </BrowserRouter>
   );
