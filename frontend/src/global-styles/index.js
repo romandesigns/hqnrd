@@ -6,8 +6,8 @@ import { media } from "./media-quries";
 export const AppStyled = styled.div`
   height: 100%;
   display: grid;
-  ${media.mobile`background-color:red`};
-  ${media.tablet`background-color:purple`};
-  ${media.laptop`background-color:green`};
-  ${media.desktop`background-color:blue`};
+  background-color: var(--bg-color);
+  padding: var(--padding);
+  box-sizing: border-box;
+  border-radius: var(--radius);
 `;

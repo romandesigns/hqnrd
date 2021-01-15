@@ -15,7 +15,7 @@ export const global = createGlobalStyle`
         height: inherit;
         font: normal normal var(--font-size)/var(--line-height) var(--sans);
         color: var(--text-color);
-        background-color: var(--bg-color);
+        background-color: var(--light);
         margin: 0;
         padding: 0;
         text-rendering: optimizeLegibility;
@@ -40,6 +40,14 @@ export const global = createGlobalStyle`
 
     h1,h2,h3,h4,h5,h6,p{
         margin: 0;
+    }
+    
+    a {
+        text-decoration: underline;
+        color: var(--success);
+        &:hover {
+            color: var(--warning);
+        }
     }
 
 `;

@@ -10,6 +10,7 @@
   --border-color: #cccbcb;
   --bg-color: #f9f9f9;
   --light: #ffffff;
+  --faded-light: rgb(250, 250, 250, 0.8);
   --light-gray: #f8f8f8;
   --gray: #f0f0f0;
   --darkgray: #e8e8e8;
