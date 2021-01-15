@@ -8,7 +8,7 @@ import Home from "./page/guest/Home";
 import Footer from "./components/layout/Footer";
 
 // Style Component
-import { AppStyled } from "./global-styles";
+import { AppStyled } from "./utils/app-root";
 
 const App = function () {
   return (

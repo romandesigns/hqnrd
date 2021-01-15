@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 
 // Styles
 import "./index.css";
-import { global as Global } from "./global-styles/global";
+import { global as Global } from "./utils/global";
 
 // Redux files
 import { Provider } from "react-redux";

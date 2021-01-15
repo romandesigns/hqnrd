@@ -10,7 +10,7 @@ const Navbar = () => {
     <NavbarPageStyled>
       <NavbarPageUlStyled>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/">Inicio</NavLink>
         </li>
         <li>
           <NavLink to="/habitaciones">Habitaciones</NavLink>
@@ -22,7 +22,7 @@ const Navbar = () => {
           <NavLink to="/contacto">Contacto</NavLink>
         </li>
         <li>
-          <NavLink to="/perfil">Perfil</NavLink>
+          <NavLink to="/perfil">Mi Cuenta</NavLink>
         </li>
       </NavbarPageUlStyled>
     </NavbarPageStyled>

@@ -5,7 +5,7 @@ export const HeaderPageStyled = styled.header`
   background-color: blue;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 9rem auto;
+  grid-template-rows: 9rem 40rem;
   border-radius: var(--radius);
   overflow: hidden;
   position: relative;

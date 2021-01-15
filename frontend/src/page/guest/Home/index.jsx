@@ -2,11 +2,14 @@
 import React from "react";
 
 // Utilities
-import { MetaTags } from "../../../utilities";
+import { MetaTags } from "../../../utils/apps";
 
 // Styled Components
+import * as HOME from "./styles";
+
+// Components
 import Header from "../../../components/layout/Header";
-import { HeaderHomeWrapper } from "./styles";
+import Button from "../../../components/ui-elements/Button";
 
 const Home = () => {
   return (
@@ -19,14 +22,28 @@ const Home = () => {
         ogImagePath="path/to/image.jpg"
       />
       <Header>
-        <HeaderHomeWrapper>
+        <HOME.Wrapper>
           <img src="/logo512.png" alt="Hotel Quinto Nivel RD Logo" />
           <h1>Hotel Quinto Nivel RD</h1>
           <h2>Como estar en casa!!!</h2>
-          <button>Crear Reservacion</button>
-        </HeaderHomeWrapper>
+          <Button>Crear Reservacion</Button>
+        </HOME.Wrapper>
       </Header>
-      <main>Home Main Component</main>
+      <HOME.Main>
+        <HOME.Features>
+          <HOME.Feature>
+            <figure>
+              <img src="/img/public-area/room-01.jpg" alt="HQNRD Habitacion" />
+              <HOME.FeatureFigCaption>
+                <h3>Comodidad y Comforte</h3>
+                <p>Esta es una breve description de la habitaciones que provee el hotel quinto nivel rd</p>
+              </HOME.FeatureFigCaption>
+            </figure>
+          </HOME.Feature>
+        </HOME.Features>
+        <section className="reviews"></section>
+        <section className="unites"></section>
+      </HOME.Main>
     </>
   );
 };

@@ -24,6 +24,7 @@ export const global = createGlobalStyle`
 
         display: grid;
         grid-template-columns: minmax(auto, 80vw);
+        
         justify-content: center;
         align-self: center;
         box-sizing: border-box;
@@ -34,13 +35,8 @@ export const global = createGlobalStyle`
         ${media.desktop`grid-template-columns: minmax(auto, 75vw);`};
     }
 
-    #root {
-       height: inherit;
-    }
-
-    h1,h2,h3,h4,h5,h6,p{
-        margin: 0;
-    }
+    #root { height: inherit; }
+    h1,h2,h3,h4,h5,h6,p { margin: 0; }
     
     a {
         text-decoration: underline;

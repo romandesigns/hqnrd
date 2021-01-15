@@ -4,9 +4,10 @@ import styled from "styled-components";
 export const NavbarPageStyled = styled.nav`
   background-color: white;
   display: grid;
-  justify-self: center;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
   width: 100%;
   max-width: 80%;
   margin: var(--margin);
@@ -28,6 +29,25 @@ export const NavbarPageUlStyled = styled.ul`
       display: block;
       color: var(--text-color);
       padding: calc(var(--padding) - 0.4rem) var(--padding);
+      position: relative;
+      overflow: hidden;
+      &::before {
+        content: "";
+        height: 20px;
+        position: absolute;
+        bottom: -2rem;
+        left: 0;
+        right: 0;
+        transition: bottom var(--transition);
+        background-color: red;
+        border-radius: var(--radius);
+      }
+      &:hover::before {
+        bottom: -1.5rem;
+      }
+      &:hover {
+        color: red;
+      }
     }
   }
 `;

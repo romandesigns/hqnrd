@@ -10,7 +10,8 @@
   --border-color: #cccbcb;
   --bg-color: #f9f9f9;
   --light: #ffffff;
-  --faded-light: rgb(250, 250, 250, 0.8);
+  --faded-light: rgb(250, 250, 250, 0.5);
+  --faded-dark: rgb(0, 0, 0, 0.2);
   --light-gray: #f8f8f8;
   --gray: #f0f0f0;
   --darkgray: #e8e8e8;
@@ -18,10 +19,11 @@
 
   /* Dimension */
   --radius: 0.4rem;
+  --gap: 1rem;
   --shadow: 0 5px 3px -4px rgba(0, 0, 0, 0.25);
   --padding: 2rem;
   --margin: 2rem;
-  --transition: 0.5s ease;
+  --transition: 0.08s ease;
   --blur: blur(20px);
 
   /* Typography */
