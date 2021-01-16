@@ -1,6 +1,7 @@
 :root {
   /* Color Palette */
   --primary: #318ebe;
+  --darker-primary: #1873b0;
   --success: #31b0be;
   --danger: #be316e;
   --warning: #9fa936;
@@ -10,7 +11,7 @@
   --border-color: #cccbcb;
   --bg-color: #f9f9f9;
   --light: #ffffff;
-  --faded-light: rgb(250, 250, 250, 0.5);
+  --faded-light: rgb(250, 250, 250, 0.7);
   --faded-dark: rgb(0, 0, 0, 0.2);
   --light-gray: #f8f8f8;
   --gray: #f0f0f0;

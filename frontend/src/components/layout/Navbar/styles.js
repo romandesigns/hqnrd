@@ -10,7 +10,7 @@ export const NavbarPageStyled = styled.nav`
   justify-self: center;
   width: 100%;
   max-width: 80%;
-  margin: var(--margin);
+  margin: var(--margin) var(--margin) 0 var(--margin);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   position: relative;

@@ -11,8 +11,8 @@ const ButtonComponent = ({ children, path, type = "default" }) => {
   switch (type) {
     case "reservation":
       return (
-        <Button>
-          <Link>{children}</Link>
+        <Button bgColor="primary">
+          <Link to={path}>{children}</Link>
         </Button>
       );
     default:

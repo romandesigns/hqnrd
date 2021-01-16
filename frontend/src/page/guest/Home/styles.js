@@ -9,9 +9,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: calc(var(--padding) + 2rem);
+  padding: var(--padding) calc(var(--padding) + 2rem);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
   backdrop-filter: var(--blur);
   background-color: var(--faded-light);
 
@@ -20,7 +19,12 @@ export const Wrapper = styled.div`
   }
 
   h1 {
-    color: var(--light);
+    color: var(--text-color);
+    margin-top: 1rem;
+  }
+  p {
+    font-size: 19px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -35,7 +39,7 @@ export const Features = styled.section`
   display: grid;
   grid-column-gap: var(--gap);
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2rem;
+  grid-auto-rows: 1fr;
 `;
 
 export const Feature = styled.article`
@@ -56,5 +60,11 @@ export const Feature = styled.article`
 `;
 
 export const FeatureFigCaption = styled.figcaption`
+  padding: var(--padding);
+`;
+
+export const Reputation = styled.section`
+  background-color: var(--light);
+  border-radius: var(--radius);
   padding: var(--padding);
 `;
