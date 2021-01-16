@@ -46,4 +46,11 @@ export const global = createGlobalStyle`
         }
     }
 
+    figure {
+        margin: 0;
+        padding: 0;
+    }
+    ul { padding-left: 0; margin:0;}
+    ul li { list-style-type: none }
+
 `;

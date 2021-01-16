@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 export const HeaderPageStyled = styled.header`
-  background-color: blue;
+  background-color: var(--gradient_prime);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 9rem 40rem;

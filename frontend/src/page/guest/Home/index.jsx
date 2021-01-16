@@ -1,5 +1,6 @@
 //  Dependencies
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 // Utilities
 import { MetaTags } from "../../../utils/apps";
@@ -35,10 +36,10 @@ const Home = () => {
         <HOME.Features>
           <HOME.Feature>
             <figure>
-              <img src="/img/public-area/room-01.jpg" alt="HQNRD Habitacion" />
+              <img src="/img/public-area/featured-room.jpg" alt="HQNRD Habitacion" />
               <HOME.FeatureFigCaption>
                 <h3>Comodidad y Comforte</h3>
-                <p>Esta es una breve description de la habitaciones que provee el hotel quinto nivel rd.</p>
+                <p>Habitaciones espaciosas equipadas con todo lo que puedas necesitar en un apartamento moderno.</p>
               </HOME.FeatureFigCaption>
             </figure>
           </HOME.Feature>
@@ -61,23 +62,49 @@ const Home = () => {
             </figure>
           </HOME.Feature>
         </HOME.Features>
-        <HOME.Reputation className="reputation">
-          <article className="about">
-            <figure>
-              <img src="/img/public-area/public-area_3.jpg" alt="HQNRD fachada" />
-            </figure>
-            <div className="description">
-              <h4>Hotel Quinto Nive RD</h4>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis numquam, maxime maiores ratione quam cupiditate itaque incidunt
-                consequuntur, porro ducimus culpa debitis, quae distinctio id excepturi veniam eveniet earum soluta.
-              </p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-          </article>
-          <article className="testimonials"></article>
-        </HOME.Reputation>
-        <section className="unites"></section>
+        <HOME.PhotoGallery>
+          <HOME.GalleryItem>
+            <HOME.GalleryFifure img="/img/public-area/public-area_4.jpg" title="Banco en area publica"></HOME.GalleryFifure>
+          </HOME.GalleryItem>
+          <HOME.GalleryItem>
+            <HOME.GalleryFifure img="/img/public-area/public-area_8.jpg" title="Banco en area publica"></HOME.GalleryFifure>
+          </HOME.GalleryItem>
+          <HOME.GalleryItem>
+            <HOME.GalleryFifure img="/img/public-area/public-area_5.jpg" title="Banco en area publica"></HOME.GalleryFifure>
+          </HOME.GalleryItem>
+          <HOME.GalleryItem>
+            <HOME.GalleryFifure img="/img/public-area/public-area_1.jpg" title="Banco en area publica"></HOME.GalleryFifure>
+          </HOME.GalleryItem>
+          <HOME.GalleryItem>
+            <HOME.GalleryFifure img="/img/public-area/public-area_3.jpg" title="Banco en area publica"></HOME.GalleryFifure>
+          </HOME.GalleryItem>
+          <HOME.GalleryItem>
+            <HOME.GalleryFifure img="/img/public-area/public-area_2.jpg" title="Banco en area publica"></HOME.GalleryFifure>
+          </HOME.GalleryItem>
+          <HOME.GalleryItem>
+            <HOME.GalleryFifure img="/img/public-area/public-area_6.jpg" title="Banco en area publica"></HOME.GalleryFifure>
+          </HOME.GalleryItem>
+        </HOME.PhotoGallery>
+        <HOME.Units>
+          <header>
+            <nav>
+              <ul>
+                <li>
+                  <button>Categorias</button>
+                </li>
+                <li>
+                  <button>Habitaciones</button>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          <section>
+            <article>Familiar</article>
+            <article>Doble Cama</article>
+            <article>Habitacione Doble</article>
+            <article>Habitacion Basica</article>
+          </section>
+        </HOME.Units>
       </HOME.Main>
     </>
   );
