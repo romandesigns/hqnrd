@@ -1,15 +1,30 @@
 //  Dependencies
 import styled from "styled-components";
 
+export const Gallery = styled.section`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10% 1fr;
+  background-color: var(--light);
+`;
+
+export const GalleryDescription = styled.div`
+  padding: var(--padding);
+  align-self: center;
+  grid-row: 1;
+  h3 {
+    padding-top: 1rem;
+  }
+`;
+
 export const PhotoGallery = styled.ul`
   padding-left: 0;
   display: grid;
-  padding: var(--padding);
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1));
+  padding: 1rem var(--padding) 0 var(--padding);
+  grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-auto-flow: dense;
   grid-auto-rows: 18rem;
-  gap: var(--gap);
-  background-color: var(--light);
+  grid-gap: var(--gap);
   border-radius: var(--radius);
 `;
 
@@ -26,7 +41,7 @@ export const GalleryItem = styled.li`
   }
 `;
 
-export const GalleryFifure = styled.figure`
+export const GalleryFigure = styled.figure`
   background: ${({ img }) => (img ? `url(${img})` : "")};
   background-size: cover;
   background-repeat: no-repeat;

@@ -15,8 +15,12 @@ export const Feature = styled.article`
   figure {
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
     img {
       max-width: 100%;
+      order: 1;
+      padding: 0 2rem 2rem 2rem;
     }
     h3 {
       margin-bottom: calc(var(--margin) - 1rem);

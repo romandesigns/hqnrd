@@ -57,7 +57,7 @@ export const UnitsHeaderNav = styled.nav`
 
 export const UnitsCategories = styled.section`
   display: grid;
-  gap: var(--gap);
+  grid-gap: var(--gap);
   grid-column: 1 / 5;
   grid-template-columns: 9rem 1fr 1fr 9rem;
   grid-template-rows: 35rem 35rem;
@@ -66,15 +66,41 @@ export const UnitsCategories = styled.section`
 export const UnitsCategory = styled.article`
   border-radius: var(--radius);
   overflow: hidden;
-  padding: 1rem;
-  background-color: var(--bg-color);
   a {
     display: block;
     width: 100%;
     height: 100%;
+    color: var(--light);
+    text-decoration: none;
+    font-size: 2rem;
+    position: relative;
+    h4 {
+      position: absolute;
+      bottom: 0.6rem;
+      left: 0.6rem;
+      z-index: 8;
+      color: var(--text-color);
+      background: white;
+      padding: 1.2rem var(--padding);
+      font-size: 1.4rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 100%;
+      background-color: var(--faded-dark);
+      transition: background var(--transition);
+      z-index: 0;
+    }
+    &:hover::before {
+      background-color: transparent;
+    }
   }
   &:nth-child(1) {
-    /* border: 1px solid red; */
     grid-column: 2 / 3;
     a {
       background: var(--primary) url("./img/cat/familiar.jpg") no-repeat center center;
@@ -95,9 +121,8 @@ export const UnitsCategory = styled.article`
   }
   &:nth-child(3) {
     grid-column: 2 / 3;
-    /* border: 1px solid green; */
     a {
-      background: var(--primary) url("./img/cat/basic.jpg") no-repeat center center;
+      background: var(--primary) url("./img/cat/master.jpg") no-repeat center center;
       background-size: cover;
       display: flex;
       justify-content: center;
