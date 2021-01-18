@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 // Page
 import Home from "./page/guest/Home";
@@ -16,6 +16,8 @@ const App = function () {
       <AppStyled>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Redirect from="/categorias" to="/" />
+          <Redirect from="/habitaciones" to="/" />
         </Switch>
         <Footer />
       </AppStyled>

@@ -24,29 +24,33 @@ export const NavbarPageUlStyled = styled.ul`
   grid-template-columns: repeat(5, minmax(auto, auto));
   li {
     display: inline-block;
+
     a {
       text-decoration: none;
       display: block;
       color: var(--text-color);
       padding: calc(var(--padding) - 0.4rem) var(--padding);
+      &:hover {
+        color: var(--primary);
+      }
+    }
+    .active {
       position: relative;
       overflow: hidden;
+      color: var(--primary);
       &::before {
         content: "";
-        height: 20px;
+        height: 2rem;
         position: absolute;
-        bottom: -2rem;
+        bottom: -1.5rem;
         left: 0;
         right: 0;
         transition: bottom var(--transition);
-        background-color: red;
+        background-color: var(--primary);
         border-radius: var(--radius);
       }
-      &:hover::before {
-        bottom: -1.5rem;
-      }
       &:hover {
-        color: red;
+        color: var(--primary);
       }
     }
   }

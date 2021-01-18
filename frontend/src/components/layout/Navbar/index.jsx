@@ -10,7 +10,9 @@ const Navbar = () => {
     <NavbarPageStyled>
       <NavbarPageUlStyled>
         <li>
-          <NavLink to="/">Inicio</NavLink>
+          <NavLink exact to="/">
+            Inicio
+          </NavLink>
         </li>
         <li>
           <NavLink to="/habitaciones">Habitaciones</NavLink>
