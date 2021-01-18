@@ -14,7 +14,7 @@ import Gallery from "../../../components/layout/PhotoGallery";
 import Categories from "../../../components/layout/Categories";
 import Button from "../../../components/ui-elements/Button";
 
-const Home = ({ match }) => {
+const Home = () => {
   return (
     <>
       <MetaTags

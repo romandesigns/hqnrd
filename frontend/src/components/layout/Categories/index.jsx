@@ -1,30 +1,40 @@
 // Dependencies
-import React from "react";
-import { NavLink, Route, Switch, Redirect } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
 // Components
 import Menu from "./CategoriesTemplate";
-import Rooms from "./HabitacionesTemplate";
+import Habitaciones from "./HabitacionesTemplate";
 
 // Styled Components
 import * as HOME from "./styles";
 
 function Categories() {
+  const [menu, setMenu] = useState("category");
+  let menuContent = menu === "category" ? <Menu /> : <Habitaciones />;
+
+  useEffect(() => {
+    setMenu("category");
+  }, []);
+
   return (
-    <HOME.Units>
+    <HOME.Units id="categories">
       <HOME.UnitsHeader>
         <HOME.UnitsHeaderNav>
           <ul>
             <li>
-              <NavLink to="/categorias">Categorias</NavLink>
+              <button onClick={() => setMenu("category")} style={menu === "category" ? { backgroundColor: "#31b0be" } : { backgroundColor: "#1873b0" }}>
+                Categorias
+              </button>
             </li>
             <li>
-              <NavLink to="/habitaciones">Habitaciones</NavLink>
+              <button onClick={() => setMenu("rooms")} style={menu === "rooms" ? { backgroundColor: "#31b0be" } : { backgroundColor: "#1873b0" }}>
+                Habitaciones
+              </button>
             </li>
           </ul>
         </HOME.UnitsHeaderNav>
       </HOME.UnitsHeader>
-      <Switch></Switch>
+      {menuContent}
     </HOME.Units>
   );
 }

@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Units = styled.section`
   display: grid;
   grid-row-gap: var(--gap);
-  grid-template-columns: 12rem 1fr 1fr 12rem;
+  grid-template-columns: 10rem 1fr 1fr 10rem;
   grid-template-rows: 9rem auto;
   padding: var(--padding);
   background-color: var(--light);
@@ -25,21 +25,20 @@ export const UnitsHeaderNav = styled.nav`
 
     li {
       text-align: center;
-      margin: 0 1.7rem;
+      margin: 0 0.7rem;
       text-align: center;
-      width: 50%;
       display: inline-block;
 
-      a {
+      button {
         text-transform: uppercase;
         text-align: center;
         border: none;
-        background-color: var(--darker-primary);
+        background-color: var(--primary);
         color: var(--light);
         display: block;
         width: 100%;
         font-size: 1.4rem;
-        padding: 0.8rem 1rem;
+        padding: 1rem 7rem;
         font-weight: 700;
         cursor: pointer;
         border-top-left-radius: var(--radius);
@@ -60,23 +59,58 @@ export const UnitsCategories = styled.section`
   display: grid;
   gap: var(--gap);
   grid-column: 1 / 5;
-  grid-template-columns: 12rem 1fr 1fr 12rem;
-  grid-template-rows: 30rem 30rem;
+  grid-template-columns: 9rem 1fr 1fr 9rem;
+  grid-template-rows: 35rem 35rem;
 `;
 
 export const UnitsCategory = styled.article`
-  &:nth-child(1) {
-    grid-column: 2 / 3;
-    border: 1px solid red;
-  }
-  &:nth-child(3) {
-    grid-column: 2 / 3;
-    border: 1px solid green;
-  }
+  border-radius: var(--radius);
+  overflow: hidden;
+  padding: 1rem;
+  background-color: var(--bg-color);
   a {
     display: block;
     width: 100%;
     height: 100%;
   }
-  border: 1px solid purple;
+  &:nth-child(1) {
+    /* border: 1px solid red; */
+    grid-column: 2 / 3;
+    a {
+      background: var(--primary) url("./img/cat/familiar.jpg") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &:nth-child(2) {
+    a {
+      background: var(--primary) url("./img/cat/doble-bed.jpg") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &:nth-child(3) {
+    grid-column: 2 / 3;
+    /* border: 1px solid green; */
+    a {
+      background: var(--primary) url("./img/cat/basic.jpg") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &:nth-child(4) {
+    a {
+      background: var(--primary) url("./img/cat/basic.jpg") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 `;

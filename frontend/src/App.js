@@ -16,8 +16,6 @@ const App = function () {
       <AppStyled>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Redirect from="/categorias" to="/" />
-          <Redirect from="/habitaciones" to="/" />
         </Switch>
         <Footer />
       </AppStyled>
