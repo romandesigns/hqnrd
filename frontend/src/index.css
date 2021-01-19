@@ -14,10 +14,10 @@
   --faded-light: rgb(250, 250, 250, 0.7);
   --faded-dark: rgb(0, 0, 0, 0.2);
   --light-gray: #f8f8f8;
+  --lighter-gray: #f9f9f9;
   --gray: #f0f0f0;
   --darkgray: #e8e8e8;
   --dark: #030303;
-
   /* Dimension */
   --radius: 0.4rem;
   --gap: 1rem;

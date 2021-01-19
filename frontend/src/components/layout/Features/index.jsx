@@ -1,39 +1,34 @@
 //  Dependencies
 import React from "react";
-
 // Styled Components
 import * as HOME from "./styles";
+// Components
+import Card from "../../ui-elements/Card";
 
 function Features() {
   return (
     <HOME.Features>
-      <HOME.Feature>
-        <figure>
-          <img src="/img/public-area/featured-room.jpg" alt="HQNRD Habitacion" />
-          <HOME.FeatureFigCaption>
-            <h3>Comodidad y Comforte</h3>
-            <p>Habitaciones espaciosas equipadas con todo lo que puedas necesitar en un apartamento moderno.</p>
-          </HOME.FeatureFigCaption>
-        </figure>
-      </HOME.Feature>
-      <HOME.Feature>
-        <figure>
-          <img src="/img/public-area/roof-top.jpg" alt="HQNRD Roof Top" />
-          <HOME.FeatureFigCaption>
-            <h3>Area de Recreacion</h3>
-            <p>Disfruta de hermosas atardeceres o anocheceres desde nuestro roof top.</p>
-          </HOME.FeatureFigCaption>
-        </figure>
-      </HOME.Feature>
-      <HOME.Feature>
-        <figure>
-          <img src="/img/public-area/security-camera.jpg" alt="HQNRD Camara de vigilancia" />
-          <HOME.FeatureFigCaption>
-            <h3>Servcio de vigilancia exterior</h3>
-            <p>Vigilando por ti para proveerte el la tranquilidad que mereces.</p>
-          </HOME.FeatureFigCaption>
-        </figure>
-      </HOME.Feature>
+      <Card
+        title="Comodidad y Comforte"
+        description="Habitaciones espaciosas equipadas con todo lo que puedas necesitar en un apartamento moderno."
+        img_src="/img/public-area/featured-room.jpg"
+        alt_value="HQNRD Habitacion"
+        type="featured"
+      />
+      <Card
+        title="Area de Recreacion"
+        description="Disfruta de hermosas atardeceres o anocheceres desde nuestro roof top."
+        img_src="/img/public-area/roof-top.jpg"
+        alt_value="HQNRD Roof Top"
+        type="featured"
+      />
+      <Card
+        title="Servcio de vigilancia exterior"
+        description="Vigilando por ti para proveerte el la tranquilidad que mereces."
+        img_src="/img/public-area/security-camera.jpg"
+        alt_value="HQNRD Camara de vigilancia"
+        type="featured"
+      />
     </HOME.Features>
   );
 }
