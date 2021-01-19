@@ -90,4 +90,14 @@ export const RoomsList = styled.section`
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: var(--gap);
   grid-auto-rows: 33rem;
+
+  article {
+    figcaption {
+      background-color: var(--lighter-gray);
+    }
+    a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+  }
 `;

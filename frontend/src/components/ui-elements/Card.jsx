@@ -28,6 +28,7 @@ function Card({ type, title = "", description = "", img_src = "", alt_value = ""
     <CARD.FeatureFigCaption>
       <CARD.RoomDetails>
         <CARD.Details>
+          <CARD.RoomDetailPrice>$ {price}</CARD.RoomDetailPrice>
           <strong>Capacidad:</strong> {capacity} Personas
           <br />
           <strong>Categoria:</strong> {category}

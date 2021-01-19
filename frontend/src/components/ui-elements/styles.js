@@ -1,3 +1,4 @@
+// Dependencies
 import styled from "styled-components";
 
 const setBtnBgColor = {
@@ -9,6 +10,8 @@ const setBtnBgColor = {
         return "#31b0be";
       case "danger":
         return "#be316e";
+      case "dark":
+        return "#444444";
       case "warning":
         return "#9fa936";
       default:
@@ -22,8 +25,13 @@ export const Button = styled.button`
   outline: none;
   background-color: ${({ bgColor }) => (bgColor ? setBtnBgColor.bg(bgColor) : setBtnBgColor.bg(null))};
   cursor: pointer;
+  padding: ${({ bgColor }) => (bgColor === "dark" ? "1rem 5rem" : "")};
+  color: ${({ bgColor }) => (bgColor === "dark" ? "#f9f9f9" : "inherit")};
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  svg {
+    margin-right: calc(var(--margin - 1rem));
+  }
   a {
     display: block;
     text-decoration: none;
@@ -42,7 +50,6 @@ export const Button = styled.button`
 
 export const Feature = styled.article`
   border-radius: var(--radius);
-  padding: var(--padding);
   border: 0.1rem solid var(--gray);
   a {
     display: block;
@@ -58,8 +65,7 @@ export const Feature = styled.article`
       display: block;
       font-size: 0;
       overflow: hidden;
-      border-radius: var(--radius);
-      margin: var(--padding) 0 0 0;
+      border-radius: 0 0 var(--radius) var(--radius);
       img {
         width: 100%;
         box-shadow: var(--shadow);
@@ -72,7 +78,27 @@ export const Feature = styled.article`
   }
 `;
 
-export const FeatureFigCaption = styled.figcaption``;
+export const FeatureFigCaption = styled.figcaption`
+  padding: var(--padding);
+`;
 
-export const RoomDetails = styled.div``;
+export const RoomDetails = styled.div`
+  font-size: 1.35rem;
+  position: relative;
+`;
+
+export const RoomDetailPrice = styled.div`
+  position: absolute;
+  font-size: 1.35rem;
+  bottom: 0;
+  right: 0;
+  padding: 2rem;
+  background: var(--success);
+  color: var(--light);
+  font-weight: 800;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  box-shadow: var(--shadow);
+`;
+
 export const Details = styled.figcaption``;

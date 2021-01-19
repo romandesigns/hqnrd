@@ -1,6 +1,7 @@
 // Dependecies
 import React from "react";
-
+import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai";
+import { FaAirbnb } from "react-icons/fa";
 // Style Components
 import * as FOOTER from "./styles";
 
@@ -43,10 +44,21 @@ const Footer = () => {
             Tel: <a href="tel:809-878-5789">809-878-5789</a>
             <br />
             <br />
-            <strong>Siguenos en nuestras redes</strong>
+            <strong>Siguenos en nuestras redes sociales</strong>
             <br />
-            Email <a href="mailto:hotelquintonivelrd@gmail.com">Facebook</a> Tel: <a href="tel:809-878-5789">Instagram</a>
+            <AiOutlineFacebook />{" "}
+            <a href="https://www.facebook.com/hotelquintonivelsalcedo/" alt="_blank" rel="noopener noreferrer">
+              Facebook
+            </a>
+            <br /> <AiOutlineInstagram /> <a href="tel:809-878-5789">Instagram</a>
             <br />
+            <br />
+            <strong>Reserva atraves de Airbnb (Optional)</strong>
+            <br />
+            <FaAirbnb />{" "}
+            <a href="https://www.airbnb.com/rooms/38047428?adults=16&check_in=2021-01-20&check_out=2021-01-21&locale=en&currency=USD&source_impression_id=p3_1611095329_wRdCUHhZj/8bFKih&guests=1">
+              airbnb
+            </a>
           </FOOTER.DetailsWrapper>
         </FOOTER.Details>
         <FOOTER.DeveloperInfo>

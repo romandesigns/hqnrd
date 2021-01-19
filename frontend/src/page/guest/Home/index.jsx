@@ -1,12 +1,9 @@
 //  Dependencies
 import React from "react";
-
 // Utilities
 import { MetaTags } from "../../../utils/apps";
-
 // Styled Components
 import * as HOME from "./styles";
-
 // Components
 import HEADER from "../../../components/layout/Header";
 import Features from "../../../components/layout/Features";

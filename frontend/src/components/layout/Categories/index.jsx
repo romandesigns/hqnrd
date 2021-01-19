@@ -3,14 +3,14 @@ import React, { useState, useEffect } from "react";
 
 // Components
 import Menu from "./CategoriesTemplate";
-import Habitaciones from "./HabitacionesTemplate";
+import Rooms from "./RoomsTemplate";
 
 // Styled Components
 import * as HOME from "./styles";
 
 function Categories() {
   const [menu, setMenu] = useState("category");
-  let menuContent = menu === "category" ? <Menu /> : <Habitaciones />;
+  let menuContent = menu === "category" ? <Menu /> : <Rooms />;
 
   useEffect(() => {
     setMenu("category");
@@ -28,7 +28,7 @@ function Categories() {
             </li>
             <li>
               <button onClick={() => setMenu("rooms")} style={menu === "rooms" ? { backgroundColor: "#31b0be" } : { backgroundColor: "#1873b0" }}>
-                Habitaciones
+                Rooms
               </button>
             </li>
           </ul>
