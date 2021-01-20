@@ -20,7 +20,7 @@ function Card({ type, title = "", description = "", img_src = "", alt_value = ""
 
   const Category = (
     <CARD.FeatureFigCaption>
-      <h3>{title}</h3>
+      <h3>Habitaciones {title}</h3>
     </CARD.FeatureFigCaption>
   );
 

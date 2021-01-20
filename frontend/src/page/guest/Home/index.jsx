@@ -5,7 +5,7 @@ import { MetaTags } from "../../../utils/apps";
 // Styled Components
 import * as HOME from "./styles";
 // Components
-import HEADER from "../../../components/layout/Header";
+import Header from "../../../components/layout/Header";
 import Features from "../../../components/layout/Features";
 import Gallery from "../../../components/layout/PhotoGallery";
 import Categories from "../../../components/layout/Categories";
@@ -21,7 +21,7 @@ const Home = () => {
         ogDescription="Disfruta de las acomodidades que te ofrecemos; Habitaciones amplias y modernas, Smart TV, control de seguridad y mucho mas"
         ogImagePath="path/to/image.jpg"
       />
-      <HEADER>
+      <Header img_src="/img/hero-image.jpg">
         <HOME.Wrapper>
           <img src="/logo512.png" alt="Hotel Quinto Nivel RD Logo" />
           <h1>Hotel Quinto Nivel RD</h1>
@@ -30,7 +30,7 @@ const Home = () => {
             Crear Reservacion
           </Button>
         </HOME.Wrapper>
-      </HEADER>
+      </Header>
       <HOME.Main>
         <Features />
         <Gallery />

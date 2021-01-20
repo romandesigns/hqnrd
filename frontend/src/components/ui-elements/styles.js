@@ -72,7 +72,6 @@ export const Feature = styled.article`
       }
     }
     h3 {
-      ${({ cardType }) => console.log(cardType)}
       margin-bottom: calc(var(--margin) - 1rem);
     }
   }

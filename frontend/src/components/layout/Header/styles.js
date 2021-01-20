@@ -22,7 +22,7 @@ export const HeaderPageStyled = styled.header`
     z-index: 0;
   }
   &::before {
-    background: url("/img/hero-image.jpg");
+    background: ${({ img_src }) => `url(${img_src})`};
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

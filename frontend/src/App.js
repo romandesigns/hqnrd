@@ -1,10 +1,10 @@
 // Dependencies
 import React from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // Page
 import Home from "./page/guest/Home";
-import Categoria from "./page/guest/Categoria";
+import Category from "./page/guest/Category";
 import NotFound from "./page/NotFound";
 
 // Page component
@@ -19,7 +19,7 @@ const App = function () {
       <AppStyled>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/categoria/:cat" component={Categoria} />
+          <Route path="/categoria/:cat" component={Category} />
           <Route component={NotFound} />
         </Switch>
         <Footer />
