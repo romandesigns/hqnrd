@@ -16,18 +16,6 @@ export const Brand = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  div img {
-    max-width: 10%;
-  }
-`;
-
-export const BrandWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  h2 {
-    margin-top: 1rem;
-  }
 `;
 
 export const Details = styled.section`
@@ -39,6 +27,10 @@ export const Details = styled.section`
 export const DetailsWrapper = styled.div`
   padding-top: var(--padding);
   padding-bottom: var(--padding);
+
+  svg {
+    transform: translateY(3px);
+  }
 `;
 
 export const DeveloperInfo = styled.section`

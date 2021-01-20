@@ -1,22 +1,19 @@
 // Dependecies
 import React from "react";
 import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai";
-import { FaAirbnb } from "react-icons/fa";
+import { FaAirbnb, FaWhatsapp } from "react-icons/fa";
+import { BiEnvelope } from "react-icons/bi";
 // Style Components
 import * as FOOTER from "./styles";
+import Brand from "../../ui-elements/Brand";
+// Components
 
 const Footer = () => {
   return (
     <FOOTER.Container>
       <FOOTER.MainContent>
         <FOOTER.Brand>
-          <FOOTER.BrandWrapper>
-            <img src="/logo512.png" alt="Hotel Quinto Nivel Brand" />
-            <div>
-              <h2>Hotel Quinto Nivel RD</h2>
-              <p>Como estar en casa!!!</p>
-            </div>
-          </FOOTER.BrandWrapper>
+          <Brand />
         </FOOTER.Brand>
         <FOOTER.Details>
           <FOOTER.DetailsWrapper>
@@ -36,12 +33,12 @@ const Footer = () => {
             </address>
             <strong>Contactos</strong>
             <br />
-            Email:{" "}
+            <BiEnvelope />{" "}
             <a href="mailto:hotelquintonivelrd@gmail.com" target="_blank" rel="noopener noreferrer">
               hotelquintonivelrd@gmail.com
             </a>
             <br />
-            Tel: <a href="tel:809-878-5789">809-878-5789</a>
+            <FaWhatsapp /> <a href="tel:809-878-5789">809-878-5789</a>
             <br />
             <br />
             <strong>Siguenos en nuestras redes sociales</strong>
@@ -53,7 +50,7 @@ const Footer = () => {
             <br /> <AiOutlineInstagram /> <a href="tel:809-878-5789">Instagram</a>
             <br />
             <br />
-            <strong>Reserva atraves de Airbnb (Optional)</strong>
+            <strong>Reserva atraves de Airbnb (Opcional)</strong>
             <br />
             <FaAirbnb />{" "}
             <a href="https://www.airbnb.com/rooms/38047428?adults=16&check_in=2021-01-20&check_out=2021-01-21&locale=en&currency=USD&source_impression_id=p3_1611095329_wRdCUHhZj/8bFKih&guests=1">

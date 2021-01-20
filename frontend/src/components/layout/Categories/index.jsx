@@ -28,7 +28,7 @@ function Categories() {
             </li>
             <li>
               <button onClick={() => setMenu("rooms")} style={menu === "rooms" ? { backgroundColor: "#31b0be" } : { backgroundColor: "#1873b0" }}>
-                Rooms
+                Habitaciones
               </button>
             </li>
           </ul>

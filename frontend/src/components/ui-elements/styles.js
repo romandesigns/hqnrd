@@ -30,7 +30,7 @@ export const Button = styled.button`
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   svg {
-    margin-right: calc(var(--margin - 1rem));
+    margin-right: calc(var(--margin) 0.5rem);
   }
   a {
     display: block;
@@ -101,3 +101,15 @@ export const RoomDetailPrice = styled.div`
 `;
 
 export const Details = styled.figcaption``;
+
+export const BrandWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    max-width: 10%;
+  }
+  h2 {
+    margin-top: 1rem;
+  }
+`;

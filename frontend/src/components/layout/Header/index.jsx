@@ -1,8 +1,9 @@
 // Dependencies
 import React from "react";
+// Components
+import Navbar from "../Navbar";
 // Styled Components
 import { HeaderPageStyled, HeaderPageContentStyled } from "./styles";
-import Navbar from "../Navbar";
 
 const HeaderPage = (props) => {
   return (

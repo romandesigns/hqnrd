@@ -37,4 +37,11 @@ export const HeaderPageContentStyled = styled.div`
   align-self: center;
   position: relative;
   z-index: 2;
+
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  padding: var(--padding);
+  box-sizing: border-box;
+  display: flex;
 `;
