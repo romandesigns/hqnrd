@@ -21,22 +21,25 @@ const setBtnBgColor = {
 };
 
 export const Button = styled.button`
-  border: none;
-  outline: none;
   background-color: ${({ bgColor }) => (bgColor ? setBtnBgColor.bg(bgColor) : setBtnBgColor.bg(null))};
-  cursor: pointer;
-  padding: ${({ bgColor }) => (bgColor === "dark" ? "1rem 5rem" : "")};
-  color: ${({ bgColor }) => (bgColor === "dark" ? "#f9f9f9" : "inherit")};
   border-radius: var(--radius);
+  border: none;
   box-shadow: var(--shadow);
+  color: ${({ bgColor }) => (bgColor === "dark" ? "#f9f9f9" : "inherit")};
+  cursor: pointer;
+  max-height: 4rem;
+  max-width: 17rem;
+  outline: none;
+  padding: ${({ bgColor }) => (bgColor === "dark" ? "1rem 3rem" : "")};
+  width: 100%;
   svg {
     margin-right: calc(var(--margin) 0.5rem);
   }
   a {
-    display: block;
-    text-decoration: none;
     color: var(--light);
+    display: block;
     padding: 1rem 2rem;
+    text-decoration: none;
     &:hover {
       color: var(--light);
     }
@@ -57,18 +60,18 @@ export const Feature = styled.article`
     height: 100%;
   }
   figure {
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
     span {
+      border-radius: 0 0 var(--radius) var(--radius);
       display: block;
       font-size: 0;
       overflow: hidden;
-      border-radius: 0 0 var(--radius) var(--radius);
       img {
-        width: 100%;
         box-shadow: var(--shadow);
+        width: 100%;
       }
     }
     h3 {
@@ -87,27 +90,30 @@ export const RoomDetails = styled.div`
 `;
 
 export const RoomDetailPrice = styled.div`
-  position: absolute;
-  font-size: 1.35rem;
-  bottom: 0;
-  right: 0;
-  padding: 2rem;
   background: var(--success);
-  color: var(--light);
-  font-weight: 800;
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
+  bottom: 0;
   box-shadow: var(--shadow);
+  color: var(--light);
+  font-size: 1.35rem;
+  font-weight: 800;
+  padding: 2rem;
+  position: absolute;
+  right: 0;
 `;
 
 export const Details = styled.figcaption``;
 
 export const BrandWrapper = styled.div`
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
   img {
     max-width: 10%;
+  }
+  h1 {
+    margin-top: 0.7rem;
   }
   h2 {
     margin-top: 1rem;

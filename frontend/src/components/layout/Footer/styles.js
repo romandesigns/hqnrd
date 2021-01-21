@@ -6,27 +6,27 @@ export const Container = styled.footer`
 `;
 
 export const MainContent = styled.main`
-  padding: var(--padding);
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  padding: var(--padding);
 `;
 
 export const Brand = styled.section`
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 `;
 
 export const Details = styled.section`
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 `;
 
 export const DetailsWrapper = styled.div`
-  padding-top: var(--padding);
   padding-bottom: var(--padding);
+  padding-top: var(--padding);
 
   svg {
     transform: translateY(3px);
@@ -34,10 +34,10 @@ export const DetailsWrapper = styled.div`
 `;
 
 export const DeveloperInfo = styled.section`
-  display: flex;
   background-color: var(--gray);
-  justify-content: space-between;
-  grid-column: 1/3;
-  padding: var(--padding);
   border-radius: var(--radius);
+  display: flex;
+  grid-column: 1/3;
+  justify-content: space-between;
+  padding: var(--padding);
 `;

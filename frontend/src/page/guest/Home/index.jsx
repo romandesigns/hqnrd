@@ -22,14 +22,16 @@ const Home = () => {
         ogImagePath="path/to/image.jpg"
       />
       <Header img_src="/img/hero-image.jpg">
-        <HOME.Wrapper>
-          <img src="/logo512.png" alt="Hotel Quinto Nivel RD Logo" />
-          <h1>Hotel Quinto Nivel RD</h1>
-          <p>Como estar en casa!!!</p>
-          <Button path="/reservacion" type="reservation">
-            Crear Reservacion
-          </Button>
-        </HOME.Wrapper>
+        <HOME.Content>
+          <HOME.Wrapper>
+            <img src="/logo512.png" alt="Hotel Quinto Nivel RD Logo" />
+            <h1>Hotel Quinto Nivel RD</h1>
+            <p>Como estar en casa!!!</p>
+            <Button path="/reservacion" type="reservation">
+              Crear Reservacion
+            </Button>
+          </HOME.Wrapper>
+        </HOME.Content>
       </Header>
       <HOME.Main>
         <Features />

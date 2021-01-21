@@ -2,52 +2,52 @@
 import styled from "styled-components";
 
 export const NavbarPageStyled = styled.nav`
-  background-color: white;
-  display: grid;
-  justify-content: center;
   align-items: center;
   align-self: center;
-  justify-self: center;
-  width: 100%;
-  max-width: 80%;
-  margin: var(--margin) var(--margin) 0 var(--margin);
+  background-color: white;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  display: grid;
+  justify-content: center;
+  justify-self: center;
+  margin: var(--margin) var(--margin) 0 var(--margin);
+  max-width: 80%;
   position: relative;
+  width: 100%;
   z-index: 1;
 `;
 
 export const NavbarPageUlStyled = styled.ul`
-  margin: 0;
-  padding-left: 0;
   display: grid;
   grid-template-columns: repeat(5, minmax(auto, auto));
+  margin: 0;
+  padding-left: 0;
   li {
     display: inline-block;
 
     a {
-      text-decoration: none;
-      display: block;
       color: var(--text-color);
+      display: block;
       padding: calc(var(--padding) - 0.4rem) var(--padding);
+      text-decoration: none;
       &:hover {
         color: var(--primary);
       }
     }
     .active {
-      position: relative;
-      overflow: hidden;
       color: var(--primary);
+      overflow: hidden;
+      position: relative;
       &::before {
-        content: "";
-        height: 2rem;
-        position: absolute;
-        bottom: -1.5rem;
-        left: 0;
-        right: 0;
-        transition: bottom var(--transition);
         background-color: var(--primary);
         border-radius: var(--radius);
+        bottom: -1.5rem;
+        content: "";
+        height: 2rem;
+        left: 0;
+        position: absolute;
+        right: 0;
+        transition: bottom var(--transition);
       }
       &:hover {
         color: var(--primary);

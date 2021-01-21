@@ -9,24 +9,24 @@ function Features() {
   return (
     <HOME.Features>
       <Card
-        title="Comodidad y Comforte"
+        alt_value="HQNRD Habitacion"
         description="Habitaciones espaciosas equipadas con todo lo que puedas necesitar en un apartamento moderno."
         img_src="/img/public-area/featured-room.jpg"
-        alt_value="HQNRD Habitacion"
+        title="Comodidad y Comforte"
         type="featured"
       />
       <Card
-        title="Area de Recreacion"
+        alt_value="HQNRD Roof Top"
         description="Disfruta de hermosas atardeceres o anocheceres desde nuestro roof top."
         img_src="/img/public-area/roof-top.jpg"
-        alt_value="HQNRD Roof Top"
+        title="Area de Recreacion"
         type="featured"
       />
       <Card
-        title="Servcio de vigilancia exterior"
+        alt_value="HQNRD Camara de vigilancia"
         description="Vigilando por ti para proveerte el la tranquilidad que mereces."
         img_src="/img/public-area/security-camera.jpg"
-        alt_value="HQNRD Camara de vigilancia"
+        title="Servcio de vigilancia exterior"
         type="featured"
       />
     </HOME.Features>

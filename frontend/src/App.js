@@ -20,7 +20,8 @@ const App = function () {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/categoria/:cat" component={Category} />
-          <Route component={NotFound} />
+          <Route exact path="/404" component={NotFound} />
+          <Route exact component={NotFound} />
         </Switch>
         <Footer />
       </AppStyled>
