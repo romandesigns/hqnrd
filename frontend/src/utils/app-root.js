@@ -1,15 +1,12 @@
 // Dependencies
 import styled from "styled-components";
 
-// Style component
-import { media } from "./media-quries";
-
 export const AppStyled = styled.div`
-  height: 100%;
+  background-color: var(--bg-color);
+  border-radius: var(--radius);
+  box-sizing: border-box;
   display: grid;
   grid-row-gap: 1rem;
-  background-color: var(--bg-color);
+  height: 100%;
   padding: var(--padding);
-  box-sizing: border-box;
-  border-radius: var(--radius);
 `;

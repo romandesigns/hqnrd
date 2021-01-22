@@ -2,12 +2,12 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-  height: calc(100vh - 45rem);
+  align-items: center;
+  border-radius: var(--radius);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: calc(100vh - 45rem);
   justify-content: center;
-  border-radius: var(--radius);
 
   h2 {
     margin-bottom: calc(var(--margin));

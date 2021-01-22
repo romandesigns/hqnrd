@@ -5,7 +5,7 @@ const theme = [];
 const themeReducer = (state = theme, action) => {
   switch (action.type) {
     case "SET_THEME":
-      return [...theme, action.payload];
+      return [...state, action.payload];
     default:
       return state;
   }
