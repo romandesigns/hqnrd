@@ -24,11 +24,20 @@ export const HeaderWrapper = styled.div`
 
 export const Content = styled.main`
   display: grid;
-  grid-auto-rows: 32rem;
+  grid-auto-rows: auto;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 6rem 32rem;
+  grid-template-rows: auto auto;
+  padding: 0 11.6rem;
 
   & > button {
     align-self: center;
+  }
+`;
+
+export const Description = styled.div`
+  grid-column: 1/3;
+  padding: var(--padding);
+  button {
+    margin-top: 1rem;
   }
 `;

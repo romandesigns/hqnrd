@@ -31,7 +31,7 @@ export const NavbarPageUlStyled = styled.ul`
       padding: calc(var(--padding) - 0.4rem) var(--padding);
       text-decoration: none;
       &:hover {
-        color: var(--primary);
+        color: var(--success);
       }
     }
     .active {
@@ -50,7 +50,7 @@ export const NavbarPageUlStyled = styled.ul`
         transition: bottom var(--transition);
       }
       &:hover {
-        color: var(--primary);
+        color: var(--success);
       }
     }
   }

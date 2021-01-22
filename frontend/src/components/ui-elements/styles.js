@@ -90,15 +90,15 @@ export const RoomDetails = styled.div`
 `;
 
 export const RoomDetailPrice = styled.div`
-  background: var(--success);
+  background: var(--text-color);
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
   bottom: 0;
   box-shadow: var(--shadow);
   color: var(--light);
-  font-size: 1.35rem;
-  font-weight: 800;
-  padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: var(--padding);
   position: absolute;
   right: 0;
 `;

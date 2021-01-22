@@ -39,10 +39,10 @@ export const global = createGlobalStyle`
     h1,h2,h3,h4,h5,h6,p { margin: 0; }
     
     a {
-        color: var(--success);
+        color: var(--darker-primary);
         text-decoration: underline;
         &:hover {
-            color: var(--warning);
+            color: var(--success);
         }
     }
 

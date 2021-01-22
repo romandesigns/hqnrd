@@ -65,6 +65,7 @@ export const UnitsCategories = styled.section`
 
   article {
     background-color: var(--lighter-gray);
+    box-shadow: var(--shadow);
     h3 {
       font-size: 2rem;
     }
@@ -92,6 +93,7 @@ export const RoomsList = styled.section`
   grid-template-columns: 1fr 1fr 1fr;
 
   article {
+    box-shadow: var(--shadow);
     figcaption {
       background-color: var(--lighter-gray);
     }
