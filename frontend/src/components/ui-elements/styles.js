@@ -5,19 +5,25 @@ const setBgColor = {
   bg: (bg) => {
     switch (bg) {
       case "primary":
-        return "#1873b0";
+        return "var(--primary)";
+      case "darker-primary":
+        return "var(--darker-primary)";
       case "success":
-        return "#31b0be";
+        return "var(--success)";
       case "danger":
-        return "#be316e";
+        return "var(--danger)";
       case "dark":
-        return "#444444";
+        return "var(--dark)";
+      case "green":
+        return "var(--whatsapp)";
       case "warning":
-        return "#9fa936";
+        return "var(--warning)";
       case "light":
-        return "#ffffff";
+        return "var(--light)";
       case "light-gray":
-        return "#f9f9f9";
+        return "var(--light-gray)";
+      case "lighter-gray":
+        return "var(--lighter-gray)";
       default:
         return "#e8e8e8";
     }
@@ -28,8 +34,9 @@ export const Button = styled.button`
   background-color: ${({ bgColor }) => (bgColor ? setBgColor.bg(bgColor) : setBgColor.bg(null))};
   border-radius: var(--radius);
   border: none;
+  margin: var(--margin) 0;
   box-shadow: var(--shadow);
-  color: ${({ bgColor }) => (bgColor === "dark" ? "#f9f9f9" : "inherit")};
+  color: ${({ bgColor }) => (bgColor === "dark" ? setBgColor.bg("gray") : "inherit")};
   cursor: pointer;
   max-height: 4rem;
   max-width: 17rem;
@@ -99,12 +106,12 @@ export const RoomDetailPrice = styled.div`
   background: var(--text-color);
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
-  bottom: 0;
+  top: -20px;
   box-shadow: var(--shadow);
   color: var(--light);
   font-size: 1.5rem;
   font-weight: 600;
-  padding: var(--padding);
+  padding: calc(var(--padding) - 1.5rem) var(--padding);
   position: absolute;
   right: 0;
 `;

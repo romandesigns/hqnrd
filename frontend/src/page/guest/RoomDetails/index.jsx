@@ -3,6 +3,7 @@ import React from "react";
 // Components
 import Header from "../../../components/layout/Header";
 import Brand from ".././../../components/ui-elements/Brand";
+import Button from "./../../../components/ui-elements/Button";
 // Utilities
 import { MetaTags } from "../../../utils/apps";
 // Style Component
@@ -63,6 +64,7 @@ const RoomDetails = (props) => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi est adipisci assumenda velit minima iure accusantium tenetur vel quia,
               doloribus expedita rerum voluptate quaerat consectetur asperiores quidem tempora! Iusto, eos!
             </p>
+            <Button type="goback">Regresar</Button>
           </ROOM.Description>
           <ROOM.RoomSpecs>
             <p>
@@ -87,14 +89,19 @@ const RoomDetails = (props) => {
               <ROOM.Label>Capacidad:</ROOM.Label> 4 Personas
             </p>
             <ROOM.BtnGroup>
-              <button>Reservar</button>
-              <button>Llamanos</button>
-              <button>Escribenos</button>
+              <br />
+              <Button type="whatsapp">Llamanos</Button>
+              <small>
+                <em>
+                  <strong>Tel:</strong> 809-753-7500
+                </em>
+              </small>
+              <Button type="email">Escribenos</Button>
             </ROOM.BtnGroup>
           </ROOM.RoomSpecs>
           <ROOM.Features>
             <ROOM.Extras>
-              <h5>Extras</h5>
+              <h4>Extras</h4>
               <ul>
                 <li>Aire Acondicionado</li>
                 <li>Smart TV</li>
@@ -105,7 +112,7 @@ const RoomDetails = (props) => {
               </ul>
             </ROOM.Extras>
             <ROOM.Illustration>
-              <h5>Illustracion</h5>
+              <h4>Illustracion</h4>
               <figure>
                 <img src="/img/diagram-03-b.jpg" alt="diagram-03-b" />
                 <figcaption>Illustracion de la habitacion</figcaption>

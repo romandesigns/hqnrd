@@ -37,7 +37,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
         <Card
           type="room"
@@ -47,7 +47,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
         <Card
           type="room"
@@ -57,7 +57,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
         <Card
           type="room"
@@ -67,7 +67,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
         <Card
           type="room"
@@ -77,7 +77,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
         <Card
           type="room"
@@ -87,7 +87,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
         <Card
           type="room"
@@ -97,7 +97,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
         <Card
           type="room"
@@ -107,7 +107,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
         <Card
           type="room"
@@ -117,7 +117,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
         <Card
           type="room"
@@ -127,7 +127,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
         <Card
           type="room"
@@ -137,7 +137,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
         <Card
           type="room"
@@ -147,7 +147,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
         <Card
           type="room"
@@ -157,7 +157,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
         <Card
           type="room"
@@ -167,7 +167,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
         <Card
           type="room"
@@ -177,7 +177,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
         <Card
           type="room"
@@ -187,7 +187,7 @@ function HabitacionesTemplate() {
           category="Doble Cama"
           img_src="/img/cat/familiar.jpg"
           alt_value="image alt info"
-          path_to="/habitacion/1"
+          path_to="/categoria/doble/habitacion/1"
         />
       </ROOMS.RoomsList>
     </ROOMS.Rooms>
