@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 // Page
 import Home from "./page/guest/Home";
 import Category from "./page/guest/Category";
+import RoomDetails from "./page/guest/RoomDetails";
 import NotFound from "./page/NotFound";
 
 // Page component
@@ -19,7 +20,8 @@ const App = function () {
       <AppStyled>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/categoria/:cat" component={Category} />
+          <Route exact path="/categoria/:cat" component={Category} />
+          <Route exact path="/categoria/:cat/habitacion/:id" component={RoomDetails} />
           <Route exact path="/404" component={NotFound} />
           <Route exact component={NotFound} />
         </Switch>

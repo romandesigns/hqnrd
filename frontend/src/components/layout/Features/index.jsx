@@ -14,6 +14,7 @@ function Features() {
         img_src="/img/public-area/featured-room.jpg"
         title="Comodidad y Comforte"
         type="featured"
+        bg="light"
       />
       <Card
         alt_value="HQNRD Roof Top"
@@ -21,6 +22,7 @@ function Features() {
         img_src="/img/public-area/roof-top.jpg"
         title="Area de Recreacion"
         type="featured"
+        bg="light"
       />
       <Card
         alt_value="HQNRD Camara de vigilancia"
@@ -28,6 +30,7 @@ function Features() {
         img_src="/img/public-area/security-camera.jpg"
         title="Servcio de vigilancia exterior"
         type="featured"
+        bg="light"
       />
     </HOME.Features>
   );

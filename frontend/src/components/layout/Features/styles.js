@@ -6,10 +6,6 @@ export const Features = styled.section`
   grid-auto-rows: 1fr;
   grid-column-gap: var(--gap);
   grid-template-columns: 1fr 1fr 1fr;
-
-  article {
-    background-color: var(--light);
-  }
 `;
 
 export const FeatureFigCaption = styled.figcaption``;

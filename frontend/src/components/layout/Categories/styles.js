@@ -64,10 +64,8 @@ export const UnitsCategories = styled.section`
   grid-template-rows: auto auto;
 
   article {
-    background-color: var(--lighter-gray);
-    box-shadow: var(--shadow);
     h3 {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
 `;
@@ -93,10 +91,6 @@ export const RoomsList = styled.section`
   grid-template-columns: 1fr 1fr 1fr;
 
   article {
-    box-shadow: var(--shadow);
-    figcaption {
-      background-color: var(--lighter-gray);
-    }
     a {
       color: var(--text-color);
       text-decoration: none;

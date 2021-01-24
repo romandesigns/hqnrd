@@ -1,7 +1,7 @@
 // Dependencies
 import styled from "styled-components";
 
-const setBtnBgColor = {
+const setBgColor = {
   bg: (bg) => {
     switch (bg) {
       case "primary":
@@ -14,6 +14,10 @@ const setBtnBgColor = {
         return "#444444";
       case "warning":
         return "#9fa936";
+      case "light":
+        return "#ffffff";
+      case "light-gray":
+        return "#f9f9f9";
       default:
         return "#e8e8e8";
     }
@@ -21,7 +25,7 @@ const setBtnBgColor = {
 };
 
 export const Button = styled.button`
-  background-color: ${({ bgColor }) => (bgColor ? setBtnBgColor.bg(bgColor) : setBtnBgColor.bg(null))};
+  background-color: ${({ bgColor }) => (bgColor ? setBgColor.bg(bgColor) : setBgColor.bg(null))};
   border-radius: var(--radius);
   border: none;
   box-shadow: var(--shadow);
@@ -54,10 +58,12 @@ export const Button = styled.button`
 export const Feature = styled.article`
   border-radius: var(--radius);
   border: 0.1rem solid var(--gray);
+  background: ${({ bg }) => (bg === "light" ? setBgColor.bg("light") : bg === "light-gray" ? setBgColor.bg("light-gray") : "")};
   a {
     display: block;
     width: 100%;
     height: 100%;
+    text-decoration: none;
   }
   figure {
     display: flex;
@@ -109,6 +115,7 @@ export const BrandWrapper = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
+
   img {
     max-width: 10%;
   }

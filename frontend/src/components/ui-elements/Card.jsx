@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // Styled Components
 import * as CARD from "./styles";
 
-function Card({ type, title = "", description = "", img_src = "", alt_value = "", path_to = "", price = "", category = "", capacity = "" }) {
+function Card({ type, title = "", description = "", img_src = "", alt_value = "", path_to = "", price = "", category = "", capacity = "", bg = "" }) {
   const [cardType, setCardType] = useState(type);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ function Card({ type, title = "", description = "", img_src = "", alt_value = ""
 
   if (cardType === "featured") {
     return (
-      <CARD.Feature cardType={type}>
+      <CARD.Feature bg={bg}>
         {Featured}
         <figure>
           <span>
@@ -52,7 +52,7 @@ function Card({ type, title = "", description = "", img_src = "", alt_value = ""
 
   if (cardType === "category") {
     return (
-      <CARD.Feature cardType={type}>
+      <CARD.Feature bg={bg}>
         <Link to={path_to}>
           {Category}
           <figure>
@@ -67,7 +67,7 @@ function Card({ type, title = "", description = "", img_src = "", alt_value = ""
 
   if (cardType === "room") {
     return (
-      <CARD.Feature cardType={type}>
+      <CARD.Feature bg={bg}>
         <Link to={path_to}>
           {Room}
           <figure>

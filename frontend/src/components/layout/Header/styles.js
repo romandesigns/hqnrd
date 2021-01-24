@@ -6,7 +6,7 @@ export const HeaderPageStyled = styled.header`
   border-radius: var(--radius);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 9rem 40rem;
+  grid-template-rows: 9rem ${({ room }) => (room === "detail" ? "auto" : "40rem")};
   overflow: hidden;
   position: relative;
   &::before,
