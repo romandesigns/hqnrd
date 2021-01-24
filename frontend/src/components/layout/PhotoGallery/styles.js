@@ -1,11 +1,12 @@
 //  Dependencies
 import styled from "styled-components";
 
-export const Gallery = styled.section`
+export const Container = styled.section`
+  ${({ room }) => console.log(room)};
   background-color: var(--light);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 10% 1fr;
+  grid-template-rows: ${({ room }) => (room === "detail" ? "1fr" : "10% 1fr")};
 `;
 
 export const GalleryDescription = styled.div`
@@ -17,7 +18,8 @@ export const GalleryDescription = styled.div`
   }
 `;
 
-export const PhotoGallery = styled.ul`
+export const GalleryList = styled.ul`
+  ${(props) => console.log(props)}
   border-radius: var(--radius);
   display: grid;
   grid-auto-flow: dense;
@@ -25,7 +27,7 @@ export const PhotoGallery = styled.ul`
   grid-gap: var(--gap);
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   padding-left: 0;
-  padding: 1rem var(--padding) 0 var(--padding);
+  padding: ${({ room }) => (room === "detail" ? "2rem" : "1rem var(--padding) 0 var(--padding)")};
 `;
 
 export const GalleryItem = styled.li`

@@ -3,36 +3,40 @@ import styled from "styled-components";
 
 export const RoomDetails = styled.main``;
 
-export const PhotoGallery = styled.ul`
-  border-radius: var(--radius);
+export const Details = styled.section`
   display: grid;
-  grid-auto-flow: dense;
-  grid-auto-rows: 18rem;
   grid-gap: var(--gap);
-  grid-template-columns: repeat(4, minmax(auto, 1fr));
-  padding-left: 0;
-  padding: 1rem var(--padding) 0 var(--padding);
+  grid-template-columns: 2fr 1fr;
+  background-color: var(--light);
+  margin: var(--margin) 0;
+  padding: var(--padding);
+`;
+export const Label = styled.strong``;
+export const BtnGroup = styled.strong``;
+
+export const Extras = styled.article``;
+export const Illustration = styled.article`
+  grid-column: 1;
+  img {
+    max-width: 25rem;
+  }
 `;
 
-export const GalleryItem = styled.li`
-  &:nth-child(1) {
-    grid-column: 2 / span 3;
-  }
-  &:nth-child(4) {
-    grid-row: 1 / span 3;
-    background-position: -50rem center;
-  }
-  &:nth-child(5) {
-    grid-row: 1 / span 2;
-  }
+export const Description = styled.article`
+  padding: var(--padding) 0;
+  border-bottom: 1px solid var(--border-color);
 `;
 
-export const GalleryFigure = styled.figure`
-  background: ${({ img }) => (img ? `url(${img})` : "")};
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: var(--radius);
-  height: 100%;
-  width: 100%;
+export const Features = styled.article`
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+`;
+
+export const RoomSpecs = styled.article`
+  background-color: pink;
+  margin: var(--margin) 0 0 0;
+  padding: var(--padding);
+  grid-row: 1/3;
+  grid-column: 2/-1;
 `;
