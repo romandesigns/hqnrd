@@ -8,13 +8,15 @@ import Header from "../../../components/layout/Header";
 import Brand from "../../../components/ui-elements/Brand";
 import Button from "../../../components/ui-elements/Button";
 import Card from "../../../components/ui-elements/Card";
-
 // Styled Components
 import * as CATEGORY from "./styles";
+// Api
+import { rooms } from "../../../data";
 
 const Category = ({ match }) => {
   const { params, url } = match;
   const { cat } = params;
+  const matchedRooms = rooms.filter((room) => room.category === cat);
 
   // Checking for valid param
   let categories = ["doble-cama", "master", "doble", "standard", "basica", "familiar"];
@@ -50,13 +52,17 @@ const Category = ({ match }) => {
         </CATEGORY.Description>
 
         <CATEGORY.Rooms>
-          <Card type="room" price="95" bg="light" category={sanitizedParam} img_src={`/img/cat/${cat}.jpg`} path_to={`${url}/habitacion/1`} />
-          <Card type="room" price="95" bg="light" category={sanitizedParam} img_src={`/img/cat/${cat}.jpg`} path_to={`${url}/habitacion/1`} />
-          <Card type="room" price="95" bg="light" category={sanitizedParam} img_src={`/img/cat/${cat}.jpg`} path_to={`${url}/habitacion/1`} />
-          <Card type="room" price="95" bg="light" category={sanitizedParam} img_src={`/img/cat/${cat}.jpg`} path_to={`${url}/habitacion/1`} />
-          <Card type="room" price="95" bg="light" category={sanitizedParam} img_src={`/img/cat/${cat}.jpg`} path_to={`${url}/habitacion/1`} />
-          <Card type="room" price="95" bg="light" category={sanitizedParam} img_src={`/img/cat/${cat}.jpg`} path_to={`${url}/habitacion/1`} />
-          <Card type="room" price="95" bg="light" category={sanitizedParam} img_src={`/img/cat/${cat}.jpg`} path_to={`${url}/habitacion/1`} />
+          {matchedRooms.map((room, index) => (
+            <Card
+              key={index}
+              type="room"
+              price={room.price}
+              bg="light"
+              category={sanitizedParam}
+              img_src={room.img.hero}
+              path_to={`${url}/habitacion/${room.unit}`}
+            />
+          ))}
         </CATEGORY.Rooms>
       </CATEGORY.Content>
     </>

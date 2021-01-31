@@ -32,7 +32,6 @@ export const createAdmin = async (req, res) => {
       phone,
       password: await AdminModel.encodePass(password),
     });
-    console.log(admin);
     // if (!admin) return res.status(400).json({ message: CONST.ACCOUNT_NOT_CREATED });
     // await admin.save();
     // return res.status(201).json(admin);

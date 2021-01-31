@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // Styled Components
 import * as CARD from "./styles";
 
-function Card({ type, title = "", description = "", img_src = "", alt_value = "", path_to = "", price = "", category = "", capacity = "", bg = "" }) {
+function Card({ type, heading = "", description = "", img_src = "", alt_value = "", path_to = "", price = "", category = "", capacity = "", bg = "" }) {
   const [cardType, setCardType] = useState(type);
 
   useEffect(() => {
@@ -13,14 +13,14 @@ function Card({ type, title = "", description = "", img_src = "", alt_value = ""
 
   const Featured = (
     <CARD.FeatureFigCaption>
-      <h3>{title}</h3>
+      <h3>{heading}</h3>
       <p>{description}</p>
     </CARD.FeatureFigCaption>
   );
 
   const Category = (
     <CARD.FeatureFigCaption>
-      <h3>Habitaciones {title}</h3>
+      <h3>{heading}</h3>
     </CARD.FeatureFigCaption>
   );
 

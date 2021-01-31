@@ -2,7 +2,6 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  ${({ room }) => console.log(room)};
   background-color: var(--light);
   display: grid;
   grid-template-columns: 1fr;
@@ -19,7 +18,6 @@ export const GalleryDescription = styled.div`
 `;
 
 export const GalleryList = styled.ul`
-  ${(props) => console.log(props)}
   border-radius: var(--radius);
   display: grid;
   grid-auto-flow: dense;

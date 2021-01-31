@@ -65,7 +65,7 @@ export const Button = styled.button`
 export const Feature = styled.article`
   border-radius: var(--radius);
   border: 0.1rem solid var(--gray);
-  background: ${({ bg }) => (bg === "light" ? setBgColor.bg("light") : bg === "light-gray" ? setBgColor.bg("light-gray") : "")};
+  background: ${({ bg }) => (bg === "light" ? setBgColor.bg(bg) : bg === "light-gray" ? setBgColor.bg("light-gray") : "")};
   a {
     display: block;
     width: 100%;

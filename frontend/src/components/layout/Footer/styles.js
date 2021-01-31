@@ -27,7 +27,7 @@ export const Details = styled.section`
 export const DetailsWrapper = styled.div`
   padding-bottom: var(--padding);
   padding-top: var(--padding);
-
+  font-size: 1.3rem;
   svg {
     transform: translateY(3px);
   }

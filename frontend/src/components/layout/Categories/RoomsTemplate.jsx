@@ -35,7 +35,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />
@@ -45,7 +45,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />
@@ -55,7 +55,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />
@@ -65,7 +65,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />
@@ -75,7 +75,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />
@@ -85,7 +85,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />
@@ -95,7 +95,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />
@@ -105,7 +105,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />
@@ -115,7 +115,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />
@@ -125,7 +125,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />
@@ -135,7 +135,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />
@@ -145,7 +145,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />
@@ -155,7 +155,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />
@@ -165,7 +165,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />
@@ -175,7 +175,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />
@@ -185,7 +185,7 @@ function HabitacionesTemplate() {
           price="90"
           capacity="4"
           category="Doble Cama"
-          img_src="/img/cat/familiar.jpg"
+          img_src="/img/category/familiar.jpg"
           alt_value="image alt info"
           path_to="/categoria/doble/habitacion/1"
         />

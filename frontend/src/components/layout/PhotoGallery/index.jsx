@@ -1,35 +1,20 @@
 // Dependencies
 import React from "react";
 import { Link } from "react-router-dom";
-
 // Styled Components
 import * as GALLERY from "./styles";
+// API
+import { gallery } from "../../../data";
 
 function Gallery() {
   return (
     <GALLERY.Container>
       <GALLERY.GalleryList>
-        <GALLERY.GalleryItem>
-          <GALLERY.GalleryFigure img="/img/public-area/public-area_4.jpg" title="Area Comun - Pasillo"></GALLERY.GalleryFigure>
-        </GALLERY.GalleryItem>
-        <GALLERY.GalleryItem>
-          <GALLERY.GalleryFigure img="/img/public-area/public-area_8.jpg" title="Area Comun - Intercom"></GALLERY.GalleryFigure>
-        </GALLERY.GalleryItem>
-        <GALLERY.GalleryItem>
-          <GALLERY.GalleryFigure img="/img/public-area/public-area_5.jpg" title="Area Comun - Pasillo"></GALLERY.GalleryFigure>
-        </GALLERY.GalleryItem>
-        <GALLERY.GalleryItem>
-          <GALLERY.GalleryFigure img="/img/public-area/public-area_1.jpg" title="Area Comun - Pasillo"></GALLERY.GalleryFigure>
-        </GALLERY.GalleryItem>
-        <GALLERY.GalleryItem>
-          <GALLERY.GalleryFigure img="/img/public-area/public-area_3.jpg" title="Area Comun - Edificio Lateral"></GALLERY.GalleryFigure>
-        </GALLERY.GalleryItem>
-        <GALLERY.GalleryItem>
-          <GALLERY.GalleryFigure img="/img/public-area/public-area_2.jpg" title="Area Comun - Escalera"></GALLERY.GalleryFigure>
-        </GALLERY.GalleryItem>
-        <GALLERY.GalleryItem>
-          <GALLERY.GalleryFigure img="/img/public-area/public-area_6.jpg" title="Area Comun - Pasillo"></GALLERY.GalleryFigure>
-        </GALLERY.GalleryItem>
+        {gallery.map((galleryImage, index) => (
+          <GALLERY.GalleryItem key={index}>
+            <GALLERY.GalleryFigure img={galleryImage.img_uri} title={galleryImage.title}></GALLERY.GalleryFigure>
+          </GALLERY.GalleryItem>
+        ))}
       </GALLERY.GalleryList>
       <GALLERY.GalleryDescription>
         <h3>Areas comunes</h3>
