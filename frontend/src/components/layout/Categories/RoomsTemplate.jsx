@@ -1,5 +1,7 @@
 // Styled Components
 import * as ROOMS from "./styles";
+// API
+import { rooms } from "../../../data";
 
 import Card from "../../ui-elements/Card";
 function HabitacionesTemplate() {
@@ -29,166 +31,19 @@ function HabitacionesTemplate() {
         </select>
       </ROOMS.Filter>
       <ROOMS.RoomsList>
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
-        <Card
-          type="room"
-          title="Servcio de vigilancia exterior"
-          price="90"
-          capacity="4"
-          category="Doble Cama"
-          img_src="/img/category/familiar.jpg"
-          alt_value="image alt info"
-          path_to="/categoria/doble/habitacion/1"
-        />
+        {rooms.map((room, index) => (
+          <Card
+            key={index}
+            type="room"
+            unit={room.unit}
+            price={room.price}
+            capacity={room.capacity}
+            category={room.category.replace("-", " ").charAt(0).toUpperCase() + room.category.replace("-", " ").slice(1)}
+            img_src={room.img.hero}
+            alt_value={`Habitacion ${room.category}`}
+            path_to={`/categoria/${room.category}/habitacion/${room.unit}`}
+          />
+        ))}
       </ROOMS.RoomsList>
     </ROOMS.Rooms>
   );

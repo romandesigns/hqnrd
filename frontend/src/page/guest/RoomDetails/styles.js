@@ -1,14 +1,19 @@
 // Dependencies
 import styled from "styled-components";
 
-export const RoomDetails = styled.main``;
+export const RoomDetails = styled.main`
+  margin-top: 2rem;
+  section ul {
+    padding: 0;
+  }
+`;
 
 export const Details = styled.section`
   background-color: var(--light);
   display: grid;
   grid-gap: var(--gap);
   grid-template-columns: 2fr 1fr;
-  margin: var(--margin) 0;
+  margin: 3rem 0 var(--margin) 0;
   padding: var(--padding);
 `;
 

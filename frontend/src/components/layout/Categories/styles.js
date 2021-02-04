@@ -86,9 +86,10 @@ export const Filter = styled.section`
 
 export const RoomsList = styled.section`
   display: grid;
-  grid-auto-rows: 33rem;
+  grid-auto-rows: 35rem;
   grid-gap: var(--gap);
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 35rem;
 
   article {
     a {

@@ -4,7 +4,19 @@ import { Link } from "react-router-dom";
 // Styled Components
 import * as CARD from "./styles";
 
-function Card({ type, heading = "", description = "", img_src = "", alt_value = "", path_to = "", price = "", category = "", capacity = "", bg = "" }) {
+function Card({
+  type,
+  heading = "",
+  unit = "",
+  description = "",
+  img_src = "",
+  alt_value = "",
+  path_to = "",
+  price = "",
+  category = "",
+  capacity = "",
+  bg = "",
+}) {
   const [cardType, setCardType] = useState(type);
 
   useEffect(() => {
@@ -29,6 +41,8 @@ function Card({ type, heading = "", description = "", img_src = "", alt_value = 
       <CARD.RoomDetails>
         <CARD.Details>
           <CARD.RoomDetailPrice>$ {price}</CARD.RoomDetailPrice>
+          <strong>Unidad:</strong> #{unit}
+          <br />
           <strong>Capacidad:</strong> {capacity} Personas
           <br />
           <strong>Categoria:</strong> {category}
