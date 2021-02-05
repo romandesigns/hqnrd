@@ -27,7 +27,7 @@
   --padding: 2rem;
   --margin: 2rem;
   --transition: 0.04s ease;
-  --blur: blur(20px);
+  --blur: blur(6px);
 
   /* Typography */
   --serif: "Bree Serif", serif;

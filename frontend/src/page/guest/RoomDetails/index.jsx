@@ -1,42 +1,40 @@
 // Dependencies
 import React, { useState, useEffect } from "react";
+
 // Components
 import Header from "../../../components/layout/Header";
 import Brand from ".././../../components/ui-elements/Brand";
 import Button from "./../../../components/ui-elements/Button";
+import Modal from "../../misc/modal";
+
 // Utilities
 import { MetaTags } from "../../../utils/apps";
-// API
-import { rooms } from "../../../data";
 
 // Style Component
 import * as CATEGORY from "../../guest/Category/styles";
 import * as GALLERY from "../../../components/layout/PhotoGallery/styles";
 import * as ROOM from "./styles";
 
-const RoomDetails = (props) => {
-  const [room, setRoom] = useState(() => rooms.filter((x) => x.unit === parseInt(props.match.params.id)));
-  console.log();
+// API
+import { rooms } from "../../../data";
+
+const RoomDetails = ({ match }) => {
+  const [room, setRoom] = useState(() => rooms.filter((x) => x.unit === parseInt(match.params.id)));
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   useEffect(() => {
-    let result = rooms.filter((x) => x.unit === parseInt(props.match.params.id));
+    let result = rooms.filter((x) => x.unit === parseInt(match.params.id));
     setRoom(result);
-  }, [props.match.params.id]);
-
-  const RoomId = {
-    img_src: "/img/cat/familiar.jpg",
-    category: props.match.params.cat,
-    unit: props.match.params.id,
-  };
+  }, [match.params.id]);
 
   return (
     <>
       <MetaTags
-        ogDescription="Disfruta de las acomodidades que te ofrecemos; Habitaciones amplias y modernas, Smart TV, control de seguridad y mucho mas"
+        ogDescription={room[0].ogDescription}
         ogImagePath="path/to/image.jpg"
-        ogTitle="Hotel Quinto Nivel RD"
-        pageDescription="Mas que un hotel, nosotros te proveemos la seguridad, comforte y la mejor experiencia posible; Habitaciones modernas y amplias, sistema de seguridad disponible y mucho mas."
-        pageTitle={`Habitacion # ${room[0].unit}`}
+        ogTitle={`Habitacion # ${room[0].unit} | Hotel Quinto Nivel RD`}
+        pageDescription={room[0].pageDescription}
+        pageTitle={`Habitacion ${room[0].category.replace("-", " ")} #${room[0].unit}`}
       />
 
       <Header img_src={room[0].img.hero} room="detail">
@@ -54,7 +52,9 @@ const RoomDetails = (props) => {
 
         <ROOM.Details>
           <ROOM.Description>
-            <h3>Habitacion doble cama #{room[0].unit}</h3>
+            <h3>
+              Habitacion {room[0].category.replace("-", " ")} #{room[0].unit}
+            </h3>
             <p>{room[0].roomDescription}</p>
             <Button type="goback">Regresar</Button>
           </ROOM.Description>
@@ -89,6 +89,7 @@ const RoomDetails = (props) => {
                 </em>
               </small>
               <Button type="email">Escribenos</Button>
+              <button onClick={() => setModalIsOpen(true)}>Register</button>
             </ROOM.BtnGroup>
           </ROOM.RoomSpecs>
           <ROOM.Features>
@@ -109,6 +110,9 @@ const RoomDetails = (props) => {
                 <img src={room[0].img.diagram} alt="diagram-03-b" />
                 <figcaption>Illustracion de la habitacion</figcaption>
               </figure>
+              <Modal open={modalIsOpen} close={() => setModalIsOpen(false)}>
+                Hello world
+              </Modal>
             </ROOM.Illustration>
           </ROOM.Features>
         </ROOM.Details>

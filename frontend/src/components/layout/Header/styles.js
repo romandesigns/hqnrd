@@ -29,5 +29,6 @@ export const HeaderPageStyled = styled.header`
   }
   &::after {
     background: var(--gradient_sec);
+    backdrop-filter: var(--blur);
   }
 `;

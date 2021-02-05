@@ -4,8 +4,6 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   align-items: center;
   align-self: center;
-  backdrop-filter: var(--blur);
-  background-color: var(--faded-light);
   border-radius: var(--radius);
   display: flex;
   flex-direction: column;
@@ -15,15 +13,18 @@ export const Wrapper = styled.div`
 
   img {
     max-width: 7rem;
+    box-shadow: 0 11px 4px -8px rgb(0 0 0 / 32%);
   }
 
   h1 {
-    color: var(--text-color);
+    color: var(--light);
     margin-top: 1rem;
+    font-size: 4rem;
   }
   p {
-    font-size: 19px;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: var(--light);
+    margin-bottom: 1rem;
   }
 `;
 

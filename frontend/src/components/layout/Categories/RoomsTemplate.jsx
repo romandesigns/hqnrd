@@ -1,9 +1,10 @@
 // Styled Components
 import * as ROOMS from "./styles";
+// UI Components
+import Card from "../../ui-elements/Card";
 // API
 import { rooms } from "../../../data";
 
-import Card from "../../ui-elements/Card";
 function HabitacionesTemplate() {
   return (
     <ROOMS.Rooms>

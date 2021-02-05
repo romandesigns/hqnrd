@@ -1,8 +1,6 @@
-// Dependencies
-import React from "react";
 // Styled Components
 import * as HOME from "./styles";
-// Components
+// UI Components
 import Card from "../../ui-elements/Card";
 // API
 import { categories } from "../../../data";

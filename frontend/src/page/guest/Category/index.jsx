@@ -1,17 +1,19 @@
 // Dependenciens
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-// Utilities
-import { MetaTags } from "../../../utils/apps";
 // Components
 import Header from "../../../components/layout/Header";
 import Brand from "../../../components/ui-elements/Brand";
 import Button from "../../../components/ui-elements/Button";
 import Card from "../../../components/ui-elements/Card";
+// Utilities
+import { MetaTags } from "../../../utils/apps";
+
 // Styled Components
 import * as CATEGORY from "./styles";
+
 // Api
-import { rooms } from "../../../data";
+import { rooms, categories } from "../../../data";
 
 const Category = ({ match }) => {
   const { params, url } = match;
@@ -27,6 +29,11 @@ const Category = ({ match }) => {
   // Sanitizing param
   const sanitizedParam = cat === "doble-cama" ? cat.replace("-", " ") : cat;
 
+  // useEffect(() => {
+  //   let result = rooms.filter((x) => x.unit === parseInt(match.params.id));
+  //   setRoom(result);
+  // }, [match.params.id]);
+
   return (
     <>
       <MetaTags
@@ -37,7 +44,7 @@ const Category = ({ match }) => {
         pageTitle={`Habitaciones ${sanitizedParam}`}
       />
 
-      <Header img_src={`/img/cat/${cat}.jpg`}>
+      <Header img_src={`/img/category/${cat}.jpg`}>
         <CATEGORY.HeaderWrapper>{<Brand heading="h1" />}</CATEGORY.HeaderWrapper>
       </Header>
 
