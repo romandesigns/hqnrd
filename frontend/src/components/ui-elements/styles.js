@@ -34,10 +34,10 @@ export const Button = styled.button`
   background-color: ${({ bgColor }) => (bgColor ? setBgColor.bg(bgColor) : setBgColor.bg(null))};
   border-radius: var(--radius);
   border: none;
-  margin: var(--margin) 0;
   box-shadow: var(--shadow);
   color: ${({ bgColor }) => (bgColor === "dark" ? setBgColor.bg("gray") : "inherit")};
   cursor: pointer;
+  margin: var(--margin) 0;
   max-height: 4rem;
   max-width: 17rem;
   outline: none;
@@ -63,14 +63,14 @@ export const Button = styled.button`
 `;
 
 export const Feature = styled.article`
+  background: ${({ bg }) => (bg === "light" ? setBgColor.bg(bg) : bg === "light-gray" ? setBgColor.bg("light-gray") : "")};
   border-radius: var(--radius);
   border: 0.1rem solid var(--gray);
-  background: ${({ bg }) => (bg === "light" ? setBgColor.bg(bg) : bg === "light-gray" ? setBgColor.bg("light-gray") : "")};
   a {
     display: block;
-    width: 100%;
     height: 100%;
     text-decoration: none;
+    width: 100%;
   }
   figure {
     display: flex;
@@ -106,7 +106,6 @@ export const RoomDetailPrice = styled.div`
   background: var(--text-color);
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
-  top: -20px;
   box-shadow: var(--shadow);
   color: var(--light);
   font-size: 1.5rem;
@@ -114,6 +113,7 @@ export const RoomDetailPrice = styled.div`
   padding: calc(var(--padding) - 1.5rem) var(--padding);
   position: absolute;
   right: 0;
+  top: -20px;
 `;
 
 export const Details = styled.figcaption``;
@@ -124,11 +124,13 @@ export const BrandWrapper = styled.div`
   justify-content: center;
 
   img {
-    max-width: 10%;
+    max-width: 6rem !important;
   }
+
   h1 {
     margin-top: 0.7rem;
   }
+
   h2 {
     margin-top: 1rem;
   }

@@ -1,29 +1,29 @@
 // Dependencies
 import styled from "styled-components";
 
-export const RoomDetails = styled.main`
+export const Details = styled.main`
   margin-top: 2rem;
   section ul {
     padding: 0;
   }
 `;
 
-export const Details = styled.section`
-  background-color: var(--light);
-  display: grid;
-  grid-gap: var(--gap);
-  grid-template-columns: 2fr 1fr;
-  margin: 3rem 0 var(--margin) 0;
-  padding: var(--padding);
-`;
+// export const Details = styled.section`
+//   background-color: var(--light);
+//   display: grid;
+//   grid-gap: var(--gap);
+//   grid-template-columns: 2fr 1fr;
+//   margin: 3rem 0 var(--margin) 0;
+//   padding: var(--padding);
+// `;
 
 export const Label = styled.strong``;
 
 export const BtnGroup = styled.div`
   button {
     display: block;
-    max-width: 100%;
     margin: 0;
+    max-width: 100%;
   }
   small {
     display: block;
@@ -46,24 +46,24 @@ export const Illustration = styled.article`
 `;
 
 export const Description = styled.article`
-  padding: var(--padding) 0;
   border-bottom: 1px solid var(--border-color);
+  padding: var(--padding) 0;
 `;
 
 export const Features = styled.article`
+  align-items: start;
   display: flex;
   justify-content: end;
-  align-items: start;
   margin-top: var(--margin);
 `;
 
-export const RoomSpecs = styled.article`
+export const Specs = styled.aside`
+  border-radius: var(--radius);
   border: 1px solid var(--border-color);
+  grid-column: 2/-1;
+  grid-row: 1/3;
   margin: var(--margin) 0 0 0;
   padding: var(--padding);
-  grid-row: 1/3;
-  grid-column: 2/-1;
-  border-radius: var(--radius);
   p {
     margin-bottom: calc(var(--margin) - 1rem);
   }
