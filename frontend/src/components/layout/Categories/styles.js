@@ -12,7 +12,7 @@ export const Units = styled.section`
 
 export const UnitsHeader = styled.header`
   align-items: flex-end;
-  box-shadow: inset 0 -10px 6px -12px rgb(0 0 0 / 59%);
+  box-shadow: var(--btn-shadow);
   display: flex;
   grid-column: 2 / 4;
   justify-content: center;
@@ -34,7 +34,7 @@ export const UnitsHeaderNav = styled.nav`
         border-top-left-radius: var(--radius);
         border-top-right-radius: var(--radius);
         border: none;
-        box-shadow: inset 0 -10px 6px -12px rgb(0 0 0 / 59%);
+        box-shadow: var(--btn-shadow);
         color: var(--light);
         cursor: pointer;
         display: block;

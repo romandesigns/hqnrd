@@ -14,6 +14,8 @@ const setBgColor = {
         return "var(--danger)";
       case "dark":
         return "var(--dark)";
+      case "darker":
+        return "var(--darker)";
       case "green":
         return "var(--whatsapp)";
       case "warning":
@@ -35,13 +37,14 @@ export const Button = styled.button`
   border-radius: var(--radius);
   border: none;
   box-shadow: var(--shadow);
-  color: ${({ bgColor }) => (bgColor === "dark" ? setBgColor.bg("gray") : "inherit")};
+  color: ${({ bgColor }) => (bgColor === "dark" || bgColor === "darker" ? setBgColor.bg("gray") : "inherit")};
   cursor: pointer;
-  margin: var(--margin) 0;
+  display: inline-block;
+  margin: ${({ bgColor }) => (bgColor === "darker" ? "var(--margin) 0 !important" : "var(--margin) 0")};
   max-height: 4rem;
   max-width: 17rem;
   outline: none;
-  padding: ${({ bgColor }) => (bgColor === "dark" ? "1rem 3rem" : "")};
+  padding: ${({ bgColor }) => (bgColor === "dark" ? "1rem 3rem" : bgColor === "darker" ? "1.25rem 3rem" : "")};
   width: 100%;
   svg {
     margin-right: calc(var(--margin) 0.5rem);
@@ -62,8 +65,23 @@ export const Button = styled.button`
   }
 `;
 
+export const BTNStyles = {
+  backgroundColor: "var(--darker)",
+  borderRadius: "var(--radius)",
+  border: "none",
+  boxShadow: "var(--shadow)",
+  color: "var(--light)",
+  cursor: "pointer",
+  display: "inline-block",
+  margin: "var(--margin) 0",
+  maxHeight: "4rem",
+  outline: "none",
+  padding: "1.25rem 3rem",
+  width: "100%",
+};
+
 export const Feature = styled.article`
-  background: ${({ bg }) => (bg === "light" ? setBgColor.bg(bg) : bg === "light-gray" ? setBgColor.bg("light-gray") : "")};
+  background: ${({ bg }) => (bg === "light" ? setBgColor.bg(bg) : bg === "light-gray" ? setBgColor.bg(bg) : "")};
   border-radius: var(--radius);
   border: 0.1rem solid var(--gray);
   a {

@@ -1,22 +1,6 @@
 // Dependencies
 import styled from "styled-components";
 
-export const Details = styled.main`
-  margin-top: 2rem;
-  section ul {
-    padding: 0;
-  }
-`;
-
-// export const Details = styled.section`
-//   background-color: var(--light);
-//   display: grid;
-//   grid-gap: var(--gap);
-//   grid-template-columns: 2fr 1fr;
-//   margin: 3rem 0 var(--margin) 0;
-//   padding: var(--padding);
-// `;
-
 export const Label = styled.strong``;
 
 export const BtnGroup = styled.div`
@@ -33,6 +17,18 @@ export const BtnGroup = styled.div`
 
 export const Extras = styled.article`
   margin-right: calc(var(--margin) * 3);
+`;
+
+export const ExtrasWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  & ul:first-child {
+    margin-right: 7rem;
+  }
+  ul li span {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
 `;
 
 export const Illustration = styled.article`
@@ -55,13 +51,32 @@ export const Features = styled.article`
   display: flex;
   justify-content: end;
   margin-top: var(--margin);
+  h4 {
+    margin-bottom: calc(var(--margin) - 1rem);
+  }
+`;
+
+export const MainWrapper = styled.div`
+  display: grid;
+  grid-gap: var(--gap);
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto;
+`;
+
+export const Details = styled.main`
+  margin-top: 2rem;
+  padding: var(--padding);
+  background-color: var(--light);
+  grid-row: 1;
+  section ul {
+    padding: 0;
+  }
 `;
 
 export const Specs = styled.aside`
   border-radius: var(--radius);
-  border: 1px solid var(--border-color);
+  background-color: var(--light);
   grid-column: 2/-1;
-  grid-row: 1/3;
   margin: var(--margin) 0 0 0;
   padding: var(--padding);
   p {

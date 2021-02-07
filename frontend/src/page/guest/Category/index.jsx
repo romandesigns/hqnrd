@@ -68,6 +68,7 @@ const Category = ({ match }) => {
               category={sanitizedParam}
               img_src={room.img.hero}
               path_to={`${url}/habitacion/${room.unit}`}
+              unit={room.unit}
             />
           ))}
         </CATEGORY.Rooms>

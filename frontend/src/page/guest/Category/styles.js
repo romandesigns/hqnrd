@@ -45,6 +45,9 @@ export const Description = styled.div`
   button {
     margin-top: 1rem;
   }
+  p {
+    max-width: 80%;
+  }
 `;
 
 export const Rooms = styled.div`

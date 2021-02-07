@@ -5,17 +5,17 @@ import { Link } from "react-router-dom";
 import * as CARD from "./styles";
 
 function Card({
-  type,
-  heading = "",
-  unit = "",
-  description = "",
-  img_src = "",
   alt_value = "",
+  bg = "",
+  capacity = "",
+  category = "",
+  description = "",
+  heading = "",
+  img_src = "",
   path_to = "",
   price = "",
-  category = "",
-  capacity = "",
-  bg = "",
+  type,
+  unit = "",
 }) {
   const [cardType, setCardType] = useState(type);
 

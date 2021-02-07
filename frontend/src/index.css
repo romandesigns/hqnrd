@@ -19,7 +19,9 @@
   --lighter-gray: #f9f9f9;
   --gray: #f0f0f0;
   --darkgray: #e8e8e8;
-  --dark: #1e1e1e;
+  --dark: #545454;
+  --darker: #1e1e1e;
+
   /* Dimension */
   --radius: 0.4rem;
   --gap: 1rem;
@@ -28,6 +30,7 @@
   --margin: 2rem;
   --transition: 0.04s ease;
   --blur: blur(6px);
+  --btn-shadow: inset 0 -10px 6px -12px rgb(0 0 0 / 59%);
 
   /* Typography */
   --serif: "Bree Serif", serif;
