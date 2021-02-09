@@ -2,17 +2,26 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  background-color: red;
+  backdrop-filter: var(--blur);
+  background-color: var(--faded-light);
   bottom: 0;
-  display: grid;
-  grid-template-columns: 1fr 50rem 1fr;
-  grid-template-rows: 2rem 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   inset: 0px;
   left: 0;
   overflow: hidden;
-  padding: 4rem;
   position: fixed;
   right: 0;
   top: 0;
+  width: 100%;
   z-index: 1;
+
+  & > button {
+    margin-left: 42rem;
+    position: relative;
+    top: 6rem;
+  }
 `;

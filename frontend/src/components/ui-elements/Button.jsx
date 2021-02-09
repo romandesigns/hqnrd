@@ -2,7 +2,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-scroll";
-import { FaArrowLeft, FaWhatsapp } from "react-icons/fa";
+import { FaArrowLeft, FaWhatsapp, FaFacebookF, FaGoogle } from "react-icons/fa";
 import { BsEnvelope } from "react-icons/bs";
 
 // Styled Components
@@ -42,6 +42,33 @@ const ButtonComponent = ({ children, path, type = "default" }) => {
             <BsEnvelope />
             {children}
           </a>
+        </Button>
+      );
+    case "google":
+      return (
+        <Button bgColor="google">
+          <a href="/google">
+            <FaGoogle />
+            {children}
+          </a>
+        </Button>
+      );
+    case "facebook":
+      return (
+        <Button bgColor="facebook">
+          <a href="/facebook">
+            <FaFacebookF />
+            {children}
+          </a>
+        </Button>
+      );
+    case "usar-correo":
+      return (
+        <Button bgColor="correo">
+          <Link to="/register">
+            <BsEnvelope />
+            {children}
+          </Link>
         </Button>
       );
     default:

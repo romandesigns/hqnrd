@@ -26,6 +26,12 @@ const setBgColor = {
         return "var(--light-gray)";
       case "lighter-gray":
         return "var(--lighter-gray)";
+      case "correo":
+        return "var(--darker)";
+      case "google":
+        return "var(--google)";
+      case "facebook":
+        return "var(--facebook)";
       default:
         return "#e8e8e8";
     }
@@ -66,18 +72,23 @@ export const Button = styled.button`
 `;
 
 export const BTNStyles = {
-  backgroundColor: "var(--darker)",
-  borderRadius: "var(--radius)",
-  border: "none",
-  boxShadow: "var(--shadow)",
-  color: "var(--light)",
-  cursor: "pointer",
-  display: "inline-block",
-  margin: "var(--margin) 0",
-  maxHeight: "4rem",
-  outline: "none",
-  padding: "1.25rem 3rem",
-  width: "100%",
+  btn: {
+    backgroundColor: "var(--darker)",
+    borderRadius: "var(--radius)",
+    border: "none",
+    boxShadow: "var(--shadow)",
+    color: "var(--light)",
+    cursor: "pointer",
+    display: "inline-block",
+    margin: "var(--margin) 0",
+    maxHeight: "4rem",
+    outline: "none",
+    padding: "1.25rem 3rem",
+    width: "100%",
+  },
+  btn_icon: {
+    marginRight: "calc(var(--margin) 0.5rem)",
+  },
 };
 
 export const Feature = styled.article`

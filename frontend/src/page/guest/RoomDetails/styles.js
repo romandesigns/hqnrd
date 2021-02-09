@@ -86,3 +86,81 @@ export const Specs = styled.aside`
     font-size: 2.7rem;
   }
 `;
+
+export const ModalRoomDetails = styled.section`
+  border-radius: var(--radius);
+  background-color: var(--light);
+  grid-column: 2/-1;
+  padding: var(--padding) var(--padding) 0 var(--padding);
+  p {
+    margin-bottom: calc(var(--margin) - 1.6rem);
+  }
+  & p:first-child {
+    font-size: 2.7rem;
+  }
+`;
+
+export const DetailsModal = styled.section`
+  width: 100%;
+  max-width: 50rem;
+  background-color: var(--light);
+
+  header {
+    div {
+      justify-content: end;
+      padding: 1rem var(--padding);
+
+      img + div {
+        padding: 1rem;
+      }
+    }
+    figure {
+      width: block;
+      width: 100%;
+      font-size: 0;
+      img {
+        display: block;
+        max-width: 100%;
+      }
+    }
+  }
+  footer {
+    padding: var(--padding);
+    display: flex;
+    box-shadow: var(--shadow);
+    button {
+      width: 100%;
+      max-width: 40rem;
+      display: flex;
+      margin: 0 0.5rem;
+    }
+  }
+`;
+
+export const Calendar = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  background-color: var(--light);
+  margin: auto;
+  padding: var(--padding);
+  border-radius: var(--radius);
+  position: relative;
+  margin-top: -2.5rem;
+  /* border: 1px solid var(--border-color); */
+  box-shadow: var(--shadow);
+
+  input {
+    border: none;
+    outline: none;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    width: 84%;
+  }
+  span {
+    font-size: 1.2rem;
+    color: var(--primary);
+  }
+`;

@@ -22,6 +22,10 @@
   --dark: #545454;
   --darker: #1e1e1e;
 
+  /* Social media */
+  --google: #db4437;
+  --facebook: #4267b2;
+
   /* Dimension */
   --radius: 0.4rem;
   --gap: 1rem;

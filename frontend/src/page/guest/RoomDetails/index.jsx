@@ -1,6 +1,6 @@
 // Dependencies
 import React, { useState, useEffect } from "react";
-import { FaCheck, FaTimes } from "react-icons/fa";
+import { FaCheck, FaTimes, FaCalendarAlt } from "react-icons/fa";
 
 // Components
 import Header from "../../../components/layout/Header";
@@ -78,7 +78,8 @@ const RoomDetails = ({ match }) => {
               </em>
             </small>
             <Button type="email">Escribenos</Button>
-            <button style={BTNStyles} open={modalIsOpen} onClick={() => setModalIsOpen(true)}>
+            <button style={BTNStyles.btn} open={modalIsOpen} onClick={() => setModalIsOpen(true)}>
+              <FaCalendarAlt style={BTNStyles.btn_icon} />
               Reservar
             </button>
           </ROOM.BtnGroup>
@@ -152,46 +153,54 @@ const RoomDetails = ({ match }) => {
                 <img src={room[0].img.diagram} alt="diagram-03-b" />
               </figure>
               <Modal open={modalIsOpen} close={() => setModalIsOpen(false)}>
-                <section>
+                <ROOM.DetailsModal>
                   <header>
                     <Brand />
-                  </header>
-                  <main>
                     <figure>
                       <img src={room[0].img.hero} alt={room[0].img.hero} />
                     </figure>
-                    <div>
-                      <ROOM.Specs>
-                        <p>
-                          <ROOM.Label>Precio:</ROOM.Label> {room[0].price} / 1 Dia
-                        </p>
-                        <p>
-                          <ROOM.Label>Spacio:</ROOM.Label> 77.24 metros cuadrados
-                        </p>
-                        <p>
-                          <ROOM.Label>Cama:</ROOM.Label> {room[0].bedQty}
-                        </p>
-                        <p>
-                          <ROOM.Label>Sofa Cama:</ROOM.Label> {room[0].sofaBed === true ? "Disponible" : "No Disponible"}
-                        </p>
-                        <p>
-                          <ROOM.Label>Baño:</ROOM.Label> {room[0].sofaBed === true ? "Privado" : "Compartido"}
-                        </p>
-                        <p>
-                          <ROOM.Label>Tipo de Cama:</ROOM.Label> {room[0].bedType}
-                        </p>
-                        <p>
-                          <ROOM.Label>Capacidad:</ROOM.Label> {room[0].capacity} Personas
-                        </p>
-                      </ROOM.Specs>
-                    </div>
+                  </header>
+                  <main>
+                    <ROOM.Calendar>
+                      <label htmlFor="timein">
+                        <span>Fecha de entrada</span>
+                        <input type="date" name="timein" id="timein" />
+                      </label>
+                      <label htmlFor="timeout">
+                        <span>Fecha de salida</span>
+                        <input type="date" name="timeout" id="timeout" />
+                      </label>
+                    </ROOM.Calendar>
+                    <ROOM.ModalRoomDetails>
+                      <p>
+                        <ROOM.Label>Precio:</ROOM.Label> {room[0].price} / 1 Dia
+                      </p>
+                      <p>
+                        <ROOM.Label>Spacio:</ROOM.Label> 77.24 metros cuadrados
+                      </p>
+                      <p>
+                        <ROOM.Label>Cama:</ROOM.Label> {room[0].bedQty}
+                      </p>
+                      <p>
+                        <ROOM.Label>Sofa Cama:</ROOM.Label> {room[0].sofaBed === true ? "Disponible" : "No Disponible"}
+                      </p>
+                      <p>
+                        <ROOM.Label>Baño:</ROOM.Label> {room[0].sofaBed === true ? "Privado" : "Compartido"}
+                      </p>
+                      <p>
+                        <ROOM.Label>Tipo de Cama:</ROOM.Label> {room[0].bedType}
+                      </p>
+                      <p>
+                        <ROOM.Label>Capacidad:</ROOM.Label> {room[0].capacity} Personas
+                      </p>
+                    </ROOM.ModalRoomDetails>
                   </main>
                   <footer>
-                    <button>Google</button>
-                    <button>Facebook</button>
-                    <button>User mi Correo</button>
+                    <Button type="google">Google</Button>
+                    <Button type="facebook">Facebook</Button>
+                    <Button type="usar-correo">User Correo</Button>
                   </footer>
-                </section>
+                </ROOM.DetailsModal>
               </Modal>
             </ROOM.Illustration>
           </ROOM.Features>
