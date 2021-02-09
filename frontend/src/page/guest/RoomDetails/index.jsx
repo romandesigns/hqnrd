@@ -95,6 +95,8 @@ const RoomDetails = ({ match }) => {
             <p>{room[0].roomDescription}</p>
             <Button type="goback">Regresar</Button>
           </ROOM.Description>
+
+          {/* Room Features */}
           <ROOM.Features>
             <ROOM.Extras>
               <h4>Extras</h4>
