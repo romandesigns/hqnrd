@@ -56,10 +56,16 @@ export const Button = styled.button`
     margin-right: calc(var(--margin) 0.5rem);
   }
   a {
-    color: var(--light);
-    display: block;
     padding: 1rem 2rem;
     text-decoration: none;
+    color: var(--light);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    box-sizing: border-box;
     &:hover {
       color: var(--light);
     }
@@ -148,19 +154,24 @@ export const RoomDetailPrice = styled.div`
 export const Details = styled.figcaption``;
 
 export const BrandWrapper = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: center;
+  a {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    &:hover {
+      color: var(--darker-primary);
+    }
+    img {
+      max-width: 6rem !important;
+    }
 
-  img {
-    max-width: 6rem !important;
-  }
+    h1 {
+      margin-top: 0.7rem;
+    }
 
-  h1 {
-    margin-top: 0.7rem;
-  }
-
-  h2 {
-    margin-top: 1rem;
+    h2 {
+      margin-top: 1rem;
+    }
   }
 `;

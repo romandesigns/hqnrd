@@ -49,7 +49,7 @@ const RoomDetails = ({ match }) => {
         {/* Room Details - Aside */}
         <ROOM.Specs>
           <p>
-            <ROOM.Label>Precio:</ROOM.Label> {room[0].price} / 1 Dia
+            <ROOM.Label>Precio:</ROOM.Label> ${room[0].price} / 1 Dia
           </p>
           <p>
             <ROOM.Label>Spacio:</ROOM.Label> 77.24 metros cuadrados
@@ -175,7 +175,7 @@ const RoomDetails = ({ match }) => {
                     </ROOM.Calendar>
                     <ROOM.ModalRoomDetails>
                       <p>
-                        <ROOM.Label>Precio:</ROOM.Label> {room[0].price} / 1 Dia
+                        <ROOM.Label>Precio:</ROOM.Label> ${room[0].price} / 1 Dia
                       </p>
                       <p>
                         <ROOM.Label>Spacio:</ROOM.Label> 77.24 metros cuadrados
