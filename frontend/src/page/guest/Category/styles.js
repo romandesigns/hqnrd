@@ -13,6 +13,7 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   z-index: 1;
   & > div {
+    display: flex;
     height: 10rem;
     justify-content: flex-start;
     max-width: 84%;

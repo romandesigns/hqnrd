@@ -57,4 +57,32 @@ export const global = createGlobalStyle`
     ul { padding-left: 0; margin:0;}
     ul li { list-style-type: none }
 
+    form {
+        label {
+            text-align: left;
+            display: block;
+            width: 100%;
+            max-width:30rem;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        select,
+        input[type="password"] {
+            border: none;
+            outline: none;
+            display: block;
+            width: 100%;
+            max-width:30rem;
+            border:1px solid var(--border-color);
+            padding: 1rem var(--padding) ;
+            border-radius: var(--radius);
+            margin-bottom: var(--margin);
+            color: var(--text-color);
+        }
+        
+        select {
+            max-width:34rem;
+        }
+    }
 `;

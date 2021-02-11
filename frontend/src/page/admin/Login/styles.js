@@ -2,16 +2,14 @@
 import styled from "styled-components";
 
 export const Header = styled.section`
-  padding: 5rem 0 1rem;
+  margin-bottom: var(--margin);
+  padding: var(--padding) 0;
 `;
 
 export const Container = styled.main`
-  padding: var(--padding);
-  background-color: var(--light);
-  width: 100%;
-  max-width: 40rem;
-  margin: 0 auto;
-  border-radius: var(--radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   form {
     display: flex;
@@ -25,4 +23,14 @@ export const Container = styled.main`
       display: block;
     }
   }
+`;
+
+export const Wrapper = styled.section`
+  padding: var(--padding);
+  background-color: var(--light);
+  box-sizing: border-box;
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 40rem;
+  box-shadow: var(--shadow);
 `;

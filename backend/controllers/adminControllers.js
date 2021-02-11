@@ -1,9 +1,7 @@
 // Dependencies
 import mongoose from "mongoose";
-
 // CONSTANT Variables
 import * as CONST from "../constants/index.js";
-
 // Models
 import AdminModel from "../models/AdminModel.js";
 

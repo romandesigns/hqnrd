@@ -3,14 +3,13 @@ import express from "express";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import chalk from "chalk";
-import database from "./databse/index.js";
+import dataBase from "./databse/index.js";
 import * as CONST from "./constants/index.js";
-
-// Dependencies instances
+// Instances
 const app = express();
 
 dotenv.config();
-database(chalk);
+dataBase(chalk);
 
 // Middleware
 app.use(express.json());

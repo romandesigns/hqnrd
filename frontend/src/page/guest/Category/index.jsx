@@ -8,7 +8,6 @@ import Button from "../../../components/ui-elements/Button";
 import Card from "../../../components/ui-elements/Card";
 // Utilities
 import { MetaTags } from "../../../utils/apps";
-
 // Styled Components
 import * as CATEGORY from "./styles";
 
@@ -29,13 +28,9 @@ const Category = ({ match }) => {
   // Sanitizing param
   const sanitizedParam = cat === "doble-cama" ? cat.replace("-", " ") : cat;
 
-  // useEffect(() => {
-  //   let result = rooms.filter((x) => x.unit === parseInt(match.params.id));
-  //   setRoom(result);
-  // }, [match.params.id]);
-
   return (
     <>
+      {/* Category Page metadata */}
       <MetaTags
         ogDescription="Disfruta de las acomodidades que te ofrecemos; Habitaciones amplias y modernas, Smart TV, control de seguridad y mucho mas"
         ogImagePath="path/to/image.jpg"
@@ -44,10 +39,12 @@ const Category = ({ match }) => {
         pageTitle={`Habitaciones ${sanitizedParam}`}
       />
 
+      {/* Header Component */}
       <Header img_src={`/img/category/${cat}.jpg`}>
         <CATEGORY.HeaderWrapper>{<Brand heading="h1" />}</CATEGORY.HeaderWrapper>
       </Header>
 
+      {/* Category Description*/}
       <CATEGORY.Content>
         <CATEGORY.Description>
           <h2>{`Habitaciones ${sanitizedParam}`}</h2>
@@ -58,6 +55,7 @@ const Category = ({ match }) => {
           <Button type="goback">Regresar</Button>
         </CATEGORY.Description>
 
+        {/* Category Rooms*/}
         <CATEGORY.Rooms>
           {matchedRooms.map((room, index) => (
             <Card

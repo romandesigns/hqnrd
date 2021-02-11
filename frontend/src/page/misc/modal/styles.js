@@ -18,7 +18,6 @@ export const Container = styled.section`
   top: 0;
   width: 100%;
   z-index: 1;
-
   & > button {
     margin-left: 42rem;
     position: relative;

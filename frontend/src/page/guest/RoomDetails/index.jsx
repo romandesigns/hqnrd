@@ -1,22 +1,21 @@
 // Dependencies
 import React, { useState, useEffect } from "react";
-import { FaCheck, FaTimes, FaCalendarAlt } from "react-icons/fa";
+import { FaCalendarAlt } from "react-icons/fa";
 
 // Components
 import Header from "../../../components/layout/Header";
 import Brand from ".././../../components/ui-elements/Brand";
 import Button from "./../../../components/ui-elements/Button";
 import Modal from "../../misc/modal";
-
+import RoomExtras from "./RoomExtras";
+import RoomSpecs from "./RoomSpecs";
 // Utilities
 import { MetaTags } from "../../../utils/apps";
-
 // Style Component
 import * as CATEGORY from "../../guest/Category/styles";
 import * as GALLERY from "../../../components/layout/PhotoGallery/styles";
 import * as ROOM from "./styles";
 import { BTNStyles } from "../../../components/ui-elements/styles";
-
 // API
 import { rooms } from "../../../data";
 
@@ -48,27 +47,8 @@ const RoomDetails = ({ match }) => {
       <ROOM.MainWrapper>
         {/* Room Details - Aside */}
         <ROOM.Specs>
-          <p>
-            <ROOM.Label>Precio:</ROOM.Label> ${room[0].price} / 1 Dia
-          </p>
-          <p>
-            <ROOM.Label>Spacio:</ROOM.Label> 77.24 metros cuadrados
-          </p>
-          <p>
-            <ROOM.Label>Cama:</ROOM.Label> {room[0].bedQty}
-          </p>
-          <p>
-            <ROOM.Label>Sofa Cama:</ROOM.Label> {room[0].sofaBed === true ? "Disponible" : "No Disponible"}
-          </p>
-          <p>
-            <ROOM.Label>Baño:</ROOM.Label> {room[0].sofaBed === true ? "Privado" : "Compartido"}
-          </p>
-          <p>
-            <ROOM.Label>Tipo de Cama:</ROOM.Label> {room[0].bedType}
-          </p>
-          <p>
-            <ROOM.Label>Capacidad:</ROOM.Label> {room[0].capacity} Personas
-          </p>
+          {/* Room Specs items */}
+          <RoomSpecs room={room} />
           <ROOM.BtnGroup>
             <br />
             <Button type="whatsapp">Llamanos</Button>
@@ -100,52 +80,7 @@ const RoomDetails = ({ match }) => {
           <ROOM.Features>
             <ROOM.Extras>
               <h4>Extras</h4>
-              <ROOM.ExtrasWrapper>
-                <ul>
-                  <li>
-                    <span>{room[0].features.closet ? <FaCheck color="#128c7e" /> : <FaTimes color="#be316e" />}</span>
-                    <span>Closet</span>
-                  </li>
-                  <li>
-                    <span>{room[0].features.wifi ? <FaCheck color="#128c7e" /> : <FaTimes color="#be316e" />}</span>
-                    <span>Wifi</span>
-                  </li>
-                  <li>
-                    <span>{room[0].features.refregirator ? <FaCheck color="#128c7e" /> : <FaTimes color="#be316e" />}</span>
-                    <span>Refrigerador</span>
-                  </li>
-                  <li>
-                    <span>{room[0].features.smartTv ? <FaCheck color="#128c7e" /> : <FaTimes color="#be316e" />}</span>
-                    <span>Smart Tv</span>
-                  </li>
-                  <li>
-                    <span>{room[0].features.kitchenette ? <FaCheck color="#128c7e" /> : <FaTimes color="#be316e" />}</span>
-                    <span>Cocineta</span>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <span>{room[0].features.balcony ? <FaCheck color="#128c7e" /> : <FaTimes color="#be316e" />}</span>
-                    <span>Balcon</span>
-                  </li>
-                  <li>
-                    <span>{room[0].features.airConditioning ? <FaCheck color="#128c7e" /> : <FaTimes color="#be316e" />}</span>
-                    <span>Aire Acondicionado</span>
-                  </li>
-                  <li>
-                    <span>{room[0].features.itercom ? <FaCheck color="#128c7e" /> : <FaTimes color="#be316e" />}</span>
-                    <span>Intercom</span>
-                  </li>
-                  <li>
-                    <span>{room[0].features.ceilingFan ? <FaCheck color="#128c7e" /> : <FaTimes color="#be316e" />}</span>
-                    <span>Abanico de Techo</span>
-                  </li>
-                  <li>
-                    <span>{room[0].features.roofTopAllowed ? <FaCheck color="#128c7e" /> : <FaTimes color="#be316e" />}</span>
-                    <span>Accesso al Roof Top</span>
-                  </li>
-                </ul>
-              </ROOM.ExtrasWrapper>
+              <RoomExtras room={room} />
             </ROOM.Extras>
 
             {/* Room Decription */}

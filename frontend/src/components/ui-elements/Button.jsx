@@ -19,6 +19,7 @@ const ButtonComponent = ({ children, path, type = "default" }) => {
           </Link>
         </Button>
       );
+
     case "goback":
       return (
         <Button bgColor="dark" onClick={() => history.goBack()}>
@@ -26,6 +27,7 @@ const ButtonComponent = ({ children, path, type = "default" }) => {
           {children}
         </Button>
       );
+
     case "whatsapp":
       return (
         <Button bgColor="green">
@@ -35,6 +37,7 @@ const ButtonComponent = ({ children, path, type = "default" }) => {
           </a>
         </Button>
       );
+
     case "email":
       return (
         <Button bgColor="darker-primary">
@@ -44,6 +47,7 @@ const ButtonComponent = ({ children, path, type = "default" }) => {
           </a>
         </Button>
       );
+
     case "google":
       return (
         <Button bgColor="google">
@@ -53,6 +57,7 @@ const ButtonComponent = ({ children, path, type = "default" }) => {
           </a>
         </Button>
       );
+
     case "facebook":
       return (
         <Button bgColor="facebook">
@@ -62,6 +67,7 @@ const ButtonComponent = ({ children, path, type = "default" }) => {
           </a>
         </Button>
       );
+
     case "usar-correo":
       return (
         <Button bgColor="correo">
@@ -71,6 +77,7 @@ const ButtonComponent = ({ children, path, type = "default" }) => {
           </Link>
         </Button>
       );
+
     default:
       return <Button>Button</Button>;
   }

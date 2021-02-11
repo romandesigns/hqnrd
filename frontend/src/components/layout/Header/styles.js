@@ -9,6 +9,12 @@ export const HeaderPageStyled = styled.header`
   grid-template-rows: 9rem ${({ room }) => (room === "detail" ? "auto" : "40rem")};
   overflow: hidden;
   position: relative;
+  a {
+    color: var(--light);
+    &:hover {
+      color: var(--light);
+    }
+  }
   &::before,
   &::after {
     bottom: 0;

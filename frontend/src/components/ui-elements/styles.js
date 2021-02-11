@@ -157,7 +157,7 @@ export const BrandWrapper = styled.div`
   a {
     align-items: center;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     text-decoration: none;
     &:hover {
       color: var(--darker-primary);

@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   border-radius: var(--radius);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   justify-self: center;
   padding: var(--padding) calc(var(--padding) + 2rem);
 
@@ -26,6 +26,11 @@ export const Wrapper = styled.div`
     color: var(--light);
     margin-bottom: 1rem;
   }
+
+  h1,
+  p {
+    text-align: left;
+  }
 `;
 
 export const Main = styled.main`
@@ -39,7 +44,7 @@ export const Content = styled.div`
   box-sizing: border-box;
   display: flex;
   height: 100%;
-  justify-content: center;
+  justify-content: start;
   padding: var(--padding);
   width: 100%;
   z-index: 2;
