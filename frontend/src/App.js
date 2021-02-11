@@ -3,7 +3,8 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 // Page
 import Home from "./page/guest/Home";
-import Login from "./page/admin/Login";
+import SignIn from "./page/admin/SignIn";
+import SignUp from "./page/admin/SignUp";
 import Category from "./page/guest/Category";
 import RoomDetails from "./page/guest/RoomDetails";
 import NotFound from "./page/NotFound";
@@ -22,7 +23,9 @@ const App = function () {
           <Route exact path="/" component={Home} />
           <Route exact path="/categoria/:cat" component={Category} />
           <Route exact path="/categoria/:cat/habitacion/:id" component={RoomDetails} />
-          <Route exact path="/admin/cuenta" component={Login} />
+          <Route exact path="/admin/cuenta" component={SignIn} />
+          <Route exact path="/:role/iniciar-session" component={SignIn} />
+          <Route exact path="/registracion" component={SignUp} />
           <Route exact path="/404" component={NotFound} />
           <Route exact component={NotFound} />
         </Switch>

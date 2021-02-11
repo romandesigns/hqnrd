@@ -11,11 +11,11 @@ const AdminSchema = new mongoose.Schema(
     idcard: {
       type: Buffer,
     },
-    firstname: {
+    name: {
       type: String,
       required: true,
     },
-    lastName: {
+    lastname: {
       type: String,
       required: true,
     },
@@ -24,7 +24,6 @@ const AdminSchema = new mongoose.Schema(
     },
     dob: {
       type: String,
-      required: true,
     },
     email: {
       type: String,
@@ -32,12 +31,13 @@ const AdminSchema = new mongoose.Schema(
     },
     phone: {
       type: String,
+      required: true,
     },
     password: {
       type: String,
       required: true,
     },
-    role: ["manager", "ceo", "guest"],
+    role: ["manager", "ceo", "guest", "maintnance"],
   },
   { timestamps: true }
 );

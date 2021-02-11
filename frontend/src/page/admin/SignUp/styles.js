@@ -12,15 +12,21 @@ export const Container = styled.main`
   align-items: center;
 
   form {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; */
     width: 100%;
     height: 100%;
     label,
     input {
       display: block;
+    }
+    & + div {
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2rem;
     }
   }
 `;

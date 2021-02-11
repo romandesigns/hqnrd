@@ -11,7 +11,8 @@ import DevSignature from "./DevSignature";
 
 const Footer = () => {
   const location = useLocation();
-  let isAdminOrUserLogin = location.pathname.indexOf("admin") > -1 ? true : location.pathname.indexOf("user") > -1 ? true : false;
+  let isAdminOrUserLogin = location.pathname.indexOf("registracion") > -1 ? true : location.pathname.indexOf("iniciar-session") > -1 ? true : false;
+  // let isAdminOrUserLogin = location.pathname.indexOf("registracion") > -1 ? true : false;
 
   if (isAdminOrUserLogin === false) {
     return (

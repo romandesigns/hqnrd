@@ -24,7 +24,7 @@ const Navbar = () => {
           <NavLink to="/contacto">Contacto</NavLink>
         </li>
         <li>
-          <NavLink to="/perfil">Mi Cuenta</NavLink>
+          <NavLink to="/huesped/iniciar-session">Iniciar Session</NavLink>
         </li>
       </NavbarPageUlStyled>
     </NavbarPageStyled>
