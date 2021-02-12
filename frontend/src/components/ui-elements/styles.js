@@ -98,7 +98,8 @@ export const BTNStyles = {
 };
 
 export const Feature = styled.article`
-  background: ${({ bg }) => (bg === "light" ? setBgColor.bg(bg) : bg === "light-gray" ? setBgColor.bg(bg) : "")};
+  /* background: ${({ bg }) => (bg === "light" ? setBgColor.bg(bg) : bg === "light-gray" ? setBgColor.bg(bg) : "")}; */
+
   border-radius: var(--radius);
   border: 0.1rem solid var(--gray);
   a {
@@ -112,19 +113,23 @@ export const Feature = styled.article`
     flex-direction: column;
     margin: 0;
     padding: 0;
-    span {
-      border-radius: 0 0 var(--radius) var(--radius);
-      display: block;
-      font-size: 0;
-      overflow: hidden;
-      img {
-        box-shadow: var(--shadow);
-        width: 100%;
-      }
+    height: 0;
+    padding-top: calc(100% / (var(--aspect-ratio169)));
+    font-size: 0;
+    border-radius: 0 0 var(--radius) var(--radius);
+    position: relative;
+    * {
+      box-shadow: var(--shadow);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
     }
-    h3 {
-      margin-bottom: calc(var(--margin) - 1rem);
-    }
+  }
+  h3 {
+    margin-bottom: calc(var(--margin) - 1rem);
   }
 `;
 

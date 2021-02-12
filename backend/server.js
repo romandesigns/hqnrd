@@ -3,6 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import chalk from "chalk";
+import cors from "cors";
 import dataBase from "./databse/index.js";
 import * as CONST from "./constants/index.js";
 // Instances
@@ -18,11 +19,11 @@ app.use(morgan("tiny"));
 
 //  Imported routes
 import roomRoutes from "./routes/roomRoutes.js";
-import adminRoutes from "./routes/adminRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 // Routes
 app.use("/", roomRoutes);
-app.use("/", adminRoutes);
+app.use("/", userRoutes);
 
 // App port
 const PORT = process.env.PORT || 8080;

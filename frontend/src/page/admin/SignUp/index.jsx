@@ -1,29 +1,40 @@
 // Dependencies
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link, useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-
 // Components
 import Brand from "../../../components/ui-elements/Brand";
 // Styled components
 import * as FORM from "./styles.js";
 import { BTNStyles as BTN } from "../../../components/ui-elements/styles";
+
 const Login = () => {
+  const history = useHistory();
+
   // User registration form data
   const [formData, setFormData] = useState({
-    user: "",
+    username: "",
     email: "",
-    pass: "",
-    pass_check: "",
+    password: "",
+    passCheck: "",
     name: "",
-    last_name: "",
+    lastName: "",
     phone: "",
   });
 
   // Handling user submission data
   const handleSubmit = function (e) {
     e.preventDefault();
-    if (formData.pass !== formData.pass_check) return toast.dark("Las contraseñas no son identicas, trate de nuevo!");
+    if (formData.password !== formData.passCheck) return toast.dark("Las contraseñas no son identicas, trate de nuevo!");
+    POSTData();
+  };
+
+  const POSTData = async () => {
+    let res = await axios.post("/create/admin", formData);
+    if (res.statusText === "Created") {
+      history.push("/perfil");
+    }
   };
 
   return (
@@ -38,7 +49,14 @@ const Login = () => {
               <legend>Informacion de Cuenta</legend>
 
               {/* Username */}
-              <input type="text" name="user" placeholder="Nombre de Usuario" value={formData.user} onChange={(e) => setFormData({ ...formData, user: e.target.value })} required />
+              <input
+                type="text"
+                name="username"
+                placeholder="Nombre de Usuario"
+                value={formData.user}
+                onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+                required
+              />
 
               {/* User email */}
               <input
@@ -51,15 +69,22 @@ const Login = () => {
               />
 
               {/* Password */}
-              <input type="password" name="pass" placeholder="Contraseña" value={formData.pass} onChange={(e) => setFormData({ ...formData, pass: e.target.value })} required />
+              <input
+                type="password"
+                name="password"
+                placeholder="Contraseña"
+                value={formData.password}
+                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                required
+              />
 
               {/* Password Verification */}
               <input
                 type="password"
-                name="pass_check"
+                name="passCheck"
                 placeholder="Verifique Contraseña"
-                value={formData.pass_check}
-                onChange={(e) => setFormData({ ...formData, pass_check: e.target.value })}
+                value={formData.passCheck}
+                onChange={(e) => setFormData({ ...formData, passCheck: e.target.value })}
                 required
               />
             </fieldset>
@@ -72,10 +97,10 @@ const Login = () => {
               {/* User last name */}
               <input
                 type="text"
-                name="last_name"
+                name="lastName"
                 placeholder="Apellido"
-                value={formData.last_name}
-                onChange={(e) => setFormData({ ...formData, last_name: e.target.value })}
+                value={formData.lastName}
+                onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                 required
               />
 

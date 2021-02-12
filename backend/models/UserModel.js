@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 
 // Admin Schema
-const AdminSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
     avatar: {
       type: Buffer,
@@ -11,11 +11,16 @@ const AdminSchema = new mongoose.Schema(
     idcard: {
       type: Buffer,
     },
-    name: {
+    username: {
       type: String,
       required: true,
     },
-    lastname: {
+    name: {
+      type: String,
+      unique: true,
+      required: true,
+    },
+    lastName: {
       type: String,
       required: true,
     },
@@ -27,6 +32,7 @@ const AdminSchema = new mongoose.Schema(
     },
     email: {
       type: String,
+      unique: true,
       required: true,
     },
     phone: {
@@ -42,18 +48,18 @@ const AdminSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const AdminModel = mongoose.model("Admin", AdminSchema);
+const UserModel = mongoose.model("User", UserSchema);
 
-AdminModel.encodePass = async function (password) {
+UserModel.encodePass = async function (password) {
   const saltRounds = 10;
   const salt = await bcrypt.genSaltSync(saltRounds);
   const hash = await bcrypt.hashSync(password, salt);
   return hash;
 };
 
-AdminModel.decodePass = async function (plainPassword, hashed) {
+UserModel.decodePass = async function (plainPassword, hashed) {
   const isMatch = await bcrypt.compareSync(plainPassword, hashed);
   return isMatch;
 };
 
-export default AdminModel;
+export default UserModel;

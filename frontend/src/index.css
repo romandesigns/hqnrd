@@ -41,4 +41,8 @@
   --sans: Poppins, serif;
   --font-size: 1.4rem;
   --line-height: 1.5;
+
+  /* Aspect Ratio */
+  --aspect-ratio43: 4/3;
+  --aspect-ratio169: 16/9;
 }

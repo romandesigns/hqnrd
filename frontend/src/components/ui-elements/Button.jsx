@@ -1,6 +1,6 @@
 //  Dependencies
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link as LinkPath } from "react-router-dom";
 import { Link } from "react-scroll";
 import { FaArrowLeft, FaWhatsapp, FaFacebookF, FaGoogle } from "react-icons/fa";
 import { BsEnvelope } from "react-icons/bs";
@@ -71,10 +71,10 @@ const ButtonComponent = ({ children, path, type = "default" }) => {
     case "usar-correo":
       return (
         <Button bgColor="correo">
-          <Link to="/register">
+          <LinkPath to="/registracion">
             <BsEnvelope />
             {children}
-          </Link>
+          </LinkPath>
         </Button>
       );
 

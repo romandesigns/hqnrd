@@ -1,5 +1,5 @@
 // SERVER APP CONSTANTS
-export const APP_LISTEN_FEEDBACK = "App up in running in ";
+export const APP_LISTEN_FEEDBACK = "Server up in running in ";
 
 // CONTROLLERS CONSTANTS
 export const CONTENT_NOT_FOUND = "Contenido no encontrado";
