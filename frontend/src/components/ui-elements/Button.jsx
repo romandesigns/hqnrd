@@ -78,6 +78,13 @@ const ButtonComponent = ({ children, path, type = "default" }) => {
         </Button>
       );
 
+    case "iniciar-session":
+      return (
+        <Button bgColor="correo">
+          <LinkPath to="/huesped/iniciar-session">{children}</LinkPath>
+        </Button>
+      );
+
     default:
       return <Button>Button</Button>;
   }

@@ -6,14 +6,19 @@ import { MetaTags } from "../../../utils/apps";
 // Style Component
 import * as MODAL from "./styles";
 
-const Modal = ({ open, children, close }) => {
-  if (!open) return null;
-  return (
-    <MODAL.Container>
-      <button onClick={close}>close</button>
-      {children}
-    </MODAL.Container>
-  );
+const Modal = (props) => {
+  if (props.confirmation_email) {
+    return <MODAL.Container confirmation>{props.children}</MODAL.Container>;
+  }
+
+  if (props.reservation_modal) {
+    return (
+      <MODAL.Container>
+        <button onClick={props.close}>close</button>
+        {props.children}
+      </MODAL.Container>
+    );
+  }
 };
 
 export default Modal;

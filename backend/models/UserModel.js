@@ -14,10 +14,10 @@ const UserSchema = new mongoose.Schema(
     username: {
       type: String,
       required: true,
+      unique: true,
     },
     name: {
       type: String,
-      unique: true,
       required: true,
     },
     lastName: {
@@ -42,6 +42,9 @@ const UserSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
+    },
+    validated: {
+      type: Boolean,
     },
     role: ["manager", "ceo", "guest", "maintnance"],
   },

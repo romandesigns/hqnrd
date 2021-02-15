@@ -89,7 +89,7 @@ const RoomDetails = ({ match }) => {
               <figure title={`Illustracion de la habitacion ${room[0].unit}`}>
                 <img src={room[0].img.diagram} alt="diagram-03-b" />
               </figure>
-              <Modal open={modalIsOpen} close={() => setModalIsOpen(false)}>
+              <Modal reservation_modal open={modalIsOpen} close={() => setModalIsOpen(false)}>
                 <ROOM.DetailsModal>
                   <header>
                     <Brand />

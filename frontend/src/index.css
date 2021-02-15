@@ -3,7 +3,6 @@
   --primary: #318ebe;
   --darker-primary: #1873b0;
   --success: #31b0be;
-  --whatsapp: #128c7e;
   --danger: #be316e;
   --warning: #9fa936;
   --gradient_prime: linear-gradient(28deg, rgb(49 142 190 / 0.4) 0%, rgb(49 142 190 / 40%) 41%, rgb(49 176 190 / 0.4) 100%);
@@ -25,6 +24,7 @@
   /* Social media */
   --google: #db4437;
   --facebook: #4267b2;
+  --whatsapp: #128c7e;
 
   /* Dimension */
   --radius: 0.4rem;

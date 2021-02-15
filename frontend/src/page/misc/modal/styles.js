@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   backdrop-filter: var(--blur);
-  background-color: var(--faded-light);
+  background-color: ${({ confirmation }) => (confirmation ? "var(--light)" : "var(--faded-light)")};
   bottom: 0;
   display: flex;
   flex-direction: column;

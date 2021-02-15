@@ -7,6 +7,7 @@ import SignIn from "./page/admin/SignIn";
 import SignUp from "./page/admin/SignUp";
 import Category from "./page/guest/Category";
 import RoomDetails from "./page/guest/RoomDetails";
+import EmailConfirmed from "./page/misc/email-confirmed";
 import NotFound from "./page/NotFound";
 
 // Page component
@@ -26,6 +27,7 @@ const App = function () {
           <Route exact path="/admin/cuenta" component={SignIn} />
           <Route exact path="/:role/iniciar-session" component={SignIn} />
           <Route exact path="/registracion" component={SignUp} />
+          <Route exact path="/verificacion/confirmacion" component={EmailConfirmed} />
           <Route exact path="/404" component={NotFound} />
           <Route exact component={NotFound} />
         </Switch>

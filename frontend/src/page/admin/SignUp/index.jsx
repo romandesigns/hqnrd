@@ -31,10 +31,18 @@ const Login = () => {
   };
 
   const POSTData = async () => {
+    formData.passCheck = undefined;
     let res = await axios.post("/create/admin", formData);
-    if (res.statusText === "Created") {
+    console.log();
+
+    if (res.data.error) {
+      return toast.error(res.data.error);
+    }
+
+    if (res.status === 200) {
       history.push("/perfil");
     }
+    setFormData({});
   };
 
   return (
