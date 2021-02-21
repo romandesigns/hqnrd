@@ -104,6 +104,7 @@ export const DetailsModal = styled.section`
   width: 100%;
   max-width: 50rem;
   background-color: var(--light);
+  border-radius: var(--radius);
 
   header {
     div {
@@ -127,12 +128,13 @@ export const DetailsModal = styled.section`
   footer {
     padding: var(--padding);
     display: flex;
+    justify-content: center;
     box-shadow: var(--shadow);
     button {
       width: 100%;
-      max-width: 40rem;
+      max-width: 100%;
+      margin: 0;
       display: flex;
-      margin: 0 0.5rem;
     }
   }
 `;

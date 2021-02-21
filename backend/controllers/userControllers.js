@@ -2,6 +2,7 @@
 import mongoose from "mongoose";
 import mailer from "@sendgrid/mail";
 import jwt from "jsonwebtoken";
+import Joi from "joi";
 
 // CONSTANT Variables
 import * as CONST from "../constants/index.js";
@@ -10,7 +11,7 @@ import UserModel from "../models/UserModel.js";
 // Misc
 import EMAIL from "../misc/HTML_email_template.js";
 
-// Get all admins
+// Get all users
 export const getUsers = async (req, res) => {
   try {
     let users = await UserModel.find({});
@@ -24,13 +25,11 @@ export const getUsers = async (req, res) => {
 // Create user
 export const createUser = async (req, res) => {
   const { name, lastName, email, phone, username, password } = req.body;
-
   let user = await UserModel.findOne({ $or: [{ email: email }, { username: username }] });
   if (user) return res.json({ error: CONST.CREDENTIALS_REGISTEED });
 
   let token = jwt.sign(req.body, process.env.SECRET_PASSPHRASE, { expiresIn: "20m" });
-  let verification_Link = `http://${req.hostname}:3000/verificacion/confirmacion/${token}`;
-
+  let verification_Link = `http://${req.headers.host}/verificacion-email?token=${token}`;
   mailer.setApiKey(process.env.SENDGRID_API_KEY);
   const msg = {
     to: email, // Change to your recipient
@@ -41,7 +40,7 @@ export const createUser = async (req, res) => {
       CONST.EMAIL_COMFIRM_PREHEADER,
       CONST.EMAIL_TITLE,
       name,
-      CONST.EMAIL_VERIFICATION_COPY,
+      CONST.EMAIL_BODY,
       CONST.EMAIL_BTN_CTA,
       CONST.EMAIL_SIGNATURE,
       CONST.EMAIL_REP_MANAGER_NAME,
@@ -51,36 +50,54 @@ export const createUser = async (req, res) => {
   mailer
     .send(msg)
     .then(() => {
-      console.log("Email sent");
+      return res.json({ message: "Email sent" });
     })
-    .catch((error) => {
-      console.error(error);
+    .catch(({ message }) => {
+      console.error(message);
+      return res.json({ error: message });
     });
+};
+
+// signIn user
+export const signIn = async (req, res) => {
+  const { email, password } = req.body;
+  let user = await UserModel.findOne({ email: email });
+  if (!user) return res.json({ error: CONST.SIGN_IN_EMAIL });
+  let token = jwt.sign({ id: user._id }, process.env.SECRET_PASSPHRASE, { expiresIn: "1hr" });
+  let retrievedUser = {
+    created: new Date(user.createdAt).toUTCString(),
+    updated: new Date(user.updatedAt).toUTCString(),
+    username: user.username,
+    name: user.name,
+    lastname: user.lastname,
+    email: user.email,
+    phone: user.phone,
+    validated: user.validated,
+  };
+  return res.json({ token, retrievedUser });
 };
 
 // Update admin
 export const verifyUser = async (req, res) => {
-  console.log(req.params);
-  let data = jwt.verify(req.params.token, process.env.SECRET_PASSPHRASE);
-  console.log(data);
-
-  // const { name, lastName, email, phone, username, password } = req.body;
-  // try {
-  //   let user = new UserModel({
-  //     username,
-  //     name,
-  //     lastName,
-  //     email,
-  //     phone,
-  //     role: "huesped",
-  //     password: await UserModel.encodePass(password),
-  //   });
-  //   if (!user) return res.status(400).json({ message: CONST.ACCOUNT_NOT_CREATED });
-  //   await user.save();
-  //   return res.status(201).json(user);
-  // } catch ({ message }) {
-  //   return res.status(500).json({ error: message });
-  // }
+  try {
+    let data = jwt.verify(req.query.token, process.env.SECRET_PASSPHRASE);
+    const { name, lastName, email, phone, username, password } = data;
+    let user = new UserModel({
+      username,
+      name,
+      lastName,
+      email,
+      phone,
+      role: "huesped",
+      validated: true,
+      password: await UserModel.encodePass(password),
+    });
+    if (!user) return res.status(400).json({ message: CONST.ACCOUNT_NOT_CREATED });
+    await user.save();
+    if (user) return res.redirect(`${process.env.CLIENT_HOST}/huesped/iniciar-session`);
+  } catch ({ message }) {
+    return res.status(500).json({ error: message });
+  }
 };
 
 // Update admin

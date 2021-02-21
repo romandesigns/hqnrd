@@ -8,11 +8,21 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
-  justify-self: center;
+  align-items: flex-start;
   padding: var(--padding) calc(var(--padding) + 2rem);
 
+  div {
+    display: flex;
+    flex-direction: row;
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
   img {
-    max-width: 7rem;
+    max-width: 10rem;
+    max-height: 10rem;
     box-shadow: 0 11px 4px -8px rgb(0 0 0 / 32%);
   }
 

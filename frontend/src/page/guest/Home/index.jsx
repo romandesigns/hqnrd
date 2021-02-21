@@ -33,10 +33,10 @@ const Home = () => {
                 <h1>Hotel Quinto Nivel RD</h1>
                 <p>Como estar en casa!!!</p>
               </div>
-              <Button path="/reservacion" type="reservation">
-                Crear Reservacion
-              </Button>
             </div>
+            <Button path="/reservacion" type="reservation">
+              Crear Reservacion
+            </Button>
           </HOME.Wrapper>
         </HOME.Content>
       </Header>

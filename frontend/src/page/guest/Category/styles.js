@@ -1,30 +1,6 @@
 // Dependencies
 import styled from "styled-components";
 
-export const HeaderWrapper = styled.div`
-  align-items: flex-end;
-  background: var(--dark_gradient);
-  box-sizing: border-box;
-  color: var(--light);
-  display: flex;
-  justify-content: center;
-  padding: var(--padding);
-  position: relative;
-  width: 100%;
-  z-index: 1;
-  & > div {
-    display: flex;
-    height: 10rem;
-    justify-content: flex-start;
-    max-width: 84%;
-    width: 100%;
-
-    p {
-      margin-top: -1rem;
-    }
-  }
-`;
-
 export const Content = styled.main`
   display: grid;
   grid-auto-rows: auto;

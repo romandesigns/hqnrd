@@ -2,8 +2,7 @@
 import React from "react";
 import { useHistory, Link as LinkPath } from "react-router-dom";
 import { Link } from "react-scroll";
-import { FaArrowLeft, FaWhatsapp, FaFacebookF, FaGoogle } from "react-icons/fa";
-import { BsEnvelope } from "react-icons/bs";
+import { FaArrowLeft, FaWhatsapp, FaFacebookF, FaGoogle, FaEnvelope } from "react-icons/fa";
 
 // Styled Components
 import { Button } from "./styles";
@@ -42,7 +41,7 @@ const ButtonComponent = ({ children, path, type = "default" }) => {
       return (
         <Button bgColor="darker-primary">
           <a href="mailto:hotelquintonivelrd@gmail.com">
-            <BsEnvelope />
+            <FaEnvelope />
             {children}
           </a>
         </Button>
@@ -71,8 +70,8 @@ const ButtonComponent = ({ children, path, type = "default" }) => {
     case "usar-correo":
       return (
         <Button bgColor="correo">
-          <LinkPath to="/registracion">
-            <BsEnvelope />
+          <LinkPath to="/huesped/iniciar-session">
+            <FaEnvelope />
             {children}
           </LinkPath>
         </Button>

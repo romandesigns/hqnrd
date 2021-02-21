@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import chalk from "chalk";
 import cors from "cors";
+import passport from "passport";
 import dataBase from "./databse/index.js";
 import * as CONST from "./constants/index.js";
 // Instances
@@ -15,7 +16,8 @@ dataBase(chalk);
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false, limit: "16384kb" }));
-app.use(morgan("tiny"));
+app.use(morgan("dev"));
+app.use(cors());
 
 //  Imported routes
 import roomRoutes from "./routes/roomRoutes.js";

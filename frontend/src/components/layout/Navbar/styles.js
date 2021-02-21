@@ -11,7 +11,7 @@ export const NavbarPageStyled = styled.nav`
   justify-content: center;
   justify-self: center;
   margin: var(--margin) var(--margin) 0 var(--margin);
-  max-width: 80%;
+  max-width: 91%;
   position: relative;
   width: 100%;
   z-index: 1;

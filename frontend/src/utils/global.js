@@ -40,8 +40,9 @@ export const global = createGlobalStyle`
 
     a {
         color: var(--darker-primary);
-        text-decoration: underline;
+        text-decoration: none;
         &:hover {
+        text-decoration: underline;
             color: var(--success);
         }
     }

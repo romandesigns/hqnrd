@@ -10,6 +10,7 @@ import Card from "../../../components/ui-elements/Card";
 import { MetaTags } from "../../../utils/apps";
 // Styled Components
 import * as CATEGORY from "./styles";
+import { HeaderWrapper } from "../../../components/layout/Header/styles";
 
 // Api
 import { rooms, categories } from "../../../data";
@@ -41,7 +42,7 @@ const Category = ({ match }) => {
 
       {/* Header Component */}
       <Header img_src={`/img/category/${cat}.jpg`}>
-        <CATEGORY.HeaderWrapper>{<Brand heading="h1" />}</CATEGORY.HeaderWrapper>
+        <HeaderWrapper>{<Brand heading="h1" />}</HeaderWrapper>
       </Header>
 
       {/* Category Description*/}
@@ -49,8 +50,8 @@ const Category = ({ match }) => {
         <CATEGORY.Description>
           <h2>{`Habitaciones ${sanitizedParam}`}</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non tempora sunt magnam a optio aspernatur nobis exercitationem perspiciatis? Soluta quod
-            officia mollitia. Esse modi velit aliquam illo sed, reprehenderit enim.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non tempora sunt magnam a optio aspernatur nobis exercitationem perspiciatis? Soluta quod officia mollitia.
+            Esse modi velit aliquam illo sed, reprehenderit enim.
           </p>
           <Button type="goback">Regresar</Button>
         </CATEGORY.Description>

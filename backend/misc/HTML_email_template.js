@@ -1,4 +1,4 @@
-const Email = (preheader, title, name, copy, btn_cta, signature, representative, link) => {
+const Email = (preheader = "", title = "", name = "", copy = "", btn_cta = "", signature = "", representative = "", link = "") => {
   return ` <!DOCTYPE html>
 <html>
 <head>

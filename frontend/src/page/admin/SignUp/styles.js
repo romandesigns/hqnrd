@@ -1,27 +1,28 @@
 // Dependencies
 import styled from "styled-components";
 
-export const Header = styled.section`
-  margin-bottom: var(--margin);
-  padding: var(--padding) 0;
-`;
-
 export const Container = styled.main`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   form {
-    /* display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; */
+    flex-direction: column;
     width: 100%;
     height: 100%;
-    label,
-    input {
+
+    fieldset {
       display: block;
+      width: 100%;
+      max-width: 32rem;
+      padding: var(--padding);
+      border-color: var(--light);
     }
+
     & + div {
       padding: 0;
       display: flex;
@@ -31,12 +32,24 @@ export const Container = styled.main`
   }
 `;
 
+export const OutterWrapper = styled.section`
+  width: 100%;
+  max-width: 40rem;
+`;
+
 export const Wrapper = styled.section`
-  padding: var(--padding);
+  margin-top: calc(var(--margin) * 2);
   background-color: var(--light);
   box-sizing: border-box;
   border-radius: var(--radius);
   width: 100%;
-  max-width: 40rem;
   box-shadow: var(--shadow);
+  padding: var(--padding);
+`;
+
+export const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--margin);
 `;

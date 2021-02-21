@@ -12,9 +12,9 @@ import RoomSpecs from "./RoomSpecs";
 // Utilities
 import { MetaTags } from "../../../utils/apps";
 // Style Component
-import * as CATEGORY from "../../guest/Category/styles";
 import * as GALLERY from "../../../components/layout/PhotoGallery/styles";
 import * as ROOM from "./styles";
+import { HeaderWrapper } from "../../../components/layout/Header/styles";
 import { BTNStyles } from "../../../components/ui-elements/styles";
 // API
 import { rooms } from "../../../data";
@@ -26,7 +26,8 @@ const RoomDetails = ({ match }) => {
   useEffect(() => {
     let result = rooms.filter((x) => x.unit === parseInt(match.params.id));
     setRoom(result);
-  }, [match.params.id]);
+    window.localStorage.setItem("room", JSON.stringify(`unit:${room[0].unit}`));
+  }, [match.params.id, room]);
 
   return (
     <>
@@ -41,7 +42,7 @@ const RoomDetails = ({ match }) => {
 
       {/* Page Header */}
       <Header img_src={room[0].img.hero} room="detail">
-        <CATEGORY.HeaderWrapper>{<Brand heading="h1" />}</CATEGORY.HeaderWrapper>
+        <HeaderWrapper>{<Brand heading="h1" />}</HeaderWrapper>
       </Header>
 
       <ROOM.MainWrapper>
@@ -133,9 +134,9 @@ const RoomDetails = ({ match }) => {
                     </ROOM.ModalRoomDetails>
                   </main>
                   <footer>
-                    <Button type="google">Google</Button>
-                    <Button type="facebook">Facebook</Button>
-                    <Button type="usar-correo">User Correo</Button>
+                    {/* <Button type="google">Google</Button>
+                    <Button type="facebook">Facebook</Button> */}
+                    <Button type="usar-correo">Iniciar Session</Button>
                   </footer>
                 </ROOM.DetailsModal>
               </Modal>
