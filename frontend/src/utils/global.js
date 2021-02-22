@@ -87,4 +87,8 @@ export const global = createGlobalStyle`
             box-sizing: border-box;
         }
     }
+
+    .Toastify {
+        position: absolute;
+    }
 `;

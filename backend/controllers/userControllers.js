@@ -64,17 +64,17 @@ export const signIn = async (req, res) => {
   let user = await UserModel.findOne({ email: email });
   if (!user) return res.json({ error: CONST.SIGN_IN_EMAIL });
   let token = jwt.sign({ id: user._id }, process.env.SECRET_PASSPHRASE, { expiresIn: "1hr" });
-  let retrievedUser = {
+  let data = {
     created: new Date(user.createdAt).toUTCString(),
     updated: new Date(user.updatedAt).toUTCString(),
     username: user.username,
     name: user.name,
-    lastname: user.lastname,
+    lastname: user.lastName,
     email: user.email,
     phone: user.phone,
     validated: user.validated,
   };
-  return res.json({ token, retrievedUser });
+  return res.json({ token, data });
 };
 
 // Update admin

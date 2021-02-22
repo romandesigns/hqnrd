@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaHome } from "react-icons/fa";
 import { useParams, Link, useHistory } from "react-router-dom";
 import axios from "axios";
@@ -34,9 +34,10 @@ const SignIn = () => {
 
   const POSTData = async () => {
     let { status, data } = await axios.post("/sigin/user", formData);
+    window.localStorage.setItem("user", JSON.stringify(data));
 
     if (status === 200) {
-      history.push("/perfil");
+      history.push("/huesped/perfil");
       setFormData({
         email: "",
         password: "",

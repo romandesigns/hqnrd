@@ -50,8 +50,10 @@ export const Button = styled.button`
   max-height: 4rem;
   max-width: 17rem;
   outline: none;
-  padding: ${({ bgColor }) => (bgColor === "dark" ? "1rem 3rem" : bgColor === "darker" ? "1.25rem 3rem" : "")};
+  padding: ${({ bgColor }) => (bgColor === "dark" ? "1rem 3rem" : bgColor === "darker" ? "1.25rem 3rem" : bgColor === "success" || bgColor === "danger" ? "1rem 3rem" : "")};
   width: 100%;
+  color: var(--light);
+
   svg {
     margin-right: calc(var(--margin) 0.5rem);
   }

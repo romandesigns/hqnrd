@@ -2,7 +2,7 @@
 import React from "react";
 import { useHistory, Link as LinkPath } from "react-router-dom";
 import { Link } from "react-scroll";
-import { FaArrowLeft, FaWhatsapp, FaFacebookF, FaGoogle, FaEnvelope } from "react-icons/fa";
+import { FaArrowLeft, FaWhatsapp, FaFacebookF, FaGoogle, FaEnvelope, FaUpload, FaTrashAlt } from "react-icons/fa";
 
 // Styled Components
 import { Button } from "./styles";
@@ -74,6 +74,22 @@ const ButtonComponent = ({ children, path, type = "default" }) => {
             <FaEnvelope />
             {children}
           </LinkPath>
+        </Button>
+      );
+
+    case "upload":
+      return (
+        <Button bgColor="success">
+          <FaUpload />
+          {children}
+        </Button>
+      );
+
+    case "delete":
+      return (
+        <Button bgColor="danger">
+          <FaTrashAlt />
+          {children}
         </Button>
       );
 

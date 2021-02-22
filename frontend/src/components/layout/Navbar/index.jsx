@@ -1,11 +1,24 @@
 // Dependecies
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, useHistory } from "react-router-dom";
 
 // Style Components
 import { NavbarPageStyled, NavbarPageUlStyled } from "./styles";
 
 const Navbar = () => {
+  const [token, setToken] = useState();
+  let history = useHistory();
+
+  useEffect(() => {
+    const getUserToken = async () => {
+      let localUserData = await window.localStorage.getItem("user");
+      if (!localUserData || localUserData === null) return setToken(false);
+      let { token } = JSON.parse(localUserData);
+      setToken(token);
+    };
+    getUserToken();
+  }, [history]);
+
   return (
     <NavbarPageStyled>
       <NavbarPageUlStyled>
@@ -24,7 +37,7 @@ const Navbar = () => {
           <NavLink to="/contacto">Contacto</NavLink>
         </li>
         <li>
-          <NavLink to="/huesped/iniciar-session">Iniciar Session</NavLink>
+          <NavLink to={`/huesped/${token ? "cerrar-session" : "iniciar-session"}`}>{token ? "Cerrar Session" : "Iniciar Session"}</NavLink>
         </li>
       </NavbarPageUlStyled>
     </NavbarPageStyled>

@@ -54,7 +54,7 @@ export const HeaderWrapper = styled.div`
     display: flex;
     height: 10rem;
     justify-content: flex-start;
-    max-width: 84%;
+    max-width: 95%;
     width: 100%;
 
     p {
