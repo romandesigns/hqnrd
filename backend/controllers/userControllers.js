@@ -63,7 +63,7 @@ export const signIn = async (req, res) => {
   const { email, password } = req.body;
   let user = await UserModel.findOne({ email: email });
   if (!user) return res.json({ error: CONST.SIGN_IN_EMAIL });
-  let token = jwt.sign({ id: user._id }, process.env.SECRET_PASSPHRASE, { expiresIn: "1hr" });
+  let token = jwt.sign({ _id: user._id }, process.env.SECRET_PASSPHRASE, { expiresIn: "1h" });
   let data = {
     created: new Date(user.createdAt).toUTCString(),
     updated: new Date(user.updatedAt).toUTCString(),
@@ -121,4 +121,9 @@ export const deleteUser = async (req, res) => {
   } catch ({ message }) {
     if (message) return res.status(500).json({ error: CONST.INTERNAL_PROBLEM_FOUND });
   }
+};
+
+// Remove admin
+export const guestProfile = async (req, res) => {
+  console.log(req.user);
 };

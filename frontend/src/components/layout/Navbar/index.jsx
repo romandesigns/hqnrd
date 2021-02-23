@@ -1,6 +1,6 @@
 // Dependecies
 import React, { useState, useEffect } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink, useHistory,Redirect } from "react-router-dom";
 
 // Style Components
 import { NavbarPageStyled, NavbarPageUlStyled } from "./styles";
@@ -18,6 +18,11 @@ const Navbar = () => {
     };
     getUserToken();
   }, [history]);
+
+  const LogOut = () => {
+    window.localStorage.removeItem("user");
+    <Redirect to="/" />
+  }
 
   return (
     <NavbarPageStyled>
@@ -37,7 +42,7 @@ const Navbar = () => {
           <NavLink to="/contacto">Contacto</NavLink>
         </li>
         <li>
-          <NavLink to={`/huesped/${token ? "cerrar-session" : "iniciar-session"}`}>{token ? "Cerrar Session" : "Iniciar Session"}</NavLink>
+          <NavLink to={`/huesped/${token ? "cerrar-session" : "iniciar-session"}`} onClick={LogOut}>{token ? "Cerrar Session" : "Iniciar Session"}</NavLink>
         </li>
       </NavbarPageUlStyled>
     </NavbarPageStyled>
