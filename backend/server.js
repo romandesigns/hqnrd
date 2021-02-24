@@ -21,11 +21,15 @@ app.use(cors());
 
 //  Imported routes
 import roomRoutes from "./routes/roomRoutes.js";
-import userRoutes from "./routes/userRoutes.js";
+import guestRoutes from "./routes/guestRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
+import homeRoutes from "./routes/homeRoutes.js";
 
 // Routes
 app.use("/", roomRoutes);
-app.use("/", userRoutes);
+app.use("/", guestRoutes);
+app.use("/", adminRoutes);
+app.use("/", homeRoutes);
 
 // App port
 const PORT = process.env.PORT || 8080;
