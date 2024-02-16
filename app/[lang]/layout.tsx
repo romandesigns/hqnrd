@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { poppins } from "./ui/typography";
 import "./styles/globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={lang}>
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
