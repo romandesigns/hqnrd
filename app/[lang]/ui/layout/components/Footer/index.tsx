@@ -8,7 +8,7 @@ export const Footer = () => {
   return (
     <footer className="bg-primary-500 py-10 px-2">
       <Section className=" mx-auto px-4 py-2 flex justify-between items-center max-w-7xl  bg-white/10 rounded-md pb-4">
-        <div className="flex items-center justify-start w-full py-4 relative -z-[1]">
+        <div className="flex items-center justify-start w-full py-5 relative">
           <Brand className="text-white" />
         </div>
         <div className="grid grid-cols-1 grid-rows-[1fr,auto] w-full md:grid-cols-2 md:grid-rows-1 md:gap-8">

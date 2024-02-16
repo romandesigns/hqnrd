@@ -1,5 +1,4 @@
 "use client";
-import className from "classnames";
 import Link from "next/link";
 import React from "react";
 import { Nav } from "rsuite";
@@ -8,7 +7,9 @@ import { twMerge } from "tailwind-merge";
 export const BrandLink = ({
   linkPath,
   children,
+  className,
 }: {
+  className: string;
   linkPath: string;
   children: React.ReactNode;
 }) => {

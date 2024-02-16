@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { BrandLink } from "./BrandLink";
+import cn from "classnames";
 
 export function Brand({ width = 21, height = 21, className = "" }) {
   return (
-    <BrandLink linkPath={"/"}>
+    <BrandLink linkPath={"/"} className={cn(className)}>
       <>
         <Image
           src="/assets/general/logo-original.svg"
