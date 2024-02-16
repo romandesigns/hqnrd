@@ -1,0 +1,52 @@
+{
+  "billboard": [
+    {
+      "mobile": {
+        "title": "Our Reviews Speak for themeselves",
+        "subtitle": "4.5"
+      },
+      "desktop": {
+        "title": "Our Reviews Speak for themeselves",
+        "subtitle": "4.5"
+      },
+      "src": "/assets/home/billboard/hqnrd-air-view-building.jpg",
+      "alt": "front building airview image"
+    },
+    {
+      "mobile": {
+        "title": "Rooms available for all occasions",
+        "subtitle": ""
+      },
+      "desktop": {
+        "title": "Rooms available for all occasions",
+        "subtitle": ""
+      },
+      "src": "/assets/home/billboard/doble-room.jpg",
+      "alt": "double room image"
+    },
+    {
+      "mobile": {
+        "title": "Basic Rooms for a comfortable stay",
+        "subtitle": ""
+      },
+      "desktop": {
+        "title": "Basic Rooms for a comfortable stay",
+        "subtitle": ""
+      },
+      "src": "/assets/home/billboard/hqnrd-basic-room.jpg",
+      "alt": "basic room image"
+    },
+    {
+      "mobile": {
+        "title": "Enjoy the sunset from our hotel",
+        "subtitle": ""
+      },
+      "desktop": {
+        "title": "Enjoy the sunset from our hotel",
+        "subtitle": ""
+      },
+      "src": "/assets/home/billboard/photograph-behind-plant-on-the-table-during-sunset-at-the-hotel-quinto-nivel-rd.webp",
+      "alt": "sunset image"
+    }
+  ]
+}
