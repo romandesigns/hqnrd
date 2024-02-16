@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
-import { poppins } from "../ui/typography";
-import "../styles/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
+import { CustomProvider } from "rsuite";
+import "../styles/globals.css";
+import { poppins } from "../ui/typography";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 import { Locale, i18n } from "@/i18n-config";
+import { Footer } from "../ui/layout/components";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -24,7 +26,10 @@ export default function RootLayout({
   return (
     <html lang={lang}>
       <body className={poppins.className}>
-        {children}
+        <CustomProvider>
+          {children}
+          <Footer />
+        </CustomProvider>
         <SpeedInsights />
       </body>
     </html>

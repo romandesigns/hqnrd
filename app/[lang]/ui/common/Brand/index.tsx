@@ -1,16 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Nav } from "rsuite";
-import { twMerge } from "tailwind-merge";
+import { BrandLink } from "./BrandLink";
 
 export function Brand({ width = 21, height = 21, className = "" }) {
   return (
-    <Nav>
-      <Nav.Item
-        as={Link}
-        href="/"
-        className={twMerge(`flex items-start justify-start p-0 ${className}`)}
-      >
+    <BrandLink linkPath={"/"}>
+      <>
         <Image
           src="/assets/general/logo-original.svg"
           alt="Hotel Quinto Nivel RD"
@@ -27,7 +21,7 @@ export function Brand({ width = 21, height = 21, className = "" }) {
             Como estar en casa!
           </p>
         </div>
-      </Nav.Item>
-    </Nav>
+      </>
+    </BrandLink>
   );
 }

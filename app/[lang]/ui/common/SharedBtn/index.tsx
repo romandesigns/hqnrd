@@ -1,8 +1,8 @@
 "use client";
 
-import { PiShareNetworkBold } from "../../icons";
 import { twMerge } from "tailwind-merge";
-import { ShareDataTypes } from "./types";
+import { PiShareNetworkBold } from "../../icons";
+import { ShareDataTypes } from "../../../../../types";
 
 export const ShareBtn = ({ data, className, iconColor }: ShareDataTypes) => {
   const showShareScreen = async () => {

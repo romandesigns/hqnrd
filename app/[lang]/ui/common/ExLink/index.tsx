@@ -1,8 +1,6 @@
-"use client";
+import { ReactNode } from "react";
 
-import React, { ReactNode } from "react";
-
-export const ExternalLink = ({
+export const ExLink = ({
   href,
   children,
   className,

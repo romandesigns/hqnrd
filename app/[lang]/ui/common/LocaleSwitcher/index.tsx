@@ -1,7 +1,7 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { i18n, type Locale } from "../../../../../i18n-config";
 
 export function LocaleSwitcher() {
