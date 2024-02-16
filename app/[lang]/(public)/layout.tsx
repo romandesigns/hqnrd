@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { poppins } from "./ui/typography";
-import "./styles/globals.css";
+import { poppins } from "../ui/typography";
+import "../styles/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
