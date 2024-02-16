@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 
 import { Locale, i18n } from "@/i18n-config";
 import { Footer, Navigation } from "../ui/layout/components";
+import { FrequentlyAskedQuestions } from "../ui/layout/components/Fqa";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -25,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={lang}>
-      <body className={`${poppins.className} antialiased`}>
+      <body className={`${poppins.className} antialiased text-neutral-600`}>
         <CustomProvider>
           <Navigation />
           {children}

@@ -1,0 +1,44 @@
+{
+  "fqa": [
+    {
+      "question": "Do you provide food?",
+      "answer": "Yes, we provide food. In order to receive the service you must include the food option in your reservation."
+    },
+    {
+      "question": "Do you provide parking surveillance?",
+      "answer": "Yes, we provide surveillance for your vehicle. We have a parking lot with security cameras capturing the hotel's perimeter."
+    },
+    {
+      "question": "Does the hotel have a pool?",
+      "answer": "Unfortunately, we do not have a pool. We are working on it and hope to have one in the near future."
+    },
+    {
+      "question": "What are the main attractions near the hotel?",
+      "answer": "The hotel is located in the heart of the city, so there are many attractions nearby. We are located near the beach, the city's main shopping centers, and the city's main tourist attractions. We are also located near the city's main restaurants and bars."
+    },
+    {
+      "question": "What is the price?",
+      "answer": "The prices range depending on the type of room you choose. We have single, double, and triple rooms. We also have suites. The prices range from $50 to $200 per night. We also have special prices for long stays."
+    },
+    {
+      "question": "At what time is the check-in and check-out?",
+      "answer": "The check-in is available 24h and the checkout is at 11:00AM Monday morning after the last reservation day."
+    },
+    {
+      "question": "Do you allow pets?",
+      "answer": "Unfortunately, we do not accept pets."
+    },
+    {
+      "question": "Is there parking available?",
+      "answer": "Yes, we have parking available for our guests."
+    },
+    {
+      "question": "Do you accept credit cards?",
+      "answer": "Yes, we accept credit cards and online payments"
+    },
+    {
+      "question": "Do you provide payment receipts?",
+      "answer": "Yes, we provide payment receipts. You can request it at the front desk."
+    }
+  ]
+}
