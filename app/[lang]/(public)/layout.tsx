@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={lang}>
-      <body className={poppins.className}>
+      <body className={`${poppins.className} antialiased`}>
         <CustomProvider>
           {children}
           <Footer />

@@ -25,6 +25,8 @@
     "zustand": "^4.5.0"
   },
   "devDependencies": {
+    "@redux-devtools/extension": "^3.3.0",
+    "@rsuite/icons": "^1.0.3",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^20",
     "@types/react": "^18",
