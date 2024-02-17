@@ -1,9 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { IconButton } from "rsuite";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import homeBillboards from "@/public/assets/data/homeBillboard.json";
+import { FcGoogle, FaStar, FaStarHalfAlt } from "../../../../icons";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
@@ -21,8 +22,8 @@ import {
   Controller,
 } from "swiper/modules";
 import Image from "next/image";
-import { RiDoorClosedLine } from "../../../../icons";
 import type { Swiper as SwiperType } from "swiper";
+import { HeaderButtonsGroup } from "./ButtonsGroup";
 
 export const HomeHeader = () => {
   const [controlledSwiper, setControlledSwiper] = useState<SwiperType | null>(
@@ -38,21 +39,18 @@ export const HomeHeader = () => {
         backgroundPosition: "center",
         transition: "background 0.5s ease-in-out",
       }}
-      className={`max-w-[100%] h-[100%] rounded-md grid grid-cols-1 grid-rows-[auto_1fr_auto] items-center justify-center overflow-hidden transition-background ease-in-out delay-150 relative`}
+      className={`max-w-[100%] h-[100%] rounded-md grid grid-cols-1 grid-rows-[auto_1fr_auto_auto] items-center justify-center overflow-hidden transition-background ease-in-out delay-150 relative`}
     >
-      <div className="relative z-[2] text-center pt-8 flex px-8">
+      <div className="relative z-[2] text-center pt-4 flex px-8">
         <Swiper
           effect={"fade"}
           modules={[EffectFade, Controller]}
           onSwiper={setControlledSwiper}
         >
           {homeBillboards.billboard.map((item, idx) => (
-            <SwiperSlide
-              className="rounded-sm border border-white bg-white/30"
-              key={idx}
-            >
+            <SwiperSlide key={idx}>
               {controlledSwiper?.activeIndex === idx && (
-                <h3 className="text-sm font-semibold  backdrop-filter text-black backdrop-blur-md rounded-sm py-2 px-4">
+                <h3 className="text-sm font-semibold  text-white py-2 px-4">
                   {item.mobile.title}
                 </h3>
               )}
@@ -93,28 +91,20 @@ export const HomeHeader = () => {
         ))}
       </Swiper>
 
-      <div className="p-4 pt-0 w-full">
-        <div className="grid grid-cols-2 grid-rows-1 gap-2 py-1">
-          <IconButton
-            appearance="primary"
-            className="relative z-[2] uppercase text-xs"
-            icon={<RiDoorClosedLine className="rs-icon" />}
-            size="lg"
-          >
-            Sign In
-          </IconButton>
-          <IconButton
-            appearance="primary"
-            className="relative z-[2] uppercase text-xs"
-            icon={<RiDoorClosedLine className="rs-icon" />}
-            size="lg"
-          >
-            Rooms
-          </IconButton>
-        </div>
+      <div className="z-[2]  flex items-center justify-center py-2 pb-6">
+        <h3 className="flex items-center justify-centerc text-white text-sm">
+          <FcGoogle />
+          <span className="mx-2">Google rating 4.5</span>
+          <FaStar color="yellow" />
+          <FaStar color="yellow" />
+          <FaStar color="yellow" />
+          <FaStar color="yellow" />
+          <FaStarHalfAlt color="yellow" />
+        </h3>
       </div>
 
-      {/* <div className=" w-full h-full absolute top-0 bottom-0 left-0 right-0 z-[0] bg-radial-gradient" /> */}
+      <HeaderButtonsGroup />
+      <div className=" w-full h-full absolute top-0 bottom-0 left-0 right-0 z-[0] bg-black/25" />
       <div className="backdrop-filter backdrop-blur-md w-full h-full absolute top-0 bottom-0 left-0 right-0" />
     </div>
   );
