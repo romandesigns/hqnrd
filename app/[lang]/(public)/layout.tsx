@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 
 import { Locale, i18n } from "@/i18n-config";
 import { Footer, Navigation } from "../ui/layout/components";
-import { FrequentlyAskedQuestions } from "../ui/layout/components/Fqa";
 import { HomeHeader } from "../ui/layout/components/Header/Home";
 
 export async function generateStaticParams() {
@@ -27,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={lang}>
-      <body className={`${poppins.className} antialiased text-neutral-600`}>
+      <body
+        className={`${poppins.className} antialiased text-neutral-600 font-sans font-normal`}
+      >
         <CustomProvider>
           <Navigation />
           <header className="h-screen flex items-stretch justify-stretch p-2 header-height">

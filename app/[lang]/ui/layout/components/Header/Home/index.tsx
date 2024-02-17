@@ -97,18 +97,15 @@ export const HomeHeader = () => {
         <div className="grid grid-cols-2 grid-rows-1 gap-2 py-1">
           <IconButton
             appearance="primary"
-            color="blue"
-            className="relative z-[2] uppercase text-xs font-semibold"
-            active
+            className="relative z-[2] uppercase text-xs"
             icon={<RiDoorClosedLine className="rs-icon" />}
             size="lg"
           >
             Sign In
           </IconButton>
           <IconButton
-            appearance="default"
-            className="relative z-[2] rs-btn-dark uppercase text-xs font-semibold"
-            active
+            appearance="primary"
+            className="relative z-[2] uppercase text-xs"
             icon={<RiDoorClosedLine className="rs-icon" />}
             size="lg"
           >
