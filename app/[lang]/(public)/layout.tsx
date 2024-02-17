@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang={lang}>
       <body
-        className={`${poppins.className} antialiased text-neutral-600 font-sans font-normal`}
+        className={`${poppins.className} antialiased text-neutral-600 font-sans font-normal min-h-dvh`}
       >
         <CustomProvider>
           <Navigation />
