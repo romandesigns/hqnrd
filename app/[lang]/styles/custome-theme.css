@@ -10,5 +10,12 @@
   --rs-primary-800: #045194;
   --rs-primary-900: #004280;
 
-  --rs-btn-default: red;
+  --rs-btn-default-bg: rgb(24, 24, 24) !important;
+  --rs-btn-default-text: rgb(225, 225, 225) !important;
+  --rs-btn-default-hover-bg: rgb(16, 16, 16) !important;
+  --rs-btn-default-active-bg: rgb(24, 24, 24) !important;
+  --rs-iconbtn-pressed-addon: rgba(255, 255, 255, 0.138) !important;
+  --rs-btn-default-active-text: rgb(225, 225, 225) !important;
+  /* --rs-btn-default-disabled-bg: red !important;
+  --rs-btn-default-disabled-text: red !important; */
 }

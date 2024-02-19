@@ -1,50 +1,26 @@
 {
   "billboard": [
     {
-      "mobile": {
-        "title": "Our Reviews Speak for themeselves",
-        "subtitle": "4.5"
-      },
-      "desktop": {
-        "title": "Our Reviews Speak for themeselves",
-        "subtitle": "4.5"
-      },
+      "title": "Exclusive Panoramic View",
+      "description": "At Hotel Quinto Nivel RD, each morning is a window to urban beauty. Our rooms, featuring privileged views and luxurious amenities, are the perfect retreat for the modern traveler. Book now and elevate your lodging experience to new heights.",
       "src": "/assets/home/billboard/hqnrd-air-view-building.jpg",
       "alt": "front building airview image"
     },
     {
-      "mobile": {
-        "title": "Rooms available for all occasions",
-        "subtitle": ""
-      },
-      "desktop": {
-        "title": "Rooms available for all occasions",
-        "subtitle": ""
-      },
-      "src": "/assets/home/billboard/doble-room.jpg",
-      "alt": "double room image"
+      "title": "Clean Hallways and Spaces",
+      "description": "At Hotel Quinto Nivel RD, we believe that every guest deserves a peaceful retreat. Our rooms are designed to provide a serene escape from the city's hustle and bustle, offering a tranquil space to relax and rejuvenate. Book now and experience the ultimate in urban relaxation.",
+      "src": "/assets/home/billboard/hqnrd-hallway.jpg",
+      "alt": "basic room image"
     },
     {
-      "mobile": {
-        "title": "Basic Rooms for a comfortable stay",
-        "subtitle": ""
-      },
-      "desktop": {
-        "title": "Basic Rooms for a comfortable stay",
-        "subtitle": ""
-      },
+      "title": "Modern and Spacious",
+      "description": "At Hotel Quinto Nivel RD, we believe that every guest deserves a peaceful retreat. Our rooms are designed to provide a serene escape from the city's hustle and bustle, offering a tranquil space to relax and rejuvenate. Book now and experience the ultimate in urban relaxation.",
       "src": "/assets/home/billboard/hqnrd-basic-room.jpg",
       "alt": "basic room image"
     },
     {
-      "mobile": {
-        "title": "Enjoy the sunset from our hotel",
-        "subtitle": ""
-      },
-      "desktop": {
-        "title": "Enjoy the sunset from our hotel",
-        "subtitle": ""
-      },
+      "title": "A Place to Unwind",
+      "description": "At Hotel Quinto Nivel RD, we believe that every guest deserves a peaceful retreat. Our rooms are designed to provide a serene escape from the city's hustle and bustle, offering a tranquil space to relax and rejuvenate. Book now and experience the ultimate in urban relaxation.",
       "src": "/assets/home/billboard/photograph-behind-plant-on-the-table-during-sunset-at-the-hotel-quinto-nivel-rd.webp",
       "alt": "sunset image"
     }

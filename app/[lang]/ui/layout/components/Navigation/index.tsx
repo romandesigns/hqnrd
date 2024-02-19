@@ -4,7 +4,7 @@ import { MobileNavigation } from "./MobileNav";
 
 export const Navigation = () => {
   return (
-    <nav className="sticky top-0 z-[3]">
+    <nav className="sticky top-0 z-[4]">
       <DesktopNavbar />
       <MotionMobileNavigation>
         <MobileNavigation />
