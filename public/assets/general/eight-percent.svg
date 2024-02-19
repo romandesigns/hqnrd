@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="254.591" height="211.72" viewBox="0 0 254.591 211.72">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_517" data-name="Rectangle 517" width="160.173" height="211.72" fill="#707070"/>
+    </clipPath>
+  </defs>
+  <g id="Group_313" data-name="Group 313" transform="translate(0 -13.115)">
+    <g id="Group_310" data-name="Group 310" transform="translate(0 13.115)">
+      <g id="Group_316" data-name="Group 316" transform="translate(0)">
+        <g id="Group_315" data-name="Group 315" transform="translate(0 0)" clip-path="url(#clip-path)">
+          <path id="Path_394" data-name="Path 394" d="M137.536,115.485c-4.22-11.259-12.333-20.014-23.805-26.086,13.579-7.429,22.8-20.494,22.8-39.193C136.532,23.564,115.779,0,70.443,0S4.357,23.564,4.357,50.205c0,18.956,8.961,31.508,22.794,39.193C9.734,98.62,0,113.989,0,134.993c0,38.679,32.276,59.427,70.443,59.427a95.833,95.833,0,0,0,22.209-2.537ZM70.443,39.191c9.988,0,16.905,6.915,16.905,18.956S79.921,76.59,70.443,76.59s-16.905-6.4-16.905-18.443,7.171-18.956,16.905-18.956m0,113.989c-13.833,0-21.772-9.222-21.772-21.006,0-13.062,8.966-21.26,21.772-21.26,13.064,0,21.516,8.454,21.516,21.26,0,11.784-7.685,21.006-21.516,21.006" transform="translate(0 0.001)" fill="#707070"/>
+          <rect id="Rectangle_516" data-name="Rectangle 516" width="104.916" height="7.538" transform="matrix(0.506, -0.862, 0.862, 0.506, 94.048, 207.876)" fill="#707070"/>
+          <path id="Path_395" data-name="Path 395" d="M79.452,69.146a4.74,4.74,0,1,1-1.686-6.488,4.739,4.739,0,0,1,1.686,6.488" transform="translate(80.065 70.294)" fill="#707070"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_311" data-name="Group 311" transform="matrix(0.914, 0.407, -0.407, 0.914, 188.475, 0)">
+      <rect id="Rectangle_514" data-name="Rectangle 514" width="20.835" height="204.81" rx="10" transform="translate(51.539 0)" fill="#707070"/>
+      <g id="Ellipse_43" data-name="Ellipse 43" transform="translate(0 30.704)" fill="#707070" stroke="#707070" stroke-width="1">
+        <circle cx="19.19" cy="19.19" r="19.19" stroke="none"/>
+        <circle cx="19.19" cy="19.19" r="18.69" fill="none"/>
+      </g>
+      <g id="Ellipse_44" data-name="Ellipse 44" transform="translate(86.629 149.982)" fill="#707070" stroke="#707070" stroke-width="1">
+        <circle cx="19.19" cy="19.19" r="19.19" stroke="none"/>
+        <circle cx="19.19" cy="19.19" r="18.69" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

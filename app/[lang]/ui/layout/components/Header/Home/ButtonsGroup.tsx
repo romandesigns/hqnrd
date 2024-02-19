@@ -1,29 +1,29 @@
 import React from "react";
-import { IconButton } from "rsuite";
-import { RiDoorClosedLine } from "../../../../icons";
+import { IconButton, ButtonToolbar, ButtonGroup } from "rsuite";
+import { PiSignInFill, RiDoorClosedLine } from "../../../../icons";
 import { twMerge } from "tailwind-merge";
 
 export function HeaderButtonsGroup({ className = "" }: { className?: string }) {
   return (
-    <div className={twMerge(`p-4 pt-0 w-full ${className}`)}>
-      <div className="grid grid-cols-2 grid-rows-1 gap-2 py-1">
-        <IconButton
-          appearance="primary"
-          className="relative z-[2] uppercase text-xs"
-          icon={<RiDoorClosedLine className="rs-icon" />}
-          size="lg"
-        >
-          Sign In
-        </IconButton>
-        <IconButton
-          appearance="primary"
-          className="relative z-[2] uppercase text-xs"
-          icon={<RiDoorClosedLine className="rs-icon" />}
-          size="lg"
-        >
-          Rooms
-        </IconButton>
-      </div>
-    </div>
+    <ButtonToolbar className={twMerge(`p-4 w-full ${className}`)}>
+      <IconButton
+        size="md"
+        active
+        appearance="primary"
+        className="flex-1 uppercase"
+        icon={<PiSignInFill className="rs-icon" />}
+      >
+        Sign In
+      </IconButton>
+      <IconButton
+        size="md"
+        appearance="default"
+        active
+        className="flex-1 uppercase"
+        icon={<RiDoorClosedLine className="rs-icon" />}
+      >
+        Rooms
+      </IconButton>
+    </ButtonToolbar>
   );
 }

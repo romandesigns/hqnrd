@@ -12,17 +12,13 @@
 
   --swiper-theme-color: var(--rs-primary-500) !important;
   --swiper-navigation-color: transparent !important;
-}
 
-.rs-btn-icon-with-text.rs-btn-lg.rs-btn-icon-placement-left {
-  padding: 10px 16px 10px 40px;
-}
-
-ul.mobile-navigation
-  .rs-btn-icon-with-text.rs-btn-lg.rs-btn-icon-placement-left {
-  padding: 10px 16px 10px 28px;
-}
-
-.testimanial-rewier-name {
-  background: url("/assets/quote.png") no-repeat;
+  --rs-btn-default-bg: rgb(24, 24, 24) !important;
+  --rs-btn-default-text: rgb(225, 225, 225) !important;
+  --rs-btn-default-hover-bg: rgb(16, 16, 16) !important;
+  --rs-btn-default-active-bg: rgb(24, 24, 24) !important;
+  --rs-iconbtn-pressed-addon: rgba(255, 255, 255, 0.138) !important;
+  --rs-btn-default-active-text: rgb(225, 225, 225) !important;
+  /* --rs-btn-default-disabled-bg: red !important;
+  --rs-btn-default-disabled-text: red !important; */
 }
