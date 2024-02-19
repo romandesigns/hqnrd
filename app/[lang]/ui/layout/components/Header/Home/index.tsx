@@ -95,11 +95,11 @@ export const HomeHeader = () => {
         <h3 className="flex items-center justify-centerc text-white text-sm">
           <FcGoogle />
           <span className="mx-2">Google rating 4.5</span>
-          <FaStar color="yellow" />
-          <FaStar color="yellow" />
-          <FaStar color="yellow" />
-          <FaStar color="yellow" />
-          <FaStarHalfAlt color="yellow" />
+          <FaStar color="orange" />
+          <FaStar color="orange" />
+          <FaStar color="orange" />
+          <FaStar color="orange" />
+          <FaStarHalfAlt color="orange" />
         </h3>
       </div>
 

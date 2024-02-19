@@ -6,7 +6,11 @@ export { LuContact2 } from "react-icons/lu";
 export { PiSignInFill } from "react-icons/pi";
 export { RiDoorClosedLine, RiHomeLine } from "react-icons/ri";
 // Utility
-export { FaInternetExplorer, FaLocationDot } from "react-icons/fa6";
+export {
+  FaInternetExplorer,
+  FaLocationDot,
+  FaQuoteLeft,
+} from "react-icons/fa6";
 export { MdEmail, MdGTranslate } from "react-icons/md";
 // Social
 export {

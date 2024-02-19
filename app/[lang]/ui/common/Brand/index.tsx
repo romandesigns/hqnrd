@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { BrandLink } from "./BrandLink";
 import cn from "classnames";
+import { twMerge } from "tailwind-merge";
 
 export function Brand({ width = 21, height = 21, className = "" }) {
   return (
-    <BrandLink linkPath={"/"} className={cn(className)}>
+    <BrandLink linkPath={"/"} className={twMerge(cn(className))}>
       <>
         <Image
           src="/assets/general/logo-original.svg"

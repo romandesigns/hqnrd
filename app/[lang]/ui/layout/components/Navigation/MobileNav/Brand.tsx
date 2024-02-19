@@ -4,7 +4,7 @@ import React from "react";
 export const MobileNavLogo = () => {
   return (
     <article className="flex items-center justify-center">
-      <Brand />
+      <Brand className="p-2" />
     </article>
   );
 };

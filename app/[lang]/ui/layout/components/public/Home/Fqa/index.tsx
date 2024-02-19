@@ -1,5 +1,5 @@
 import React from "react";
-import { Section } from "../../containers";
+import { Section } from "../../../../containers";
 import { PanelGroup, Panel } from "rsuite";
 import data from "@/public/assets/data/fqa.json";
 

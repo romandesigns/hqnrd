@@ -1,8 +1,10 @@
+import Testimonials from "../ui/layout/components/public/Home/Testimonials";
+
 export default function Home() {
   return (
     <>
-      <main className="flex flex-col items-center justify-between p-24">
-        Home Page
+      <main className="flex flex-col items-center justify-between">
+        <Testimonials />
       </main>
     </>
   );

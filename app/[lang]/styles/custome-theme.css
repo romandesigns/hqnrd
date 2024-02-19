@@ -10,5 +10,19 @@
   --rs-primary-800: #045194;
   --rs-primary-900: #004280;
 
-  --rs-btn-default: red;
+  --swiper-theme-color: var(--rs-primary-500) !important;
+  --swiper-navigation-color: transparent !important;
+}
+
+.rs-btn-icon-with-text.rs-btn-lg.rs-btn-icon-placement-left {
+  padding: 10px 16px 10px 40px;
+}
+
+ul.mobile-navigation
+  .rs-btn-icon-with-text.rs-btn-lg.rs-btn-icon-placement-left {
+  padding: 10px 16px 10px 28px;
+}
+
+.testimanial-rewier-name {
+  background: url("/assets/quote.png") no-repeat;
 }

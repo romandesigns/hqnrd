@@ -3,6 +3,7 @@
 @tailwind utilities;
 @import "rsuite/dist/rsuite-no-reset.min.css";
 @import "./custome-theme.css";
+@import "./swiper.css";
 
 .header-height {
   height: calc(100vh - 51px) !important;

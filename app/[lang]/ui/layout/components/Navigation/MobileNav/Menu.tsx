@@ -24,7 +24,7 @@ export const MobileNavMenu = () => {
       <section className="flex items-center justify-center p-4 h-full w-full">
         <Nav
           as="ul"
-          className="h-full w-full border rounded-md grid grid-cols-1 grid-rows-[auto_auto_auto_1fr_auto_auto] gap-3 items-center justify-center p-4"
+          className="mobile-navigation h-full w-full border rounded-md grid grid-cols-1 grid-rows-[auto_auto_auto_1fr_auto_auto] gap-3 items-center justify-center p-4"
         >
           {/* Home Button */}
           <Nav.Item as="li" className="p-0">
