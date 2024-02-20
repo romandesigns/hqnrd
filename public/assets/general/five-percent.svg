@@ -1,28 +1,43 @@
-<svg id="Component_11_1" data-name="Component 11 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="296.624" height="240.769" viewBox="0 0 296.624 240.769">
-  <defs>
-    <clipPath id="clip-path">
-      <rect id="Rectangle_513" data-name="Rectangle 513" width="132.857" height="218.463" fill="#707070"/>
-    </clipPath>
-  </defs>
-  <g id="Group_310" data-name="Group 310">
-    <path id="Path_391" data-name="Path 391" d="M.48,15.288v48.3l28.376-48.3Z" transform="translate(0.537 17.123)" fill="#707070"/>
-    <g id="Group_309" data-name="Group 309" transform="translate(0 0)">
-      <g id="Group_308" data-name="Group 308" clip-path="url(#clip-path)">
-        <path id="Path_392" data-name="Path 392" d="M78.133,76.372c-13.742,0-25.451,4.581-31.815,11.2V59.319h76.359V15.288H59.992L1.015,115.673v12.112H49.627c1.02-6.362,6.364-11.961,16.036-11.961,11.961,0,18.834,6.871,18.834,20.361,0,12.981-5.6,22.4-18.069,22.4-12.218,0-17.053-7.636-17.817-14.507H0c.252,33.339,25.194,57.266,68.464,57.266,40.723,0,64.393-24.433,64.393-64.393,0-31.052-16.29-60.575-54.724-60.575" transform="translate(0 17.123)" fill="#707070"/>
-        <rect id="Rectangle_512" data-name="Rectangle 512" width="104.244" height="7.49" transform="matrix(0.506, -0.862, 0.862, 0.506, 5.7, 89.912)" fill="#707070"/>
-        <path id="Path_393" data-name="Path 393" d="M38.007,14.086a4.71,4.71,0,1,1-1.675-6.447,4.709,4.709,0,0,1,1.675,6.447" transform="translate(32.744 7.829)" fill="#707070"/>
-      </g>
-    </g>
-  </g>
-  <g id="Group_311" data-name="Group 311" transform="matrix(0.914, 0.407, -0.407, 0.914, 182.485, 2.95)">
-    <rect id="Rectangle_514" data-name="Rectangle 514" width="20.823" height="204.698" rx="10" transform="translate(51.511 0)" fill="#707070"/>
-    <g id="Ellipse_43" data-name="Ellipse 43" transform="translate(0 30.687)" fill="#707070" stroke="#707070" stroke-width="1">
-      <circle cx="19.179" cy="19.179" r="19.179" stroke="none"/>
-      <circle cx="19.179" cy="19.179" r="18.679" fill="none"/>
-    </g>
-    <g id="Ellipse_44" data-name="Ellipse 44" transform="translate(86.582 149.9)" fill="#707070" stroke="#707070" stroke-width="1">
-      <circle cx="19.179" cy="19.179" r="19.179" stroke="none"/>
-      <circle cx="19.179" cy="19.179" r="18.679" fill="none"/>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Component_11_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 254.6 211.7" style="enable-background:new 0 0 254.6 211.7;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#136bad;}
+	.st1{clip-path:url(#SVGID_00000150817889973475528340000009771882243746222998_);fill:#136bad;}
+	.st2{fill:none;stroke:#136bad;stroke-width:1.0015;stroke-miterlimit:4.0063;}
+</style>
+<g id="Group_310">
+	<path id="Path_391" class="st0" d="M8.3,24.4v48.3l28.4-48.3L8.3,24.4z"/>
+	<g>
+		<g>
+			<defs>
+				<rect id="SVGID_1_" x="7.3" y="-8" width="132.9" height="218.5"/>
+			</defs>
+			<clipPath id="SVGID_00000044150642129484815980000012989464936823217579_">
+				<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+			</clipPath>
+			<path id="Path_392" style="clip-path:url(#SVGID_00000044150642129484815980000012989464936823217579_);fill:#136bad;" d="
+				M85.4,85.5c-13.7,0-25.5,4.6-31.8,11.2V68.4H130v-44H67.3l-59,100.4v12.1h48.6c1-6.4,6.4-12,16-12c12,0,18.8,6.9,18.8,20.4
+				c0,13-5.6,22.4-18.1,22.4c-12.2,0-17.1-7.6-17.8-14.5H7.3c0.3,33.3,25.2,57.3,68.5,57.3c40.7,0,64.4-24.4,64.4-64.4
+				C140.2,115,123.9,85.5,85.4,85.5"/>
+			
+				<rect id="Rectangle_512" x="-15.5" y="46.1" transform="matrix(0.5062 -0.8624 0.8624 0.5062 -24.9297 56.1525)" style="clip-path:url(#SVGID_00000044150642129484815980000012989464936823217579_);fill:#136bad;" width="104.2" height="7.5"/>
+			<path id="Path_393" style="clip-path:url(#SVGID_00000044150642129484815980000012989464936823217579_);fill:#136bad;" d="
+				M78.1,13.9c-1.3,2.2-4.2,3-6.4,1.7c-2.2-1.3-3-4.2-1.7-6.4c1.3-2.2,4.2-3,6.4-1.7C78.6,8.8,79.4,11.7,78.1,13.9L78.1,13.9"/>
+		</g>
+	</g>
+</g>
+<g id="Group_311" transform="matrix(0.914, 0.407, -0.407, 0.914, 182.485, 2.95)">
+	<path id="Rectangle_514" class="st0" d="M60.1-3.8h0.8c5.5,0,10,4.5,10,10l0,184.7c0,5.5-4.5,10-10,10h-0.8c-5.5,0-10-4.5-10-10
+		V6.2C50.1,0.7,54.6-3.8,60.1-3.8z"/>
+	<g id="Ellipse_43" transform="translate(0 30.687)">
+		<circle class="st0" cx="17.8" cy="15.4" r="19.2"/>
+		<circle class="st2" cx="17.8" cy="15.4" r="18.7"/>
+	</g>
+	<g id="Ellipse_44" transform="translate(86.582 149.9)">
+		<circle class="st0" cx="17.8" cy="15.4" r="19.2"/>
+		<circle class="st2" cx="17.8" cy="15.4" r="18.7"/>
+	</g>
+</g>
 </svg>

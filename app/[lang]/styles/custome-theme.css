@@ -13,10 +13,13 @@
   --swiper-theme-color: var(--rs-primary-500) !important;
   --swiper-navigation-color: transparent !important;
 
-  --rs-btn-default-bg: rgb(24, 24, 24) !important;
+  --ra-dark: rgb(24, 24, 24);
+  --ra-dark-hover: rgb(16, 16, 16);
+
+  --rs-btn-default-bg: var(--ra-dark) !important;
   --rs-btn-default-text: rgb(225, 225, 225) !important;
-  --rs-btn-default-hover-bg: rgb(16, 16, 16) !important;
-  --rs-btn-default-active-bg: rgb(24, 24, 24) !important;
+  --rs-btn-default-hover-bg: var(--ra-dark-hover) !important;
+  --rs-btn-default-active-bg: var(--ra-dark) !important;
   --rs-iconbtn-pressed-addon: rgba(255, 255, 255, 0.138) !important;
   --rs-btn-default-active-text: rgb(225, 225, 225) !important;
   /* --rs-btn-default-disabled-bg: red !important;

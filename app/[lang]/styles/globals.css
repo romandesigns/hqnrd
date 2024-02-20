@@ -29,3 +29,39 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.glowing-shadow {
+  position: relative;
+}
+
+.glowing-shadow::before,
+.glowing-shadow::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background: conic-gradient(from 45deg, #02ffee, #02a2ff, #131313);
+  background-size: 400%;
+  width: calc(100%);
+  height: calc(100%);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+  border-radius: 10px;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.glowing-shadow::after {
+  filter: blur(10px);
+  opacity: 0.8;
+}
