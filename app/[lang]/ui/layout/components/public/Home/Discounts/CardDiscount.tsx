@@ -14,7 +14,7 @@ export default function CardDiscount({
     <div className="w-full h-full rounded-md md:px-4 relative">
       <div className="p-6 bg-white rounded-md md:my-20 shadow-sm">
         <div className="w-full h-full p-10 flex items-center flex-col justify-center rounded-md border-2 border-dashed">
-          <h4 className="font-bold text-lg">Applicable When Booking 5 days</h4>
+          <h4 className="font-bold text-lg">{eligibleDays}</h4>
           <figure className="my-10">
             <Image
               width={300}
