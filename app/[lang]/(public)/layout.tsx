@@ -1,4 +1,6 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
+
 import type { Metadata } from "next";
 import { CustomProvider } from "rsuite";
 import "../styles/globals.css";
@@ -42,6 +44,7 @@ export default function RootLayout({
             </div>
           </header>
           {children}
+          <Analytics />
           <Footer />
         </CustomProvider>
         <SpeedInsights />
