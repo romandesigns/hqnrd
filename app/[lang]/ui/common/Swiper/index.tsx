@@ -20,10 +20,10 @@ export function SwiperComponent<T extends { reviewerName: string }>({
   const { width } = useViewportDimensions();
   return (
     <Swiper
-      slidesPerView={width >= 1080 ? 3 : width >= 640 ? 2 : 1}
+      slidesPerView={width >= 1080 ? 3 : width >= 740 ? 2 : 1}
       spaceBetween={25}
       autoplay={{
-        delay: 200000,
+        delay: 3500,
         disableOnInteraction: false,
       }}
       pagination={{
