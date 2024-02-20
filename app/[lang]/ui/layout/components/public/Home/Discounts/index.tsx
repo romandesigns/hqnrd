@@ -10,12 +10,14 @@ export default function Discounts() {
         <CardDiscount
           imgSrc="/assets/general/five-percent.svg"
           eligibleDays="Applicable When Booking 5 days"
-          color="primary"
+          borderColor="border-primary-500"
+          bgColor="bg-primary-500/90"
         />
         <CardDiscount
           imgSrc="/assets/general/eight-percent.svg"
           eligibleDays="Applicable When Booking 8 days"
-          color="neutral"
+          borderColor="border-neutral-500"
+          bgColor="bg-neutral-500/90"
         />
       </article>
       <div className="bg-[url('/assets/general/travel-bag.svg')] bg-no-repeat bg-[left_bottom_-2rem] bg-[length:20%] absolute top-0 left-0 right-0 bottom-0 opacity-10" />

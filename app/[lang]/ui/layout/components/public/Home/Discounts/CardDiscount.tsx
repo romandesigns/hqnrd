@@ -1,14 +1,17 @@
 import Image from "next/image";
 import React from "react";
+import { twMerge } from "tailwind-merge";
 
 export default function CardDiscount({
   imgSrc,
   eligibleDays,
-  color,
+  borderColor,
+  bgColor,
 }: {
   imgSrc: string;
   eligibleDays: string;
-  color: string;
+  borderColor: string;
+  bgColor: string;
 }): React.JSX.Element {
   return (
     <div className="w-full h-full rounded-md md:px-4 relative">
@@ -24,13 +27,17 @@ export default function CardDiscount({
             />
           </figure>
           <div
-            className={`relative border p-3 w-full border-${color}-600 rounded-md`}
+            className={twMerge(
+              `relative border p-3 w-full rounded-md ${borderColor}`
+            )}
           >
             <span className="uppercase text-white relative z-[2] font-bold">
               Special Offer
             </span>
             <span
-              className={`absolute w-full h-full block border bg-${color}-600/90 top-2 -left-2 rounded-md`}
+              className={twMerge(
+                `absolute w-full h-full block top-2 -left-2 rounded-md ${bgColor}`
+              )}
             />
           </div>
         </div>
