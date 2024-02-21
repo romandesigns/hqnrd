@@ -1,7 +1,7 @@
 import { twMerge } from "tailwind-merge";
-import { SectionTypes } from "../../../../../../types";
+import { SectionPropTypes } from "../../../../../../types";
 
-export const Section = ({ children, className = "" }: SectionTypes) => {
+export const Section = ({ children, className = "" }: SectionPropTypes) => {
   return (
     <section
       className={twMerge(

@@ -1,8 +1,7 @@
-import React from "react";
-import { Section } from "../../../../containers";
 import { FcGoogle } from "@/app/[lang]/ui/icons";
-import TestimonialList from "./Testimonial";
 import { testimonials } from "@/public/assets/data/testimonials";
+import { Section } from "../../../../containers";
+import TestimonialList from "./Testimonial";
 
 export default function Testimonials() {
   return (

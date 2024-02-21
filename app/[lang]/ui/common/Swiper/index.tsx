@@ -1,8 +1,8 @@
 "use client";
-import React, { ReactElement } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import useViewportDimensions from "@/utils/hooks/useViewPort";
+import { ReactElement } from "react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { twMerge } from "tailwind-merge";
 
 // Define props for the SwiperComponent

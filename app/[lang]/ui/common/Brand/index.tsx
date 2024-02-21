@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { BrandLink } from "./BrandLink";
 import cn from "classnames";
+import Image from "next/image";
 import { twMerge } from "tailwind-merge";
+import { BrandLink } from "./BrandLink";
 
 export function Brand({ width = 21, height = 21, className = "" }) {
   return (

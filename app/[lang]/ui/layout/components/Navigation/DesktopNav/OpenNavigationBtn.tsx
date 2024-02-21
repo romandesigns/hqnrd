@@ -2,12 +2,15 @@
 import { FiMenu } from "@/app/[lang]/ui/icons";
 import { NavigationState, useNavToggle } from "@/store/mobile-navigation";
 import { IconButton } from "rsuite";
+import { twMerge } from "tailwind-merge";
 
-export const OpenNavBtn = () => {
+export const OpenNavBtn = ({ className = "" }: { className: string }) => {
   const { openNavigation } = useNavToggle((state: NavigationState) => state);
 
   return (
-    <span className="border rounded-md border-[#e5e5ea]">
+    <span
+      className={twMerge(`border rounded-md border-[#e5e5ea] ${className}`)}
+    >
       <IconButton
         icon={<FiMenu size={20} />}
         size="xs"

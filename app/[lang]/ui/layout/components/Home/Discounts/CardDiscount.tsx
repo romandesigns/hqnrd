@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-export default function CardDiscount({
+export function CardDiscount({
   imgSrc,
   eligibleDays,
   borderColor,

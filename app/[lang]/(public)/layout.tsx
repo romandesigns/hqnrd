@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 import { Locale, i18n } from "@/i18n-config";
 import { Footer, Navigation } from "../ui/layout/components";
-import { HomeHeader } from "../ui/layout/components/Header/Home";
+import { HomeHeader } from "../ui/layout/components/Home";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));

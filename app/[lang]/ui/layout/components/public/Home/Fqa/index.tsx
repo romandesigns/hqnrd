@@ -1,7 +1,6 @@
-import React from "react";
-import { Section } from "../../../../containers";
-import { PanelGroup, Panel } from "rsuite";
 import data from "@/public/assets/data/fqa.json";
+import { Panel, PanelGroup } from "rsuite";
+import { Section } from "../../../../containers";
 
 export const FrequentlyAskedQuestions = () => {
   return (

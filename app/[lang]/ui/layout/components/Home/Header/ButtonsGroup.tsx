@@ -1,7 +1,6 @@
-import React from "react";
-import { IconButton, ButtonToolbar, ButtonGroup } from "rsuite";
-import { PiSignInFill, RiDoorClosedLine } from "../../../../icons";
+import { ButtonToolbar, IconButton } from "rsuite";
 import { twMerge } from "tailwind-merge";
+import { PiSignInFill, RiDoorClosedLine } from "../../../../icons";
 
 export function HeaderButtonsGroup({ className = "" }: { className?: string }) {
   return (

@@ -1,8 +1,7 @@
-import React from "react";
 import { FaStar, FaStarHalfAlt } from "@/app/[lang]/ui/icons";
 import Image from "next/image";
 
-export default function ReviewCard() {
+export function ReviewCard() {
   return (
     <div className="grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] relative bg-white p-1 rounded-md w-full">
       <figure className="h-24 w-24 bg-slate-500 absolute -top-4 -left-4 rounded-md shadow-[7px_8px_12px_-4px_rgba(0,0,0,0.3)]  overflow-hidden">

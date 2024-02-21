@@ -4,8 +4,8 @@ import {
   BUSINESS_EMAIL,
   BUSINESS_WEB_DOMAIN,
 } from "@/constants";
+import { ShareDataPropTypes } from "../../../../../../types";
 import { ExLink, ShareBtn } from "../../../common";
-import { ShareDataTypes } from "../../../../../../types";
 import {
   AiFillPhone,
   FaInternetExplorer,
@@ -13,7 +13,7 @@ import {
   MdEmail,
 } from "../../../icons";
 
-export const Contact = ({ data }: ShareDataTypes) => {
+export const Contact = ({ data }: ShareDataPropTypes) => {
   return (
     <ul className="text-white text-sm w-full">
       <li className="w-full border-t border-primary-600 flex items-start">

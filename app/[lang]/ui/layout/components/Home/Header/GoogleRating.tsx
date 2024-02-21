@@ -1,6 +1,5 @@
-import React from "react";
-import { FcGoogle, FaStar, FaStarHalfAlt } from "../../../../icons";
 import { twMerge } from "tailwind-merge";
+import { FaStar, FaStarHalfAlt, FcGoogle } from "../../../../icons";
 
 export function GoogleRating({ className = "" }: { className?: string }) {
   return (
