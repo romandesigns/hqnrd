@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "rsuite";
+import { RoomCard } from "../../ui/common/RoomCard";
 
 export default function Page() {
   return (
