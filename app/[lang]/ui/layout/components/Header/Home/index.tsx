@@ -1,19 +1,20 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
 import homeBillboards from "@/public/assets/data/homeBillboard.json";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { GoogleRating } from "./GoogleRating";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/autoplay";
 import "swiper/css/effect-cards";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/autoplay";
 
-// import required modules
+import Image from "next/image";
+import type { Swiper as SwiperType } from "swiper";
 import {
   Autoplay,
   Controller,
@@ -21,15 +22,9 @@ import {
   EffectFade,
   Pagination,
 } from "swiper/modules";
-import Image from "next/image";
-import type { Swiper as SwiperType } from "swiper";
 import { HeaderButtonsGroup } from "./ButtonsGroup";
-import { ButtonToolbar, IconButton } from "rsuite";
-import {
-  MdGTranslate,
-  IoLogoWhatsapp,
-  FaLocationDot,
-} from "@/app/[lang]/ui/icons";
+import { UtilitiesIcons } from "./UtilitiesIcons";
+import { WeatherWidget } from "./WeatherWidget";
 
 export const HomeHeader = () => {
   const [controlledSwiper, setControlledSwiper] = useState<SwiperType | null>(
@@ -42,11 +37,11 @@ export const HomeHeader = () => {
     <div
       className={`w-[100%] h-[100%] rounded-md grid grid-cols-1 grid-rows-[1fr_auto_auto] md:grid-rows-1fr] items-center justify-center overflow-hidden transition-background relative`}
     >
-      <div className="z-[3] grid grid-cols-1 grid-rows-[auto_1fr] md:grid-cols-2 md:grid-rows-[1fr] px-2 w-full max-w-6xl mx-auto overflow-hidden rounded-md">
-        <div className="md:place-self-center w-full">
+      <div className="z-[3] h-full grid grid-cols-1 grid-rows-[15%_1fr] md:grid-cols-2 md:grid-rows-[1fr] px-2 w-full max-w-6xl mx-auto overflow-hidden rounded-md">
+        <div className="md:place-self-center w-full flex justify-center items-center md:block">
           {/* Header Text Description */}
           <GoogleRating className="hidden md:block md:mb-4" />
-          <div className="mb-10 md:mb-0 lg:m-0 md:bg-neutral-500/60 md:backdrop-filter md:backdrop-blur-md md:rounded-md z-[3] ">
+          <div className="md:mb-0 lg:m-0 md:bg-neutral-500/60 md:backdrop-filter md:backdrop-blur-md md:rounded-md z-[3] ">
             <Swiper
               modules={[Controller]}
               allowTouchMove={false}
@@ -62,7 +57,7 @@ export const HomeHeader = () => {
                     key={index}
                     className="text-center text-white md:text-left"
                   >
-                    <h3 className="font-extrabold text-lg md:font-bold sm:text-2xl md:text-xl md:mb-4 md:bg-neutral-500/60 md:p-4 rounded-tl-md rounded-tr-md">
+                    <h3 className="font-semibold text-md md:font-bold sm:text-2xl md:text-xl md:mb-4 md:bg-neutral-500/60 md:p-4 rounded-tl-md rounded-tr-md">
                       {slide.title}
                     </h3>
                     <p className="hidden md:block md:text-sm text-left leading-7m md:pt-1 md:p-5">
@@ -74,35 +69,18 @@ export const HomeHeader = () => {
             </Swiper>
             <HeaderButtonsGroup className="hidden relative z-[3] md:flex pr-32" />
           </div>
-          <ButtonToolbar className="md:mt-4 hidden md:flex">
-            <IconButton
-              size="md"
-              appearance="primary"
-              color="blue"
-              active
-              icon={<FaLocationDot />}
-            />
-            <IconButton
-              size="md"
-              appearance="primary"
-              color="green"
-              active
-              icon={<IoLogoWhatsapp />}
-            />
-            <IconButton
-              size="md"
-              appearance="default"
-              active
-              icon={<MdGTranslate />}
-            />
-          </ButtonToolbar>
+          {/* Utilities Icons Widget */}
+          <UtilitiesIcons />
+          {/* Header Widget */}
+          <WeatherWidget />
         </div>
+
         {/* Header Cards Swipper */}
         <Swiper
           effect={"cards"}
           grabCursor={true}
           modules={[EffectCards, Autoplay, Pagination, Controller]}
-          className={`w-[70vw] h-[60vh] md:w-[22rem] aspect-[9/16] shadow-lg self-start relative !z-[3] md:place-content-start`}
+          className={`w-[70vw] h-[60vh] md:w-[22rem] aspect-[9/16] shadow-lg place-self-center relative !z-[3] md:place-content-start`}
           pagination={{
             clickable: true,
           }}
