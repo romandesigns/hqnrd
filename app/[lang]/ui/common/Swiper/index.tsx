@@ -7,7 +7,7 @@ import { twMerge } from "tailwind-merge";
 
 // Define props for the SwiperComponent
 interface SwiperComponentProps<T> {
-  items: T[];
+  items: T[] | number[];
   className?: string;
   RenderComponent: (props: T) => ReactElement;
 }
@@ -33,8 +33,8 @@ export function SwiperComponent<T extends { reviewerName: string }>({
       modules={[Autoplay, Pagination, Navigation]}
       className={twMerge(`review_carousel flex items-stretch`, className)}
     >
-      {items.map((item) => (
-        <SwiperSlide key={item.reviewerName} className="py-1 pb-7">
+      {items.map((item, index) => (
+        <SwiperSlide key={index} className="py-1 pb-7">
           <RenderComponent {...item} />
         </SwiperSlide>
       ))}

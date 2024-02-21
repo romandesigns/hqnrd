@@ -1,6 +1,8 @@
-export function Heading() {
+import { twMerge } from "tailwind-merge";
+
+export function Heading({ className = "" }: { className?: string }) {
   return (
-    <div className="mb-20 md:mb-0 md:col-span-3">
+    <div className={twMerge(`mb-20 md:mb-0 md:col-span-3 ${className}`)}>
       <p className="inline-flex items-center text-xs justify-center text-tertiary-800 font-bold bg-white/50 p-1 rounded-full px-2">
         Available Discounts!
       </p>
