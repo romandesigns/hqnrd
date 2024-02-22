@@ -5,9 +5,12 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { twMerge } from "tailwind-merge";
 
+type TrendingListType = Array<
+  { a: number } | { b: number } | { c: number } | { d: number } | { e: number }
+>;
 // Define props for the SwiperComponent
 interface SwiperComponentProps<T> {
-  items: T[] | number[];
+  items: T[] | TrendingListType;
   className?: string;
   RenderComponent: (props: T) => ReactElement;
 }
@@ -35,7 +38,7 @@ export function SwiperComponent<T extends { reviewerName: string }>({
     >
       {items.map((item, index) => (
         <SwiperSlide key={index} className="py-1 pb-7">
-          <RenderComponent {...item} />
+          <RenderComponent {...(item as T)} />
         </SwiperSlide>
       ))}
     </Swiper>

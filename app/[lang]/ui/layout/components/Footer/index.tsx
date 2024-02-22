@@ -7,7 +7,7 @@ import { SocialMedia } from "./SocialMedia";
 export const Footer = () => {
   return (
     <footer className="bg-primary-500 py-10 px-2">
-      <Section className="px-4 py-2 flex justify-between items-center bg-white/10 rounded-md pb-4">
+      <Section className="px-4 py-2 flex justify-between items-center bg-white/10 rounded-md pb-4 w-full max-w-7xl mx-auto">
         <div className="flex items-center justify-start w-full py-5 relative">
           <Brand className="text-white" />
         </div>

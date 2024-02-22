@@ -1,47 +1,36 @@
 "use client";
 import { RoomCard } from "@/app/[lang]/ui/common/RoomCard";
-import React from "react";
-import { Heading } from "../../../Home";
 import { SwiperComponent } from "@/app/[lang]/ui/common/Swiper";
-
+import { Section } from "../../../../containers";
+import { Heading } from "../../../Home";
+type TrendingListType = Array<
+  { a: number } | { b: number } | { c: number } | { d: number } | { e: number }
+>;
 export default function Trendings() {
-  const trendingList = [{ a: 1 }, { b: 1 }, { c: 1 }, { d: 1 }, { e: 1 }];
+  const trendingList: TrendingListType = [
+    { a: 1 },
+    { b: 1 },
+    { c: 1 },
+    { d: 1 },
+    { e: 1 },
+  ];
   return (
-    <section
-      className="w-full relative rounded-md my-2 mb-8 bg-secondary-50
-        after:content-['']
-        after:absolute
-        after:w-full
-        after:h-full
-        after:-top-2
-        after:-z-[1]
-       after:bg-primary-200
-        after:rounded-md
-        after:-rotate-1
-        after:block
-        before:content-['']
-        before:absolute
-        before:w-full
-        before:h-full
-        before:-top-2
-        before:-z-[1]
-       before:bg-secondary-200
-        before:rounded-md
-        before:rotate-1
-        before:-skew-y-3
-        before:block
-        "
-    >
-      <article className="mx-auto w-full max-w-7xl flex items-center justify-center flex-col py-20 ">
-        <Heading className="flex items-center justify-center flex-col" />
-        <div className="w-11/12">
-          <SwiperComponent
-            items={trendingList}
-            RenderComponent={RoomCard}
-            className="testimonails-swiper"
+    <Section className="w-full relative rounded-md my-2 bg-primary-100/30">
+      <article className="w-full h-full sm:p-2 rounded-md">
+        <div className="w-full h-full p-2 rounded-md sm:px-4 relative flex flex-col justify-center items-center">
+          <Heading
+            className="flex items-center justify-center flex-col"
+            textColor="text-primary-500 bg-primary-100/50"
           />
+          <div className="w-11/12 md:my-10">
+            <SwiperComponent
+              items={trendingList}
+              RenderComponent={RoomCard}
+              className="testimonails-swiper"
+            />
+          </div>
         </div>
       </article>
-    </section>
+    </Section>
   );
 }

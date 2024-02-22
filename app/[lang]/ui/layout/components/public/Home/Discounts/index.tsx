@@ -5,7 +5,7 @@ export default function Discounts() {
   return (
     <Section className="w-full bg-tertiary-100/20 py-10 px-2 rounded-md sm:py-20 sm:px-10 relative">
       <article className="w-full h-full md:p-2 rounded-md grid grid-cols-[1fr] grid-rows-[auto_1fr_1fr] md:grid-cols-2 md:grid-rows-1 gap-y-4 z-[2]">
-        <Heading />
+        <Heading textColor="text-tertiary-500 bg-tertiary-100/50" />
         <CardDiscount
           imgSrc="/assets/general/five-percent.svg"
           eligibleDays="Applicable When Booking 5 days"
