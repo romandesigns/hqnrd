@@ -17,17 +17,19 @@ export default function Trendings() {
   ];
   return (
     <Section className="w-full relative rounded-md my-2 bg-primary-100/30">
-      <article className="w-full h-full sm:p-2 rounded-md">
-        <div className="w-full h-full p-2 rounded-md sm:px-4 relative flex flex-col justify-center items-center">
+      <article className="w-full h-full rounded-md sm:p-4 sm:border sm:border-primary-100/40">
+        <div className="p-2 sm:p-0 bg-primary-100/40 rounded-md sm:px-4 relative flex flex-col justify-center items-center">
           <Heading
             className="flex items-center justify-center flex-col"
-            textColor="text-primary-500 bg-primary-100/50"
+            highlightColor="text-primary-500 bg-primary-100/50"
+            highlightText="Trending Now!"
+            headingText="Discover Our Most Popular Rooms!"
           />
-          <div className="w-11/12 md:my-10">
+          <div className="w-full md:my-10 pl-0 md:pr-3">
             <SwiperComponent
               items={trendingList}
               RenderComponent={RoomCard}
-              className="testimonails-swiper"
+              className="testimonails-swiper !pl-0 md:!pl-3"
             />
           </div>
         </div>

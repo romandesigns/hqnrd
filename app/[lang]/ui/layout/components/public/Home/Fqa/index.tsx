@@ -4,7 +4,7 @@ import { Section } from "../../../../containers";
 
 export const FrequentlyAskedQuestions = () => {
   return (
-    <Section>
+    <Section className="w-full max-w-7xl">
       <h2 className="text-2xl my-8">Frequently Asked Questions</h2>
       <PanelGroup
         accordion

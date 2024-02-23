@@ -2,22 +2,26 @@ import { twMerge } from "tailwind-merge";
 
 export function Heading({
   className = "",
-  textColor = "",
+  highlightColor = "",
+  highlightText = "Insert Highlight",
+  headingText = "Insert Heading",
 }: {
   className?: string;
-  textColor?: string;
+  highlightColor?: string;
+  highlightText?: string;
+  headingText?: string;
 }) {
   return (
-    <div className={twMerge(`mb-20 md:mb-0 md:col-span-3 ${className}`)}>
+    <div className={twMerge(`my-6 md:mb-0 md:col-span-3 ${className}`)}>
       <p
         className={twMerge(
-          `inline-flex items-center text-xs justify-center text-red-800 font-bold bg-white/50 p-1 rounded-full px-2 ${textColor}`
+          `mt-4 inline-flex items-center text-xs justify-center text-black/50 font-bold bg-white/50 p-1 rounded-full px-2 ${highlightColor}`
         )}
       >
-        Popular Rooms!
+        {highlightText}
       </p>
       <h3 className="font-black my-2 text-neutral-500 underline text-xl">
-        Some of the most popular rooms
+        {headingText}
       </h3>
     </div>
   );

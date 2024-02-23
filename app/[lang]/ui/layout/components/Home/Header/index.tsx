@@ -72,7 +72,7 @@ export const HomeHeader = () => {
           {/* Utilities Icons Widget */}
           <UtilitiesIcons />
           {/* Header Widget */}
-          <WeatherWidget />
+          {/* <WeatherWidget /> */}
         </div>
 
         {/* Header Cards Swipper */}
