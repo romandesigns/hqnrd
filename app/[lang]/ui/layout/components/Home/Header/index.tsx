@@ -94,13 +94,17 @@ export const HomeHeader = () => {
           controller={{ control: [controlledSwiper, textControlledSwipper] }}
         >
           {homeBillboards.billboard.map((item, idx) => (
-            <SwiperSlide className="rounded-md overflow-hidden" key={idx}>
+            <SwiperSlide
+              className="rounded-md overflow-hidden relative"
+              key={idx}
+            >
               <Image
                 src={item.src}
                 alt="front building airview image"
                 fill
                 quality={100}
                 style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </SwiperSlide>
           ))}
@@ -128,14 +132,15 @@ export const HomeHeader = () => {
         {homeBillboards.billboard.map((slide, index) => {
           return (
             <SwiperSlide key={index}>
-              <figure className="w-full h-full after:content[*] top-0 left-0 right-0 after:absolute after:backdrop-filter after:backdrop-blur-lg after:w-full after:h-full after:block after:left-0 after:right-0 after:top-0 after:bottom-0 ">
+              <figure className="w-full h-full after:content[*] top-0 left-0 right-0 after:absolute after:backdrop-filter after:backdrop-blur-lg after:w-full after:h-full after:block after:left-0 after:right-0 after:top-0 after:bottom-0 relative">
                 <Image
                   className="w-full h-full object-cover"
                   src={slide.src}
                   placeholder="blur"
-                  fill={true}
+                  fill
                   blurDataURL="/assets/home/billboard/hqnrd-air-view-building.jpg"
                   alt={slide.title + " billoard image"}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </figure>
             </SwiperSlide>

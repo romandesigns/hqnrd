@@ -24,6 +24,7 @@ export function CardDiscount({
               height={300}
               src={imgSrc}
               alt={`${eligibleDays} image`}
+              style={{ height: "auto" }}
             />
           </figure>
           <div

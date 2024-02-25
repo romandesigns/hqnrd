@@ -2,7 +2,7 @@
 import { RoomCard } from "@/app/[lang]/ui/common/RoomCard";
 import { SwiperComponent } from "@/app/[lang]/ui/common/Swiper";
 import { Section } from "../../../../containers";
-import { Heading } from "../../../Home";
+import { Heading } from "../../../../../common";
 
 type TrendingListType = Array<
   { a: number } | { b: number } | { c: number } | { d: number } | { e: number }

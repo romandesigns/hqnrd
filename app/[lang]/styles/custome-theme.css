@@ -25,3 +25,14 @@
   /* --rs-btn-default-disabled-bg: red !important;
   --rs-btn-default-disabled-text: red !important; */
 }
+
+.home-gallery-tabs .rs-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.home-gallery-tabs .rs-nav-bar {
+  width: 100%;
+  max-width: 40rem;
+  border-top: 2px solid #e7e7e7 !important;
+}

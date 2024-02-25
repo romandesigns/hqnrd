@@ -1,5 +1,5 @@
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import type { Metadata } from "next";
 import { CustomProvider } from "rsuite";
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang={lang}>
       <body
-        className={`${poppins.className} antialiased text-neutral-600 font-sans font-normal min-h-dvh`}
+        className={`${poppins.className} antialiased text-neutral-600 font-sans font-normal min-h-dvh bg-[#f6f7f9]`}
       >
         <CustomProvider
           locale={lang === "en" ? enUS : lang === "es" ? esES : esES}
