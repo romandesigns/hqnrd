@@ -4,6 +4,7 @@ import { Tabs } from "rsuite";
 import { Section } from "../../../containers";
 import { CommonAreas } from "./CommonAreas";
 import { RoofTop } from "./RoofTop";
+import { RiGalleryFill } from "@/app/[lang]/ui/icons";
 
 export function Gallery() {
   return (
@@ -24,10 +25,14 @@ export function Gallery() {
             appearance="subtle"
             className="w-full home-gallery-tabs md:py-10"
           >
-            <Tabs.Tab eventKey="1" title="Common Areas">
+            <Tabs.Tab
+              eventKey="1"
+              title="Common Areas"
+              icon={<RiGalleryFill />}
+            >
               <CommonAreas />
             </Tabs.Tab>
-            <Tabs.Tab eventKey="2" title="Roof Top">
+            <Tabs.Tab eventKey="2" title="Roof Top" icon={<RiGalleryFill />}>
               <RoofTop />
             </Tabs.Tab>
           </Tabs>

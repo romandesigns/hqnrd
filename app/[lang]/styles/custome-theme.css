@@ -36,3 +36,7 @@
   max-width: 40rem;
   border-top: 2px solid #e7e7e7 !important;
 }
+
+.home-gallery-tabs .rs-nav-item-active {
+  font-weight: 700;
+}
