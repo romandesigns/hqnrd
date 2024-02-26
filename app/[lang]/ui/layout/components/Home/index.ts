@@ -1,6 +1,6 @@
 export { CardDiscount } from "./Discounts/CardDiscount";
 
-export { HomeHeader } from "./Header";
+export { HomeHeader } from "./Header/HeaderComponent";
 export { HeaderButtonsGroup } from "./Header/ButtonsGroup";
 export { GoogleRating } from "./Header/GoogleRating";
 export { UtilitiesIcons } from "./Header/UtilitiesIcons";
