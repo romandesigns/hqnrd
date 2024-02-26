@@ -1,11 +1,10 @@
 "use client";
-import React from "react";
+import { Heading } from "@/app/[lang]/ui/common";
+import { RiGalleryFill } from "@/app/[lang]/ui/icons";
 import { Tabs } from "rsuite";
 import { Section } from "../../../containers";
 import { CommonAreas } from "./CommonAreas";
 import { RoofTop } from "./RoofTop";
-import { RiGalleryFill } from "@/app/[lang]/ui/icons";
-import { Heading } from "@/app/[lang]/ui/common";
 
 export function Gallery() {
   return (

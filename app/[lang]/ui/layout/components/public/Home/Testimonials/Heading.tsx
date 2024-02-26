@@ -1,4 +1,3 @@
-import React from "react";
 import { FcGoogle } from "@/app/[lang]/ui/icons";
 
 export function Heading() {

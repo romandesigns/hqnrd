@@ -6,5 +6,5 @@ export { GoogleRating } from "./Header/GoogleRating";
 export { UtilitiesIcons } from "./Header/UtilitiesIcons";
 export { WeatherWidget } from "./Header/WeatherWidget";
 
-export { ReviewCard } from "./Testimonials/ReviewCard";
 export { Gallery } from "./Gallery";
+export { ReviewCard } from "./Testimonials/ReviewCard";

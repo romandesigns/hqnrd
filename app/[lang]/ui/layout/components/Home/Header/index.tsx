@@ -24,7 +24,6 @@ import {
 } from "swiper/modules";
 import { HeaderButtonsGroup } from "./ButtonsGroup";
 import { UtilitiesIcons } from "./UtilitiesIcons";
-import { WeatherWidget } from "./WeatherWidget";
 
 export const HomeHeader = () => {
   const [controlledSwiper, setControlledSwiper] = useState<SwiperType | null>(

@@ -1,12 +1,12 @@
 "use client";
-import { twMerge } from "tailwind-merge";
-import { Button } from "rsuite";
 import {
-  PiSignInFill,
-  GoHomeFill,
   BsDoorOpenFill,
+  GoHomeFill,
   MdDashboard,
+  PiSignInFill,
 } from "@/app/[lang]/ui/icons";
+import { Button } from "rsuite";
+import { twMerge } from "tailwind-merge";
 
 export const Menu = ({ className = "" }: { className: string }) => {
   return (

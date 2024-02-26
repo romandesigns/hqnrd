@@ -1,6 +1,6 @@
 import { Heading } from "@/app/[lang]/ui/common";
-import { Section } from "../../../containers";
 import { BiGroup } from "@/app/[lang]/ui/icons";
+import { Section } from "../../../containers";
 
 export function Category() {
   return (

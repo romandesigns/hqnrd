@@ -1,6 +1,6 @@
 import { Brand } from "@/app/[lang]/ui/common";
-import { OpenNavBtn } from "./OpenNavigationBtn";
 import { Menu } from "./Menu";
+import { OpenNavBtn } from "./OpenNavigationBtn";
 
 export const DesktopNavbar = () => {
   return (

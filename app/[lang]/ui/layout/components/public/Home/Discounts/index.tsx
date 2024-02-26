@@ -1,6 +1,6 @@
+import { Heading } from "../../../../../common";
 import { Section } from "../../../../containers/Section";
 import { CardDiscount } from "../../../Home";
-import { Heading } from "../../../../../common";
 
 export default function Discounts() {
   return (

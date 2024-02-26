@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  BUSINESS_MAP_LOCATION,
-  BUSINESS_WHATS_APP_DIRECT_CHAT,
-} from "@/constants";
-import Link from "next/link";
-import { ButtonGroup, ButtonToolbar, IconButton, Nav } from "rsuite";
+import { ExLink } from "@/app/[lang]/ui/common";
 import {
   FaLocationDot,
   IoLogoWhatsapp,
@@ -15,7 +10,12 @@ import {
   RiDoorClosedLine,
   RiHomeLine,
 } from "@/app/[lang]/ui/icons";
-import { ExLink } from "@/app/[lang]/ui/common";
+import {
+  BUSINESS_MAP_LOCATION,
+  BUSINESS_WHATS_APP_DIRECT_CHAT,
+} from "@/constants";
+import Link from "next/link";
+import { ButtonGroup, ButtonToolbar, IconButton, Nav } from "rsuite";
 
 export const MobileNavMenu = () => {
   return (

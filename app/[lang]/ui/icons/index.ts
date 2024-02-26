@@ -29,11 +29,11 @@ export {
   AiFillPhone,
   AiOutlineYoutube,
 } from "react-icons/ai";
+export { BiGroup } from "react-icons/bi";
 export { FaSignInAlt, FaStar, FaStarHalfAlt } from "react-icons/fa";
 export { FcGoogle } from "react-icons/fc";
+export { GiWaterBottle } from "react-icons/gi";
 export { ImInstagram } from "react-icons/im";
 export { IoLogoWhatsapp } from "react-icons/io";
-export { GiWaterBottle } from "react-icons/gi";
-export { PiShareNetworkBold, PiFanBold } from "react-icons/pi";
+export { PiFanBold, PiShareNetworkBold } from "react-icons/pi";
 export { RiGalleryFill } from "react-icons/ri";
-export { BiGroup } from "react-icons/bi";
