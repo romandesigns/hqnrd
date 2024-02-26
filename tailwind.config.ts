@@ -28,7 +28,7 @@ const config: Config = {
         black: "900",
       },
       colors: {
-        brand_neutral: "#1a1a1a",
+        brand_neutral: "#181818",
         brand_accent: "#0b5fa3",
         primary: {
           50: "#f2fbff",
