@@ -36,3 +36,4 @@ export { IoLogoWhatsapp } from "react-icons/io";
 export { GiWaterBottle } from "react-icons/gi";
 export { PiShareNetworkBold, PiFanBold } from "react-icons/pi";
 export { RiGalleryFill } from "react-icons/ri";
+export { BiGroup } from "react-icons/bi";
