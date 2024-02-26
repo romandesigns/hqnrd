@@ -28,8 +28,8 @@ const config: Config = {
         black: "900",
       },
       colors: {
-        prime_dark: "#1a1a1a",
-        prime_cool: "#0b5fa3",
+        brand_neutral: "#1a1a1a",
+        brand_accent: "#0b5fa3",
         primary: {
           50: "#f2fbff",
           100: "#bddef0",
