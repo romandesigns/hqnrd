@@ -26,7 +26,7 @@ export default function Discounts() {
           />
         </div>
       </article>
-      <div className="bg-[url('/assets/general/travel-bag.svg')] bg-no-repeat bg-[left_bottom_-2rem] bg-[length:20%] absolute top-0 left-0 right-0 bottom-0 opacity-10" />
+      <div className="bg-[url('/assets/general/bag.svg')] bg-no-repeat bg-[right_4rem_bottom] bg-[length:18%] absolute top-0 left-0 right-0 bottom-0 opacity-[0.04]" />
     </Section>
   );
 }

@@ -4,7 +4,7 @@ import { Section } from "../../../containers";
 
 export function Category() {
   return (
-    <Section className="my-2 p-2 snap-y flex items-center justify-center w-full py-10 px-2 rounded-md sm:py-20 sm:px-10">
+    <Section className="my-2 p-2 snap-y flex items-center justify-center w-full py-10 px-2 rounded-md sm:py-20 sm:px-10 relative">
       <article className="w-full h-full sm:p-4 sm:border sm:border-neutral-100/10 rounded-md">
         <div className="w-full mx-auto max-w-7xl text-center flex flex-items justify-center items-center flex-col h-full bg-neutral-100/10 rounded-md p-2 py-10">
           <Heading
@@ -12,7 +12,7 @@ export function Category() {
             headingText="Select your Room Type and reserve now!"
             highlightColor="text-neutral-500 font-bold bg-neutral-100/50"
           />
-          <ul className="md:py-10 h-[36rem] sm:h-[40rem] grid md:grid-cols-6 md:grid-rows-3 grid-cols-2 w-full gap-2 md:px-60">
+          <ul className="md:py-10 h-[36rem] sm:h-[40rem] grid md:grid-cols-6 md:grid-rows-3 grid-cols-2 w-full gap-2 md:px-20 lg:px-60">
             <li className="overflow-hidden md:delay-75 rounded-md border font-bold p-3 bg-white flex items-center justify-center md:col-start-5 md:col-end-7 md:row-start-3 md:row-end-4">
               <div className="w-full relative h-full md:hover:shadow-lg hover:cursor-pointer focus:shadow-sm md:transition md:duration-150 ease-out md:hover:ease-in flex items-center justify-center shadow-sm rounded-md border border-neutral-100/15 flex-col">
                 <span>Basic</span>
@@ -94,6 +94,7 @@ export function Category() {
           </ul>
         </div>
       </article>
+      <div className="hiddens sm:block bg-[url('/assets/general/family.svg')] bg-no-repeat bg-[left_-4rem_bottom_-3rem] bg-[length:60%] absolute top-0 left-0 right-0 bottom-0 opacity-[0.03] -z-[2] sm:bg-[length:40%] md:bg-[length:30%] lg:bg-[length:30%] lg:bg-[left_-2rem_bottom_-3rem]" />
     </Section>
   );
 }

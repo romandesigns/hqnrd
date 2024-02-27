@@ -8,3 +8,4 @@ export { WeatherWidget } from "./Header/WeatherWidget";
 
 export { Gallery } from "./Gallery";
 export { ReviewCard } from "./Testimonials/ReviewCard";
+export { Amenities } from "./Amenities";
