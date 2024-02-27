@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
+    "@supabase/ssr": "^0.1.0",
+    "@supabase/supabase-js": "^2.39.7",
     "@vercel/analytics": "^1.2.1",
     "@vercel/speed-insights": "^1.0.10",
     "cheerio": "^1.0.0-rc.12",
