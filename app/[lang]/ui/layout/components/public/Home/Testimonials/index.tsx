@@ -12,7 +12,6 @@ export default function Testimonials() {
           <div className="my-20 ">
             <TestimonialList testimonials={testimonials} />
           </div>
-          {/* <div className="bg-[url('/assets/general/quotes-icon.svg')] bg-no-repeat bg-[right_-6rem_bottom_-2rem] absolute top-0 left-0 right-0 bottom-0 z-0 opacity-10" /> */}
         </div>
       </article>
       <div className="bg-[url('/assets/general/quotes-icon.svg')] bg-no-repeat bg-[right_0rem_bottom] lg:bg-[length:30%] bg-[length:70%] absolute top-0 left-0 right-0 bottom-0 opacity-[0.08] -z-[2]" />
