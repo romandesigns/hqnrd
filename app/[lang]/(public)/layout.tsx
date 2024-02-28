@@ -15,8 +15,6 @@ export const metadata: Metadata = {
 };
 
 import { Locale, i18n } from "@/i18n-config";
-import { Footer, Navigation } from "../ui/layout/components";
-import { HomeHeader } from "../ui/layout/components/Home";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -37,15 +35,8 @@ export default function RootLayout({
         <CustomProvider
           locale={lang === "en" ? enUS : lang === "es" ? esES : esES}
         >
-          <Navigation />
-          <header className="h-screen flex items-stretch justify-stretch p-2 header-height">
-            <div className="bg-gradient-to-tl from-primary-200 to-neutral-200 flex-1 rounded-md">
-              <HomeHeader />
-            </div>
-          </header>
           {children}
           <Analytics />
-          <Footer />
         </CustomProvider>
         <SpeedInsights />
       </body>
