@@ -19,7 +19,10 @@ function getLocale(request: NextRequest): string | undefined {
 }
 
 export async function middleware(request: NextRequest) {
+  // Continue with session update
   await updateSession(request);
+
+  // Locale negotiation and redirection logic
   const pathname = request.nextUrl.pathname;
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
@@ -36,8 +39,8 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Matcher ignoring `/_next/` and `/api/`
+  // Update matcher according to provided documentation, keeping your custom exclusions
   matcher: [
-    "/((?!_next/static|_next/image|assets|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+    "/((?!_next/static|_next/image|favicon.ico|assets|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 };
