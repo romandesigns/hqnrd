@@ -1,6 +1,7 @@
 import { Brand } from "@/app/[lang]/ui/common";
 import { Menu } from "./Menu";
 import { OpenNavBtn } from "./OpenNavigationBtn";
+import { Button, Navbar, Nav } from "rsuite";
 
 export const DesktopNavbar = () => {
   return (
