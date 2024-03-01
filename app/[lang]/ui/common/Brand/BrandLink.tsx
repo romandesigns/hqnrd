@@ -18,7 +18,7 @@ export const BrandLink = ({
       <Nav.Item
         as={Link}
         href={linkPath}
-        className={twMerge(`flex items-start justify-start p-0 ${className}`)}
+        className={twMerge(`flex items-start justify-start p-0  ${className}`)}
       >
         {children}
       </Nav.Item>

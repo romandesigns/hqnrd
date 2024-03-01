@@ -36,6 +36,7 @@ export {
   MdVpnKey,
   MdWifi,
   MdOutlineFamilyRestroom,
+  MdOutlineEmail,
 } from "react-icons/md";
 // Social
 export {
@@ -50,7 +51,7 @@ export { FcGoogle } from "react-icons/fc";
 export { GiCctvCamera, GiWaterBottle } from "react-icons/gi";
 export { GrToast } from "react-icons/gr";
 export { ImInstagram } from "react-icons/im";
-export { IoLogoWhatsapp } from "react-icons/io";
+export { IoLogoWhatsapp, IoMdArrowRoundBack } from "react-icons/io";
 export {
   PiCouch,
   PiFanBold,

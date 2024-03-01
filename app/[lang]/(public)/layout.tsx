@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang={lang}>
       <body
-        className={`${poppins.className} antialiased text-neutral-600 font-sans font-normal min-h-dvh bg-[#f6f7f9]`}
+        className={`${poppins.className} antialiased text-brand_neutral font-sans font-normal min-h-dvh bg-[#f6f7f9]`}
       >
         <CustomProvider
           locale={lang === "en" ? enUS : lang === "es" ? esES : esES}

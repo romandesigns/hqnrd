@@ -5,7 +5,7 @@ import { BrandLink } from "./BrandLink";
 
 export function Brand({ width = 21, height = 21, className = "" }) {
   return (
-    <BrandLink linkPath={"/"} className={twMerge(cn(className))}>
+    <BrandLink linkPath={"/"} className={twMerge(className)}>
       <>
         <Image
           src="/assets/general/logo-original.svg"
@@ -16,10 +16,10 @@ export function Brand({ width = 21, height = 21, className = "" }) {
           priority
         />
         <div className="flex items-start justify-center flex-col pl-2">
-          <h1 className="font-black text-xs uppercase mt-1">
+          <h1 className="font-black text-xs uppercase mt-1 text-brand_neutral">
             Hotel Quinto Nivel RD
           </h1>
-          <p className="font-medium text-xs text-inherit">
+          <p className="font-medium text-xs text-brand_neutral">
             Como estar en casa!
           </p>
         </div>
