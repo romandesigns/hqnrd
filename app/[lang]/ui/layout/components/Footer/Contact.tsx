@@ -15,7 +15,7 @@ import {
 
 export const Contact = ({ data }: ShareDataPropTypes) => {
   return (
-    <ul className="text-white text-sm w-full">
+    <ul className="text-white text-sm w-full space-y-3 [&_li_a]:hover:text-white">
       <li className="w-full border-t border-primary-600 flex items-start">
         <div className="heading-h3 bg-primary-600 p-2 py-1 rounded-bl-md rounded-br-md">
           <h3 className="text-xs font-semibold">Contact Us</h3>

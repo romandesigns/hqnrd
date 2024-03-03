@@ -8,7 +8,7 @@ import { AiFillFacebook, ImInstagram } from "../../../icons";
 
 export const SocialMedia = () => {
   return (
-    <ul className="text-white text-sm w-full mt-4 md:mt-0">
+    <ul className="text-white text-sm w-full mt-4 md:mt-0 space-y-3">
       <li className="w-full border-t border-primary-600 flex items-start mt-6 md:mt-0">
         <div className="heading-h3 bg-primary-600 p-2 py-1 rounded-bl-md rounded-br-md">
           <h3 className="text-xs font-semibold">Social Media</h3>

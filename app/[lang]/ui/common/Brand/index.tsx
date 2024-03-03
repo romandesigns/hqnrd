@@ -16,10 +16,10 @@ export function Brand({ width = 21, height = 21, className = "" }) {
           priority
         />
         <div className="flex items-start justify-center flex-col pl-2">
-          <h1 className="font-black text-xs uppercase mt-1 text-brand_neutral">
+          <h1 className="font-black text-xs uppercase mt-1 text-inherit">
             Hotel Quinto Nivel RD
           </h1>
-          <p className="font-medium text-xs text-brand_neutral">
+          <p className="font-medium text-xs text-inherit">
             Como estar en casa!
           </p>
         </div>

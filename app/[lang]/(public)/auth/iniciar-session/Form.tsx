@@ -1,8 +1,8 @@
 "use client";
 import { InputPhone } from "@/app/[lang]/ui/common/Form";
 import React from "react";
-import { Form, DatePicker, Input, Radio, RadioGroup } from "rsuite";
 import { Country } from "react-phone-number-input";
+import { DatePicker, Form, Input, Radio, RadioGroup } from "rsuite";
 
 export function SignUpForm({
   lang,
