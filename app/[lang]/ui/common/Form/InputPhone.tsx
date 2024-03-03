@@ -17,7 +17,7 @@ export function InputPhone({
   return (
     <div
       className={twMerge(
-        `border-neutral-100/50 focus-within:ring-[.18rem] focus-within:border-brand_accent focus-within:ring-brand_accent/30 inline-block w-full border rounded-md ${
+        `border-neutral-100/50 focus-within:ring-[.18rem] focus-within:border-brand_accent focus-within:ring-brand_accent/30 inline-block w-full border rounded-md p-[.4rem] ${
           className ? className : ""
         }`
       )}
@@ -28,7 +28,7 @@ export function InputPhone({
         value={phone}
         defaultCountry={locale as Country}
         name="tel"
-        className="focus:outline-none focus:ring-primary-100 flex"
+        className="focus:outline-none focus:ring-primary-100 flex [&_input]:focus:outline-none [&_input]:hover:outline-none [&_input]:outline-none [&_input]:placeholder:text-xs"
       />
     </div>
   );

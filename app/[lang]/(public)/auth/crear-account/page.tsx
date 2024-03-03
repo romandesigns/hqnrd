@@ -1,9 +1,9 @@
-import React from "react";
-import { Country } from "react-phone-number-input";
-import { SignUpForm } from "./Form";
 import { Brand } from "@/app/[lang]/ui/common";
-import { BackButton } from "../../../ui/common/Btns";
 import { headers } from "next/headers";
+import Link from "next/link";
+import { Country } from "react-phone-number-input";
+import { BackButton } from "../../../ui/common/Btns";
+import { SignUpForm } from "./Form";
 
 export default function Page({
   params: { lang },
@@ -28,11 +28,22 @@ export default function Page({
               <Brand />
             </div>
             <div className="place-self-center w-3/5">
-              <h1 className="font-bold text-center my-5">
-                Create your Account
-              </h1>
-              <p>Book your Next Stay</p>
-              <SignUpForm lang={lang} locale={locale} />
+              <div className="my-8 flex items-center justify-center flex-col">
+                <h1 className="font-bold text-center text-xl">
+                  Create your Account
+                </h1>
+                <p>Book your Next Stay</p>
+              </div>
+              <SignUpForm lang={lang} locale={locale as Country} />
+              <p className="text-xs flex items-center my-4">
+                Already have an account ?{" "}
+                <Link
+                  href="/auth/iniciar-session"
+                  className="font-semibold text-primary-600 mx-2 underline"
+                >
+                  Login
+                </Link>
+              </p>
             </div>
           </article>
         </div>

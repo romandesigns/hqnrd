@@ -4,6 +4,7 @@
 @import "rsuite/dist/rsuite.min.css";
 @import "./custome-theme.css";
 @import "./swiper.css";
+@import "react-phone-number-input/style.css";
 
 .header-height {
   height: calc(100vh - 51px) !important;
@@ -47,6 +48,10 @@
   z-index: -1;
   animation: animate 20s linear infinite;
   border-radius: 10px;
+}
+
+.rs-stack-item .rs-picker-toolbar-right button {
+  background-color: #1a73b2 !important;
 }
 
 @keyframes animate {
