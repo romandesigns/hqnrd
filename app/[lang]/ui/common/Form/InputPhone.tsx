@@ -28,6 +28,7 @@ export function InputPhone({
         value={phone}
         defaultCountry={locale as Country}
         name="tel"
+        required
         className="focus:outline-none focus:ring-primary-100 flex [&_input]:focus:outline-none [&_input]:hover:outline-none [&_input]:outline-none [&_input]:placeholder:text-xs"
       />
     </div>

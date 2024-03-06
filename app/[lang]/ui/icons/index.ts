@@ -31,12 +31,12 @@ export {
   MdGTranslate,
   MdOutlineBathtub,
   MdOutlineBlender,
+  MdOutlineEmail,
+  MdOutlineFamilyRestroom,
   MdOutlineLocalLaundryService,
   MdOutlineWaterDrop,
   MdVpnKey,
   MdWifi,
-  MdOutlineFamilyRestroom,
-  MdOutlineEmail,
 } from "react-icons/md";
 // Social
 export {
@@ -46,7 +46,7 @@ export {
   AiOutlineYoutube,
 } from "react-icons/ai";
 export { BiCloset, BiGroup } from "react-icons/bi";
-export { FaSignInAlt, FaStar, FaStarHalfAlt, FaFan } from "react-icons/fa";
+export { FaFan, FaSignInAlt, FaStar, FaStarHalfAlt } from "react-icons/fa";
 export { FcGoogle } from "react-icons/fc";
 export { GiCctvCamera, GiWaterBottle } from "react-icons/gi";
 export { GrToast } from "react-icons/gr";
@@ -55,8 +55,8 @@ export { IoLogoWhatsapp, IoMdArrowRoundBack } from "react-icons/io";
 export {
   PiCouch,
   PiFanBold,
+  PiFanFill,
   PiShareNetworkBold,
   PiTelevisionSimple,
-  PiFanFill,
 } from "react-icons/pi";
 export { RiGalleryFill, RiNetflixFill } from "react-icons/ri";

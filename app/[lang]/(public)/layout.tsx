@@ -36,9 +36,7 @@ export default function RootLayout({
           locale={lang === "en" ? enUS : lang === "es" ? esES : esES}
         >
           {children}
-          <Analytics />
         </CustomProvider>
-        <SpeedInsights />
       </body>
     </html>
   );

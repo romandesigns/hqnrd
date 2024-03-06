@@ -3,7 +3,17 @@ import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import { BrandLink } from "./BrandLink";
 
-export function Brand({ width = 21, height = 21, className = "" }) {
+export function Brand({
+  width = 21,
+  height = 21,
+  className = "",
+  hideTypo,
+}: {
+  width?: number;
+  height?: number;
+  className?: string;
+  hideTypo?: boolean;
+}) {
   return (
     <BrandLink linkPath={"/"} className={twMerge(className)}>
       <>
@@ -15,7 +25,14 @@ export function Brand({ width = 21, height = 21, className = "" }) {
           style={{ width: "1.5rem", height: "auto" }}
           priority
         />
-        <div className="flex items-start justify-center flex-col pl-2">
+        <div
+          className={twMerge(
+            `flex items-start justify-center flex-col pl-2`,
+            cn({
+              hidden: hideTypo,
+            })
+          )}
+        >
           <h1 className="font-black text-xs uppercase mt-1 text-inherit">
             Hotel Quinto Nivel RD
           </h1>
