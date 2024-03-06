@@ -6,10 +6,10 @@ export const userSchema = z
     sex: z.enum(["male", "female", "other"]),
     email: z.string().email(),
     telCountry: z.string(), // You might want to validate against a list of country codes
-    tel: z.string(), // Custom regex can be used to validate phone numbers
+    phone: z.string(), // Custom regex can be used to validate phone numbers
     password: z.string(),
     confirmPassword: z.string(),
-    dob: z.string(),
+    dob: z.date(),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Passwords don't match",

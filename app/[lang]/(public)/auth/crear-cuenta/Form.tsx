@@ -50,12 +50,11 @@ export function SignUpForm({
       <div className="dateOfBirthPicker">
         <DatePicker
           placeholder="Select Date of Birth"
-          className="w-full [&_input]:placeholder:text-xs"
+          className="w-full [&_input]:placeholder:text-xs [&_input]:text-xs"
           name="myCalendar"
           appearance="default"
           color="blue"
           block={true}
-          size="lg"
           style={{ color: "red" }}
           onChange={(value) => setUserBirthDate(value)}
         />
