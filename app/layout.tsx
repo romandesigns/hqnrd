@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/Theme";
-import { Locale,i18n } from "@/i18n-config";
 import { poppins } from "@/components/fonts";
 
 const geistSans = Geist({
