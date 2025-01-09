@@ -5,6 +5,12 @@ The hotel offers a range of modern amenities and conveniences, ensuring a memora
 This project consists of a public-facing site where guests can book and manage their reservations. Additionally,
 hotel administrators can manage reservations and perform other administrative tasks.
 
+**Look and feel**
+- Minimalist
+- Glassy effect
+- Complementary color harmony
+- Pastel like color palette
+
 ### Core components
 - Public facing site
 - User and administraion dashboard
