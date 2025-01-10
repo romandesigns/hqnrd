@@ -5,7 +5,7 @@ export function Wrapper({
   className,
 }: {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }) {
-  return <div>{children}</div>;
+  return <div className="mx-auto w-full max-w-7xl border">{children}</div>;
 }

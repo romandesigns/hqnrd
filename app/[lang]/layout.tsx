@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from "next";
 import { i18n, Locale } from "@/i18n-config";
 import { LocaleSwitcher } from "@/components/features/LocaleSwitcher";
 import "@/styles/globals.css";
+import { Navigation } from "@/components/layout";
 
 export const metadata: Metadata = {
   title: "Hotel Quinto Nivel RD",
@@ -31,19 +32,18 @@ interface LayoutProps {
 export default async function RootLayout({ children, params }: LayoutProps) {
   const { lang } = await params;
   return (
-    <html lang={lang} 
-    className="scroll-smooth focus:scroll-auto"
-    suppressHydrationWarning>
-      <body
-        className={`${poppins.className} antialiased`}
-      >
-         <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <LocaleSwitcher lang={lang}/>
+    <html
+      lang={lang}
+      className="scroll-smooth focus:scroll-auto"
+      suppressHydrationWarning
+    >
+      <body className={`${poppins.className} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
         </ThemeProvider>
       </body>
