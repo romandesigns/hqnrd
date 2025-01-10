@@ -1,18 +1,9 @@
-import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "@/providers/Theme";
 import { poppins } from "@/components/fonts";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { ThemeProvider } from "@/providers/Theme";
+import type { Metadata, Viewport } from "next";
+import "@/styles/globals.css";
+import { i18n, Locale } from "@/i18n-config";
+import { LocaleSwitcher } from "@/components/features/LocaleSwitcher";
 
 export const metadata: Metadata = {
   title: "Hotel Quinto Nivel RD",
@@ -40,7 +31,7 @@ interface LayoutProps {
 export default async function RootLayout({ children, params }: LayoutProps) {
   const { lang } = await params;
   return (
-    <html lang="en" 
+    <html lang={lang} 
     className="scroll-smooth focus:scroll-auto"
     suppressHydrationWarning>
       <body
@@ -52,6 +43,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
             enableSystem
             disableTransitionOnChange
           >
+            <LocaleSwitcher lang={lang}/>
           {children}
         </ThemeProvider>
       </body>

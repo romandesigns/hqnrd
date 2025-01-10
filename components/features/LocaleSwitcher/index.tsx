@@ -2,9 +2,9 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { i18n, Locale } from "@/i18n-config";
 import cn from "classnames";
 import { twMerge } from "tailwind-merge";
+import { i18n, Locale } from "@/i18n-config";
 
 export const redirectedPathName = (locale: Locale, pathName: string) => {
   if (!pathName) return "/";
