@@ -8,6 +8,11 @@ body {
 
 @layer base {
   :root {
+    /* Brand Primary*/
+     --brand-primary-shade: #1873b0;
+     --brand-primary-base: #328ebe;
+     --brand-primary-tint: #d7eff6;
+
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;

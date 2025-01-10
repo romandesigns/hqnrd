@@ -1,9 +1,9 @@
 import { poppins } from "@/components/fonts";
 import { ThemeProvider } from "@/providers/Theme";
 import type { Metadata, Viewport } from "next";
-import "@/styles/globals.css";
 import { i18n, Locale } from "@/i18n-config";
 import { LocaleSwitcher } from "@/components/features/LocaleSwitcher";
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Hotel Quinto Nivel RD",
