@@ -4,6 +4,7 @@ import BoxReveal from "@/components/ui/box-reveal";
 import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n-config";
 import { GoogleStats } from "./GoogleStats";
+import { TextAnimate } from "@/components/ui/text-animate";
 
 export function TextContent({ lang }: { lang: Locale }) {
   return (
@@ -18,11 +19,15 @@ export function TextContent({ lang }: { lang: Locale }) {
           Experience unmatched comfort and elegance
         </h1>
       </BoxReveal>
-      <p className="text-center text-xs text-muted-foreground md:text-left md:text-sm">
+      <TextAnimate
+        delay={8}
+        animation="blurInUp"
+        by="character"
+        className="text-center text-xs text-muted-foreground md:text-left md:text-sm"
+      >
         Whether you're traveling solo, with family, or on a romantic escape, our
-        thoughtfully designed rooms cater to every need{" "}
-        <span className="font-bold underline">Visit us today!</span>
-      </p>
+        thoughtfully designed rooms cater to every need Visit us today!
+      </TextAnimate>
       <div className="mb-4 flex w-full items-center justify-center gap-2 md:justify-start">
         <Button>Explore Rooms</Button>
         <Button variant="secondary">Contact Us</Button>
