@@ -1,4 +1,4 @@
-import { ContactFeatures } from "@/components/features";
+import { ContactWidget } from "@/components/features";
 import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n-config";
 import { MotionMobileNavigation } from "@/motion/MotionMobileNavigation";
@@ -40,7 +40,7 @@ export function MobileMenu({ lang }: { lang: Locale }) {
             </Button>
           </MenuItem>
           <MenuItem className="mb-5 mt-20 block">
-            <ContactFeatures lang={lang} />
+            <ContactWidget lang={lang} />
           </MenuItem>
           <MenuItem className="block">
             <Button size="full" variant="default" className="py-4 text-xs">

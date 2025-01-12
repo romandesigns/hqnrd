@@ -1,5 +1,6 @@
-export { FaWhatsapp } from "react-icons/fa";
-export { FaList } from "react-icons/fa6";
-export { HiMenuAlt2 } from "react-icons/hi";
+export { FaWhatsapp, FaStar, FaStarHalfAlt } from "react-icons/fa";
+export { FaList, FaRegEnvelope } from "react-icons/fa6";
+export { HiMenuAlt2, HiLocationMarker } from "react-icons/hi";
 export { LuMap } from "react-icons/lu";
-export { MdTranslate } from "react-icons/md";
+export { MdTranslate, MdOutlineMarkEmailUnread } from "react-icons/md";
+export { FcGoogle } from "react-icons/fc";
