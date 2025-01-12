@@ -1,5 +1,6 @@
 import { ContactWidget } from "@/components/features";
 import { HiLocationMarker } from "@/components/icons";
+import BoxReveal from "@/components/ui/box-reveal";
 import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n-config";
 import { GoogleStats } from "./GoogleStats";
@@ -12,9 +13,11 @@ export function TextContent({ lang }: { lang: Locale }) {
         <HiLocationMarker />
         <span>In Salcedo, Republica Dominicana</span>
       </small>
-      <h1 className="text-center text-3xl font-black md:text-left md:text-5xl">
-        Experience unmatched comfort and elegance
-      </h1>
+      <BoxReveal>
+        <h1 className="text-center text-3xl font-black md:text-left md:text-5xl">
+          Experience unmatched comfort and elegance
+        </h1>
+      </BoxReveal>
       <p className="text-center text-xs text-muted-foreground md:text-left md:text-sm">
         Whether you're traveling solo, with family, or on a romantic escape, our
         thoughtfully designed rooms cater to every need{" "}
