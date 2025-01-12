@@ -9,9 +9,9 @@ body {
 @layer base {
   :root {
     /* Brand Primary*/
-     --brand-primary-shade: #1873b0;
-     --brand-primary-base: #328ebe;
-     --brand-primary-tint: #d7eff6;
+    --brand-primary-shade: #1873b0;
+    --brand-primary-base: #328ebe;
+    --brand-primary-tint: #d7eff6;
 
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -73,5 +73,25 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Shadows */
+  .hqnrd-shadow-xs {
+    @apply shadow-[0rem_0.5rem_1rem_0rem_black];
+  }
+  .hqnrd-shadow-sm {
+    @apply shadow-[0rem_0.5rem_1rem_0rem_black];
+  }
+  .hqnrd-shadow-md {
+    @apply shadow-[0rem_0.5rem_1rem_0rem_black];
+  }
+  .hqnrd-shadow-lg {
+    @apply shadow-[0rem_0.5rem_1rem_0rem_black];
+  }
+  /* Glass Effect */
+  .glass {
+    @apply overflow-hidden rounded-md border border-background/20 bg-opacity-50 p-2 backdrop-blur-lg;
   }
 }
