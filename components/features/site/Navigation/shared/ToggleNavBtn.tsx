@@ -6,8 +6,7 @@ import React from "react";
 import { HiMenuAlt2 } from "react-icons/hi";
 
 export function ToggleNavigationBtn() {
-  const { isOpen, toggleMobileNavigation } = useMobileNavigation();
-  console.log(isOpen);
+  const { toggleMobileNavigation } = useMobileNavigation();
   return (
     <Button size="icon" variant="ghost" onClick={toggleMobileNavigation}>
       <HiMenuAlt2 size={35} />
