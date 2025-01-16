@@ -30,7 +30,7 @@ export function DesktopMenu({ lang }: { lang: Locale }) {
         </Button>
       </MenuItem>
       <MenuItem>
-        <Button size="sm" variant="outline" asChild>
+        <Button size="sm" variant="secondary" asChild>
           <Link
             href={`/${lang}/auth/crear-cuenta`}
             className="text-center font-semibold"

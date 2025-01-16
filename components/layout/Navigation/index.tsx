@@ -4,7 +4,7 @@ import { Content } from "../container";
 
 export function Navigation({ lang }: { lang: Locale }) {
   return (
-    <nav className="flex items-center justify-center">
+    <nav className="sticky inset-0 z-[3] flex items-center justify-center bg-background/70 backdrop-blur-lg">
       <Content
         className="flex items-center justify-between p-2"
         direction="horizontal"
