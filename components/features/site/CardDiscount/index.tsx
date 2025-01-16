@@ -16,7 +16,7 @@ export function CardDiscount({
         <div className="relative overflow-hidden bg-transparent p-2 after:absolute after:content-['']">
           <div className="rounded-b-md p-2 shadow-[0_26px_0_10px_hsl(var(--muted))]">
             {highlight && (
-              <h1 className="rounded-md bg-foreground p-2 px-6 font-bold uppercase text-primary-foreground">
+              <h1 className="rounded-md bg-foreground p-2 px-6 font-extrabold uppercase text-primary-foreground">
                 {highlight}
               </h1>
             )}
@@ -27,10 +27,10 @@ export function CardDiscount({
       <div className="h-[35rem] bg-muted">
         <div className="h-full p-4">
           <div className="relative flex h-full items-center justify-center overflow-hidden rounded-md">
-            <h3 className="relative z-[1] text-[12.5rem] font-black">
+            <h3 className="relative z-[1] text-[12.5rem] font-black text-white">
               {percentage}%
             </h3>
-            <div className="from-bg-red-500 absolute inset-0 z-[1] bg-gradient-to-tl from-background/60 via-slate-200/5 to-foreground/50" />
+            <div className="absolute inset-0 z-[1] bg-gradient-to-tl from-background/60 via-slate-200/20 to-foreground/50" />
             <Image
               src="/assets/images/home/header/HQNRD-first-featured-image.webp"
               alt="random image"
