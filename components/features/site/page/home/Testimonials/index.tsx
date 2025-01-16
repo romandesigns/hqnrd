@@ -1,6 +1,6 @@
 import { Content, Section } from "@/components/layout";
 import React from "react";
-import { CaredReview } from "../../../CardReview";
+import { CaredReview } from "./CardReview";
 import { HeadingSection } from "@/components/features/site/Headings";
 
 export function Testimonials() {

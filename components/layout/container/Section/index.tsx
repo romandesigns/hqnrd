@@ -11,6 +11,10 @@ export function Section({
   sectionName?: string;
 }) {
   return (
-    <section className={cn(`w-full py-56 ${className}`)}>{children}</section>
+    <section className={cn(`w-full ${className}`)}>
+      {/* <div className="block h-80" /> */}
+      {children}
+      {/* <div className="block h-80" /> */}
+    </section>
   );
 }

@@ -1,14 +1,13 @@
 import { HeadingSection } from "@/components/features/site/Headings";
 import { Content, Section } from "@/components/layout";
-import { CardDiscount } from "../../../CardDiscount";
+import { CardDiscount } from "./CardDiscount";
 import { Button } from "@/components/ui/button";
 
-export function Discount() {
+export function Discounts() {
   return (
     <Section sectionName="discounts">
       <Content className="gap-4 rounded-md border p-4 pt-8">
         <HeadingSection
-          showBorders
           title="Exclusive Discounts"
           description="The longer you stay, the more you save!"
         />
