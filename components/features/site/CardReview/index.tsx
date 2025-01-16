@@ -31,7 +31,7 @@ export function CaredReview() {
             was pleasantly.
           </p>
         </div>
-        <div className="boerder-t rounded-b-md border-t bg-muted-foreground/5 p-4">
+        <div className="rounded-b-md border-t bg-muted-foreground/5 p-4">
           <div className="flex items-center gap-2">
             <p className="font-bold">4.7</p>
             <div className="flex items-center">

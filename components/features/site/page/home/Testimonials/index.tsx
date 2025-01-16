@@ -8,6 +8,7 @@ export function Testimonials() {
     <Section sectionName="testimonials">
       <Content className="flex-row justify-center">
         <HeadingSection
+          showBorders
           title="Testimonials"
           description="Don't hear it from us, hear it from our guests!"
         />
