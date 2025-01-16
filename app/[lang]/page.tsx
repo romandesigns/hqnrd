@@ -4,6 +4,7 @@ import {
   Header,
   Testimonials,
 } from "@/components/features/site/page/home";
+import { Surrounding } from "@/components/features/site/page/home/Surrounding";
 import {} from "@/components/features/site/page/home/Testimonials";
 import { ClientLayout } from "@/components/layout/container";
 import { getDictionary } from "@/get-dictionary";
@@ -24,6 +25,7 @@ export default async function Page(props: {
         <Testimonials />
         <Discounts />
         <Categories />
+        <Surrounding />
       </main>
     </ClientLayout>
   );
