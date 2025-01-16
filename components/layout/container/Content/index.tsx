@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-export function Wrapper({
+export function Content({
   children,
   className,
   direction,

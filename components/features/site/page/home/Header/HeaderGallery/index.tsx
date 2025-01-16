@@ -6,7 +6,7 @@ export function HeroGallery() {
     <>
       <article className="relative flex h-auto w-full items-center justify-center p-2">
         {/* Top left image */}
-        <figure className="absolute -top-10 left-2 aspect-square h-auto w-[25%] rounded-md border-8 border-foreground" />
+        <figure className="absolute -top-10 left-2 aspect-square h-auto w-[25%] rounded-md border-8 border-muted" />
         {/* Top Right image */}
         <figure className="glass absolute -top-10 right-2 z-[2] aspect-square h-auto w-[25%] rounded-md">
           <div className="relative aspect-square h-full w-full overflow-hidden rounded-md">

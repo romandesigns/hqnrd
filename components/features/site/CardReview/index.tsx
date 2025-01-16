@@ -1,0 +1,60 @@
+import React from "react";
+import Image from "next/image";
+import { FaStar } from "@/components/icons";
+
+export function CaredReview() {
+  return (
+    <div className="glass rounded-lg">
+      <div className="flex items-end">
+        <div className="h-12 rounded-tl-md bg-muted p-1" />
+        <div className="relative overflow-hidden bg-transparent p-2 after:absolute after:content-['']">
+          <div className="rounded-b-md p-2 shadow-[0_66px_0_10px_hsl(var(--muted))]">
+            {/* <h1>This is a test</h1> */}
+            <Image
+              src="/assets/images/home/header/HQNRD-first-featured-image.webp"
+              alt="random image"
+              height={80}
+              width={80}
+              className="rounded-md"
+            />
+          </div>
+        </div>
+        <div className="flex h-12 flex-1 items-center justify-start rounded-tr-md bg-muted p-2 font-bold">
+          Roman Feliz
+        </div>
+      </div>
+      <div className="rounded-b-md bg-muted">
+        <div className="p-4 pt-0">
+          {/* <h3 className="py-2 text-center font-bold">Roman Feliz</h3> */}
+          <p className="text-xs leading-6 text-gray-500 text-muted-foreground">
+            The hotel is located in the heart of the city, close to the main. I
+            was pleasantly.
+          </p>
+        </div>
+        <div className="boerder-t rounded-b-md border-t bg-muted-foreground/5 p-4">
+          <div className="flex items-center gap-2">
+            <p className="font-bold">4.7</p>
+            <div className="flex items-center">
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+            </div>
+          </div>
+          <div className="flex gap-4 text-xs">
+            <p>
+              Rooms: <span className="font-bold">5</span>
+            </p>
+            <p>
+              Location: <span className="font-bold">5</span>
+            </p>
+            <p>
+              Service: <span className="font-bold">5</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

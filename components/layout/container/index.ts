@@ -1,3 +1,3 @@
-export { Wrapper } from "./Wrapper";
+export { Content } from "./Content";
 export { Section } from "./Section";
 export { ClientLayout } from "./ClientLayout";
