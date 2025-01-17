@@ -15,6 +15,8 @@ export function Trending() {
       </Content>
       <Content className="grid grid-cols-3 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <CardRoom />
+        <CardRoom />
+        <CardRoom />
       </Content>
     </Section>
   );
