@@ -3,6 +3,7 @@ import {
   Discounts,
   Header,
   Testimonials,
+  Trending,
 } from "@/components/features/site/page/home";
 import { Surrounding } from "@/components/features/site/page/home/Surrounding";
 import {} from "@/components/features/site/page/home/Testimonials";
@@ -26,6 +27,7 @@ export default async function Page(props: {
         <Discounts />
         <Categories />
         <Surrounding />
+        <Trending />
       </main>
     </ClientLayout>
   );
