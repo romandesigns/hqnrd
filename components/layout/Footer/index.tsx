@@ -16,12 +16,12 @@ export function Footer({ lang }: { lang: Locale }) {
     <footer className="bg-muted-foreground/10 p-2 md:py-10">
       <Content className="rounded-md bg-muted p-10">
         <Fqa />
-        <div className="mt-20 flex items-center justify-between gap-2 border-t border-background pt-20">
+        <div className="flex items-center justify-between gap-2 border-t border-background pt-20">
           <Brand lang={lang} />
           <FaShareNodes />
         </div>
-        <article className="mt-10 grid grid-cols-1 grid-rows-2 gap-10 md:grid-cols-2 md:grid-rows-1">
-          <ul className="py-10s mt-10 space-y-6 text-xs md:text-[0.80rem]">
+        <article className="grid-rows-auto mt-4 grid grid-cols-1 md:grid-cols-2 md:grid-rows-1 md:gap-10">
+          <ul className="mt-10 space-y-6 py-4 text-xs md:py-10 md:text-[0.80rem]">
             <li className="flex items-center justify-start gap-2">
               <span>
                 <TbBrandWhatsappFilled />
@@ -49,7 +49,7 @@ export function Footer({ lang }: { lang: Locale }) {
               <span>https://hotelquintonivelrd.com</span>
             </li>
           </ul>
-          <ul className="py-10s mt-10 space-y-6 text-xs md:text-[0.80rem]">
+          <ul className="space-y-6 text-xs md:mt-10 md:py-10 md:text-[0.80rem]">
             <li className="flex items-center justify-start gap-2">
               <span>
                 <FaFacebookSquare />
