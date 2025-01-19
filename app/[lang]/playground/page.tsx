@@ -1,61 +1,140 @@
-import { FaStar } from "@/components/icons";
-import React from "react";
-import Image from "next/image";
+"use client";
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function Page() {
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { CaredReview } from "@/components/features/site/page/home/Testimonials/CardReview";
+
+const reviews = [
+  {
+    id: 1,
+    avatar: "/assets/images/home/header/HQNRD-first-featured-image.webp",
+    avatarAlt: "User Roman Feliz avatar - Hotel Quinto Nivel RD guest review",
+    author: "Roman Feliz",
+    comment:
+      "The hotel is located in the heart of the city, close to the main. I was pleasantly.",
+    rating: 4.7,
+    servicesRating: {
+      rooms: 5,
+      location: 5,
+      service: 5,
+    },
+  },
+  {
+    id: 2,
+    avatar: "/assets/images/home/header/HQNRD-first-featured-image.webp",
+    avatarAlt: "User Roman Feliz avatar - Hotel Quinto Nivel RD guest review",
+    author: "Roman Feliz",
+    comment:
+      "The hotel is located in the heart of the city, close to the main. I was pleasantly.",
+    rating: 4.7,
+    servicesRating: {
+      rooms: 5,
+      location: 5,
+      service: 5,
+    },
+  },
+  {
+    id: 3,
+    avatar: "/assets/images/home/header/HQNRD-first-featured-image.webp",
+    avatarAlt: "User Roman Feliz avatar - Hotel Quinto Nivel RD guest review",
+    author: "Roman Feliz",
+    comment:
+      "The hotel is located in the heart of the city, close to the main. I was pleasantly.",
+    rating: 4.7,
+    servicesRating: {
+      rooms: 5,
+      location: 5,
+      service: 5,
+    },
+  },
+  {
+    id: 4,
+    avatar: "/assets/images/home/header/HQNRD-first-featured-image.webp",
+    avatarAlt: "User Roman Feliz avatar - Hotel Quinto Nivel RD guest review",
+    author: "Roman Feliz",
+    comment:
+      "The hotel is located in the heart of the city, close to the main. I was pleasantly.",
+    rating: 4.7,
+    servicesRating: {
+      rooms: 5,
+      location: 5,
+      service: 5,
+    },
+  },
+];
+
+export default function App() {
   return (
-    <div className="bg-pink-500 p-20">
-      <div className="glass max-w-xs rounded-lg">
-        <div className="flex items-end">
-          <div className="h-20 rounded-tl-md bg-muted p-1" />
-          <div className="relative overflow-hidden bg-transparent p-2 after:absolute after:content-['']">
-            <div className="rounded-b-md p-2 shadow-[0_58px_0_10px_hsl(var(--muted))]">
-              {/* <h1>This is a test</h1> */}
-              <Image
-                src="/assets/images/home/header/HQNRD-first-featured-image.webp"
-                alt="random image"
-                height={80}
-                width={80}
-                className="rounded-md"
-              />
-            </div>
-          </div>
-          <div className="flex h-20 flex-1 items-center justify-start rounded-tr-md bg-muted p-2 font-bold">
-            Roman Feliz
-          </div>
-        </div>
-        <div className="rounded-b-md bg-muted">
-          <div className="p-4 pt-0">
-            {/* <h3 className="py-2 text-center font-bold">Roman Feliz</h3> */}
-            <p className="text-xs leading-6 text-gray-500 text-muted-foreground">
-              The hotel is located in the heart of the city, close to the main.
-              I was pleasantly surprised by the quality of the hotel. The staff
-              was very friendly and helpful.
-            </p>
-          </div>
-          <div className="boerder-t rounded-b-md border-t bg-background p-4">
-            <div className="flex items-center gap-2">
-              <p>4.7</p>
-              <div className="flex items-center">
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-              </div>
-            </div>
-            <div className="flex gap-4 text-xs">
-              <p>
-                Rooms: <span className="font-semibold">5</span>
-              </p>
-              <p>
-                Location: <span className="font-semibold">5</span>
-              </p>
-              <p>
-                Service: <span className="font-semibold">5</span>
-              </p>
-            </div>
-          </div>
+    <div className="mx-auto flex max-w-7xl items-center justify-center border border-red-500 p-4">
+      <div className="mx-auto flex h-screen w-screen items-center justify-center p-2">
+        <div className="max-w-7xl border border-red-500">
+          <Swiper
+            width={300}
+            slidesPerView={3}
+            centeredSlides={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            spaceBetween={20}
+            navigation={true}
+            pagination={{
+              dynamicBullets: true,
+              clickable: true,
+            }}
+            freeMode={true}
+            modules={[Autoplay, Pagination, Navigation]}
+            className="h-full w-full"
+          >
+            <SwiperSlide>Roman</SwiperSlide>
+            <SwiperSlide>Roman</SwiperSlide>
+            <SwiperSlide>Roman</SwiperSlide>
+            {/* <SwiperSlide className="w-full">
+              <CaredReview review={reviews[0]} />
+            </SwiperSlide>
+            <SwiperSlide className="w-full">
+              <CaredReview review={reviews[0]} />
+            </SwiperSlide>
+            <SwiperSlide className="w-full">
+              <CaredReview review={reviews[0]} />
+            </SwiperSlide> */}
+
+            {/* <SwiperSlide className="grid place-items-center bg-pink-500">
+            Slide 1
+          </SwiperSlide>
+          <SwiperSlide className="grid place-items-center bg-yellow-500">
+            Slide 2
+          </SwiperSlide>
+          <SwiperSlide className="grid place-items-center bg-green-500">
+            Slide 3
+          </SwiperSlide>
+          <SwiperSlide className="grid place-items-center bg-red-500">
+            Slide 4
+          </SwiperSlide>
+          <SwiperSlide className="grid place-items-center bg-blue-500">
+            Slide 5
+          </SwiperSlide>
+          <SwiperSlide className="grid place-items-center bg-orange-500">
+            Slide 6
+          </SwiperSlide>
+          <SwiperSlide className="grid place-items-center bg-zinc-500">
+            Slide 7
+          </SwiperSlide>
+          <SwiperSlide className="grid place-items-center bg-purple-500">
+            Slide 8
+          </SwiperSlide>
+          <SwiperSlide className="grid place-items-center bg-violet-500">
+            Slide 9
+          </SwiperSlide> */}
+          </Swiper>
         </div>
       </div>
     </div>

@@ -1,7 +1,22 @@
 import Particles from "@/components/ui/particles";
 import Image from "next/image";
+import { JSX } from "react";
 
-export function HeroGallery() {
+/**
+ * The `HeroGallery` component renders a gallery of images in a hero section.
+ * It includes five images positioned at various locations within the component,
+ * and a particle effect overlay.
+ *
+ * @returns {JSX.Element} The rendered HeroGallery component.
+ *
+ * @component
+ * @example
+ * return (
+ *   <HeroGallery />
+ * )
+ */
+
+export function HeroGallery(): JSX.Element {
   return (
     <>
       <article className="relative flex h-auto w-full items-center justify-center p-2">

@@ -6,14 +6,17 @@ import { CategoryItem } from "./CategoryItem";
 export function Categories() {
   return (
     <Section sectionName="testimonials">
+      {/* Heading Section */}
       <Content className="flex-row justify-center">
         <HeadingSection
           showBorders={true}
           title="Find your perfect stay"
-          description="Choose the room that fits your style and book your stay today!"
+          description="Choose the one that fits your style!"
         />
       </Content>
-      <Content className="grid grid-cols-2 grid-cols-3 gap-4">
+
+      {/* Centered Category Items */}
+      <Content className="grid grid-cols-1 place-items-center gap-4 md:grid-cols-2 lg:grid-cols-3">
         <CategoryItem />
         <CategoryItem />
         <CategoryItem />

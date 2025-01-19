@@ -16,7 +16,7 @@ export function CardCategory({
   totalRooms: number;
 }) {
   return (
-    <div className="glass h-full grid-cols-1 grid-rows-[auto_1fr_auto] rounded-lg border">
+    <div className="glass h-full w-full max-w-[28rem] grid-cols-1 grid-rows-[auto_1fr_auto] rounded-lg border">
       <div className="flex items-end">
         <div className="flex-0.5 h-4 rounded-tl-md bg-muted p-1" />
         <div className="relative overflow-hidden bg-transparent p-1 after:absolute after:content-['']">

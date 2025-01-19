@@ -11,8 +11,9 @@ export function Fqa() {
   return (
     <Section sectionName="max-w-6xl">
       <HeadingSection
-        title="Frequently Asked Questions"
-        description="Find answers to common questions about our services."
+        showBorders
+        title="Frequently Questions"
+        description="Answers to common questions."
       />
       <Content>
         <Accordion type="single" collapsible className="w-full">

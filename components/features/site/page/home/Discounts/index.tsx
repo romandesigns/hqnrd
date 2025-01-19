@@ -11,7 +11,7 @@ export function Discounts() {
           title="Exclusive Discounts"
           description="The longer you stay, the more you save!"
         />
-        <Content className="grid grid-cols-2 grid-rows-[auto] gap-4">
+        <Content className="grid grid-cols-1 grid-rows-2 gap-4 md:grid-cols-2 md:grid-rows-1">
           <CardDiscount highlight="Discount Available!" percentage={5} />
           <CardDiscount highlight="Discount Available" percentage={8} />
         </Content>

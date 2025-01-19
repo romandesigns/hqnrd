@@ -2,11 +2,18 @@ import { ContactWidget } from "@/components/features";
 import { HiLocationMarker } from "@/components/icons";
 import BoxReveal from "@/components/ui/box-reveal";
 import { Button } from "@/components/ui/button";
+import { TextAnimate } from "@/components/ui/text-animate";
 import { Locale } from "@/i18n-config";
 import { GoogleStats } from "./GoogleStats";
-import { TextAnimate } from "@/components/ui/text-animate";
-
-export function TextContent({ lang }: { lang: Locale }) {
+import { JSX } from "react";
+/**
+ * Renders the text content for the home page header.
+ *
+ * @param {Object} props - The component props.
+ * @param {Locale} props.lang - The locale for the content.
+ * @returns {JSX.Element} The rendered text content component.
+ */
+export function TextContent({ lang }: { lang: Locale }): JSX.Element {
   return (
     <article className="relative flex h-auto w-full flex-col items-center justify-center gap-4 md:justify-start md:gap-6">
       <GoogleStats reviewsCount={4.9} lang={lang} ratingCount={139} />
