@@ -2,6 +2,7 @@ import { Content, Section } from "@/components/layout";
 import React from "react";
 import { HeadingSection } from "@/components/features/site/Headings";
 import { CategoryItem } from "./CategoryItem";
+import { SpotlightCard } from "@/components/ui/SpotlightCard";
 
 export function Categories() {
   return (
@@ -17,7 +18,9 @@ export function Categories() {
 
       {/* Centered Category Items */}
       <Content className="grid grid-cols-1 place-items-center gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <CategoryItem />
+        <SpotlightCard>
+          <CategoryItem />
+        </SpotlightCard>
         <CategoryItem />
         <CategoryItem />
         <CategoryItem />

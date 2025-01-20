@@ -11,14 +11,34 @@ import "swiper/css/pagination";
 import { CaredReviewProps } from "@/types";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { CaredReview } from "../features/site/page/home/Testimonials/CardReview";
+import { CardRoom } from "../features/site/page/home/Trending/CardRoom";
 
 export function FeaturedItems({
   testimonials = false,
+  trendingRooms = false,
   itemsArray,
+  speed = 5000,
+  delay = 50,
 }: {
   testimonials?: boolean;
+  trendingRooms?: boolean;
   itemsArray: CaredReviewProps[];
+  speed?: number;
+  delay?: number;
 }) {
+  const testimonialsComponent = () =>
+    itemsArray.map((review, index) => (
+      <SwiperSlide key={index} className="pb-10">
+        <CaredReview review={review} />
+      </SwiperSlide>
+    ));
+
+  const trendingComponent = () =>
+    itemsArray.map((review, index) => (
+      <SwiperSlide key={index} className="pb-10">
+        <CardRoom />
+      </SwiperSlide>
+    ));
   return (
     <div className="inner">
       <div className="swiper-wrapper-container">
@@ -27,20 +47,20 @@ export function FeaturedItems({
           breakpoints={{
             640: {
               slidesPerView: 1,
-              spaceBetween: 10,
+              spaceBetween: 20,
             },
             768: {
               slidesPerView: 2,
-              spaceBetween: 10,
+              spaceBetween: 20,
             },
             1024: {
               slidesPerView: 3,
-              spaceBetween: 10,
+              spaceBetween: 20,
             },
           }}
-          speed={5000}
+          speed={speed}
           autoplay={{
-            delay: 50,
+            delay: delay,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -49,11 +69,8 @@ export function FeaturedItems({
           modules={[Autoplay, Pagination, Navigation]}
           className="h-auto"
         >
-          {itemsArray.map((review, index) => (
-            <SwiperSlide key={index} className="pb-10">
-              <CaredReview review={review} />
-            </SwiperSlide>
-          ))}
+          {testimonials && testimonialsComponent()}
+          {trendingRooms && trendingComponent()}
         </Swiper>
       </div>
     </div>

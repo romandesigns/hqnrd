@@ -8,7 +8,7 @@ export function CardDiscount({
   percentage: number;
 }) {
   return (
-    <div className="glass h-full grid-cols-1 grid-rows-[auto_1fr_auto] rounded-lg border">
+    <div className="glass h-full grid-cols-1 grid-rows-[auto_1fr_auto] rounded-lg">
       <div className="flex items-end">
         <div className="h-12 flex-1 rounded-tl-md bg-muted p-1" />
         <div className="relative overflow-hidden bg-transparent p-2 after:absolute after:content-['']">
@@ -23,7 +23,7 @@ export function CardDiscount({
         <div className="flex h-12 flex-1 items-center justify-start rounded-tr-md bg-muted p-2 font-bold" />
       </div>
       <div className="aspect-square bg-muted">
-        <div className="h-full p-4">
+        <div className="h-full p-2 lg:p-4">
           <div className="relative flex h-full items-center justify-center overflow-hidden rounded-md">
             <h3 className="relative z-[1] text-[10rem] font-black text-white lg:text-[14.5rem]">
               {percentage}%

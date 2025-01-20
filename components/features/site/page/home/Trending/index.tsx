@@ -1,7 +1,6 @@
-import { Content, Section } from "@/components/layout";
-import React from "react";
-import { CardRoom } from "./CardRoom";
 import { HeadingSection } from "@/components/features/site/Headings";
+import { Content, Section } from "@/components/layout";
+import { FeaturedItems } from "@/components/swiper/FeaturedSlider";
 
 export function Trending() {
   return (
@@ -13,10 +12,14 @@ export function Trending() {
           description="Explore the most trending hotels today"
         />
       </Content>
-      <Content className="grid grid-cols-3 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <CardRoom />
-        <CardRoom />
-        <CardRoom />
+      <Content className="px-2">
+        <FeaturedItems
+          // @ts-ignore
+          itemsArray={[1, 2, 3, 4]}
+          trendingRooms
+          delay={0}
+          speed={12000}
+        />
       </Content>
     </Section>
   );
