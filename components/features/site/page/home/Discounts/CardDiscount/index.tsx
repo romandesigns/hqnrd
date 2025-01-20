@@ -39,8 +39,8 @@ export function CardDiscount({
         </div>
       </div>
       <div className="rounded-b-md border-t bg-muted-foreground/10 p-4">
-        <p className="text-center text-sm font-bold">
-          Get a 5% discount when you book a 5 day stay!
+        <p className="text-center text-xs font-bold">
+          {`Available when booking  ${percentage === 8 ? "15" : percentage} day stays or more`}
         </p>
       </div>
     </div>
