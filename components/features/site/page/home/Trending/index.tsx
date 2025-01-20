@@ -17,8 +17,8 @@ export function Trending() {
           // @ts-ignore
           itemsArray={[1, 2, 3, 4]}
           trendingRooms
-          delay={0}
-          speed={12000}
+          delay={50}
+          speed={13000}
         />
       </Content>
     </Section>
