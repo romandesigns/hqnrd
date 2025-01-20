@@ -6,6 +6,7 @@ import Marquee from "@/components/ui/marquee";
 import { FeaturedItems } from "@/components/swiper/FeaturedSlider";
 import { SwiperSlide } from "swiper/react";
 import { SwiperItem } from "@/components/swiper/SwiperItem";
+import { SwipperJsx } from "./Swiper";
 
 const reviews = [
   {
@@ -76,8 +77,8 @@ export function Testimonials() {
           description="Don't hear it from us, hear it from our guests!"
         />
       </Content>
-      <Content className="overflow-hidden border border-red-400 px-2">
-        {/* <FeaturedItems testimonials itemsArray={reviews} /> */}
+      <Content className="px-2">
+        <FeaturedItems itemsArray={reviews} />
       </Content>
     </Section>
   );

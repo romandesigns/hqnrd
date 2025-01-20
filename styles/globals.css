@@ -98,4 +98,17 @@ body {
   .glass {
     @apply overflow-hidden rounded-md border border-background/20 bg-opacity-50 p-2 backdrop-blur-lg;
   }
+
+  .swiper-wrapper-container {
+    /* CSS-хаки для Swiper в Grid Layout, но они не помогают */
+    width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+    min-height: 0;
+    min-width: 0;
+  }
+  .inner {
+    display: grid;
+    height: inherit;
+  }
 }

@@ -7,8 +7,8 @@ import { SocialInformation } from "./Social";
 
 export function Footer({ lang }: { lang: Locale }) {
   return (
-    <footer className="bg-muted-foreground/10 p-2 md:py-10">
-      <Content className="rounded-md bg-muted p-5">
+    <footer className="bg-muted-foreground/10 p-2 md:p-10">
+      <Content className="rounded-md bg-muted p-10">
         <Fqa />
         <div className="flex items-center justify-between gap-2 border-t border-background pt-20">
           <Brand lang={lang} />
