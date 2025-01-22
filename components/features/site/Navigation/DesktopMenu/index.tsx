@@ -11,10 +11,7 @@ export function DesktopMenu({ lang }: { lang: Locale }) {
     <ul className="flex items-start justify-center gap-3 text-xs font-medium">
       <MenuItem>
         <Button size="sm" variant="ghost" asChild>
-          <Link
-            href={`/${lang}/auth/crear-cuenta`}
-            className="text-center font-semibold"
-          >
+          <Link href={`/${lang}`} className="text-center font-semibold">
             Inicio
           </Link>
         </Button>
