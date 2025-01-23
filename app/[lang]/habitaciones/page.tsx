@@ -1,3 +1,4 @@
+import { Header } from "@/components/features/site/page/rooms";
 import { ClientLayout } from "@/components/layout/container";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
@@ -12,9 +13,10 @@ export default async function Page(props: {
 
   return (
     <ClientLayout lang={lang}>
-      <div>
+      <>
+        <Header lang={lang} />
         <p>Habitaciones</p>
-      </div>
+      </>
     </ClientLayout>
   );
 }
