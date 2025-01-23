@@ -56,8 +56,8 @@ export function HeroGallery(): JSX.Element {
           className="absolute inset-0 z-0"
           quantity={200}
           ease={80}
-          color={"red"}
           refresh
+          color="rgba(255, 255, 255, 0.5)"
         />
         {/* Bottom Right image */}
         <figure className="glass absolute -bottom-6 right-3 z-[0] aspect-square h-auto w-[35%] rounded-md">

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export function Discounts() {
   return (
     <Section sectionName="discounts">
-      <Content className="gap-4 rounded-md border p-4 pt-8">
+      <Content className="gap-4 rounded-md border p-1 pt-8 md:p-4">
         <HeadingSection
           title="Exclusive Discounts"
           description="The longer you stay, the more you save!"
