@@ -43,6 +43,8 @@ export function TextContent({ lang }: { lang: Locale }): JSX.Element {
         lang={lang}
         className="hidden justify-start md:flex [&_ul]:justify-start"
         direction="horizontal"
+        btnClassNames="border"
+        variant="ghost"
       />
     </article>
   );
