@@ -13,15 +13,15 @@ export function MobileMenu({ lang }: { lang: Locale }) {
     <MotionMobileNavigation
       trigger={isOpen}
       lang={lang}
-      className="fixed inset-0 z-50 grid h-full grid-cols-1 grid-rows-[auto_1fr] gap-2 bg-background p-[0.60rem]"
+      className="fixed inset-0 z-50 grid h-screen grid-cols-1 grid-rows-[auto_1fr] gap-2 bg-background p-[0.60rem]"
     >
       <div className="flex h-full w-full">
-        <ul className="flex w-full flex-col items-stretch justify-center gap-4 rounded-md border px-8">
+        <ul className="flex w-full flex-col items-stretch justify-center gap-4 rounded-md bg-muted/25 px-8">
           <MenuItem className="block">
             <Button
               size="full"
-              variant="outline"
-              className="py-4 text-xs"
+              variant="ghost"
+              className="bg-muted py-4 text-xs"
               onClick={() => autoCloseNavigation()}
               asChild
             >
@@ -31,8 +31,8 @@ export function MobileMenu({ lang }: { lang: Locale }) {
           <MenuItem className="block">
             <Button
               size="full"
-              variant="outline"
-              className="py-4 text-xs"
+              variant="ghost"
+              className="bg-muted py-4 text-xs"
               onClick={() => autoCloseNavigation()}
               asChild
             >
@@ -40,7 +40,7 @@ export function MobileMenu({ lang }: { lang: Locale }) {
             </Button>
           </MenuItem>
           <MenuItem className="mb-5 mt-20 block">
-            <ContactWidget lang={lang} />
+            <ContactWidget lang={lang} variant="ghost" btnClassNames="border" />
           </MenuItem>
           <MenuItem className="block">
             <Button size="full" variant="default" className="py-4 text-xs">

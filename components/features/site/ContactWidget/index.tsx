@@ -14,11 +14,15 @@ export function ContactWidget({
   direction = "horizontal",
   showBorders,
   className,
+  variant,
+  btnClassNames,
 }: {
   lang: Locale;
   direction?: "horizontal" | "vertical";
   showBorders?: boolean;
   className?: string;
+  variant?: "default" | "ghost";
+  btnClassNames?: string;
 }) {
   return (
     <div className={cn("flex w-full flex-col", className)}>
@@ -29,22 +33,22 @@ export function ContactWidget({
         )}
       >
         <MenuItem className="block">
-          <Button size="icon" variant="outline">
+          <Button size="icon" variant={variant} className={cn(btnClassNames)}>
             <LuMap />
           </Button>
         </MenuItem>
         <MenuItem className="block">
-          <Button size="icon" variant="outline">
+          <Button size="icon" variant={variant} className={cn(btnClassNames)}>
             <FaWhatsapp />
           </Button>
         </MenuItem>
         <MenuItem className="block">
-          <Button size="icon" variant="outline">
+          <Button size="icon" variant={variant} className={cn(btnClassNames)}>
             <MdTranslate />
           </Button>
         </MenuItem>
         <MenuItem className="block">
-          <Button size="icon" variant="outline">
+          <Button size="icon" variant={variant} className={cn(btnClassNames)}>
             <FaRegEnvelope />
           </Button>
         </MenuItem>
