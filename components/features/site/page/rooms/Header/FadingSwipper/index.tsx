@@ -5,63 +5,40 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/navigation";
+import "swiper/css/effect-flip";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay, EffectFade } from "swiper/modules";
+import { EffectFlip, Autoplay } from "swiper/modules";
+
 import Image from "next/image";
+import { billboardsImages } from "@/public/assets/mocked_data/rooms_images";
 
 export function FadingSwipper() {
   return (
     <Swiper
-      spaceBetween={30}
-      effect={"fade"}
-      pagination={{
-        clickable: true,
-      }}
-      centeredSlides={true}
-      speed={3000}
+      effect={"flip"}
+      grabCursor={true}
+      pagination={true}
+      modules={[EffectFlip, Autoplay]}
+      speed={1000}
       autoplay={{
-        delay: 2500,
+        delay: 4000,
         disableOnInteraction: false,
       }}
-      modules={[Autoplay, EffectFade]}
-      className="mySwiper absolute left-0 right-0 top-0 -z-[2] h-full w-full"
+      className="aspect-square h-4/5 w-4/5"
     >
-      <SwiperSlide className="relative">
-        <Image
-          src="https://swiperjs.com/demos/images/nature-1.jpg"
-          alt="billboard image"
-          fill
-          className="object-cover"
-        />
-      </SwiperSlide>
-      <SwiperSlide className="relative">
-        <Image
-          src="https://swiperjs.com/demos/images/nature-2.jpg"
-          alt="billboard image"
-          fill
-          className="object-cover"
-        />
-      </SwiperSlide>
-      <SwiperSlide className="relative">
-        <Image
-          src="https://swiperjs.com/demos/images/nature-3.jpg"
-          alt="billboard image"
-          fill
-          className="object-cover"
-        />
-      </SwiperSlide>
-      <SwiperSlide className="relative">
-        <Image
-          src="https://swiperjs.com/demos/images/nature-4.jpg"
-          alt="billboard image"
-          fill
-          className="object-cover"
-        />
-      </SwiperSlide>
+      {billboardsImages.map((image, index) => (
+        <SwiperSlide key={index} className="glass">
+          <Image
+            src={image}
+            alt="billboard image"
+            fill
+            className="object-cover"
+          />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }
