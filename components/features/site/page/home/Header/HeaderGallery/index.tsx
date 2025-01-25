@@ -27,7 +27,7 @@ export function HeroGallery({
         {/* Top left image */}
         <figure className="absolute -top-10 left-2 aspect-square h-auto w-[25%] rounded-md border-8 border-muted" />
         {/* Top Right image */}
-        <figure className="glass absolute -top-10 right-2 z-[2] aspect-square h-auto w-[25%] rounded-md">
+        <figure className="glass absolute -top-10 right-2 z-[2] aspect-square h-auto w-[25%] rounded-md shadow-lg">
           <div className="relative aspect-square h-full w-full overflow-hidden rounded-md">
             <ImageSlider itemsArray={billboardsImages.rooms} />
           </div>
@@ -39,10 +39,10 @@ export function HeroGallery({
           </div>
         </figure>
         {/* Bottom left image */}
-        <figure className="glass absolute bottom-10 left-2 z-[2] aspect-square h-auto w-[30%]">
+        <figure className="glass absolute bottom-10 left-2 z-[2] aspect-square h-auto w-[30%] shadow-lg">
           <div className="relative aspect-square h-full w-full overflow-hidden rounded-md">
             <ImageSlider
-              itemsArray={billboardsImages.rooms}
+              itemsArray={billboardsImages.rooftop}
               direction="horizontal"
               delay={4500}
             />
