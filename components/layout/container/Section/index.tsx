@@ -4,11 +4,9 @@ import React from "react";
 export function Section({
   children,
   className,
-  sectionName,
 }: {
   children: React.ReactNode;
   className?: string;
-  sectionName?: string;
 }) {
   return (
     <section className={cn(`w-full ${className}`)}>

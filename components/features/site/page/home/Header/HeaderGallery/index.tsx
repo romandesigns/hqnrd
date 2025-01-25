@@ -1,5 +1,5 @@
+import ImageSlider from "@/components/features/site/ImageSlider";
 import Particles from "@/components/ui/particles";
-import Image from "next/image";
 import { JSX } from "react";
 
 /**
@@ -16,7 +16,11 @@ import { JSX } from "react";
  * )
  */
 
-export function HeroGallery(): JSX.Element {
+export function HeroGallery({
+  billboardsImages,
+}: {
+  billboardsImages: { rooms: string[]; rooftop: string[]; hallways: string[] };
+}): JSX.Element {
   return (
     <>
       <article className="relative flex h-auto w-full items-center justify-center p-2">
@@ -25,30 +29,32 @@ export function HeroGallery(): JSX.Element {
         {/* Top Right image */}
         <figure className="glass absolute -top-10 right-2 z-[2] aspect-square h-auto w-[25%] rounded-md">
           <div className="relative aspect-square h-full w-full overflow-hidden rounded-md">
-            <Image
-              src="/assets/images/home/header/HQNRD-second-featured-image.webp"
-              layout="fill"
-              alt={"Hotel Quinto Nivel RD"}
-            />
+            <ImageSlider itemsArray={billboardsImages.rooms} />
           </div>
         </figure>
         {/* Main image */}
         <figure className="glass relative z-[1] aspect-square w-5/6 overflow-hidden rounded-md">
           <div className="relative aspect-square h-full w-full overflow-hidden rounded-md">
-            <Image
-              src="/assets/images/home/header/HQNRD-first-featured-image.webp"
-              layout="fill"
-              alt={"Hotel Quinto Nivel RD"}
-            />
+            <ImageSlider itemsArray={billboardsImages.rooms} />
           </div>
         </figure>
         {/* Bottom left image */}
         <figure className="glass absolute bottom-10 left-2 z-[2] aspect-square h-auto w-[30%]">
           <div className="relative aspect-square h-full w-full overflow-hidden rounded-md">
-            <Image
-              src="/assets/images/home/header/HQNRD-first-featured-image.webp"
-              layout="fill"
-              alt={"Hotel Quinto Nivel RD"}
+            <ImageSlider
+              itemsArray={billboardsImages.rooms}
+              direction="horizontal"
+              delay={4500}
+            />
+          </div>
+        </figure>
+        {/* Bottom Right image */}
+        <figure className="glass absolute -bottom-6 right-3 z-[0] aspect-square h-auto w-[35%] rounded-md">
+          <div className="relative aspect-square h-full w-full overflow-hidden rounded-md">
+            <ImageSlider
+              itemsArray={billboardsImages.rooms}
+              showBlurredOverlay
+              delay={3500}
             />
           </div>
         </figure>
@@ -59,16 +65,6 @@ export function HeroGallery(): JSX.Element {
           refresh
           color="rgba(255, 255, 255, 0.5)"
         />
-        {/* Bottom Right image */}
-        <figure className="glass absolute -bottom-6 right-3 z-[0] aspect-square h-auto w-[35%] rounded-md">
-          <div className="relative aspect-square h-full w-full overflow-hidden rounded-md">
-            <Image
-              src="/assets/images/home/header/HQNRD-third-featured-image.webp"
-              layout="fill"
-              alt={"Hotel Quinto Nivel RD"}
-            />
-          </div>
-        </figure>
       </article>
     </>
   );

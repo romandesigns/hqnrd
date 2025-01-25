@@ -1,13 +1,10 @@
 import { FaStar, FaStarHalfAlt, FcGoogle } from "@/components/icons";
 import NumberTicker from "@/components/ui/number-ticker";
-import { Locale } from "@/i18n-config";
 
 export function GoogleStats({
-  lang,
   reviewsCount,
   ratingCount,
 }: {
-  lang: Locale;
   reviewsCount: number;
   ratingCount: number;
 }) {

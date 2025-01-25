@@ -95,7 +95,7 @@ export function CardRoom() {
         </div>
         <div className="my-2">
           <Button size="full" className="font-semibold" asChild>
-            <Link href={"/foo"}>View Rooms</Link>
+            <Link href={"/"}>View Rooms</Link>
           </Button>
         </div>
       </div>

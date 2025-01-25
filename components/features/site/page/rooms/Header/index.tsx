@@ -1,7 +1,6 @@
 import { Content } from "@/components/layout";
 import { Locale } from "@/i18n-config";
 import React from "react";
-import { FadingSwipper } from "./FadingSwipper";
 import { ComboboxDemo } from "@/components/ui/Combobox";
 import { ContactWidget } from "../../../ContactWidget";
 
@@ -26,7 +25,9 @@ export function Header({ lang }: { lang: Locale }) {
             />
           </article>
           {/* Fading Banner */}
-          <FadingSwipper />
+          <article className="flex h-full w-full flex-col items-center justify-center">
+            <p>Gallery Here</p>
+          </article>
         </section>
       </Content>
     </header>

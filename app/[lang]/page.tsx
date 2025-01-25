@@ -6,18 +6,14 @@ import {
   Trending,
 } from "@/components/features/site/page/home";
 import { Surrounding } from "@/components/features/site/page/home/Surrounding";
-import {} from "@/components/features/site/page/home/Testimonials";
 import { ClientLayout } from "@/components/layout/container";
-import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
-import Image from "next/image";
 
 export default async function Page(props: {
   params: Promise<{ lang: Locale }>;
 }) {
   const params = await props.params;
   const { lang } = params;
-  const trans = await getDictionary(lang);
 
   return (
     <ClientLayout lang={lang}>

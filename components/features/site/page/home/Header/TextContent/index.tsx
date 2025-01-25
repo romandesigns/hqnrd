@@ -16,7 +16,7 @@ import { JSX } from "react";
 export function TextContent({ lang }: { lang: Locale }): JSX.Element {
   return (
     <article className="relative flex h-auto w-full flex-col items-center justify-center gap-4 md:justify-start md:gap-6">
-      <GoogleStats reviewsCount={4.9} lang={lang} ratingCount={139} />
+      <GoogleStats reviewsCount={4.9} ratingCount={139} />
       <small className="flex w-full items-center justify-center gap-2 text-muted-foreground md:items-center md:justify-start">
         <HiLocationMarker />
         <span>In Salcedo, Republica Dominicana</span>
@@ -32,8 +32,9 @@ export function TextContent({ lang }: { lang: Locale }): JSX.Element {
         by="character"
         className="text-center text-xs text-muted-foreground md:text-left md:text-sm"
       >
-        Whether you're traveling solo, with family, or on a romantic escape, our
-        thoughtfully designed rooms cater to every need Visit us today!
+        Whether you&apos;re traveling solo, with family, or on a romantic
+        escape, our thoughtfully designed rooms cater to every need Visit us
+        today!
       </TextAnimate>
       <div className="mb-4 flex w-full items-center justify-center gap-2 md:justify-start">
         <Button>Explore Rooms</Button>

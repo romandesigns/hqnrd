@@ -1,4 +1,3 @@
-import ExpandableCardDemo from "@/components/expandable-card-demo-grid";
 import { Content, Section } from "@/components/layout";
 import React from "react";
 import { HeadingSection } from "../../../Headings";
@@ -6,7 +5,7 @@ import Image from "next/image";
 
 export function Surrounding() {
   return (
-    <Section className="h-15rem" sectionName="surrounding">
+    <Section className="h-15rem">
       <Content className="flex-row justify-center">
         <HeadingSection
           showBorders={true}

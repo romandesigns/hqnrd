@@ -9,7 +9,7 @@ import { Content, Section } from "@/components/layout";
 
 export function Fqa() {
   return (
-    <Section sectionName="max-w-6xl">
+    <Section>
       <HeadingSection
         showBorders
         title="Frequently Questions"

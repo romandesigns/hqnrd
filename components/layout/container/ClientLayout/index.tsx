@@ -6,13 +6,11 @@ import { Footer, Navigation } from "../..";
 
 export function ClientLayout({
   children,
-  className,
   showFooter = true,
   showNavigation = true,
   lang,
 }: {
   children: React.ReactNode;
-  className?: string;
   showFooter?: boolean;
   showNavigation?: boolean;
   lang: Locale;

@@ -4,7 +4,7 @@ import { FeaturedItems } from "@/components/swiper/FeaturedSlider";
 
 export function Trending() {
   return (
-    <Section sectionName="trending">
+    <Section>
       <Content className="flex-row justify-center">
         <HeadingSection
           showBorders
@@ -14,7 +14,7 @@ export function Trending() {
       </Content>
       <Content className="px-2">
         <FeaturedItems
-          // @ts-ignore
+          // @ts-expect-error - Temporary workaround for type conflict
           itemsArray={[1, 2, 3, 4]}
           trendingRooms
           delay={50}

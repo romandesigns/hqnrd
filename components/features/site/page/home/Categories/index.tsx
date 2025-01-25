@@ -6,7 +6,7 @@ import { SpotlightCard } from "@/components/ui/SpotlightCard";
 
 export function Categories() {
   return (
-    <Section sectionName="testimonials">
+    <Section>
       {/* Heading Section */}
       <Content className="flex-row justify-center">
         <HeadingSection

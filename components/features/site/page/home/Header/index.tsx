@@ -3,7 +3,7 @@ import { Locale } from "@/i18n-config";
 import { HeroGallery } from "./HeaderGallery";
 import { TextContent } from "./TextContent";
 import { JSX } from "react";
-
+import { billboardsImages } from "@/public/assets/mocked_data/rooms_images";
 interface HeaderProps {
   lang: Locale;
 }
@@ -25,7 +25,7 @@ export function Header({ lang }: HeaderProps): JSX.Element {
           <TextContent lang={lang} />
         </section>
         <section className="flex items-center justify-center pb-8 md:flex-1">
-          <HeroGallery />
+          <HeroGallery billboardsImages={billboardsImages} />
         </section>
       </Content>
     </header>

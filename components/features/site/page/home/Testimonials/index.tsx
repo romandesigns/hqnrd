@@ -5,7 +5,7 @@ import { reviews as testimonialsReviews } from "./reviews";
 
 export function Testimonials() {
   return (
-    <Section sectionName="testimonials">
+    <Section>
       <Content className="flex-row justify-center">
         <HeadingSection
           showBorders
