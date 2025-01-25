@@ -6,6 +6,7 @@ import { TextAnimate } from "@/components/ui/text-animate";
 import { Locale } from "@/i18n-config";
 import { GoogleStats } from "./GoogleStats";
 import { JSX } from "react";
+import Link from "next/link";
 /**
  * Renders the text content for the home page header.
  *
@@ -37,7 +38,9 @@ export function TextContent({ lang }: { lang: Locale }): JSX.Element {
         today!
       </TextAnimate>
       <div className="mb-4 flex w-full items-center justify-center gap-2 md:justify-start">
-        <Button>Explore Rooms</Button>
+        <Button asChild>
+          <Link href={`${lang}/habitaciones`}>Explore Rooms</Link>
+        </Button>
         <Button variant="secondary">Contact Us</Button>
       </div>
       <ContactWidget

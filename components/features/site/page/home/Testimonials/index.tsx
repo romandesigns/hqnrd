@@ -17,7 +17,7 @@ export function Testimonials() {
         <FeaturedItems
           itemsArray={testimonialsReviews}
           testimonials
-          speed={12000}
+          speed={13000}
         />
       </Content>
     </Section>
