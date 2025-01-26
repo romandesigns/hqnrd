@@ -22,7 +22,7 @@ export default async function Page(props: {
           />
           <div className="flex w-full items-center justify-end px-2 py-4">
             <p className="text-sm text-muted-foreground">
-              <span>Total Rooms Found:</span>
+              <span>Found:</span>
               <span className="ml-3 rounded-full bg-muted-foreground px-4 text-primary-foreground">
                 16
               </span>
@@ -31,7 +31,7 @@ export default async function Page(props: {
         </Content>
       </Section>
       <Section>
-        <Content className="grid-auto-rows grid grid-cols-1 gap-1 py-14 md:grid-cols-2 lg:grid-cols-3">
+        <Content className="grid-auto-rows grid grid-cols-1 gap-1 py-14 pt-2 md:grid-cols-2 lg:grid-cols-3">
           <CardRoom />
           <CardRoom />
           <CardRoom />

@@ -7,7 +7,7 @@ import { SocialInformation } from "./Social";
 
 export function Footer({ lang }: { lang: Locale }) {
   return (
-    <footer className="bg-muted-foreground/10 p-4 md:p-10">
+    <footer className="bg-muted-foreground/10 p-4 md:p-5">
       <Content className="rounded-md bg-muted p-4 md:p-10">
         <Fqa />
         <div className="flex items-center justify-between gap-2 border-t border-background pt-20">

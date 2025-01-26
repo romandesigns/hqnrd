@@ -22,11 +22,10 @@ export function HeroGallery({
   billboardsImages: { rooms: string[]; rooftop: string[]; hallways: string[] };
 }): JSX.Element {
   return (
-    <>
-      <article className="relative flex h-auto w-full items-center justify-center p-2">
+    <div className="flex h-full w-full items-center justify-center">
+      <article className="relative flex h-fit w-full items-center justify-center p-2">
         {/* Top left image */}
         <figure className="absolute -top-10 left-14 aspect-square h-auto w-[25%] rounded-md border-8 border-muted" />
-
         {/* Main image */}
         <figure className="glass relative z-[1] aspect-square w-4/6 overflow-hidden rounded-md">
           <div className="relative aspect-square h-full w-full overflow-hidden rounded-md">
@@ -51,6 +50,6 @@ export function HeroGallery({
           color="rgba(255, 255, 255, 0.5)"
         />
       </article>
-    </>
+    </div>
   );
 }
