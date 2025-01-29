@@ -10,8 +10,8 @@ import "swiper/css/pagination";
 // import required modules
 import { CaredReviewProps } from "@/types";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { CaredReview } from "../features/site/page/home/Testimonials/CardReview";
-import { CardRoom } from "../features/site/page/home/Trending/CardRoom";
+import { CaredReview } from "../../page/home/Testimonials/CardReview";
+import { CardRoom } from "../../page/home/Trending/CardRoom";
 
 export function FeaturedItems({
   testimonials = false,

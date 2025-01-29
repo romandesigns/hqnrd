@@ -1,7 +1,7 @@
 import { Content, Section } from "@/components/layout";
 import React from "react";
-import { HeadingSection } from "../../../Headings";
 import Image from "next/image";
+import { HeadingSection } from "@/components/features/site/Headings";
 
 export function Surrounding() {
   return (

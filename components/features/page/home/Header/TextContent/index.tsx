@@ -23,7 +23,7 @@ export function TextContent({ lang }: { lang: Locale }): JSX.Element {
         <span>In Salcedo, Republica Dominicana</span>
       </small>
       <BoxReveal>
-        <h1 className="text-center text-3xl font-black md:text-left md:text-5xl">
+        <h1 className="text-center text-3xl font-black md:text-left md:text-2xl lg:text-4xl">
           Experience unmatched comfort and elegance
         </h1>
       </BoxReveal>
@@ -34,8 +34,7 @@ export function TextContent({ lang }: { lang: Locale }): JSX.Element {
         className="text-center text-xs text-muted-foreground md:text-left md:text-sm"
       >
         Whether you&apos;re traveling solo, with family, or on a romantic
-        escape, our thoughtfully designed rooms cater to every need Visit us
-        today!
+        escape, our top of the line rooms cater to every need. -Visit us today!
       </TextAnimate>
       <div className="mb-4 flex w-full items-center justify-center gap-2 md:justify-start">
         <Button asChild>

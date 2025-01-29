@@ -4,8 +4,8 @@ import {
   Header,
   Testimonials,
   Trending,
-} from "@/components/features/site/page/home";
-import { Surrounding } from "@/components/features/site/page/home/Surrounding";
+} from "@/components/features/page/home";
+import { Surrounding } from "@/components/features/page/home/Surrounding";
 import { ClientLayout } from "@/components/layout/container";
 import { Locale } from "@/i18n-config";
 

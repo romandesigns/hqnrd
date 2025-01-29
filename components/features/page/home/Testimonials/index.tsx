@@ -1,23 +1,22 @@
 import { HeadingSection } from "@/components/features/site/Headings";
 import { Content, Section } from "@/components/layout";
-import { FeaturedItems } from "@/components/swiper/FeaturedSlider";
+import { FeaturedItems } from "@/components/features/site/swiper/FeaturedSlider";
+import { reviews as testimonialsReviews } from "./reviews";
 
-export function Trending() {
+export function Testimonials() {
   return (
     <Section>
       <Content className="flex-row justify-center">
         <HeadingSection
           showBorders
-          title="Trending"
-          description="Explore the most trending hotels today"
+          title="Testimonials"
+          description="Don't hear it from us, hear it from our guests!"
         />
       </Content>
       <Content className="px-2">
         <FeaturedItems
-          // @ts-expect-error - Temporary workaround for type conflict
-          itemsArray={[1, 2, 3, 4]}
-          trendingRooms
-          delay={50}
+          itemsArray={testimonialsReviews}
+          testimonials
           speed={13000}
         />
       </Content>

@@ -50,7 +50,12 @@ export default async function Page({ params }: PageProps) {
               <p className="pb-2 text-xs text-muted-foreground">
                 Date of Birth
               </p>
-              <Input type="email" name="email" id="email" />
+              <Input
+                type="date"
+                name="dob"
+                id="dob"
+                className="text-[0.7rem]"
+              />
             </Label>
             <Label className="flex-1" htmlFor="email">
               <p className="pb-2 text-xs text-muted-foreground">Email</p>
