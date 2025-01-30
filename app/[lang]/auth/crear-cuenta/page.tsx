@@ -1,15 +1,12 @@
-import { Brand, FormLabel } from "@/components/features";
+import { Brand } from "@/components/features";
+import { SignUpForm } from "@/components/features/page/signUp/SignUpForm";
 import { HeadingSection } from "@/components/features/site/Headings";
 import { ModeToggle } from "@/components/features/site/ModeToggle";
 import { GoHomeFill } from "@/components/icons";
 import { Content, Section } from "@/components/layout";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+
 import { Locale } from "@/i18n-config";
-import Form from "next/form";
-import Link from "next/link";
 
 interface PageProps {
   params: Promise<{
@@ -41,53 +38,7 @@ export default async function Page({ params }: PageProps) {
             title="Account Registration"
             description="Create and manage your own reservations"
           />
-          <Form action="#" className="flex flex-col gap-4">
-            <div className="flex items-center justify-center gap-4">
-              <Label className="mb-2 flex-1" htmlFor="name">
-                <FormLabel label="Nombre" />
-                <Input type="name" name="name" id="name" />
-              </Label>
-              <Label className="mb-2 flex-1" htmlFor="lasName">
-                <FormLabel label="Apellido" />
-                <Input type="name" name="lasName" id="lasName" />
-              </Label>
-            </div>
-            <Label className="flex-1" htmlFor="dob">
-              <FormLabel label="Date of Birth" />
-              <Input
-                type="date"
-                name="dob"
-                id="dob"
-                className="text-[0.7rem]"
-              />
-            </Label>
-            <div>
-              <FormLabel label="Sex" />
-              <RadioGroup>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="default" id="r1" />
-                  <Label htmlFor="r1">Male</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="comfortable" id="r2" />
-                  <Label htmlFor="r2">Female</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="compact" id="r3" />
-                  <Label htmlFor="r3">Other</Label>
-                </div>
-              </RadioGroup>
-            </div>
-            <Button size="full" className="my-2">
-              Next
-            </Button>
-            <p className="py-4 text-center text-xs text-muted-foreground">
-              Already registered?
-              <Link className="ml-2 font-bold underline" href="#">
-                Sign In
-              </Link>
-            </p>
-          </Form>
+          <SignUpForm lang={lang} />
         </article>
       </Content>
     </Section>
