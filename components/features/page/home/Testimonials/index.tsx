@@ -41,8 +41,8 @@ export function Testimonials({ lang }: { lang: Locale }): JSX.Element {
         <FeaturedItems
           itemsArray={testimonialsReviews}
           testimonials
-          speed={13000}
-          delay={500}
+          speed={6000}
+          delay={1000}
           lang={lang}
         />
       </Content>

@@ -26,7 +26,7 @@ export default async function Page(props: {
     <ClientLayout lang={lang}>
       <Header lang={lang} />
       <main className="grid min-h-screen grid-rows-[auto_1fr_auto] items-center justify-items-start gap-40 p-2 pb-20 font-[family-name:var(--font-family)] md:p-5 lg:p-20">
-        <Testimonials />
+        <Testimonials lang={lang} />
         <Discounts />
         <Categories />
         <Surrounding />

@@ -1,13 +1,14 @@
+import { Brand, FormLabel } from "@/components/features";
+import { HeadingSection } from "@/components/features/site/Headings";
+import { ModeToggle } from "@/components/features/site/ModeToggle";
+import { GoHomeFill } from "@/components/icons";
 import { Content, Section } from "@/components/layout";
-import React from "react";
-import Form from "next/form";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Brand } from "@/components/features";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Locale } from "@/i18n-config";
-import { ModeToggle } from "@/components/features/site/ModeToggle";
-import { HeadingSection } from "@/components/features/site/Headings";
-import { Button } from "@/components/ui/button";
+import Form from "next/form";
 import Link from "next/link";
 
 interface PageProps {
@@ -21,35 +22,38 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <Section className="flex min-h-screen w-full items-center justify-center border border-red-500 p-2">
-      <Content className="grid h-full max-w-[90rem] grid-cols-1 gap-4 bg-muted/5 p-4 md:grid-cols-[1fr_0.7fr]">
-        <article className="hidden aspect-[1/1] flex-1 border border-blue-500 md:block">
+      <Content className="grid h-full grid-cols-1 gap-4 bg-muted/5 p-4 max-[769px]:max-w-[30rem] min-[769px]:grid-cols-[1fr_0.7fr] lg:max-w-[90rem]">
+        <article className="hidden aspect-[1/1] flex-1 border border-blue-500 min-[769px]:block">
           Left
         </article>
-        <article className="flex-1 md:p-8 md:py-2">
+        <article className="max-[769px]:h-full md:p-8 md:py-2">
           <div className="flex items-center justify-between gap-4 py-10">
             <Brand lang={lang} />
-            <ModeToggle />
+            <div className="flex items-center justify-center gap-4">
+              <ModeToggle />
+              <Button size="icon" variant="outline">
+                <GoHomeFill />
+              </Button>
+            </div>
           </div>
           <HeadingSection
             showBorders
             title="Account Registration"
             description="Create and manage your own reservations"
           />
-          <Form action="#">
+          <Form action="#" className="flex flex-col gap-4">
             <div className="flex items-center justify-center gap-4">
               <Label className="mb-2 flex-1" htmlFor="name">
-                <p className="pb-2 text-xs text-muted-foreground">Nombre</p>
+                <FormLabel label="Nombre" />
                 <Input type="name" name="name" id="name" />
               </Label>
               <Label className="mb-2 flex-1" htmlFor="lasName">
-                <p className="pb-2 text-xs text-muted-foreground">Apellido</p>
+                <FormLabel label="Apellido" />
                 <Input type="name" name="lasName" id="lasName" />
               </Label>
             </div>
-            <Label className="flex-1" htmlFor="email">
-              <p className="pb-2 text-xs text-muted-foreground">
-                Date of Birth
-              </p>
+            <Label className="flex-1" htmlFor="dob">
+              <FormLabel label="Date of Birth" />
               <Input
                 type="date"
                 name="dob"
@@ -57,12 +61,25 @@ export default async function Page({ params }: PageProps) {
                 className="text-[0.7rem]"
               />
             </Label>
-            <Label className="flex-1" htmlFor="email">
-              <p className="pb-2 text-xs text-muted-foreground">Email</p>
-              <Input type="email" name="email" id="email" />
-            </Label>
-            <Button size="full" className="my-8 mb-2">
-              Submit
+            <div>
+              <FormLabel label="Sex" />
+              <RadioGroup>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="default" id="r1" />
+                  <Label htmlFor="r1">Male</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="comfortable" id="r2" />
+                  <Label htmlFor="r2">Female</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="compact" id="r3" />
+                  <Label htmlFor="r3">Other</Label>
+                </div>
+              </RadioGroup>
+            </div>
+            <Button size="full" className="my-2">
+              Next
             </Button>
             <p className="py-4 text-center text-xs text-muted-foreground">
               Already registered?

@@ -28,3 +28,4 @@ export {
 } from "react-icons/tb";
 export { TiSocialInstagram } from "react-icons/ti";
 export { IoMdArrowRoundBack } from "react-icons/io";
+export { GoHomeFill } from "react-icons/go";

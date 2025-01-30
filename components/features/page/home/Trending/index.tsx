@@ -29,8 +29,8 @@ export function Trending() {
           // @ts-expect-error - Temporary workaround for type conflict
           itemsArray={[1, 2, 3, 4]}
           trendingRooms
-          delay={50}
-          speed={13000}
+          speed={6000}
+          delay={1000}
         />
       </Content>
     </Section>
