@@ -12,6 +12,7 @@ import { CaredReviewProps } from "@/types";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { CaredReview } from "../../page/home/Testimonials/CardReview";
 import { CardRoom } from "../../page/home/Trending/CardRoom";
+import { Locale } from "@/i18n-config";
 
 /**
  * Component to display featured items in a swiper slider.
@@ -31,12 +32,14 @@ export function FeaturedItems({
   itemsArray,
   speed = 5000,
   delay = 50,
+  lang,
 }: {
   testimonials?: boolean;
   trendingRooms?: boolean;
   itemsArray: CaredReviewProps[];
   speed?: number;
   delay?: number;
+  lang: Locale;
 }) {
   const testimonialsComponent = () =>
     itemsArray.map((review, index) => (
@@ -48,7 +51,7 @@ export function FeaturedItems({
   const trendingComponent = () =>
     itemsArray.map((review, index) => (
       <SwiperSlide key={index} className="pb-10">
-        <CardRoom />
+        <CardRoom lang={lang} />
       </SwiperSlide>
     ));
   return (

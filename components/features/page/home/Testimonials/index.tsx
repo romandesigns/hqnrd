@@ -2,6 +2,8 @@ import { HeadingSection } from "@/components/features/site/Headings";
 import { FeaturedItems } from "@/components/features/site/swiper/FeaturedSlider";
 import { Content, Section } from "@/components/layout";
 import { reviews as testimonialsReviews } from "./reviews";
+import { Locale } from "@/i18n-config";
+import { JSX } from "react";
 
 /**
  * Testimonials component renders a section displaying testimonials from guests.
@@ -25,7 +27,7 @@ import { reviews as testimonialsReviews } from "./reviews";
  * @see HeadingSection
  * @see FeaturedItems
  */
-export function Testimonials() {
+export function Testimonials({ lang }: { lang: Locale }): JSX.Element {
   return (
     <Section>
       <Content className="flex-row justify-center">
@@ -40,6 +42,8 @@ export function Testimonials() {
           itemsArray={testimonialsReviews}
           testimonials
           speed={13000}
+          delay={500}
+          lang={lang}
         />
       </Content>
     </Section>

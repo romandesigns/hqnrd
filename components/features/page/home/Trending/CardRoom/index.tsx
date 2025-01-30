@@ -47,29 +47,31 @@ export function CardRoom({ lang }: { lang: Locale }) {
           />
         </figure>
         <div className="flex flex-col gap-2 p-2 pt-4 text-xs font-semibold text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <p className="text-[0.65rem] font-bold md:text-xs">Features:</p>
-            <ul className="flex">
-              <li className="mr-0.3 rounded-full bg-muted-foreground/10 p-2 py-1 text-[0.6rem] font-medium md:text-[0.60rem]">
+          <div className="flex items-center">
+            <p className="mr-0.5 text-[0.5rem] font-bold md:text-xs">
+              Features:
+            </p>
+            <ul className="flex gap-1">
+              <li className="rounded-full bg-muted-foreground/10 p-0.5 px-1.5 text-[0.55rem] font-medium">
                 258 sqft
               </li>
-              <li className="mr-0.3 rounded-full bg-muted-foreground/10 p-2 py-1 text-[0.6rem] font-medium md:text-[0.60rem]">
+              <li className="rounded-full bg-muted-foreground/10 p-0.5 px-1.5 text-[0.55rem] font-medium">
                 Intercom
               </li>
-              <li className="mr-0.3 rounded-full bg-muted-foreground/10 p-2 py-1 text-[0.6rem] font-medium md:text-[0.60rem]">
+              <li className="rounded-full bg-muted-foreground/10 p-0.5 px-1.5 text-[0.55rem] font-medium">
                 2.5 Beds
               </li>
-              <li className="mr-0.3 rounded-full bg-muted-foreground/10 p-2 py-1 text-[0.6rem] font-medium md:text-[0.60rem]">
+              <li className="rounded-full bg-muted-foreground/10 p-0.5 px-1.5 text-[0.55rem] font-medium">
                 Balcony
               </li>
-              <li className="rounded-full p-1 text-[0.65rem] font-medium md:text-[0.70rem]">
+              <li className="rounded-full p-0.5 text-[0.5rem] font-medium md:text-[0.55rem]">
                 ..6+
               </li>
             </ul>
           </div>
           <div className="flex w-full items-center gap-2">
-            <p className="text-[0.65rem] font-bold md:text-xs">Ameneties:</p>
-            <ul className="flex gap-2">
+            <p className="text-[0.5rem] font-bold md:text-xs">Ameneties:</p>
+            <ul className="flex gap-4">
               <li className="flex items-center justify-center font-medium md:text-[0.80rem]">
                 <FaWheelchair />
               </li>
