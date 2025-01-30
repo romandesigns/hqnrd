@@ -13,6 +13,18 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { CaredReview } from "../../page/home/Testimonials/CardReview";
 import { CardRoom } from "../../page/home/Trending/CardRoom";
 
+/**
+ * Component to display featured items in a swiper slider.
+ *
+ * @param {Object} props - The properties object.
+ * @param {boolean} [props.testimonials=false] - Flag to determine if testimonials should be displayed.
+ * @param {boolean} [props.trendingRooms=false] - Flag to determine if trending rooms should be displayed.
+ * @param {CaredReviewProps[]} props.itemsArray - Array of items to be displayed in the slider.
+ * @param {number} [props.speed=5000] - Speed of the swiper transition in milliseconds.
+ * @param {number} [props.delay=50] - Delay between autoplay transitions in milliseconds.
+ *
+ * @returns {JSX.Element} The FeaturedItems component.
+ */
 export function FeaturedItems({
   testimonials = false,
   trendingRooms = false,

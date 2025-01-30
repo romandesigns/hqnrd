@@ -6,6 +6,22 @@ import { useMobileNavigation } from "@/store/hooks";
 import Link from "next/link";
 import { MenuItem } from "../DesktopMenu/MenuItem";
 
+/**
+ * MobileMenu component renders a mobile navigation menu with various menu items.
+ *
+ * @param {Object} props - The component props.
+ * @param {Locale} props.lang - The locale for the navigation links.
+ *
+ * @returns {JSX.Element} The rendered mobile menu component.
+ *
+ * @example
+ * <MobileMenu lang="en" />
+ *
+ * @component
+ * @example
+ * // Example usage:
+ * <MobileMenu lang="es" />
+ */
 export function MobileMenu({ lang }: { lang: Locale }) {
   const { isOpen, autoCloseNavigation } = useMobileNavigation();
 

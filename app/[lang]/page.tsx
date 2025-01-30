@@ -9,6 +9,13 @@ import { Surrounding } from "@/components/features/page/home/Surrounding";
 import { ClientLayout } from "@/components/layout/container";
 import { Locale } from "@/i18n-config";
 
+/**
+ * Asynchronous function component that renders the main page layout.
+ *
+ * @param props - The properties object.
+ * @param props.params - A promise that resolves to an object containing the `lang` parameter.
+ * @returns The main page layout wrapped in `ClientLayout` with various sections.
+ */
 export default async function Page(props: {
   params: Promise<{ lang: Locale }>;
 }) {

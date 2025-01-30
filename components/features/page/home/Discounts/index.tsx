@@ -1,8 +1,15 @@
 import { HeadingSection } from "@/components/features/site/Headings";
 import { Content, Section } from "@/components/layout";
-import { CardDiscount } from "./CardDiscount";
 import { Button } from "@/components/ui/button";
+import { CardDiscount } from "./CardDiscount";
 
+/**
+ * The `Discounts` component renders a section that displays exclusive discount offers.
+ * It includes a heading section with a title and description, followed by two discount cards
+ * and a contact button.
+ *
+ * @returns {JSX.Element} The rendered Discounts component.
+ */
 export function Discounts() {
   return (
     <Section>

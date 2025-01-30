@@ -1,8 +1,19 @@
-import { Content, Section } from "@/components/layout";
-import React from "react";
-import Image from "next/image";
 import { HeadingSection } from "@/components/features/site/Headings";
+import { Content, Section } from "@/components/layout";
+import Image from "next/image";
 
+/**
+ * The `Surrounding` component renders a section showcasing various scenic spaces.
+ * It includes a heading section and a grid layout of images with descriptive overlays.
+ *
+ * @returns {JSX.Element} The JSX code for the Surrounding component.
+ *
+ * @component
+ * @example
+ * return (
+ *   <Surrounding />
+ * )
+ */
 export function Surrounding() {
   return (
     <Section className="h-15rem">

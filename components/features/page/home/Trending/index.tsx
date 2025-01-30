@@ -1,7 +1,19 @@
 import { HeadingSection } from "@/components/features/site/Headings";
-import { Content, Section } from "@/components/layout";
 import { FeaturedItems } from "@/components/features/site/swiper/FeaturedSlider";
+import { Content, Section } from "@/components/layout";
 
+/**
+ * The `Trending` component renders a section that showcases the most trending hotels.
+ * It includes a heading section with a title and description, and a list of featured items.
+ *
+ * @component
+ * @example
+ * return (
+ *   <Trending />
+ * )
+ *
+ * @returns {JSX.Element} A section displaying trending hotels.
+ */
 export function Trending() {
   return (
     <Section>

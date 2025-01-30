@@ -31,7 +31,7 @@ export function TextContent({ lang }: { lang: Locale }): JSX.Element {
         delay={8}
         animation="blurInUp"
         by="character"
-        className="text-center text-xs text-muted-foreground md:text-left md:text-sm"
+        className="text-center text-xs leading-relaxed text-muted-foreground md:text-left md:text-sm"
       >
         Whether you&apos;re traveling solo, with family, or on a romantic
         escape, our top of the line rooms cater to every need. -Visit us today!

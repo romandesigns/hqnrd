@@ -1,11 +1,19 @@
 import { FaList } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n-config";
+import Link from "next/link";
 import { ModeToggle } from "../../ModeToggle";
 import { ToggleNavigationBtn } from "../shared/ToggleNavBtn";
 import { MenuItem } from "./MenuItem";
-import Link from "next/link";
 
+/**
+ * Renders the desktop navigation menu for the site.
+ *
+ * @param {Object} props - The component props.
+ * @param {Locale} props.lang - The current language/locale.
+ *
+ * @returns {JSX.Element} The rendered desktop menu component.
+ */
 export function DesktopMenu({ lang }: { lang: Locale }) {
   return (
     <ul className="flex items-start justify-center gap-3 text-xs font-medium">

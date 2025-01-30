@@ -57,7 +57,7 @@ export function ComboboxDemo() {
           variant="secondary"
           role="combobox"
           aria-expanded={open}
-          className="w-[325px] justify-between"
+          className="w-full justify-between"
         >
           {value
             ? categories.find((category) => category.value === value)?.label
@@ -65,7 +65,7 @@ export function ComboboxDemo() {
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[325px] p-0">
+      <PopoverContent className="w-[370px] p-0">
         <Command>
           <CommandInput placeholder="Search category..." />
           <CommandList>

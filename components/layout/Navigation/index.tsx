@@ -2,9 +2,17 @@ import { Brand, DesktopMenu, MobileMenu } from "@/components/features";
 import { Locale } from "@/i18n-config";
 import { Content } from "../container";
 
+/**
+ * Navigation component that renders the site's navigation bar.
+ *
+ * @param {Object} props - The component props.
+ * @param {Locale} props.lang - The locale for the navigation content.
+ *
+ * @returns {JSX.Element} The rendered navigation component.
+ */
 export function Navigation({ lang }: { lang: Locale }) {
   return (
-    <nav className="sticky inset-0 z-[3] flex items-center justify-center bg-background/70 backdrop-blur-lg">
+    <nav className="sticky inset-0 z-[3] flex items-center justify-center bg-background/90 backdrop-blur-lg">
       <Content
         className="flex items-center justify-between p-2"
         direction="horizontal"

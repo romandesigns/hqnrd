@@ -1,9 +1,19 @@
-import { Content, Section } from "@/components/layout";
-import React from "react";
 import { HeadingSection } from "@/components/features/site/Headings";
-import { CategoryItem } from "./CategoryItem";
+import { Content, Section } from "@/components/layout";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
+import { CategoryItem } from "./CategoryItem";
 
+/**
+ * The `Categories` component renders a section that includes a heading and a grid of category items.
+ *
+ * @returns {JSX.Element} A section containing a heading and a grid of category items.
+ *
+ * @component
+ * @example
+ * return (
+ *   <Categories />
+ * )
+ */
 export function Categories() {
   return (
     <Section>
