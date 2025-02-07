@@ -40,7 +40,6 @@ export function SignUpForm({ lang }: { lang: Locale }) {
               placeholder="--/--/----"
               granularity="day"
               displayFormat={{ hour12: "MM/dd/yyyy" }}
-              birthDate
               className="hover:bg-transparent"
             />
           </Label>

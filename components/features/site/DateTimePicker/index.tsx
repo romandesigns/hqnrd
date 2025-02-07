@@ -690,7 +690,9 @@ type Granularity = "day" | "hour" | "minute" | "second";
 
 type DateTimePickerProps = {
   value?: Date;
-  birthDate?: boolean;
+  mode?: "date" | "time" | "datetime";
+  labelFor?: string;
+  hideIcon?: boolean;
   onChange?: (date: Date | undefined) => void;
   disabled?: boolean;
   /** showing `AM/PM` or not. */
@@ -744,7 +746,8 @@ const DateTimePicker = React.forwardRef<
       granularity = "second",
       placeholder = "Pick a date",
       className,
-      birthDate,
+      mode,
+      hideIcon = false,
       ...props
     },
     ref,
@@ -830,17 +833,20 @@ const DateTimePicker = React.forwardRef<
           <Button
             variant="outline"
             className={cn(
-              "w-full justify-start text-left font-normal",
+              "w-full justify-start bg-transparent text-left font-normal",
               !displayDate && "text-muted-foreground",
               className,
             )}
             ref={buttonRef}
           >
-            {birthDate ? (
+            {mode !== "date" &&
+            mode !== "time" &&
+            mode !== "datetime" &&
+            !hideIcon ? (
               <Cake className="mr-2 h-4 w-4" />
-            ) : (
+            ) : !hideIcon ? (
               <CalendarIcon className="mr-2 h-4 w-4" />
-            )}
+            ) : null}
 
             {displayDate ? (
               format(
