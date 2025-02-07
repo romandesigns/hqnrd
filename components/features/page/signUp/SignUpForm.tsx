@@ -41,6 +41,7 @@ export function SignUpForm({ lang }: { lang: Locale }) {
               granularity="day"
               displayFormat={{ hour12: "MM/dd/yyyy" }}
               className="hover:bg-transparent"
+              inputName="dob"
             />
           </Label>
           <div>
@@ -99,6 +100,7 @@ export function SignUpForm({ lang }: { lang: Locale }) {
             <Button
               size="full"
               className="my-2"
+              variant="secondary"
               onClick={() => setStep(step - 1)}
             >
               Back

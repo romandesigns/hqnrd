@@ -691,6 +691,7 @@ type Granularity = "day" | "hour" | "minute" | "second";
 type DateTimePickerProps = {
   value?: Date;
   mode?: "date" | "time" | "datetime";
+  inputName?: string;
   labelFor?: string;
   hideIcon?: boolean;
   onChange?: (date: Date | undefined) => void;
@@ -747,6 +748,7 @@ const DateTimePicker = React.forwardRef<
       placeholder = "Pick a date",
       className,
       mode,
+      inputName,
       hideIcon = false,
       ...props
     },
@@ -828,79 +830,88 @@ const DateTimePicker = React.forwardRef<
     }
 
     return (
-      <Popover>
-        <PopoverTrigger asChild disabled={disabled}>
-          <Button
-            variant="outline"
-            className={cn(
-              "w-full justify-start bg-transparent text-left font-normal",
-              !displayDate && "text-muted-foreground",
-              className,
-            )}
-            ref={buttonRef}
-          >
-            {mode !== "date" &&
-            mode !== "time" &&
-            mode !== "datetime" &&
-            !hideIcon ? (
-              <Cake className="mr-2 h-4 w-4" />
-            ) : !hideIcon ? (
-              <CalendarIcon className="mr-2 h-4 w-4" />
-            ) : null}
+      <>
+        <input
+          className="hidden"
+          type="text"
+          name={inputName}
+          value={value ? value.toISOString() : ""}
+          readOnly
+        />
+        <Popover>
+          <PopoverTrigger asChild disabled={disabled}>
+            <Button
+              variant="outline"
+              className={cn(
+                "w-full justify-start bg-transparent text-left font-normal",
+                !displayDate && "text-muted-foreground",
+                className,
+              )}
+              ref={buttonRef}
+            >
+              {mode !== "date" &&
+              mode !== "time" &&
+              mode !== "datetime" &&
+              !hideIcon ? (
+                <Cake className="mr-2 h-4 w-4" />
+              ) : !hideIcon ? (
+                <CalendarIcon className="mr-2 h-4 w-4" />
+              ) : null}
 
-            {displayDate ? (
-              format(
-                displayDate,
-                hourCycle === 24
-                  ? initHourFormat.hour24
-                  : initHourFormat.hour12,
-                {
-                  locale: loc,
-                },
-              )
-            ) : (
-              <span>{placeholder}</span>
+              {displayDate ? (
+                format(
+                  displayDate,
+                  hourCycle === 24
+                    ? initHourFormat.hour24
+                    : initHourFormat.hour12,
+                  {
+                    locale: loc,
+                  },
+                )
+              ) : (
+                <span>{placeholder}</span>
+              )}
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-auto p-0">
+            <Calendar
+              mode="single"
+              selected={displayDate}
+              month={month}
+              onSelect={(newDate) => {
+                if (newDate) {
+                  newDate.setHours(
+                    month?.getHours() ?? 0,
+                    month?.getMinutes() ?? 0,
+                    month?.getSeconds() ?? 0,
+                  );
+                  onSelect(newDate);
+                }
+              }}
+              onMonthChange={handleSelect}
+              yearRange={yearRange}
+              locale={locale}
+              {...props}
+            />
+            {granularity !== "day" && (
+              <div className="border-t border-border p-3">
+                <TimePicker
+                  onChange={(value) => {
+                    onChange?.(value);
+                    setDisplayDate(value);
+                    if (value) {
+                      setMonth(value);
+                    }
+                  }}
+                  date={month}
+                  hourCycle={hourCycle}
+                  granularity={granularity}
+                />
+              </div>
             )}
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-auto p-0">
-          <Calendar
-            mode="single"
-            selected={displayDate}
-            month={month}
-            onSelect={(newDate) => {
-              if (newDate) {
-                newDate.setHours(
-                  month?.getHours() ?? 0,
-                  month?.getMinutes() ?? 0,
-                  month?.getSeconds() ?? 0,
-                );
-                onSelect(newDate);
-              }
-            }}
-            onMonthChange={handleSelect}
-            yearRange={yearRange}
-            locale={locale}
-            {...props}
-          />
-          {granularity !== "day" && (
-            <div className="border-t border-border p-3">
-              <TimePicker
-                onChange={(value) => {
-                  onChange?.(value);
-                  setDisplayDate(value);
-                  if (value) {
-                    setMonth(value);
-                  }
-                }}
-                date={month}
-                hourCycle={hourCycle}
-                granularity={granularity}
-              />
-            </div>
-          )}
-        </PopoverContent>
-      </Popover>
+          </PopoverContent>
+        </Popover>
+      </>
     );
   },
 );

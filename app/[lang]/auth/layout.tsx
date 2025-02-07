@@ -26,7 +26,7 @@ export default async function AuthLayout({ children, params }: LayoutProps) {
   const { lang } = await params;
   return (
     <Section className="flex min-h-screen w-full items-stretch justify-stretch border border-red-500 p-2 min-[769px]:items-center min-[769px]:justify-center">
-      <Content className="grid h-full grid-cols-1 gap-4 bg-muted/5 max-[769px]:max-w-[30rem] min-[769px]:grid-cols-[1fr_0.65fr] min-[769px]:p-4 lg:max-w-[80rem]">
+      <Content className="grid h-full grid-cols-1 gap-4 bg-muted/5 max-[769px]:max-w-[30rem] min-[769px]:grid-cols-[1fr_0.6fr] min-[769px]:p-4 lg:max-w-[80rem]">
         <article className="hidden aspect-[1/1] flex-1 min-[769px]:block">
           <figure className="relative h-full w-full overflow-hidden rounded-br-3xl rounded-tl-3xl">
             <Image
@@ -37,7 +37,7 @@ export default async function AuthLayout({ children, params }: LayoutProps) {
             />
           </figure>
         </article>
-        <article className="grid grid-cols-1 grid-rows-[auto_1fr] border border-red-500 max-[769px]:h-full min-[769px]:px-4">
+        <article className="grid grid-cols-1 grid-rows-[auto_1fr] rounded-bl-3xl rounded-tr-3xl py-3 max-[769px]:h-full min-[769px]:px-6">
           <div className="flex items-center justify-between gap-4">
             <Brand lang={lang} />
             <div className="flex items-center justify-center gap-4">
