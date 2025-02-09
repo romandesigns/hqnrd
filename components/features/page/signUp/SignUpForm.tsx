@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { FormLabel } from "@/components/features";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,7 +10,6 @@ import { cn } from "@/lib/utils";
 import { enUS, es } from "date-fns/locale";
 import Form from "next/form";
 import Link from "next/link";
-import React from "react";
 import { DateTimePicker } from "../../site/DateTimePicker";
 
 export function SignUpForm({ lang }: { lang: Locale }) {
