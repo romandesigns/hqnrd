@@ -11,19 +11,20 @@ import { enUS, es } from "date-fns/locale";
 import Form from "next/form";
 import Link from "next/link";
 import { DateTimePicker } from "../../site/DateTimePicker";
+import { createUserAccountAction } from "@/server-actions/createUserAccountAction";
 
 export function SignUpForm({ lang }: { lang: Locale }) {
   const [date12, setDate12] = React.useState<Date | undefined>(undefined);
   const [step, setStep] = React.useState(0);
 
   return (
-    <Form action="#" className="flex flex-col gap-4">
-      {step === 0 && (
-        <>
-          <div className="flex items-center justify-center gap-4">
-            <Label className="mb-2 flex-1" htmlFor="name">
+    <Form action={createUserAccountAction} className="flex flex-col gap-2">
+      {/*User Details*/}
+      <div className={step === 0 ? 'block' : 'hidden'}>
+          <div className="flex items-center justify-center gap-2">
+            <Label className="mb-2 flex-1" htmlFor="name" >
               <FormLabel label="Nombre" />
-              <Input type="name" name="name" id="name" />
+              <Input type="name" name="firstName" id="name" />
             </Label>
             <Label className="mb-2 flex-1" htmlFor="lasName">
               <FormLabel label="Apellido" />
@@ -44,75 +45,72 @@ export function SignUpForm({ lang }: { lang: Locale }) {
               inputName="dob"
             />
           </Label>
-          <div>
+          <div className={'py-2'}>
             <FormLabel label="Sex" />
-            <RadioGroup>
+            <RadioGroup name="sex" className={'flex items-center justify-start'}>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="default" id="r1" />
+                <RadioGroupItem value="male" id="r1" />
                 <Label htmlFor="r1">Male</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="comfortable" id="r2" />
+                <RadioGroupItem value="female" id="r2" />
                 <Label htmlFor="r2">Female</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="compact" id="r3" />
+                <RadioGroupItem value="otro" id="r3" />
                 <Label htmlFor="r3">Other</Label>
               </div>
             </RadioGroup>
           </div>
-        </>
-      )}
-      {step === 1 && (
-        <>
-          <Label className="mb-2 flex-1" htmlFor="email">
+      </div>
+      <div className={step === 1 ? 'block' : 'hidden'}>
+          {/*Contact Details*/}
+          <Label className="mb-1 flex-1" htmlFor="email">
             <FormLabel label="Email" />
             <Input type="email" name="email" id="email" />
           </Label>
-          <Label className="mb-2 flex-1" htmlFor="password">
+          <Label className="mb-1 flex-1" htmlFor="password">
             <FormLabel label="Password" />
             <Input type="password" name="password" id="password" />
           </Label>
-          <Label className="mb-2 flex-1" htmlFor="confirmPassword">
+          <Label className="mb-1 flex-1" htmlFor="confirmPassword">
             <FormLabel label="Confirm Password" />
             <Input type="password" name="password" id="confirmPassword" />
           </Label>
-        </>
-      )}
+      </div>
 
-      <div
-        className={cn(
-          `grid grid-cols-1`,
-          step === 1 ? "grid-cols-[1fr_3fr] gap-3" : "",
-        )}
-      >
+      <div className={"py-2.5"}>
         {step === 0 && (
           <Button
+          type="submit"
+          size="full"
+          className="my-2"
+          onClick={() => setStep(step + 1)}
+        >
+          Next
+        </Button>)}
+        {step === 1 && (
+        <div className='grid grid-cols-[0.2fr_3fr] gap-2'>
+          <Button
+            variant="secondary"
+            onClick={() => setStep(step - 1)}
             size="full"
             className="my-2"
-            onClick={() => setStep(step + 1)}
+          >
+            Previous
+          </Button>
+          <Button
+            type="submit"
+            size="full"
+            className="my-2"
           >
             Next
           </Button>
-        )}
-        {step === 1 && (
-          <>
-            <Button
-              size="full"
-              className="my-2"
-              variant="secondary"
-              onClick={() => setStep(step - 1)}
-            >
-              Back
-            </Button>
-            <Button size="full" className="my-2">
-              Next
-            </Button>
-          </>
+        </div>
         )}
       </div>
 
-      <p className="py-4 text-center text-xs text-muted-foreground">
+      <p className="py-1text-center text-xs text-muted-foreground mx-auto">
         Already registered?
         <Link
           className="ml-2 font-bold underline"
