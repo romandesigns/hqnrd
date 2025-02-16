@@ -3,6 +3,8 @@ import { Locale } from "@/i18n-config";
 import { useMobileNavigation } from "@/store/hooks";
 import React, { useEffect } from "react";
 import { Footer, Navigation } from "../..";
+import { Header } from "@/components/features/page/rooms";
+
 import {  DialogScreen } from "@/components/features/global/Dialog";
 
 /**
@@ -22,7 +24,7 @@ export function ClientLayout({
   children,
   showFooter = true,
   showNavigation = true,
-  lang,
+  lang
 }: {
   children: React.ReactNode;
   showFooter?: boolean;

@@ -1,6 +1,6 @@
 import { ContactWidget } from "@/components/features";
 import { Content } from "@/components/layout";
-import { ComboboxDemo } from "@/components/ui/Combobox";
+import { CategoriesDropDownMenu } from "@/components/ui/CategoriesDropDownMenu";
 import { GoBack } from "@/components/ui/goBack";
 import { Locale } from "@/i18n-config";
 import { billboardsImages } from "@/public/assets/mocked_data/rooms_images";
@@ -25,7 +25,7 @@ export function Header({ lang }: { lang: Locale }) {
                 All rooms provide the same top of the line standards
               </p>
               <div className="flex w-full max-w-[370px] items-center justify-center pt-2">
-                <ComboboxDemo />
+                <CategoriesDropDownMenu lang={lang} />
               </div>
             </div>
             <ContactWidget
