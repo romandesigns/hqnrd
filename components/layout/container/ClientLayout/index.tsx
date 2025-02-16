@@ -3,6 +3,7 @@ import { Locale } from "@/i18n-config";
 import { useMobileNavigation } from "@/store/hooks";
 import React, { useEffect } from "react";
 import { Footer, Navigation } from "../..";
+import {  DialogScreen } from "@/components/features/global/Dialog";
 
 /**
  * ClientLayout component that provides a layout structure for the client-side application.
@@ -16,6 +17,7 @@ import { Footer, Navigation } from "../..";
  *
  * @returns {JSX.Element} The rendered layout component.
  */
+
 export function ClientLayout({
   children,
   showFooter = true,

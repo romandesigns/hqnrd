@@ -27,10 +27,8 @@ export function Categories() {
       </Content>
 
       {/* Centered Category Items */}
-      <Content className="grid grid-cols-1 place-items-center gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <SpotlightCard>
-          <CategoryItem />
-        </SpotlightCard>
+      <Content className="grid grid-cols-1 place-items-center gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-5xl">
+        <CategoryItem />
         <CategoryItem />
         <CategoryItem />
         <CategoryItem />

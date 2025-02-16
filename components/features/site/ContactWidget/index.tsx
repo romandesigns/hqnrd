@@ -1,7 +1,6 @@
 import {
   FaWhatsapp,
   LuMap,
-  MdTranslate,
   FaRegEnvelope,
 } from "@/components/icons";
 import { Button } from "@/components/ui/button";
@@ -9,6 +8,7 @@ import { Locale } from "@/i18n-config";
 import { cn } from "@/lib/utils";
 import { MenuItem } from "../Navigation/DesktopMenu/MenuItem";
 import Link from "next/link";
+import { LanguagePicker } from "@/components/features";
 
 export function ContactWidget({
   lang,
@@ -51,9 +51,7 @@ export function ContactWidget({
           </Button>
         </MenuItem>
         <MenuItem className="block">
-          <Button size="icon" variant={variant} className={cn(btnClassNames)}>
-            <MdTranslate />
-          </Button>
+          <LanguagePicker lang={lang}/>
         </MenuItem>
         <MenuItem className="block">
           <Button size="icon" variant={variant} className={cn(btnClassNames)}>

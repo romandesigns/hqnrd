@@ -40,7 +40,7 @@ export function CardCategory({
         </div>
       </div>
       <div className="rounded-b-md border-t bg-muted-foreground/10 p-4">
-        <p className="py-6 pt-4 text-sm font-normal">{description}</p>
+        <p className="py-6 pt-4 text-xs font-normal">{description}</p>
         <Button size="full" className="font-semibold" asChild>
           <Link href={path}>View Rooms</Link>
         </Button>

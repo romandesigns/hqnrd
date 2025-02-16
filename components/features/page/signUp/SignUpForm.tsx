@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Locale } from "@/i18n-config";
-import { cn } from "@/lib/utils";
 import { enUS, es } from "date-fns/locale";
 import Form from "next/form";
 import Link from "next/link";
@@ -18,10 +17,10 @@ export function SignUpForm({ lang }: { lang: Locale }) {
   const [step, setStep] = React.useState(0);
 
   return (
-    <Form action={createUserAccountAction} className="flex flex-col gap-2">
+    <Form action={createUserAccountAction} className="flex flex-col gap-2 [--margin-bottom:0.5rem]">
       {/*User Details*/}
       <div className={step === 0 ? 'block' : 'hidden'}>
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center justify-center gap-2 mb-[var(--margin-bottom)]">
             <Label className="mb-2 flex-1" htmlFor="name" >
               <FormLabel label="Nombre" />
               <Input type="name" name="firstName" id="name" />
@@ -31,7 +30,7 @@ export function SignUpForm({ lang }: { lang: Locale }) {
               <Input type="name" name="lasName" id="lasName" />
             </Label>
           </div>
-          <Label className="flex-1" htmlFor="dob">
+          <Label className="flex-1 gap-2 mb-[var(--margin-bottom)]" htmlFor="dob">
             <FormLabel label="Date of Birth" />
             <DateTimePicker
               hourCycle={12}
@@ -45,7 +44,7 @@ export function SignUpForm({ lang }: { lang: Locale }) {
               inputName="dob"
             />
           </Label>
-          <div className={'py-2'}>
+          <div className={'py-2 gap-2 my-[var(--margin-bottom)]'}>
             <FormLabel label="Sex" />
             <RadioGroup name="sex" className={'flex items-center justify-start'}>
               <div className="flex items-center space-x-2">
@@ -69,7 +68,7 @@ export function SignUpForm({ lang }: { lang: Locale }) {
             <FormLabel label="Email" />
             <Input type="email" name="email" id="email" />
           </Label>
-          <Label className="mb-1 flex-1" htmlFor="password">
+          <Label className="flex-1 gap-2 block my-[var(--margin-bottom)]" htmlFor="password">
             <FormLabel label="Password" />
             <Input type="password" name="password" id="password" />
           </Label>
