@@ -5,7 +5,8 @@ import { Content, Section } from "@/components/layout";
 import { Locale } from "@/i18n-config";
 import {rooms} from './rooms';
 import {Button} from '@/components/ui/button';
-import {MdAttachMoney,FaArrowUpLong,FaArrowDownLong} from '@/components/icons';
+import {MdAttachMoney,FaArrowUpLong,FaArrowDownLong,HiMiniUserGroup, FaSortNumericDown,FaSortNumericUp} from '@/components/icons';
+import { Label } from "@radix-ui/react-menu";
 
 type SearchParams = { [key: string]: string | string[] | undefined }
 
@@ -31,16 +32,26 @@ export default async function Page(props: PageProps) {
           />
 
          <div className="flex justify-between items-center">
-            <div>
-              <span className="flex items-center justify-start p-2 text-xs gap-2 bg-secondary/20 rounded-md font-bold">
-                <MdAttachMoney size={22}/>
-                <Button size='icon' variant='ghost' className='border'><FaArrowUpLong/></Button>
-                <Button size='icon' variant='ghost' className='border'><FaArrowDownLong/></Button>
-              </span>
-              <span className="text-xs">Guests: Up | Down</span>
-              <span className="text-xs">Order: Up | Down</span>
+            <RoomsCount className='w-auto hidden sm:block'/>
+            <div className="flex items-start p-2 py-1 justify-center flex-col md:flex-row md:justify-between">
+              <Label className='font-bold text-xs uppercase'>Filters:</Label>
+              <div className="flex items-center justify-start ml-auto">
+               <span className="flex items-center justify-start p-2 text-xs gap-2  rounded-md font-bold">
+                  <HiMiniUserGroup size={22}/>
+                  <Button size='icon' variant='ghost' className='border'><FaArrowUpLong/></Button>
+                  <Button size='icon' variant='ghost' className='border'><FaArrowDownLong/></Button>
+               </span>
+                  <span className="flex items-center justify-start p-2 text-xs gap-2  rounded-md font-bold">
+                  <MdAttachMoney size={22}/>
+                  <Button size='icon' variant='ghost' className='border'><FaArrowUpLong/></Button>
+                  <Button size='icon' variant='ghost' className='border'><FaArrowDownLong/></Button>
+                </span>
+                  <span className="flex items-center justify-start p-2 text-xs gap-2  rounded-md font-bold">
+                  <Button size='icon' variant='ghost' className='border'><FaSortNumericDown/></Button>
+                  <Button size='icon' variant='ghost' className='border'><FaSortNumericUp/></Button>
+                </span>
+              </div>
             </div>
-           <RoomsCount />
          </div>
         </Content>
       </Section>

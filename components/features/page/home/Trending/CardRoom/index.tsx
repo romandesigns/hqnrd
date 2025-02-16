@@ -44,7 +44,8 @@ interface RoomsData {
 }
 
 export function CardRoom({ lang , room}: { lang: Locale , room: Room[] }) {
-  const {uuid, pricePerNight,unit,slug} = room;
+  // const {uuid, pricePerNight,unit,slug} = room;
+  console.log(room)
   const removePluralSuffix = (word) => word.replace(/(?<!l)es$|s$/, "");
   return (
     <div className="glass h-full grid-cols-1 grid-rows-[auto_1fr_auto] rounded-lg border">
@@ -56,7 +57,7 @@ export function CardRoom({ lang , room}: { lang: Locale , room: Room[] }) {
               <p className="-mb-1 text-xs font-bold uppercase">Double Cama</p>
               <small className="text-xs font-normal text-muted-foreground">
                 Unit{" "}
-                <span className="ml-1 font-black text-foreground">{unit}</span>
+                <span className="ml-1 font-black text-foreground">{250}</span>
               </small>
             </div>
           </div>
@@ -70,7 +71,7 @@ export function CardRoom({ lang , room}: { lang: Locale , room: Room[] }) {
       <div className="h-auto overflow-hidden rounded-b-md border-t bg-muted-foreground/10 p-2">
         <figure className="relative h-52 overflow-hidden rounded-md">
           <div className="absolute bottom-0 right-0 z-[2] rounded-tl-md bg-muted p-2 px-4 text-sm font-bold">
-            {pricePerNight}$ / Night
+            {1500}$ / Night
           </div>
           <Image
             src="/assets/images/home/header/HQNRD-first-featured-image.webp"
@@ -131,7 +132,7 @@ export function CardRoom({ lang , room}: { lang: Locale , room: Room[] }) {
         </div>
         <div className="my-2">
           <Button size="full" className="font-semibold" asChild>
-            <Link href={`/${lang}/habitacion/${removePluralSuffix(slug)}/${unit}`}>View Rooms</Link>
+            <Link href={`/${lang}/habitacion/${removePluralSuffix('dobles')}/250`}>View Rooms</Link>
           </Button>
         </div>
       </div>
