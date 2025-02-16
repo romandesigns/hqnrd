@@ -10,6 +10,8 @@ export {
   FaWhatsapp,
   FaWheelchair,
   FaCalendar,
+  FaSortNumericUp,
+  FaSortNumericDown,
 } from "react-icons/fa";
 export {
   FaList,
@@ -19,6 +21,8 @@ export {
   FaChevronDown,
   FaUser,
   FaChild,
+  FaArrowUpLong,
+  FaArrowDownLong
 } from "react-icons/fa6";
 export { FcGoogle } from "react-icons/fc";
 export { HiLocationMarker, HiMenuAlt2 } from "react-icons/hi";
@@ -28,6 +32,7 @@ export {
   MdOutlineMarkEmailUnread,
   MdOutlineWifi,
   MdTranslate,
+  MdAttachMoney
 } from "react-icons/md";
 export {
   TbAirConditioning,
@@ -38,3 +43,5 @@ export {
 export { TiSocialInstagram } from "react-icons/ti";
 export { IoMdArrowRoundBack } from "react-icons/io";
 export { GoHomeFill } from "react-icons/go";
+export { HiMiniUserGroup } from "react-icons/hi2";
+export { RiUserFill } from "react-icons/ri";

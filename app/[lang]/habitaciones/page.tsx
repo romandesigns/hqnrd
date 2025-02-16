@@ -4,6 +4,8 @@ import { HeadingSection } from "@/components/features/site/Headings";
 import { Content, Section } from "@/components/layout";
 import { Locale } from "@/i18n-config";
 import {rooms} from './rooms';
+import {Button} from '@/components/ui/button';
+import {MdAttachMoney,FaArrowUpLong,FaArrowDownLong} from '@/components/icons';
 
 type SearchParams = { [key: string]: string | string[] | undefined }
 
@@ -27,7 +29,19 @@ export default async function Page(props: PageProps) {
             title="Showing All Rooms"
             description="All rooms are held to the same high standards"
           />
-          <RoomsCount />
+
+         <div className="flex justify-between items-center">
+            <div>
+              <span className="flex items-center justify-start p-2 text-xs gap-2 bg-secondary/20 rounded-md font-bold">
+                <MdAttachMoney size={22}/>
+                <Button size='icon' variant='ghost' className='border'><FaArrowUpLong/></Button>
+                <Button size='icon' variant='ghost' className='border'><FaArrowDownLong/></Button>
+              </span>
+              <span className="text-xs">Guests: Up | Down</span>
+              <span className="text-xs">Order: Up | Down</span>
+            </div>
+           <RoomsCount />
+         </div>
         </Content>
       </Section>
       <Section>
