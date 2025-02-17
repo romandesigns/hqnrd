@@ -9,6 +9,8 @@ import { cn } from "@/lib/utils";
 import { MenuItem } from "../Navigation/DesktopMenu/MenuItem";
 import Link from "next/link";
 import { LanguagePicker } from "@/components/features";
+import { ExternalLink } from "@/components/ui/ExLink";
+import { GLOBAL } from "@/utils/constants/global";
 
 export function ContactWidget({
   lang,
@@ -40,14 +42,16 @@ export function ContactWidget({
             className={cn(btnClassNames)}
             asChild
           >
-            <Link href={lang}>
+            <ExternalLink href={GLOBAL.contact.googleMap}>
               <LuMap />
-            </Link>
+            </ExternalLink>
           </Button>
         </MenuItem>
         <MenuItem className="block">
           <Button size="icon" variant={variant} className={cn(btnClassNames)}>
-            <FaWhatsapp />
+            <ExternalLink href={GLOBAL.contact.whatsapp}>
+              <FaWhatsapp />
+            </ExternalLink>
           </Button>
         </MenuItem>
         <MenuItem className="block">
@@ -55,7 +59,9 @@ export function ContactWidget({
         </MenuItem>
         <MenuItem className="block">
           <Button size="icon" variant={variant} className={cn(btnClassNames)}>
+            <ExternalLink href={GLOBAL.contact.email}>
             <FaRegEnvelope />
+            </ExternalLink>
           </Button>
         </MenuItem>
       </ul>
