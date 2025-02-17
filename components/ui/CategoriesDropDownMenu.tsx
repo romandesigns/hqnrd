@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useRouter } from "next/navigation";
+import { useRouter,useSearchParams } from "next/navigation";
 import { Check, ChevronsUpDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -54,7 +54,8 @@ const categories = [
 
 export function CategoriesDropDownMenu({ lang }: { lang: Locale }) {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("ver-todas");
+  const searchParams = useSearchParams().get('categoria');
+  const [value, setValue] = React.useState(searchParams || "ver-todas");
 
   const router = useRouter();
 

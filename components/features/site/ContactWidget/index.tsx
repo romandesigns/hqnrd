@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n-config";
 import { cn } from "@/lib/utils";
 import { MenuItem } from "../Navigation/DesktopMenu/MenuItem";
-import Link from "next/link";
 import { LanguagePicker } from "@/components/features";
 import { ExternalLink } from "@/components/ui/ExLink";
 import { GLOBAL } from "@/utils/constants/global";

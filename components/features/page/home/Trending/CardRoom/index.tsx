@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n-config";
 import Image from "next/image";
 import Link from "next/link";
+import { removePluralSuffix } from "@/utils/formatter/pluralSuffixCleaner";
 
 // Type for media files
 interface MediaFiles {
@@ -44,18 +45,16 @@ interface RoomsData {
 }
 
 export function CardRoom({ lang , room}: { lang: Locale , room: Room[] }) {
-  // const {uuid, pricePerNight,unit,slug} = room;
-  console.log(room)
-  const removePluralSuffix = (word) => word.replace(/(?<!l)es$|s$/, "");
+
   return (
     <div className="glass h-full grid-cols-1 grid-rows-[auto_1fr_auto] rounded-lg border">
       <div className="flex items-end">
         <div className="flex-0.5 h-10 rounded-tl-md bg-muted p-1" />
         <div className="relative overflow-hidden bg-transparent p-1 after:absolute after:content-['']">
-          <div className="rounded-b-md p-1 shadow-[0_26px_0_10px_hsl(var(--muted))]">
-            <div className="rounded-md bg-foreground/10 p-1 px-6">
+          <div className="rounded-b-md p-1 shadow-[0_29px_0_5px_hsl(var(--muted))]">
+            <div className="rounded-md bg-foreground/10 p-1.5 pt-2.5 px-6">
               <p className="-mb-1 text-xs font-bold uppercase">Double Cama</p>
-              <small className="text-xs font-normal text-muted-foreground">
+              <small className="text-xs font-bold text-muted-foreground uppercase">
                 Unit{" "}
                 <span className="ml-1 font-black text-foreground">{250}</span>
               </small>
