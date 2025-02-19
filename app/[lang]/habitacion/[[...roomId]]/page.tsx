@@ -14,7 +14,6 @@ type CategoryObject = {
 export default async function Page({ params }: { params: Promise<{ roomId: string, lang: Locale }> }) {
   // Destructuring segment parameters
   const { lang, roomId } = await params;
-
   // Transforming slug array to create an object containing the rooms and associated identifiers
   const transformSlugCategories = (): CategoryObject => {
     return categoriesSlug.filter(slug => slug.value !== "ver-todas").reduce<CategoryObject>((acc, category) => {
