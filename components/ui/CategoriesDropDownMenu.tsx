@@ -3,7 +3,6 @@
 import * as React from "react";
 import { useRouter,useSearchParams } from "next/navigation";
 import { Check, ChevronsUpDown } from "lucide-react";
-
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,37 +19,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Locale } from "@/i18n-config";
-
-const categories = [
-  {
-    value: "basicas",
-    label: "Basic",
-  },
-  {
-    value: "doble-camas",
-    label: "Double Bed",
-  },
-  {
-    value: "ejecutivas",
-    label: "Ejecutivas",
-  },
-  {
-    value: "standards",
-    label: "Standard",
-  },
-  {
-    value: "dobles",
-    label: "Double Room",
-  },
-  {
-    value: "familiares",
-    label: "Familiar",
-  },
-  {
-    value: "ver-todas",
-    label: "View All",
-  },
-];
+import { categoriesSlug } from "@/utils/constants/global";
 
 export function CategoriesDropDownMenu({ lang }: { lang: Locale }) {
   const [open, setOpen] = React.useState(false);
@@ -75,7 +44,7 @@ export function CategoriesDropDownMenu({ lang }: { lang: Locale }) {
           aria-expanded={open}
           className="w-full justify-between"
         >
-          {categories.find((category) => category.value === value)?.label ??
+          {categoriesSlug.find((category) => category.value === value)?.label ??
             "Select category..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
@@ -86,7 +55,7 @@ export function CategoriesDropDownMenu({ lang }: { lang: Locale }) {
           <CommandList>
             <CommandEmpty>No category found.</CommandEmpty>
             <CommandGroup>
-              {categories.map((category) => (
+              {categoriesSlug.map((category) => (
                 <CommandItem
                   key={category.value}
                   value={category.value}

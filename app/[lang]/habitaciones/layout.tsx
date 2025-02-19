@@ -2,7 +2,7 @@ import { Header } from "@/components/features/page/rooms";
 import { ClientLayout } from "@/components/layout/container";
 import { Locale } from "@/i18n-config";
 import "@/styles/globals.css";
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Hotel Quinto Nivel RD",
