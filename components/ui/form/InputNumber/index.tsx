@@ -46,6 +46,7 @@ export function InputNumber({
             <FaChevronUp />
           </Button>
           <Button
+            disabled={count === 0}
             size="icon"
             variant="outline"
             className="rounded-l-none rounded-r-none bg-transparent"

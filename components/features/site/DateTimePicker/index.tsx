@@ -558,7 +558,7 @@ const TimePickerInput = React.forwardRef<
 
     return (
       <>
-        <input name={"dob"} value={value} className={'hidden'} readOnly />
+        <input name={"dob"} value={value} className={"hidden"} readOnly />
         <Input
           ref={ref}
           id={id || picker}
@@ -735,7 +735,7 @@ type DateTimePickerRef = {
 
 const DateTimePicker = React.forwardRef<
   Partial<DateTimePickerRef>,
-  DateTimePickerProps
+  DateTimePickerProps & { minDate?: Date; maxDate?: Date }
 >(
   (
     {
@@ -753,6 +753,8 @@ const DateTimePicker = React.forwardRef<
       mode,
       inputName,
       hideIcon = false,
+      minDate, // NEW PROP: Minimum selectable date
+      maxDate, // NEW PROP: Maximum selectable date
       ...props
     },
     ref,
@@ -762,45 +764,28 @@ const DateTimePicker = React.forwardRef<
     const [displayDate, setDisplayDate] = React.useState<Date | undefined>(
       value ?? undefined,
     );
-    /**
-     * carry over the current time when a user clicks a new day
-     * instead of resetting to 00:00
-     */
-    const handleSelect = (newDay: Date | undefined) => {
-      if (!newDay) {
-        return;
-      }
-      if (!defaultPopupValue) {
-        newDay.setHours(
-          month?.getHours() ?? 0,
-          month?.getMinutes() ?? 0,
-          month?.getSeconds() ?? 0,
-        );
-        onChange?.(newDay);
-        setMonth(newDay);
-        return;
-      }
-      const diff = newDay.getTime() - defaultPopupValue.getTime();
-      const diffInDays = diff / (1000 * 60 * 60 * 24);
-      const newDateFull = add(defaultPopupValue, {
-        days: Math.ceil(diffInDays),
-      });
-      newDateFull.setHours(
-        month?.getHours() ?? 0,
-        month?.getMinutes() ?? 0,
-        month?.getSeconds() ?? 0,
-      );
-      onChange?.(newDateFull);
-      setMonth(newDateFull);
-    };
 
-    const onSelect = (newDay?: Date) => {
-      if (!newDay) {
-        return;
-      }
+    /**
+     * Handle date selection while enforcing minDate and maxDate constraints.
+     */
+    const handleSelect = (newDay?: Date) => {
+      if (!newDay) return;
+
+      if (minDate && newDay < minDate) return; // Prevent selecting before minDate
+      if (maxDate && newDay > maxDate) return; // Prevent selecting after maxDate
+
       onChange?.(newDay);
       setMonth(newDay);
       setDisplayDate(newDay);
+    };
+
+    /**
+     * Prevent selecting dates outside of minDate or maxDate range.
+     */
+    const isDisabled = (date: Date) => {
+      if (minDate && date < minDate) return true;
+      if (maxDate && date > maxDate) return true;
+      return false;
     };
 
     useImperativeHandle(
@@ -881,19 +866,11 @@ const DateTimePicker = React.forwardRef<
               mode="single"
               selected={displayDate}
               month={month}
-              onSelect={(newDate) => {
-                if (newDate) {
-                  newDate.setHours(
-                    month?.getHours() ?? 0,
-                    month?.getMinutes() ?? 0,
-                    month?.getSeconds() ?? 0,
-                  );
-                  onSelect(newDate);
-                }
-              }}
-              onMonthChange={handleSelect}
+              onSelect={handleSelect}
+              onMonthChange={setMonth}
               yearRange={yearRange}
               locale={locale}
+              disabled={isDisabled} // Disables dates based on minDate & maxDate
               {...props}
             />
             {granularity !== "day" && (

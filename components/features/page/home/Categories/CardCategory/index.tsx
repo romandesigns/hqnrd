@@ -20,14 +20,14 @@ export function CardCategory({
       <div className="flex items-end">
         <div className="flex-0.5 h-4 rounded-tl-md bg-muted p-1" />
         <div className="relative overflow-hidden bg-transparent p-1 after:absolute after:content-['']">
-          <div className="rounded-b-md p-1 shadow-[0_54px_0_10px_hsl(var(--muted))]">
+          <div className="rounded-b-md p-1 shadow-[0_40px_0_10px_hsl(var(--muted))]">
             {children}
           </div>
         </div>
         <div className="flex h-4 flex-1 items-center justify-start rounded-tr-md bg-muted p-2 font-bold" />
       </div>
       <div className="bg-muted">
-        <div className="h-full p-2 px-4">
+        <div className="h-full p-2 px-4 pt-0">
           <div className="relative flex items-center justify-between overflow-hidden rounded-md">
             <h3 className="text-md relative z-[1] font-black uppercase">
               {title}

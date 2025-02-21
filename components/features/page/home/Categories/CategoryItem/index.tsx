@@ -10,8 +10,8 @@ export function CategoryItem() {
       description="Perfect for solo travelers seeking simplicity and comfort."
       path="/habitaciones?basicas"
     >
-      <div className="flex aspect-square items-center justify-center rounded-md bg-foreground p-3 text-background">
-        <FaCube size={25} />
+      <div className="flex aspect-square items-center justify-center rounded-md bg-foreground p-2 text-background">
+        <FaCube size={18} />
       </div>
     </CardCategory>
   );
