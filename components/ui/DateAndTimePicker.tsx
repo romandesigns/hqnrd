@@ -8,15 +8,19 @@ import { FormLabel } from "../features";
 import { DateTimePicker } from "../features/site/DateTimePicker";
 
 export function DateAndTimePicker({
-  lang,
-  hideIcon,
-  label,
-  icon,
-}: {
+                                    lang,
+                                    hideIcon,
+                                    label,
+                                    icon,
+                                    granularity,
+                                    minDate
+                                  }: {
   lang: Locale;
   hideIcon?: boolean;
   label: string;
   icon: string;
+  granularity?: string
+  minDate?: Date;
 }) {
   const [date12, setDate12] = React.useState<Date | undefined>(undefined);
 
@@ -36,11 +40,12 @@ export function DateAndTimePicker({
         onChange={setDate12}
         locale={lang === "es" ? es : enUS}
         placeholder="--/--/----"
-        granularity="day"
-        displayFormat={{ hour12: "MM/dd/yyyy" }}
+        granularity={granularity || "day"}
+        // displayFormat={{ hour12: "MM/dd/yyyy" }}
         hideIcon={hideIcon}
         className="hover:bg-transparent"
         labelFor="date"
+        minDate={minDate}
       />
     </Label>
   );

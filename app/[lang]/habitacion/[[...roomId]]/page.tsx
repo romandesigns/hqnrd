@@ -11,6 +11,8 @@ import { Features } from "@/components/features/page/Room/Features";
 import { Description } from "@/components/features/page/Room/Description";
 import { Amenities } from "@/components/features/page/Room/Amenities";
 import { Media } from "@/components/features/page/Room/Media";
+import { InputNumber } from "@/components/ui/form/InputNumber";
+import { DateAndTimePicker } from "@/components/ui/DateAndTimePicker";
 
 type CategoryObject = {
   [key: string]: {
@@ -87,7 +89,38 @@ export default async function Page({ params }: { params: Promise<{ roomId: strin
             <Amenities />
             <Media />
           </article>
-          <aside className="border">ASIDE</aside>
+          <aside className="pt-4">
+            <div>
+              <h4 className="bg-secondary/50 inline-block text-2xl font-bold p-2 rounded-t-md px-6 ">2,350$ /
+                Day</h4>
+              <div className="bg-secondary/50 p-2 rounded-tr-md py-8 space-y-6">
+                <div className="flex items-center justify-center gap-4 px-4">
+                  <InputNumber
+                    name="adultsCount"
+                    inputNumberLabel="Adults"
+                    iconName="FaUser"
+                    iconSize={13}
+                  />
+                  <InputNumber
+                    name="childrensCount"
+                    inputNumberLabel="Children"
+                    iconName="FaChild"
+                    iconSize={13}
+                  />
+                </div>
+                <div className="flex items-center justify-center gap-4 px-4">
+                  <DateAndTimePicker
+                    lang={lang}
+                    hideIcon={true}
+                    label="Check In: Date and Time"
+                    icon="calendar"
+                    granularity="minute"
+                    minDate={new Date()}
+                  />
+                </div>
+              </div>
+            </div>
+          </aside>
         </Content>
       </Section>
     </ClientLayout>
