@@ -56,7 +56,7 @@ export function MobileMenu({ lang }: { lang: Locale }) {
             </Button>
           </MenuItem>
           <MenuItem className="mb-5 mt-20 block">
-            <ContactWidget lang={lang} variant="ghost" btnClassNames="border" />
+            <ContactWidget lang={lang} variant="ghost" btnClassNames="border-none bg-muted" />
           </MenuItem>
           <MenuItem className="block">
             <Button size="full" variant="default" className="py-4 text-xs">

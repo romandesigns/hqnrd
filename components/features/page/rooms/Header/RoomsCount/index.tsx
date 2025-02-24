@@ -5,11 +5,11 @@ export function RoomsCount({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        `flex w-full items-center justify-start px-2 py-4 md:justify-end`,
-        className,
+        `flex items-center justify-start md:justify-end`,
+        className
       )}
     >
-      <p className="mx-2 flex items-center justify-center gap-2 text-xs text-muted-foreground">
+      <p className="mr-2 flex items-center justify-center gap-2 text-xs text-muted-foreground">
         <span>Showing</span>
         <span className="rounded-full bg-muted-foreground px-3 text-primary-foreground">
           16

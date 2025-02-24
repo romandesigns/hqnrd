@@ -6,22 +6,25 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "assets.aceternity.com",
+        hostname: "assets.aceternity.com"
       },
       {
         protocol: "https",
-        hostname: "swiperjs.com",
+        hostname: "swiperjs.com"
       },
       {
         protocol: "https",
-        hostname: "images.pexels.com",
+        hostname: "images.pexels.com"
+      }, {
+        protocol: "https",
+        hostname: "cdn.pixabay.com"
       },
       {
         protocol: "https",
-        hostname: "videos.pexels.com",
+        hostname: "videos.pexels.com"
       }
-    ],
-  },
+    ]
+  }
 };
 
 export default nextConfig;

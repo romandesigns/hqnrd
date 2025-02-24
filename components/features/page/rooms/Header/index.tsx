@@ -5,19 +5,22 @@ import { GoBack } from "@/components/ui/goBack";
 import { Locale } from "@/i18n-config";
 import { billboardsImages } from "@/public/assets/mocked_data/rooms_images";
 import { HeroGallery } from "./HeaderGallery";
-import { RoomsCount } from "./RoomsCount";
+import { Filters } from "@/components/features/page/rooms/filters";
 
 export function Header({ lang }: { lang: Locale }) {
   return (
-    <header className="max-md:sticky max-md:top-10 max-md:z-[2] max-md:rounded-b-md max-md:bg-background/80 max-md:backdrop-blur-xl">
+    <header
+      className="hqnrd-frosty-bg lg:static">
       <Content className="py-2 md:py-20">
         <section className="relative grid grid-cols-1 gap-4 md:grid-cols-2">
           <article className="relative z-[2] flex h-full w-full flex-col items-start justify-center">
             <div className="flex w-full items-center justify-between px-2">
-              <GoBack variant="ghost" />
-              <RoomsCount className="justify-end md:hidden" />
+              <div className="py-3">
+                <GoBack variant="outline" />
+              </div>
+
             </div>
-            <div className="flex h-full w-full flex-col items-start justify-center p-4 md:py-8 lg:pb-0">
+            <div className="flex h-full w-full flex-col items-start justify-center p-2 md:py-8 lg:pb-0">
               <h2 className="text-3xl font-bold lg:text-5xl">
                 Select your Ideal Room
               </h2>
@@ -27,6 +30,9 @@ export function Header({ lang }: { lang: Locale }) {
               <div className="flex w-full max-w-[370px] items-center justify-center pt-2">
                 <CategoriesDropDownMenu lang={lang} />
               </div>
+              <Content className="w-full  md:hidden">
+                <Filters />
+              </Content>
             </div>
             <ContactWidget
               lang={lang}

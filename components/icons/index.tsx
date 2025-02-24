@@ -12,6 +12,7 @@ export {
   FaCalendar,
   FaSortNumericUp,
   FaSortNumericDown,
+  FaFilter
 } from "react-icons/fa";
 export {
   FaList,
@@ -22,7 +23,8 @@ export {
   FaUser,
   FaChild,
   FaArrowUpLong,
-  FaArrowDownLong
+  FaArrowDownLong,
+  FaPeopleRoof
 } from "react-icons/fa6";
 export { FcGoogle } from "react-icons/fc";
 export { HiLocationMarker, HiMenuAlt2 } from "react-icons/hi";
@@ -32,16 +34,39 @@ export {
   MdOutlineMarkEmailUnread,
   MdOutlineWifi,
   MdTranslate,
-  MdAttachMoney
+  MdAttachMoney,
+  MdBalcony,
+  MdOutlineBathtub,
+  MdOutlineBlender,
+  MdOutlineLocalLaundryService,
+  MdVpnKey,
+  MdOutlineWaterDrop,
+  MdWifi,
+  MdCoffeeMaker
 } from "react-icons/md";
 export {
   TbAirConditioning,
   TbBrandIntercom,
   TbBrandWhatsappFilled,
   TbToolsKitchen,
+  TbRulerMeasure,
+  TbTrafficCone,
+  TbWheelchair,
+  TbMicrowave
 } from "react-icons/tb";
 export { TiSocialInstagram } from "react-icons/ti";
 export { IoMdArrowRoundBack } from "react-icons/io";
 export { GoHomeFill } from "react-icons/go";
 export { HiMiniUserGroup } from "react-icons/hi2";
 export { RiUserFill } from "react-icons/ri";
+export { HiDotsHorizontal } from "react-icons/hi";
+export { BsCameraReels } from "react-icons/bs";
+export { LiaBedSolid } from "react-icons/lia";
+export { GiWaterBottle } from "react-icons/gi";
+export { PiCouch, PiFanBold, PiTelevisionSimple } from "react-icons/pi";
+export { GrToast } from "react-icons/gr";
+export { RiNetflixFill } from "react-icons/ri";
+export { GiCctvCamera } from "react-icons/gi";
+export { BiCloset } from "react-icons/bi";
+export { AiOutlineYoutube } from "react-icons/ai";
+export { CgSmartHomeRefrigerator } from "react-icons/cg";

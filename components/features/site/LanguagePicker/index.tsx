@@ -1,21 +1,20 @@
-'use client'
-import { Button } from "@/components/ui/button"
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+"use client";
+import { Button, ButtonProps } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { MdTranslate } from "@/components/icons";
 import { LocaleSwitcher } from "@/components/features/site/LocaleSwitcher";
 import { Locale } from "@/i18n-config";
+import { cx } from "class-variance-authority";
 
-export function LanguagePicker({ lang }:{ lang: Locale }) {
+export function LanguagePicker({ lang, variant, className }: {
+  lang: Locale,
+  variant: ButtonProps["variant"],
+  className: string
+}) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" size="icon">
+        <Button variant={variant} size="icon" className={cx(className)}>
           <MdTranslate />
         </Button>
       </DialogTrigger>
@@ -23,8 +22,8 @@ export function LanguagePicker({ lang }:{ lang: Locale }) {
         <DialogHeader>
           <DialogTitle>Select Idiom</DialogTitle>
         </DialogHeader>
-          <LocaleSwitcher lang={lang}/>
+        <LocaleSwitcher lang={lang} />
       </DialogContent>
     </Dialog>
-  )
+  );
 }
