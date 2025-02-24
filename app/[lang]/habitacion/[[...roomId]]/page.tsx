@@ -42,7 +42,6 @@ export default async function Page({ params }: { params: Promise<{ roomId: strin
     // Check if unit exists within the category
     return categories[category].units?.includes(unitNumber) || false;
   };
-  console.log(checkCategoryAndUnitFromQuery());
   return (
     <ClientLayout lang={lang}>
       <header
