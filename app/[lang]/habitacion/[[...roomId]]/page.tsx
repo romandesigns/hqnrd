@@ -13,6 +13,9 @@ import { Amenities } from "@/components/features/page/Room/Amenities";
 import { Media } from "@/components/features/page/Room/Media";
 import { InputNumber } from "@/components/ui/form/InputNumber";
 import { DateAndTimePicker } from "@/components/ui/DateAndTimePicker";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Trending } from "@/components/features/page/home";
 
 type CategoryObject = {
   [key: string]: {
@@ -91,7 +94,9 @@ export default async function Page({ params }: { params: Promise<{ roomId: strin
           </article>
           <aside className="pt-4">
             <div>
-              <h4 className="bg-secondary/50 inline-block text-2xl font-bold p-2 rounded-t-md px-6 ">2,350$ /
+              <h4
+                className="bg-secondary inline-block text-2xl font-bold p-2 rounded-md border border-background translate-y-2 px-6 ">2,350$
+                /
                 Day</h4>
               <div className="bg-secondary/50 p-2 rounded-tr-md py-8 space-y-6">
                 <div className="flex items-center justify-center gap-4 px-4">
@@ -112,16 +117,32 @@ export default async function Page({ params }: { params: Promise<{ roomId: strin
                   <DateAndTimePicker
                     lang={lang}
                     hideIcon={true}
-                    label="Check In: Date and Time"
+                    label="Check In"
                     icon="calendar"
                     granularity="minute"
                     minDate={new Date()}
                   />
+                  <DateAndTimePicker
+                    lang={lang}
+                    hideIcon={true}
+                    label="Check Out"
+                    icon="calendar"
+                    granularity="day"
+                    minDate={new Date()}
+                  />
+                </div>
+                <div className="px-4">
+                  <Label htmlFor="message" className="text-muted-foreground ">Message (Optional)</Label>
+                  <Textarea />
+                  <Button size="full" className="py-5 mt-8">Add Booking</Button>
                 </div>
               </div>
             </div>
           </aside>
         </Content>
+      </Section>
+      <Section className="py-20">
+        <Trending />
       </Section>
     </ClientLayout>
   );

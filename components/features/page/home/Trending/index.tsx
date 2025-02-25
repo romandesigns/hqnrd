@@ -14,7 +14,7 @@ import { Content, Section } from "@/components/layout";
  *
  * @returns {JSX.Element} A section displaying trending hotels.
  */
-export function Trending() {
+export function Trending({ heading, description }: { heading: string; description: string }): JSX.Element {
   return (
     <Section>
       <Content className="flex-row justify-center">
