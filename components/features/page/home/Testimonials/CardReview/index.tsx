@@ -47,10 +47,10 @@ export function CaredReview({ review }: { review: CaredReviewProps }) {
         <div className="rounded-b-md border-t bg-muted-foreground/5 p-4">
           <div className="flex items-center gap-2">
             <p className="font-bold">
-              <span className="mr-2 text-sm text-muted-foreground">
-                PROVIDED
+              <span className="mr-2 text-xs text-muted-foreground">
+                RATED HOTEL
               </span>
-              <span>4.5</span>
+              <span className="text-xs">4.5</span>
             </p>
             <div className="flex items-center">
               <StarsRating rating={4.5} />
