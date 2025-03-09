@@ -154,6 +154,15 @@ export default async function Page({ params }: PageProps) {
                       <FormLabel label="Parking" />
                     </Label>
                   </li>
+                  <li className="min-w-[10rem] flex-1">
+                    <Label
+                      htmlFor="account"
+                      className="flex items-center gap-2"
+                    >
+                      <Checkbox id="account" />
+                      <FormLabel label="Account" />
+                    </Label>
+                  </li>
                 </ul>
               </div>
               <Button type="submit" size="full" className="mt-10 py-5">
