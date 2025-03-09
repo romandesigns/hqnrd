@@ -9,28 +9,26 @@ import { Filters } from "@/components/features/page/rooms/filters";
 
 export function Header({ lang }: { lang: Locale }) {
   return (
-    <header
-      className="hqnrd-frosty-bg lg:static">
+    <header className="hqnrd-frosty-bg lg:static">
       <Content className="py-2 md:py-20">
         <section className="relative grid grid-cols-1 gap-4 md:grid-cols-2">
           <article className="relative z-[2] flex h-full w-full flex-col items-start justify-center">
             <div className="flex w-full items-center justify-between px-2">
-              <div className="py-3">
+              <div>
                 <GoBack variant="outline" />
               </div>
-
             </div>
             <div className="flex h-full w-full flex-col items-start justify-center p-2 md:py-8 lg:pb-0">
-              <h2 className="text-3xl font-bold lg:text-5xl">
+              <h2 className="w-full text-center text-lg font-bold sm:text-3xl md:text-left lg:text-5xl">
                 Select your Ideal Room
               </h2>
-              <p className="py-2 text-xs text-muted-foreground md:text-sm">
+              <p className="hidden py-2 text-xs text-muted-foreground md:block md:text-sm">
                 All rooms provide the same top of the line standards
               </p>
-              <div className="flex w-full max-w-[370px] items-center justify-center pt-2">
+              <div className="mx-auto flex w-full max-w-[370px] items-center justify-center pt-2 md:ml-0">
                 <CategoriesDropDownMenu lang={lang} />
               </div>
-              <Content className="w-full  md:hidden">
+              <Content className="w-full md:hidden">
                 <Filters />
               </Content>
             </div>

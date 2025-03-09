@@ -12,7 +12,7 @@ import { Content } from "../container";
  */
 export function Navigation({ lang }: { lang: Locale }) {
   return (
-    <nav className="sticky inset-0 z-[3] flex items-center justify-center bg-background/80 backdrop-blur-lg">
+    <nav className="sticky inset-0 z-[3] flex items-center justify-center border-b border-background bg-background/95 backdrop-blur-lg md:bg-background/85">
       <Content
         className="flex items-center justify-between p-2"
         direction="horizontal"

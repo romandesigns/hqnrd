@@ -5,7 +5,7 @@ import { Locale } from "@/i18n-config";
 import { rooms } from "./rooms";
 import { Filters } from "@/components/features/page/rooms/filters";
 
-type SearchParams = { [key: string]: string | string[] | undefined }
+type SearchParams = { [key: string]: string | string[] | undefined };
 
 interface PageProps {
   params: Promise<{ lang: Locale }>;
@@ -27,19 +27,22 @@ export default async function Page(props: PageProps) {
             description="All rooms are held to the same high standards"
           />
 
-          <div className="flex justify-between items-center">
+          <div className="flex items-center justify-between">
             {/*<RoomsCount className="w-auto hidden sm:block" />*/}
-
           </div>
         </Content>
       </Section>
       <Section>
-        <Content className="w-full hidden md:block">
+        <Content className="hidden w-full md:block">
           <Filters />
         </Content>
-        <Content className="grid-auto-rows grid grid-cols-1 gap-1 py-14 pt-2 md:grid-cols-2 lg:grid-cols-3">
-          {(categoria === "ver-todas" || categoria === undefined ? rooms : rooms.filter(room => room.slug === categoria)).map(room =>
-            <CardRoom lang={lang} key={room.uuid} room={room} />)}
+        <Content className="grid-auto-rows grid grid-cols-1 gap-1 py-14 pt-2 sm:grid-cols-2 lg:grid-cols-3">
+          {(categoria === "ver-todas" || categoria === undefined
+            ? rooms
+            : rooms.filter((room) => room.slug === categoria)
+          ).map((room) => (
+            <CardRoom lang={lang} key={room.uuid} room={room} />
+          ))}
         </Content>
       </Section>
     </>

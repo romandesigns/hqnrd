@@ -22,20 +22,27 @@ type CategoryObject = {
   };
 };
 
-export default async function Page({ params }: { params: Promise<{ roomId: string, lang: Locale }> }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ roomId: string; lang: Locale }>;
+}) {
   // Destructuring segment parameters
   const { lang, roomId } = await params;
   // Transforming slug array to create an object containing the rooms and associated identifiers
   const transformSlugCategories = (): CategoryObject => {
-    return categoriesSlug.filter(slug => slug.value !== "ver-todas").reduce<CategoryObject>((acc, category) => {
-      acc[removePluralSuffix(category.value)] = { ...category };
-      return acc;
-    }, {});
+    return categoriesSlug
+      .filter((slug) => slug.value !== "ver-todas")
+      .reduce<CategoryObject>((acc, category) => {
+        acc[removePluralSuffix(category.value)] = { ...category };
+        return acc;
+      }, {});
   };
 
   const checkCategoryAndUnitFromQuery = () => {
     // Redirecting user to rooms page if any of the following evaluates to true
-    if (roomId === undefined || !Array.isArray(roomId) || roomId.length !== 2) redirect(`/${lang}/habitaciones`);
+    if (roomId === undefined || !Array.isArray(roomId) || roomId.length !== 2)
+      redirect(`/${lang}/habitaciones`);
     const [category, unit] = roomId;
     const unitNumber = parseInt(unit, 10);
     const categories = transformSlugCategories();
@@ -46,22 +53,27 @@ export default async function Page({ params }: { params: Promise<{ roomId: strin
   };
   return (
     <ClientLayout lang={lang}>
-      <header
-        className="hqnrd-frosty-bg">
+      <header className="hqnrd-frosty-bg">
         <Content className="p-6 px-2 lg:py-2 lg:pt-8">
           <div className="py-3">
             <GoBack variant="outline" />
           </div>
-          <div className="flex flex-col justify-center items-center md:flex-row md:justify-between">
-            <div
-              className="flex flex-col justify-center items-center mb-4 lg:mb-0 gap-x-2 md:flex-1 md:justify-start md:items-start">
+          <div className="flex flex-col items-center justify-center md:flex-row md:justify-between">
+            <div className="mb-4 flex flex-col items-center justify-center gap-x-2 md:flex-1 md:items-start md:justify-start lg:mb-0">
               <p className="font-bold">Unit 201</p>
-              <h2 className="leading-6 font-black  text-3xl md:text-5xl md:font-black uppercase">Doble Cama</h2>
+              <h2 className="text-3xl font-black uppercase leading-6 md:text-5xl md:font-black">
+                Doble Cama
+              </h2>
             </div>
-            <div
-              className="flex justify-center items-center  md:flex-col md:justify-between w-full max-w-6xl md:w-auto md:max-w-auto">
-              <Button className="w-full max-w-lg md:hidden">Make Reservation</Button>
-              <ContactWidget lang={lang} className="hidden md:block" variant="outline" />
+            <div className="md:max-w-auto flex w-full max-w-6xl items-center justify-center md:w-auto md:flex-col md:justify-between">
+              <Button className="w-full max-w-lg md:hidden">
+                Make Reservation
+              </Button>
+              <ContactWidget
+                lang={lang}
+                className="hidden md:block"
+                variant="outline"
+              />
             </div>
           </div>
         </Content>
@@ -77,9 +89,9 @@ export default async function Page({ params }: { params: Promise<{ roomId: strin
         </Content>
       </Section>
       <Section>
-        <Content className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-10 p-2">
-          <article className="flex flex-col items-center justify-center gap-20">
-            <div className="flex items-center justify-start w-full pt-3">
+        <Content className="grid grid-cols-1 gap-10 p-2 md:grid-cols-[2fr_1fr]">
+          <article className="flex flex-col items-center justify-center gap-10 lg:gap-20">
+            <div className="flex w-full items-center justify-start pt-3">
               <Button size="icon" variant="outline">
                 <FaShareNodes />
               </Button>
@@ -89,19 +101,22 @@ export default async function Page({ params }: { params: Promise<{ roomId: strin
             <Amenities />
             <Media />
           </article>
-          <aside className="pt-4 hidden md:block">
+          <aside className="hidden pt-4 md:block">
             <div className="md:sticky md:top-[15rem]">
-              <h4
-                className="bg-secondary inline-block text-2xl font-bold p-2 rounded-md border-4 border-background translate-y-4 translate-x-4 px-6 ">2,350$
-                /
-                Day</h4>
+              <h4 className="inline-block translate-x-4 translate-y-4 rounded-md border-4 border-background bg-secondary p-2 px-6 text-2xl font-bold">
+                2,350$ / Day
+              </h4>
               <Booking lang={lang} />
             </div>
           </aside>
         </Content>
       </Section>
-      <Section className="py-20">
-        <Trending lang={lang} heading="Trending now" description="See these otehr options and reserve today" />
+      <Section className="py-5 lg:py-20">
+        <Trending
+          lang={lang}
+          heading="Trending now"
+          description="See these otehr options and reserve today"
+        />
       </Section>
     </ClientLayout>
   );
