@@ -13,6 +13,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { CaredReview } from "../../page/home/Testimonials/CardReview";
 import { CardRoom } from "../../page/home/Trending/CardRoom";
 import { Locale } from "@/i18n-config";
+import TeamCard from "@/components/features/site/TeamCard";
 
 /**
  * Component to display featured items in a swiper slider.
@@ -26,20 +27,38 @@ import { Locale } from "@/i18n-config";
  *
  * @returns {JSX.Element} The FeaturedItems component.
  */
+
+interface BreakPoints {
+  sm: { slidesPerView: number; spaceBetween: number };
+  md: { slidesPerView: number; spaceBetween: number };
+  lg: { slidesPerView: number; spaceBetween: number };
+}
+
+const defaultBreakPoints: BreakPoints = {
+  sm: { slidesPerView: 1, spaceBetween: 20 },
+  md: { slidesPerView: 2, spaceBetween: 20 },
+  lg: { slidesPerView: 3, spaceBetween: 20 }
+};
+
 export function FeaturedItems({
-  testimonials = false,
-  trendingRooms = false,
-  itemsArray,
-  speed = 5000,
-  delay = 50,
-  lang,
-}: {
+                                testimonials = false,
+                                trendingRooms = false,
+                                teams = false,
+                                breakPoints,
+                                itemsArray,
+                                speed = 5000,
+                                delay = 50,
+                                lang
+                              }: {
   testimonials?: boolean;
   trendingRooms?: boolean;
+  teams?: boolean;
+  breakPoints?: BreakPoints;
   itemsArray: CaredReviewProps[];
   speed?: number;
   delay?: number;
   lang: Locale;
+
 }) {
   const testimonialsComponent = () =>
     itemsArray.map((review, index) => (
@@ -54,6 +73,15 @@ export function FeaturedItems({
         <CardRoom lang={lang} />
       </SwiperSlide>
     ));
+
+  const teamsComponent = () =>
+    itemsArray.map((review, index) => (
+      <SwiperSlide key={index} className="pb-10">
+        <TeamCard />
+      </SwiperSlide>
+    ));
+
+  console.log(breakPoints);
   return (
     <div className="inner">
       <div className="swiper-wrapper-container">
@@ -61,31 +89,32 @@ export function FeaturedItems({
           centeredSlides={true}
           breakpoints={{
             640: {
-              slidesPerView: 1,
-              spaceBetween: 20,
+              slidesPerView: 3,
+              spaceBetween: 20
             },
             768: {
-              slidesPerView: 2,
-              spaceBetween: 20,
+              slidesPerView: breakPoints?.md?.slidesPerView || defaultBreakPoints.md.slidesPerView,
+              spaceBetween: breakPoints?.md?.spaceBetween || defaultBreakPoints.md.spaceBetween
             },
             1024: {
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
+              slidesPerView: breakPoints?.lg?.slidesPerView || defaultBreakPoints.lg.slidesPerView,
+              spaceBetween: breakPoints?.lg?.spaceBetween || defaultBreakPoints.lg.spaceBetween
+            }
           }}
           speed={speed}
           autoplay={{
             delay: delay,
-            disableOnInteraction: false,
+            disableOnInteraction: false
           }}
           pagination={{
-            clickable: true,
+            clickable: true
           }}
           modules={[Autoplay, Pagination, Navigation]}
           className="h-auto"
         >
           {testimonials && testimonialsComponent()}
           {trendingRooms && trendingComponent()}
+          {teams && teamsComponent()}
         </Swiper>
       </div>
     </div>

@@ -12,7 +12,10 @@ export {
   FaCalendar,
   FaSortNumericUp,
   FaSortNumericDown,
-  FaFilter
+  FaFilter,
+  FaCrown,
+  FaBed,
+  FaUsers
 } from "react-icons/fa";
 export {
   FaList,
@@ -24,7 +27,8 @@ export {
   FaChild,
   FaArrowUpLong,
   FaArrowDownLong,
-  FaPeopleRoof
+  FaPeopleRoof,
+  FaClone
 } from "react-icons/fa6";
 export { FcGoogle } from "react-icons/fc";
 export { HiLocationMarker, HiMenuAlt2 } from "react-icons/hi";
@@ -42,7 +46,9 @@ export {
   MdVpnKey,
   MdOutlineWaterDrop,
   MdWifi,
-  MdCoffeeMaker
+  MdCoffeeMaker,
+  MdBed,
+  MdHotel
 } from "react-icons/md";
 export {
   TbAirConditioning,
@@ -70,3 +76,5 @@ export { GiCctvCamera } from "react-icons/gi";
 export { BiCloset } from "react-icons/bi";
 export { AiOutlineYoutube } from "react-icons/ai";
 export { CgSmartHomeRefrigerator } from "react-icons/cg";
+export { BsHouseDoor, BsFillHouseDoorFill } from "react-icons/bs";
+export { GrClone } from "react-icons/gr";

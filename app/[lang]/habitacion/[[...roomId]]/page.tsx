@@ -11,11 +11,8 @@ import { Features } from "@/components/features/page/Room/Features";
 import { Description } from "@/components/features/page/Room/Description";
 import { Amenities } from "@/components/features/page/Room/Amenities";
 import { Media } from "@/components/features/page/Room/Media";
-import { InputNumber } from "@/components/ui/form/InputNumber";
-import { DateAndTimePicker } from "@/components/ui/DateAndTimePicker";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Trending } from "@/components/features/page/home";
+import { Booking } from "@/components/features/site/Forms/Booking";
 
 type CategoryObject = {
   [key: string]: {
@@ -80,8 +77,8 @@ export default async function Page({ params }: { params: Promise<{ roomId: strin
         </Content>
       </Section>
       <Section>
-        <Content className="grid grid-cols-[2fr_1fr] gap-2 p-2">
-          <article className="flex flex-col items-center justify-center gap-14">
+        <Content className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-10 p-2">
+          <article className="flex flex-col items-center justify-center gap-20">
             <div className="flex items-center justify-start w-full pt-3">
               <Button size="icon" variant="outline">
                 <FaShareNodes />
@@ -92,58 +89,21 @@ export default async function Page({ params }: { params: Promise<{ roomId: strin
             <Amenities />
             <Media />
           </article>
-          <aside className="pt-4">
-            <div>
+          <aside className="pt-4 hidden md:block">
+            <div className="md:sticky md:top-[15rem]">
               <h4
-                className="bg-secondary inline-block text-2xl font-bold p-2 rounded-md border border-background translate-y-2 px-6 ">2,350$
+                className="bg-secondary inline-block text-2xl font-bold p-2 rounded-md border-4 border-background translate-y-4 translate-x-4 px-6 ">2,350$
                 /
                 Day</h4>
-              <div className="bg-secondary/50 p-2 rounded-tr-md py-8 space-y-6">
-                <div className="flex items-center justify-center gap-4 px-4">
-                  <InputNumber
-                    name="adultsCount"
-                    inputNumberLabel="Adults"
-                    iconName="FaUser"
-                    iconSize={13}
-                  />
-                  <InputNumber
-                    name="childrensCount"
-                    inputNumberLabel="Children"
-                    iconName="FaChild"
-                    iconSize={13}
-                  />
-                </div>
-                <div className="flex items-center justify-center gap-4 px-4">
-                  <DateAndTimePicker
-                    lang={lang}
-                    hideIcon={true}
-                    label="Check In"
-                    icon="calendar"
-                    granularity="minute"
-                    minDate={new Date()}
-                  />
-                  <DateAndTimePicker
-                    lang={lang}
-                    hideIcon={true}
-                    label="Check Out"
-                    icon="calendar"
-                    granularity="day"
-                    minDate={new Date()}
-                  />
-                </div>
-                <div className="px-4">
-                  <Label htmlFor="message" className="text-muted-foreground ">Message (Optional)</Label>
-                  <Textarea />
-                  <Button size="full" className="py-5 mt-8">Add Booking</Button>
-                </div>
-              </div>
+              <Booking lang={lang} />
             </div>
           </aside>
         </Content>
       </Section>
       <Section className="py-20">
-        <Trending />
+        <Trending lang={lang} heading="Trending now" description="See these otehr options and reserve today" />
       </Section>
     </ClientLayout>
   );
 }
+5;

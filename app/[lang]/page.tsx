@@ -2,9 +2,9 @@ import {
   Categories,
   Discounts,
   Header,
-  Testimonials,
-  Trending,
   ReservationSearchBox,
+  Testimonials,
+  Trending
 } from "@/components/features/page/home";
 import { Surrounding } from "@/components/features/page/home/Surrounding";
 import { ClientLayout } from "@/components/layout/container";
@@ -26,13 +26,14 @@ export default async function Page(props: {
   return (
     <ClientLayout lang={lang}>
       <Header lang={lang} />
-      <main className="grid min-h-screen grid-rows-[auto_1fr_auto] items-center justify-items-start gap-40 p-2 pb-20 font-[family-name:var(--font-family)] md:p-5 lg:p-20 !pt-0">
+      <main
+        className="grid min-h-screen grid-rows-[auto_1fr_auto] items-center justify-items-start gap-40 p-2 pb-20 font-[family-name:var(--font-family)] md:p-5 lg:p-20 !pt-0">
         <ReservationSearchBox lang={lang} />
         <Testimonials lang={lang} />
         <Discounts />
-        <Categories />
+        <Categories lang={lang} />
         <Surrounding />
-        <Trending />
+        <Trending lang={lang} heading="Trending" description="Explore the most trending hotels today" />
       </main>
     </ClientLayout>
   );

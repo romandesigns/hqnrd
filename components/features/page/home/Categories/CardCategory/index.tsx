@@ -3,17 +3,19 @@ import Link from "next/link";
 import React from "react";
 
 export function CardCategory({
-  title,
-  description,
-  children,
-  path,
-  totalRooms,
-}: {
+                               title,
+                               description,
+                               children,
+                               path,
+                               totalRooms,
+                               btnCTA
+                             }: {
   title: string;
   description: string;
   children: React.ReactNode;
   path: string;
   totalRooms: number;
+  btnCTA: string;
 }) {
   return (
     <div className="glass h-full w-full max-w-[28rem] grid-cols-1 grid-rows-[auto_1fr_auto] rounded-lg border">
@@ -42,7 +44,7 @@ export function CardCategory({
       <div className="rounded-b-md border-t bg-muted-foreground/10 p-4">
         <p className="py-6 pt-4 text-xs font-normal">{description}</p>
         <Button size="full" className="font-semibold" asChild>
-          <Link href={path}>View Rooms</Link>
+          <Link href={`${path}`}>{btnCTA}</Link>
         </Button>
       </div>
     </div>
