@@ -15,7 +15,8 @@ export {
   FaFilter,
   FaCrown,
   FaBed,
-  FaUsers
+  FaUsers,
+  FaRegStar,
 } from "react-icons/fa";
 export {
   FaList,
@@ -28,7 +29,7 @@ export {
   FaArrowUpLong,
   FaArrowDownLong,
   FaPeopleRoof,
-  FaClone
+  FaClone,
 } from "react-icons/fa6";
 export { FcGoogle } from "react-icons/fc";
 export { HiLocationMarker, HiMenuAlt2 } from "react-icons/hi";
@@ -48,7 +49,7 @@ export {
   MdWifi,
   MdCoffeeMaker,
   MdBed,
-  MdHotel
+  MdHotel,
 } from "react-icons/md";
 export {
   TbAirConditioning,
@@ -58,7 +59,7 @@ export {
   TbRulerMeasure,
   TbTrafficCone,
   TbWheelchair,
-  TbMicrowave
+  TbMicrowave,
 } from "react-icons/tb";
 export { TiSocialInstagram } from "react-icons/ti";
 export { IoMdArrowRoundBack } from "react-icons/io";

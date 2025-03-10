@@ -17,16 +17,14 @@ import Link from "next/link";
  */
 export function TextContent({ lang }: { lang: Locale }): JSX.Element {
   return (
-    <article
-      className="relative flex h-auto w-full flex-col items-center justify-center gap-4 md:justify-start md:gap-6">
-      <GoogleStats reviewsCount={4.9} ratingCount={139} />
-      <small
-        className="flex w-full items-center justify-center gap-2 text-muted-foreground md:items-center md:justify-start">
+    <article className="relative flex h-auto w-full flex-col items-center justify-center gap-4 md:justify-start md:gap-6">
+      <GoogleStats reviewsCount={139} ratingsCount={4.9} />
+      <small className="flex w-full items-center justify-center gap-2 text-muted-foreground md:items-center md:justify-start">
         <HiLocationMarker />
         <span>In Salcedo, Republica Dominicana</span>
       </small>
       <BoxReveal>
-        <h1 className="text-center text-3xl font-black md:text-left md:text-2xl lg:text-5xl lg:leading-11">
+        <h1 className="lg:leading-11 text-center text-3xl font-black md:text-left md:text-2xl lg:text-5xl">
           Experience unmatched comfort and elegance
         </h1>
       </BoxReveal>
@@ -36,8 +34,8 @@ export function TextContent({ lang }: { lang: Locale }): JSX.Element {
         by="character"
         className="text-center text-xs leading-relaxed text-muted-foreground md:text-left md:text-sm"
       >
-        Whether you&apos;re traveling solo, with family, or on a romantic
-        escape, our top of the line rooms cater to every need. -Visit us today!
+        Traveling solo, with family, or on a romantic getaway? Our premium rooms
+        have you covered. Visit us today!
       </TextAnimate>
       <div className="mb-4 flex w-full items-center justify-center gap-2 md:justify-start">
         <Button asChild>
