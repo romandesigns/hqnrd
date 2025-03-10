@@ -1,5 +1,5 @@
 import React from "react";
-import { FaStar, FaStarHalfAlt } from "@/components/icons";
+import { FaStar, FaStarHalfAlt, FaRegStar } from "@/components/icons";
 
 export function StarsRating({ rating }: { rating: number }) {
   const fullStars = Math.floor(rating);
@@ -13,7 +13,7 @@ export function StarsRating({ rating }: { rating: number }) {
       ))}
       {hasHalfStar && <FaStarHalfAlt className="text-[var(--warning)]" />}
       {Array.from({ length: emptyStars }).map((_, index) => (
-        <FaStar key={`empty-${index}`} className="text-gray-300" />
+        <FaRegStar key={`empty-${index}`} className="text-[var(--warning)]" />
       ))}
     </div>
   );
