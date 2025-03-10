@@ -1,31 +1,36 @@
-import { FaStar, FaStarHalfAlt, FcGoogle } from "@/components/icons";
+import { StarsRating } from "@/components/features";
+import { FcGoogle } from "@/components/icons";
 import NumberTicker from "@/components/ui/number-ticker";
+
+/**
+ * Component to display Google statistics including the number of reviews and ratings.
+ *
+ * @param {Object} props - The properties object.
+ * @param {number} props.reviewsCount - The number of Google reviews.
+ * @param {number} props.ratingsCount - The number of Google ratings.
+ * @returns {JSX.Element} The rendered GoogleStats component.
+ */
 
 export function GoogleStats({
   reviewsCount,
-  ratingCount,
+  ratingsCount,
 }: {
   reviewsCount: number;
-  ratingCount: number;
+  ratingsCount: number;
 }) {
+  console.log(reviewsCount, ratingsCount);
   return (
     <div className="flex w-full flex-col items-center md:items-start">
       <div className="flex items-center gap-2 md:justify-start">
         <FcGoogle />
         <span className="font-black">
-          <NumberTicker decimalPlaces={2} value={reviewsCount} />{" "}
+          <NumberTicker decimalPlaces={2} value={ratingsCount} />{" "}
         </span>
-        <span className="flex items-center gap-1">
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStarHalfAlt />
-        </span>
+        <StarsRating rating={ratingsCount} />
       </div>
       <p className="text-left text-xs">
         <span className="font-black">
-          <NumberTicker value={ratingCount} />
+          <NumberTicker value={reviewsCount} />
         </span>{" "}
         Google Reviews
       </p>
