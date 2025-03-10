@@ -4,8 +4,10 @@ import { Content, Section } from "@/components/layout";
 import { Locale } from "@/i18n-config";
 import { rooms } from "./rooms";
 import { Filters } from "@/components/features/page/rooms/filters";
+import roomsData from "@/public/assets/mocked_data/rooms.json";
+import { transformSlug } from "@/components/features/page/home/Categories/categories";
 
-type SearchParams = { [key: string]: string | string[] | undefined };
+type SearchParams = { [key: string]: string | undefined };
 
 interface PageProps {
   params: Promise<{ lang: Locale }>;
@@ -16,6 +18,18 @@ export default async function Page(props: PageProps) {
   const params = await props.params;
   const { lang } = params;
   const { categoria } = await props.searchParams;
+
+  const filteredRoomsBySlug = (slug: string | undefined) => {
+    if (slug === "ver-todas" || slug === undefined) {
+      return roomsData.rooms.map((room) => room);
+    }
+    return roomsData.rooms.filter((room) =>
+      room.roomCategory
+        .toLowerCase()
+        .includes(slug.toLowerCase().includes("", "-")),
+    );
+  };
+
   return (
     <>
       <Section>
@@ -37,11 +51,8 @@ export default async function Page(props: PageProps) {
           <Filters />
         </Content>
         <Content className="grid-auto-rows grid grid-cols-1 gap-1 py-14 pt-2 sm:grid-cols-2 lg:grid-cols-3">
-          {(categoria === "ver-todas" || categoria === undefined
-            ? rooms
-            : rooms.filter((room) => room.slug === categoria)
-          ).map((room) => (
-            <CardRoom lang={lang} key={room.uuid} room={room} />
+          {filteredRoomsBySlug(categoria).map((room, index) => (
+            <CardRoom key={index} room={room} />
           ))}
         </Content>
       </Section>

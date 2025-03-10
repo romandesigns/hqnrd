@@ -5,10 +5,21 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Locale } from "@/i18n-config";
-import { categoriesSlug } from "@/utils/constants/global";
+import { slugCategories } from "@/utils/constants/global";
 
 export function CategoriesDropDownMenu({ lang }: { lang: Locale }) {
   const [open, setOpen] = React.useState(false);
@@ -33,7 +44,7 @@ export function CategoriesDropDownMenu({ lang }: { lang: Locale }) {
           aria-expanded={open}
           className="w-full justify-between"
         >
-          {categoriesSlug.find((category) => category.value === value)?.label ??
+          {slugCategories.find((category) => category.value === value)?.label ??
             "Select category..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
@@ -44,7 +55,7 @@ export function CategoriesDropDownMenu({ lang }: { lang: Locale }) {
           <CommandList>
             <CommandEmpty>No category found.</CommandEmpty>
             <CommandGroup>
-              {categoriesSlug.map((category) => (
+              {slugCategories.map((category) => (
                 <CommandItem
                   key={category.value}
                   value={category.value}
@@ -53,7 +64,7 @@ export function CategoriesDropDownMenu({ lang }: { lang: Locale }) {
                   <Check
                     className={cn(
                       "mr-2 h-4 w-4",
-                      value === category.value ? "opacity-100" : "opacity-0"
+                      value === category.value ? "opacity-100" : "opacity-0",
                     )}
                   />
                   {category.label}

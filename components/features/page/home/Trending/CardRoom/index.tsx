@@ -44,17 +44,16 @@ interface RoomsData {
   rooms: Room[];
 }
 
-export function CardRoom({ lang , room}: { lang: Locale , room: Room[] }) {
-
+export function CardRoom({ lang, room }: { lang: Locale; room: Room[] }) {
   return (
     <div className="glass h-full grid-cols-1 grid-rows-[auto_1fr_auto] rounded-lg border">
       <div className="flex items-end">
         <div className="flex-0.5 h-10 rounded-tl-md bg-muted p-1" />
         <div className="relative overflow-hidden bg-transparent p-1 after:absolute after:content-['']">
           <div className="rounded-b-md p-1 shadow-[0_29px_0_5px_hsl(var(--muted))]">
-            <div className="rounded-md bg-foreground/10 p-1.5 pt-2.5 px-6">
+            <div className="rounded-md bg-foreground/10 p-1.5 px-6 pt-2.5">
               <p className="-mb-1 text-xs font-bold uppercase">Double Cama</p>
-              <small className="text-xs font-bold text-muted-foreground uppercase">
+              <small className="text-xs font-bold uppercase text-muted-foreground">
                 Unit{" "}
                 <span className="ml-1 font-black text-foreground">{250}</span>
               </small>
@@ -131,7 +130,11 @@ export function CardRoom({ lang , room}: { lang: Locale , room: Room[] }) {
         </div>
         <div className="my-2">
           <Button size="full" className="font-semibold" asChild>
-            <Link href={`/${lang}/habitacion/${removePluralSuffix('dobles')}/250`}>View Rooms</Link>
+            <Link
+              href={`/${lang}/habitacion/${removePluralSuffix("dobles")}/250`}
+            >
+              View Rooms
+            </Link>
           </Button>
         </div>
       </div>

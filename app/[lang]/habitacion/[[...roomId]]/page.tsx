@@ -1,5 +1,5 @@
 import { Locale } from "@/i18n-config";
-import { categoriesSlug } from "@/utils/constants/global";
+import { slugCategories } from "@/utils/constants/global";
 import { removePluralSuffix } from "@/utils/formatter/pluralSuffixCleaner";
 import { redirect } from "next/navigation";
 import { ClientLayout, Content, Section } from "@/components/layout/container";
@@ -31,7 +31,7 @@ export default async function Page({
   const { lang, roomId } = await params;
   // Transforming slug array to create an object containing the rooms and associated identifiers
   const transformSlugCategories = (): CategoryObject => {
-    return categoriesSlug
+    return slugCategories
       .filter((slug) => slug.value !== "ver-todas")
       .reduce<CategoryObject>((acc, category) => {
         acc[removePluralSuffix(category.value)] = { ...category };

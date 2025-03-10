@@ -25,14 +25,14 @@ export function TextContent({ lang }: { lang: Locale }): JSX.Element {
       </small>
       <BoxReveal>
         <h1 className="lg:leading-11 text-center text-3xl font-black md:text-left md:text-2xl lg:text-5xl">
-          Experience unmatched comfort and elegance
+          Unmatched comfort and elegance await.
         </h1>
       </BoxReveal>
       <TextAnimate
         delay={8}
         animation="blurInUp"
         by="character"
-        className="text-center text-xs leading-relaxed text-muted-foreground md:text-left md:text-sm"
+        className="hyphens-auto break-words text-center text-xs leading-relaxed text-muted-foreground md:text-left md:text-sm lg:text-base"
       >
         Traveling solo, with family, or on a romantic getaway? Our premium rooms
         have you covered. Visit us today!

@@ -18,35 +18,35 @@ export const GLOBAL = {
   },
 };
 
-export const categoriesSlug = [
+export const slugCategories = [
   {
     value: "basicas",
-    label: "Basic",
+    label: "Basicas",
     units: [202, 503],
   },
   {
     value: "doble-camas",
-    label: "Double Bed",
+    label: "Doble Cama",
     units: [102, 402, 502],
   },
   {
     value: "ejecutivas",
-    label: "Executive",
+    label: "Executivas",
     units: [201, 301, 204, 401],
   },
   {
     value: "standards",
-    label: "Standard",
+    label: "Standards",
     units: [203, 501],
   },
   {
     value: "dobles",
-    label: "Double Room",
+    label: "Dobles",
     units: [403, 504],
   },
   {
     value: "familiares",
-    label: "Family",
+    label: "Familres",
     units: [302],
   },
   {

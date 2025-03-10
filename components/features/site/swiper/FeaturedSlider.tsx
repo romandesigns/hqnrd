@@ -37,19 +37,19 @@ interface BreakPoints {
 const defaultBreakPoints: BreakPoints = {
   sm: { slidesPerView: 1, spaceBetween: 20 },
   md: { slidesPerView: 2, spaceBetween: 20 },
-  lg: { slidesPerView: 3, spaceBetween: 20 }
+  lg: { slidesPerView: 3, spaceBetween: 20 },
 };
 
 export function FeaturedItems({
-                                testimonials = false,
-                                trendingRooms = false,
-                                teams = false,
-                                breakPoints,
-                                itemsArray,
-                                speed = 5000,
-                                delay = 50,
-                                lang
-                              }: {
+  testimonials = false,
+  trendingRooms = false,
+  teams = false,
+  breakPoints,
+  itemsArray,
+  speed = 5000,
+  delay = 50,
+  lang,
+}: {
   testimonials?: boolean;
   trendingRooms?: boolean;
   teams?: boolean;
@@ -58,7 +58,6 @@ export function FeaturedItems({
   speed?: number;
   delay?: number;
   lang: Locale;
-
 }) {
   const testimonialsComponent = () =>
     itemsArray.map((review, index) => (
@@ -81,7 +80,6 @@ export function FeaturedItems({
       </SwiperSlide>
     ));
 
-  console.log(breakPoints);
   return (
     <div className="inner">
       <div className="swiper-wrapper-container">
@@ -90,24 +88,32 @@ export function FeaturedItems({
           breakpoints={{
             640: {
               slidesPerView: 3,
-              spaceBetween: 20
+              spaceBetween: 20,
             },
             768: {
-              slidesPerView: breakPoints?.md?.slidesPerView || defaultBreakPoints.md.slidesPerView,
-              spaceBetween: breakPoints?.md?.spaceBetween || defaultBreakPoints.md.spaceBetween
+              slidesPerView:
+                breakPoints?.md?.slidesPerView ||
+                defaultBreakPoints.md.slidesPerView,
+              spaceBetween:
+                breakPoints?.md?.spaceBetween ||
+                defaultBreakPoints.md.spaceBetween,
             },
             1024: {
-              slidesPerView: breakPoints?.lg?.slidesPerView || defaultBreakPoints.lg.slidesPerView,
-              spaceBetween: breakPoints?.lg?.spaceBetween || defaultBreakPoints.lg.spaceBetween
-            }
+              slidesPerView:
+                breakPoints?.lg?.slidesPerView ||
+                defaultBreakPoints.lg.slidesPerView,
+              spaceBetween:
+                breakPoints?.lg?.spaceBetween ||
+                defaultBreakPoints.lg.spaceBetween,
+            },
           }}
           speed={speed}
           autoplay={{
             delay: delay,
-            disableOnInteraction: false
+            disableOnInteraction: false,
           }}
           pagination={{
-            clickable: true
+            clickable: true,
           }}
           modules={[Autoplay, Pagination, Navigation]}
           className="h-auto"
