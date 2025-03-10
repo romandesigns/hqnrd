@@ -75,7 +75,7 @@ export const categories: CategoryItem[] = [
     title: "Double Bed",
     description: "Perfect for solo travelers seeking simplicity and comfort.",
     btnCTA: "View Rooms",
-    slug: transformSlug("Doble Cama"),
+    slug: transformSlug("Doble Camas"),
     Icon: FaBed,
     maxGuestsPerUnit: 4,
     totalUnits: 2,

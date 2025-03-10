@@ -21,13 +21,17 @@ export default async function Page(props: PageProps) {
 
   const filteredRoomsBySlug = (slug: string | undefined) => {
     if (slug === "ver-todas" || slug === undefined) {
-      return roomsData.rooms.map((room) => room);
+      return roomsData.rooms;
     }
-    return roomsData.rooms.filter((room) =>
-      room.roomCategory
-        .toLowerCase()
-        .includes(slug.toLowerCase().includes("", "-")),
-    );
+
+    const cleanedSlug = slug
+      .toLowerCase()
+      .replace("standards", "standar") // Remove "es" only if NOT preceded by "e" (familiares → familiar)
+      .replace("dobles", "doble") // Remove "es" only if NOT preceded by "e" (familiares → familiar)
+      .replace(/\b(\w+[^e])es\b/g, "$1") // Remove "es" only if NOT preceded by "e" (familiares → familiar)
+      .replace(/\b(\w+[^e])s\b/g, "$1") // Remove "s" only if NOT preceded by "e" (dobles → doble, ejecutivas → ejecutiva)
+      .replace(/\s+/g, "-"); // Replace spaces with hyphens
+    return roomsData.rooms.filter((r) => r.slug.toLowerCase() == cleanedSlug);
   };
 
   return (
@@ -51,8 +55,8 @@ export default async function Page(props: PageProps) {
           <Filters />
         </Content>
         <Content className="grid-auto-rows grid grid-cols-1 gap-1 py-14 pt-2 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredRoomsBySlug(categoria).map((room, index) => (
-            <CardRoom key={index} room={room} />
+          {filteredRoomsBySlug(categoria).map((c, index) => (
+            <CardRoom key={index} room={c} />
           ))}
         </Content>
       </Section>

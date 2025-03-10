@@ -52,7 +52,9 @@ export function CardRoom({ lang, room }: { lang: Locale; room: Room[] }) {
         <div className="relative overflow-hidden bg-transparent p-1 after:absolute after:content-['']">
           <div className="rounded-b-md p-1 shadow-[0_29px_0_5px_hsl(var(--muted))]">
             <div className="rounded-md bg-foreground/10 p-1.5 px-6 pt-2.5">
-              <p className="-mb-1 text-xs font-bold uppercase">Double Cama</p>
+              <p className="-mb-1 text-xs font-bold uppercase">
+                {room.category}
+              </p>
               <small className="text-xs font-bold uppercase text-muted-foreground">
                 Unit{" "}
                 <span className="ml-1 font-black text-foreground">{250}</span>
