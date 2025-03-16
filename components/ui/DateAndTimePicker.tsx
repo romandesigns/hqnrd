@@ -5,22 +5,26 @@ import { Locale } from "@/i18n-config";
 import { enUS, es } from "date-fns/locale";
 import React from "react";
 import { FormLabel } from "../features";
-import { DateTimePicker } from "../features/site/DateTimePicker";
+import { DateTimePicker, Granularity } from "../features/site/DateTimePicker";
 
 export function DateAndTimePicker({
-                                    lang,
-                                    hideIcon,
-                                    label,
-                                    icon,
-                                    granularity,
-                                    minDate
-                                  }: {
+  lang,
+  hideIcon,
+  label,
+  icon,
+  granularity,
+  minDate,
+  inputName,
+  displayFormat,
+}: {
   lang: Locale;
   hideIcon?: boolean;
   label: string;
   icon: string;
-  granularity?: string
+  granularity: Granularity;
   minDate?: Date;
+  inputName: string;
+  displayFormat?: { hour12: string };
 }) {
   const [date12, setDate12] = React.useState<Date | undefined>(undefined);
 
@@ -41,11 +45,12 @@ export function DateAndTimePicker({
         locale={lang === "es" ? es : enUS}
         placeholder="--/--/----"
         granularity={granularity || "day"}
-        // displayFormat={{ hour12: "MM/dd/yyyy" }}
         hideIcon={hideIcon}
         className="hover:bg-transparent"
         labelFor="date"
         minDate={minDate}
+        displayFormat={displayFormat}
+        inputName={inputName}
       />
     </Label>
   );

@@ -1,4 +1,4 @@
-export const GLOBAL = {
+export const SITE_DETAILS = {
   brand_title: "HOTEL QUINTO NIVEL RD",
   brand_slogan: "Como estar en casa!",
   contact: {
@@ -17,40 +17,3 @@ export const GLOBAL = {
     },
   },
 };
-
-export const slugCategories = [
-  {
-    value: "basicas",
-    label: "Basicas",
-    units: [202, 503],
-  },
-  {
-    value: "doble-camas",
-    label: "Doble Cama",
-    units: [102, 402, 502],
-  },
-  {
-    value: "ejecutivas",
-    label: "Executivas",
-    units: [201, 301, 204, 401],
-  },
-  {
-    value: "standards",
-    label: "Standards",
-    units: [203, 501],
-  },
-  {
-    value: "dobles",
-    label: "Dobles",
-    units: [403, 504],
-  },
-  {
-    value: "familiares",
-    label: "Familres",
-    units: [302],
-  },
-  {
-    value: "ver-todas",
-    label: "View All",
-  },
-];

@@ -38,30 +38,32 @@ export function InputNumber({
       <div className="flex items-center justify-center rounded-md">
         <div className="flex">
           <Button
+            type="button" // Prevents form submission
             size="icon"
             variant="outline"
-            className="rounded-r-none bg-transparent"
+            className="rounded-r-none bg-transparent px-5"
             onClick={increment}
           >
             <FaChevronUp />
           </Button>
-          <Button
-            disabled={count === 0}
-            size="icon"
-            variant="outline"
-            className="rounded-l-none rounded-r-none bg-transparent"
-            onClick={decrement}
-          >
-            <FaChevronDown />
-          </Button>
         </div>
         <Input
-          name="adults"
+          name={name}
           value={count}
           readOnly
           onChange={() => {}}
-          className={`rounded-l-none text-center ${count === 0 ? "text-muted-foreground" : ""}`}
+          className={`rounded-none text-center ${count === 0 ? "text-muted-foreground" : ""}`}
         />
+        <Button
+          type="button" // Prevents form submission
+          disabled={count === 0}
+          size="icon"
+          variant="outline"
+          className="rounded-l-none rounded-r-md bg-transparent px-5"
+          onClick={decrement}
+        >
+          <FaChevronDown />
+        </Button>
       </div>
     </div>
   );

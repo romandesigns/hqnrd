@@ -2,14 +2,14 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
-import { CategoryItem } from "@/components/features/page/home/Categories/categories";
 import { Locale } from "@/i18n-config";
+import { CategoryInterface } from "@/types";
 
-export function CardCategory({
-  category: { title, Icon, totalUnits, maxGuestsPerUnit, slug },
+export function CategoryCard({
+  category: { label, Icon, totalUnits, maxGuestsPerUnit, slug },
   lang,
 }: {
-  category: CategoryItem;
+  category: CategoryInterface;
   lang: Locale;
 }) {
   return (
@@ -17,18 +17,18 @@ export function CardCategory({
       <div className="flex items-center justify-between p-3">
         <div>
           <h3 className="mb-2 text-sm font-bold uppercase text-foreground">
-            {title}
+            {label}
           </h3>
           <div className="flex items-center justify-start gap-4 text-xs">
             <p className="text-xs text-muted-foreground">
               Units{" "}
-              <span className="rounded-full bg-muted-foreground/10 p-0.5 px-4 font-bold text-primary">
+              <span className="p-0.25 ml-1 rounded-full bg-muted-foreground/10 px-4 font-bold text-primary">
                 {totalUnits}
               </span>
             </p>
             <p className="text-xs text-muted-foreground">
               Max per Unit{" "}
-              <span className="rounded-full bg-muted-foreground/10 p-0.5 px-4 font-bold text-primary">
+              <span className="p-0.25 ml-1 rounded-full bg-muted-foreground/10 px-4 font-bold text-primary">
                 {maxGuestsPerUnit}
               </span>
             </p>
@@ -36,7 +36,6 @@ export function CardCategory({
         </div>
         <Icon />
       </div>
-
       {/* Body */}
       <div className="border-6 relative h-full w-full overflow-hidden rounded-md border-secondary">
         <div className="z-[2] h-48 w-full bg-gradient-to-b from-black/40 via-transparent to-transparent" />
@@ -51,7 +50,7 @@ export function CardCategory({
 
       <div className="p-2">
         <Button size="full" className="py-4 font-semibold" asChild>
-          <Link href={`${lang}/habitaciones${slug}`}>View All</Link>
+          <Link href={`${lang}/habitaciones?categoria=${slug}`}>View All</Link>
         </Button>
       </div>
     </article>

@@ -1,5 +1,4 @@
 "use client";
-
 import * as React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Check, ChevronsUpDown } from "lucide-react";
@@ -19,20 +18,25 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Locale } from "@/i18n-config";
-import { slugCategories } from "@/utils/constants/global";
+import { categories } from "@/utils/constants/categories";
 
 export function CategoriesDropDownMenu({ lang }: { lang: Locale }) {
   const [open, setOpen] = React.useState(false);
   const searchParams = useSearchParams().get("categoria");
   const [value, setValue] = React.useState(searchParams || "ver-todas");
-
   const router = useRouter();
 
-  const handleSelectedCategory = (currentValue: string) => {
-    const newValue = currentValue === value ? "ver-todas" : currentValue;
-    setValue(newValue);
-    setOpen(false);
-    router.push(`/${lang}/habitaciones?categoria=${newValue}`);
+  const handleSelectedCategory = (categoryValue: string) => {
+    const newValue = categoryValue === value ? "ver-todas" : categoryValue;
+    if (categoryValue) {
+      setValue(newValue);
+      setOpen(false);
+      router.push(`/${lang}/habitaciones?categoria=${newValue}`);
+    }
+    if (!categoryValue) {
+      setOpen(false);
+      router.push(`/${lang}/habitaciones`);
+    }
   };
 
   return (
@@ -44,7 +48,7 @@ export function CategoriesDropDownMenu({ lang }: { lang: Locale }) {
           aria-expanded={open}
           className="w-full justify-between"
         >
-          {slugCategories.find((category) => category.value === value)?.label ??
+          {categories.find((category) => category.slug === value)?.label ??
             "Select category..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
@@ -55,16 +59,16 @@ export function CategoriesDropDownMenu({ lang }: { lang: Locale }) {
           <CommandList>
             <CommandEmpty>No category found.</CommandEmpty>
             <CommandGroup>
-              {slugCategories.map((category) => (
+              {categories.map((category, index) => (
                 <CommandItem
-                  key={category.value}
-                  value={category.value}
-                  onSelect={() => handleSelectedCategory(category.value)}
+                  key={index}
+                  value={category.label}
+                  onSelect={() => handleSelectedCategory(category.slug)}
                 >
                   <Check
                     className={cn(
                       "mr-2 h-4 w-4",
-                      value === category.value ? "opacity-100" : "opacity-0",
+                      value === category.label ? "opacity-100" : "opacity-0",
                     )}
                   />
                   {category.label}

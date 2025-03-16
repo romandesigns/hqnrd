@@ -5,16 +5,16 @@ import { cn } from "@/lib/utils";
 import { MenuItem } from "../Navigation/DesktopMenu/MenuItem";
 import { LanguagePicker } from "@/components/features";
 import { ExternalLink } from "@/components/ui/ExLink";
-import { GLOBAL } from "@/utils/constants/global";
+import { SITE_DETAILS } from "@/utils/constants/siteDetails";
 
 export function ContactWidget({
-                                lang,
-                                direction = "horizontal",
-                                showBorders,
-                                className,
-                                variant,
-                                btnClassNames
-                              }: {
+  lang,
+  direction = "horizontal",
+  showBorders,
+  className,
+  variant,
+  btnClassNames,
+}: {
   lang: Locale;
   direction?: "horizontal" | "vertical";
   showBorders?: boolean;
@@ -27,7 +27,7 @@ export function ContactWidget({
       {showBorders && <div className="h-0.5 w-full bg-secondary" />}
       <ul
         className={cn(
-          `flex items-center justify-center gap-2 space-x-0.5 px-2 ${direction === "horizontal" ? "flex-row" : "flex-col"}`
+          `flex items-center justify-center gap-2 space-x-0.5 px-2 ${direction === "horizontal" ? "flex-row" : "flex-col"}`,
         )}
       >
         <MenuItem className="block">
@@ -37,24 +37,28 @@ export function ContactWidget({
             className={cn(btnClassNames)}
             asChild
           >
-            <ExternalLink href={GLOBAL.contact.googleMap}>
+            <ExternalLink href={SITE_DETAILS.contact.googleMap}>
               <LuMap />
             </ExternalLink>
           </Button>
         </MenuItem>
         <MenuItem className="block">
           <Button size="icon" variant={variant} className={cn(btnClassNames)}>
-            <ExternalLink href={GLOBAL.contact.whatsapp}>
+            <ExternalLink href={SITE_DETAILS.contact.whatsapp}>
               <FaWhatsapp />
             </ExternalLink>
           </Button>
         </MenuItem>
         <MenuItem className="block">
-          <LanguagePicker lang={lang} variant={variant} className={cn(btnClassNames)} />
+          <LanguagePicker
+            lang={lang}
+            variant={variant}
+            className={cn(btnClassNames)}
+          />
         </MenuItem>
         <MenuItem className="block">
           <Button size="icon" variant={variant} className={cn(btnClassNames)}>
-            <ExternalLink href={GLOBAL.contact.email}>
+            <ExternalLink href={SITE_DETAILS.contact.email}>
               <FaRegEnvelope />
             </ExternalLink>
           </Button>

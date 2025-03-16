@@ -1,5 +1,5 @@
 import { Locale } from "@/i18n-config";
-import { slugCategories } from "@/utils/constants/global";
+import { slugCategories } from "@/utils/constants/categories";
 import { removePluralSuffix } from "@/utils/formatter/pluralSuffixCleaner";
 import { redirect } from "next/navigation";
 import { ClientLayout, Content, Section } from "@/components/layout/container";

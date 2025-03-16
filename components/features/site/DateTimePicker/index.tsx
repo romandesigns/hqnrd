@@ -307,7 +307,7 @@ function Calendar({
         nav: "space-x-1 flex items-center ",
         button_previous: cn(
           buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute left-5 top-5",
+          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute left-5 top-5 stricktr",
           disableLeftNavigation() && "pointer-events-none",
         ),
         button_next: cn(
@@ -331,7 +331,8 @@ function Calendar({
         today: "bg-accent text-accent-foreground",
         outside:
           "day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
-        disabled: "text-muted-foreground opacity-50",
+        disabled:
+          "text-muted-foreground opacity-50 [&_button]:line-through hover:cursor-not-allowed",
         range_middle:
           "aria-selected:bg-accent aria-selected:text-accent-foreground",
         hidden: "invisible",
@@ -689,7 +690,7 @@ const TimePicker = React.forwardRef<TimePickerRef, TimePickerProps>(
 );
 TimePicker.displayName = "TimePicker";
 
-type Granularity = "day" | "hour" | "minute" | "second";
+export type Granularity = "day" | "hour" | "minute" | "second";
 
 type DateTimePickerProps = {
   value?: Date;

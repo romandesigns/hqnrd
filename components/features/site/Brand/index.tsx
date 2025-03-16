@@ -1,5 +1,5 @@
 import { Locale } from "@/i18n-config";
-import { GLOBAL } from "@/utils/constants/global";
+import { SITE_DETAILS } from "@/utils/constants/siteDetails";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,6 +11,7 @@ import Link from "next/link";
  *
  * @returns {JSX.Element} The rendered Brand component.
  */
+
 export function Brand({ lang }: { lang: Locale }) {
   return (
     <Link href={`/${lang}`}>
@@ -19,12 +20,14 @@ export function Brand({ lang }: { lang: Locale }) {
           width={22}
           height={22}
           src="/assets/images/brand/HQNRD-logo.svg"
-          alt={`${GLOBAL.brand_title} Logo`}
+          alt={`${SITE_DETAILS.brand_title} Logo`}
         />
         <div>
-          <h2 className="text-[0.7rem] font-black">{GLOBAL.brand_title}</h2>
+          <h2 className="text-[0.7rem] font-black">
+            {SITE_DETAILS.brand_title}
+          </h2>
           <p className="text-[0.68rem] font-medium text-muted-foreground">
-            {GLOBAL.brand_slogan}
+            {SITE_DETAILS.brand_slogan}
           </p>
         </div>
       </div>

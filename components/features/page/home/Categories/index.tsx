@@ -1,10 +1,9 @@
 import { HeadingSection } from "@/components/features/site/Headings";
 import { Content, Section } from "@/components/layout";
 import { Locale } from "@/i18n-config";
-import { categories } from "./categories";
 import React from "react";
-import { CardCategoryV1 } from "@/components/features/site/CardCategorties";
-
+import { categories } from "@/utils/constants/categories";
+import { CategoryCard } from "./Components/CardCategory";
 
 /**
  * The `Categories` component renders a section that includes a heading and a grid of category items.
@@ -19,7 +18,6 @@ import { CardCategoryV1 } from "@/components/features/site/CardCategorties";
  */
 
 export function Categories({ lang }: { lang: Locale }) {
-
   return (
     <Section>
       {/* Section - Heading */}
@@ -31,9 +29,12 @@ export function Categories({ lang }: { lang: Locale }) {
         />
       </Content>
       {/* Section - Content */}
-      <Content
-        className="grid grid-cols-1 place-items-center gap-4 sm:grid-cols-2 grid-rows-[repeat(2,20rem)] items-stretch justify-stretch lg:grid-cols-3 max-w-5xl">
-        {categories.map((cat, index) => <CardCategoryV1 key={cat.id} category={cat} lang={lang} />)}
+      <Content className="grid max-w-5xl grid-cols-1 grid-rows-[repeat(2,20rem)] place-items-center items-stretch justify-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {categories
+          .filter((cat) => cat.slug !== "")
+          .map((cat, index) => (
+            <CategoryCard key={index} category={cat} lang={lang} />
+          ))}
       </Content>
     </Section>
   );
