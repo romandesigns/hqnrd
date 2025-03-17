@@ -242,7 +242,7 @@
     },
     {
       "id": "d45n119-b7f9-42b2-8ad1-dd1570a48165",
-      "unitNumber": 403,
+      "unitNumber": 250,
       "pricePerNight": 2735,
       "category": "Doble",
       "slug": "doble",
@@ -292,7 +292,7 @@
       "id": "d45a7119-b7f9-42b2-8ad1-dd1570a4265",
       "unitNumber": 501,
       "pricePerNight": 2735,
-      "category": "Standard",
+      "category": "Standar",
       "slug": "standar",
       "cardTitle": "Habitación Básica 101",
       "cardDescription": "Una opción ideal para quienes buscan comodidad y estilo en un ambiente acogedor.",

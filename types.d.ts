@@ -24,3 +24,22 @@ export interface CategoryInterface {
   totalUnits: number;
   bgImage: string;
 }
+
+export interface Room {
+  id: string;
+  unitNumber: number;
+  pricePerNight: number;
+  category: string;
+  slug: string;
+  cardTitle: string;
+  cardDescription: string;
+  pageTitle: string;
+  pageDescription: string;
+  maxGuestAllowed: number;
+  bedQuantity: number;
+  roomDimension: string;
+  media: {
+    featuredCardImage: string;
+    roomGallery: string[];
+  };
+}

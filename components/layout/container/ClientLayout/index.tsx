@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 import { Footer, Navigation } from "../..";
 import { Header } from "@/components/features/page/rooms";
 
-import {  DialogScreen } from "@/components/features/global/Dialog";
+import { DialogScreen } from "@/components/features/global/Dialog";
 
 /**
  * ClientLayout component that provides a layout structure for the client-side application.
@@ -24,7 +24,7 @@ export function ClientLayout({
   children,
   showFooter = true,
   showNavigation = true,
-  lang
+  lang,
 }: {
   children: React.ReactNode;
   showFooter?: boolean;

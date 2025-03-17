@@ -1,26 +1,17 @@
-import { Locale } from "@/i18n-config";
-import { slugCategories } from "@/utils/constants/categories";
-import { removePluralSuffix } from "@/utils/formatter/pluralSuffixCleaner";
-import { redirect } from "next/navigation";
+import { ContactWidget } from "@/components/features";
+import { Amenities } from "@/components/features/page/Room/Amenities";
+import { Description } from "@/components/features/page/Room/Description";
+import { Features } from "@/components/features/page/Room/Features";
+import { Media } from "@/components/features/page/Room/Media";
+import { Booking } from "@/components/features/site/Forms/Booking";
+import { FaShareNodes } from "@/components/icons";
 import { ClientLayout, Content, Section } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { GoBack } from "@/components/ui/goBack";
-import { ContactWidget } from "@/components/features";
-import { FaShareNodes } from "@/components/icons";
-import { Features } from "@/components/features/page/Room/Features";
-import { Description } from "@/components/features/page/Room/Description";
-import { Amenities } from "@/components/features/page/Room/Amenities";
-import { Media } from "@/components/features/page/Room/Media";
-import { Trending } from "@/components/features/page/home";
-import { Booking } from "@/components/features/site/Forms/Booking";
-
-type CategoryObject = {
-  [key: string]: {
-    value: string;
-    label: string;
-    units?: number[];
-  };
-};
+import { Locale } from "@/i18n-config";
+import data from "@/public/assets/mocked_data/rooms.json";
+import { removePluralSuffix } from "@/utils/formatter/pluralSuffixCleaner";
+import { notFound, redirect } from "next/navigation";
 
 export default async function Page({
   params,
@@ -29,28 +20,20 @@ export default async function Page({
 }) {
   // Destructuring segment parameters
   const { lang, roomId } = await params;
-  // Transforming slug array to create an object containing the rooms and associated identifiers
-  const transformSlugCategories = (): CategoryObject => {
-    return slugCategories
-      .filter((slug) => slug.value !== "ver-todas")
-      .reduce<CategoryObject>((acc, category) => {
-        acc[removePluralSuffix(category.value)] = { ...category };
-        return acc;
-      }, {});
-  };
+  const [roomCategory, roomUnitNumber] = roomId;
+  const category = removePluralSuffix(roomCategory);
+  if (!category) redirect(`/${lang}/habitaciones`);
+  if (!roomUnitNumber) redirect(`/${lang}/habitaciones`);
 
-  const checkCategoryAndUnitFromQuery = () => {
-    // Redirecting user to rooms page if any of the following evaluates to true
-    if (roomId === undefined || !Array.isArray(roomId) || roomId.length !== 2)
-      redirect(`/${lang}/habitaciones`);
-    const [category, unit] = roomId;
-    const unitNumber = parseInt(unit, 10);
-    const categories = transformSlugCategories();
-    // Check if category exists
-    if (!categories[category]) return false;
-    // Check if unit exists within the category
-    return categories[category].units?.includes(unitNumber) || false;
-  };
+  const room = data.rooms.filter(
+    (r) =>
+      Number(r.unitNumber) === Number(roomUnitNumber) && r.slug === category,
+  )[0];
+
+  if (!room) {
+    notFound();
+  }
+
   return (
     <ClientLayout lang={lang}>
       <header className="hqnrd-frosty-bg">
@@ -111,13 +94,13 @@ export default async function Page({
           </aside>
         </Content>
       </Section>
-      <Section className="py-5 lg:py-20">
+      {/* <Section className="py-5 lg:py-20">
         <Trending
           lang={lang}
           heading="Trending now"
           description="See these otehr options and reserve today"
         />
-      </Section>
+      </Section> */}
     </ClientLayout>
   );
 }

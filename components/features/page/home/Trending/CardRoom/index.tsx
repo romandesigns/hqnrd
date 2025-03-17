@@ -12,39 +12,9 @@ import { Locale } from "@/i18n-config";
 import Image from "next/image";
 import Link from "next/link";
 import { removePluralSuffix } from "@/utils/formatter/pluralSuffixCleaner";
+import { Room } from "@/types";
 
-// Type for media files
-interface MediaFiles {
-  featuredCardImg: string;
-  featuredVideo: string;
-  layout: string;
-  gallery: string[];
-}
-
-// Type for availability
-interface Availability {
-  isAvailable: boolean;
-  message: string;
-}
-
-// Type for a room
-interface Room {
-  uuid: string;
-  pricePerNight: number;
-  unit: number;
-  category: string;
-  beds: number;
-  mediaFiles: MediaFiles;
-  privateBathroom: boolean;
-  availability: Availability;
-}
-
-// Type for an array of rooms
-interface RoomsData {
-  rooms: Room[];
-}
-
-export function CardRoom({ lang, room }: { lang: Locale; room: Room[] }) {
+export function CardRoom({ lang, room }: { lang: Locale; room: Room }) {
   return (
     <div className="glass h-full grid-cols-1 grid-rows-[auto_1fr_auto] rounded-lg border">
       <div className="flex items-end">
@@ -52,10 +22,14 @@ export function CardRoom({ lang, room }: { lang: Locale; room: Room[] }) {
         <div className="relative overflow-hidden bg-transparent p-1 after:absolute after:content-['']">
           <div className="rounded-b-md p-1 shadow-[0_29px_0_5px_hsl(var(--muted))]">
             <div className="rounded-md bg-foreground/10 p-1.5 px-6 pt-2.5">
-              <p className="-mb-1 text-xs font-bold uppercase">Doble Cama</p>
+              <p className="-mb-1 text-xs font-bold uppercase">
+                {room.category === "doble" ? "Doble Habitacion" : room.category}
+              </p>
               <small className="text-xs font-bold uppercase text-muted-foreground">
                 Unit{" "}
-                <span className="ml-1 font-black text-foreground">{250}</span>
+                <span className="ml-1 font-black text-foreground">
+                  {room.unitNumber}
+                </span>
               </small>
             </div>
           </div>
@@ -69,7 +43,7 @@ export function CardRoom({ lang, room }: { lang: Locale; room: Room[] }) {
       <div className="h-auto overflow-hidden rounded-b-md border-t bg-muted-foreground/10 p-2">
         <figure className="relative h-52 overflow-hidden rounded-md">
           <div className="absolute bottom-0 right-0 z-[2] rounded-tl-md bg-muted p-2 px-4 text-sm font-bold">
-            {1500}$ / Night
+            {room.pricePerNight}$ / Night
           </div>
           <Image
             src="/assets/images/home/header/HQNRD-first-featured-image.webp"
@@ -130,9 +104,7 @@ export function CardRoom({ lang, room }: { lang: Locale; room: Room[] }) {
         </div>
         <div className="my-2">
           <Button size="full" className="font-semibold" asChild>
-            <Link
-              href={`/${lang}/habitacion/${removePluralSuffix("dobles")}/250`}
-            >
+            <Link href={`/${lang}/habitacion/${room.slug}/${room.unitNumber}`}>
               View Rooms
             </Link>
           </Button>

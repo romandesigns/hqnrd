@@ -40,7 +40,6 @@ export const categories: CategoryInterface[] = [
     slug: "ejecutivas",
   },
   {
-    slug: "standards",
     label: "Standars",
     units: [203, 501],
     Icon: BsFillHouseDoorFill,
@@ -48,9 +47,9 @@ export const categories: CategoryInterface[] = [
     totalUnits: 2,
     bgImage: "/assets/images/home/header/HQNRD-first-featured-image.webp",
     btnCTA: "View Rooms",
+    slug: "standars",
   },
   {
-    slug: "doble-camas",
     label: "Dobles",
     units: [403, 504],
     Icon: FaClone,
@@ -58,6 +57,7 @@ export const categories: CategoryInterface[] = [
     totalUnits: 2,
     bgImage: "/assets/images/home/header/HQNRD-first-featured-image.webp",
     btnCTA: "View Rooms",
+    slug: "dobles",
   },
   {
     label: "Familiares",
