@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // import required modules
-import { CaredReviewProps } from "@/types";
+import { CaredReviewProps, Room } from "@/types";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { CaredReview } from "../../page/home/Testimonials/CardReview";
 import { CardRoom } from "../../page/home/Trending/CardRoom";
@@ -40,7 +40,7 @@ const defaultBreakPoints: BreakPoints = {
   lg: { slidesPerView: 3, spaceBetween: 20 },
 };
 
-export function FeaturedItems({
+export function FeaturedItems<T extends CaredReviewProps | Room>({
   testimonials = false,
   trendingRooms = false,
   teams = false,
@@ -54,7 +54,7 @@ export function FeaturedItems({
   trendingRooms?: boolean;
   teams?: boolean;
   breakPoints?: BreakPoints;
-  itemsArray: CaredReviewProps[];
+  itemsArray: T[];
   speed?: number;
   delay?: number;
   lang: Locale;
@@ -67,9 +67,9 @@ export function FeaturedItems({
     ));
 
   const trendingComponent = () =>
-    itemsArray.map((review, index) => (
+    itemsArray.map((room, index) => (
       <SwiperSlide key={index} className="pb-10">
-        <CardRoom lang={lang} />
+        <CardRoom lang={lang} room={room} />
       </SwiperSlide>
     ));
 

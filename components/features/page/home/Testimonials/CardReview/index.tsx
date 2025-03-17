@@ -1,5 +1,5 @@
 import { StarsRating } from "@/components/features";
-import { CaredReviewProps } from "@/types";
+import { CaredReviewProps, Room } from "@/types";
 import Image from "next/image";
 
 /**

@@ -9,6 +9,7 @@ import {
 import { Surrounding } from "@/components/features/page/home/Surrounding";
 import { ClientLayout } from "@/components/layout/container";
 import { Locale } from "@/i18n-config";
+import roomsData from "@/public/assets/mocked_data/rooms.json";
 
 /**
  * Asynchronous function component that renders the main page layout.
@@ -33,6 +34,7 @@ export default async function Page(props: {
         <Categories lang={lang} />
         <Surrounding />
         <Trending
+          rooms={roomsData.rooms}
           lang={lang}
           heading="Trending"
           description="Explore the most trending hotels today"

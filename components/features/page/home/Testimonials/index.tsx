@@ -4,6 +4,7 @@ import { Content, Section } from "@/components/layout";
 import { reviews as testimonialsReviews } from "./reviews";
 import { Locale } from "@/i18n-config";
 import { JSX } from "react";
+import { CaredReviewProps } from "@/types";
 
 /**
  * Testimonials component renders a section displaying testimonials from guests.
@@ -38,7 +39,7 @@ export function Testimonials({ lang }: { lang: Locale }): JSX.Element {
         />
       </Content>
       <Content className="px-2">
-        <FeaturedItems
+        <FeaturedItems<CaredReviewProps>
           itemsArray={testimonialsReviews}
           testimonials
           speed={6000}

@@ -1,4 +1,5 @@
 import { ContactWidget } from "@/components/features";
+import { Trending } from "@/components/features/page/home";
 import { Amenities } from "@/components/features/page/Room/Amenities";
 import { Description } from "@/components/features/page/Room/Description";
 import { Features } from "@/components/features/page/Room/Features";
@@ -94,13 +95,14 @@ export default async function Page({
           </aside>
         </Content>
       </Section>
-      {/* <Section className="py-5 lg:py-20">
+      <Section className="py-5 lg:py-20">
         <Trending
+          rooms={data.rooms}
           lang={lang}
           heading="Trending now"
           description="See these otehr options and reserve today"
         />
-      </Section> */}
+      </Section>
     </ClientLayout>
   );
 }

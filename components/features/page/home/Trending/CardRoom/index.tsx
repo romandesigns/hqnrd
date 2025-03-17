@@ -11,7 +11,6 @@ import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n-config";
 import Image from "next/image";
 import Link from "next/link";
-import { removePluralSuffix } from "@/utils/formatter/pluralSuffixCleaner";
 import { Room } from "@/types";
 
 export function CardRoom({ lang, room }: { lang: Locale; room: Room }) {
