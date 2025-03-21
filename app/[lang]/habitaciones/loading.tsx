@@ -18,7 +18,7 @@ function HeroGallerySkeleton() {
   );
 }
 
-export default function RoomLoading() {
+export default function LoadingRoomPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header Section */}
