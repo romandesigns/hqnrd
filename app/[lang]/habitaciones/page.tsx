@@ -4,7 +4,6 @@ import { Content, Section } from "@/components/layout";
 import { Locale } from "@/i18n-config";
 import { Filters } from "@/components/features/page/rooms/filters";
 import roomsData from "@/public/assets/mocked_data/rooms.json";
-import delay from "delay";
 import { removePluralSuffix } from "@/utils/formatter/pluralSuffixCleaner";
 
 type SearchParams = { [key: string]: string | undefined };
@@ -13,7 +12,6 @@ interface PageProps {
   params: Promise<{ lang: Locale }>;
   searchParams: Promise<SearchParams>;
 }
-await delay(5000);
 
 export default async function Page(props: PageProps) {
   const params = await props.params;
@@ -43,7 +41,7 @@ export default async function Page(props: PageProps) {
       </Section>
       <Section>
         <Content className="hidden w-full md:block">
-          <Filters />
+          <Filters roomsCount={filteredRoomsBySlug(categoria).length || 0} />
         </Content>
         <Content className="grid-auto-rows grid grid-cols-1 gap-1 py-14 pt-2 sm:grid-cols-2 lg:grid-cols-3">
           {filteredRoomsBySlug(categoria).map((room, index) => (

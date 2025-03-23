@@ -28,9 +28,6 @@ export function Header({ lang }: { lang: Locale }) {
               <div className="mx-auto flex w-full max-w-[370px] items-center justify-center pt-2 md:ml-0">
                 <CategoriesDropDownMenu lang={lang} />
               </div>
-              <Content className="w-full md:hidden">
-                <Filters />
-              </Content>
             </div>
             <ContactWidget
               lang={lang}

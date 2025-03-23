@@ -10,7 +10,6 @@ import { Surrounding } from "@/components/features/page/home/Surrounding";
 import { ClientLayout } from "@/components/layout/container";
 import { Locale } from "@/i18n-config";
 import roomsData from "@/public/assets/mocked_data/rooms.json";
-import delay from "delay";
 
 /**
  * Asynchronous function component that renders the main page layout.
@@ -24,7 +23,6 @@ export default async function Page(props: {
 }) {
   const params = await props.params;
   const { lang } = params;
-  await delay(2500);
   return (
     <ClientLayout lang={lang}>
       <Header lang={lang} />

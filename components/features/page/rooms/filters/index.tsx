@@ -15,9 +15,9 @@ import {
   MdAttachMoney,
 } from "@/components/icons";
 
-export const Filters = () => (
+export const Filters = ({ roomsCount }: { roomsCount: number }) => (
   <div className="flex w-full items-center justify-between pt-4 md:pt-0">
-    <RoomsCount />
+    <RoomsCount roomsCount={roomsCount} />
     <Popover>
       <PopoverTrigger asChild>
         <Button size="icon" variant="outline">

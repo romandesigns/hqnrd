@@ -19,6 +19,10 @@ import {
 } from "@/components/ui/popover";
 import { Locale } from "@/i18n-config";
 import { categories } from "@/utils/constants/categories";
+import { Content } from "../layout";
+import { Filters } from "../features/page/rooms/filters";
+import roomsData from "@/public/assets/mocked_data/rooms.json";
+import { removePluralSuffix } from "@/utils/formatter/pluralSuffixCleaner";
 
 export function CategoriesDropDownMenu({ lang }: { lang: Locale }) {
   const [open, setOpen] = React.useState(false);
@@ -39,45 +43,59 @@ export function CategoriesDropDownMenu({ lang }: { lang: Locale }) {
     }
   };
 
+  const filteredRoomsBySlug = (slug: string | undefined) => {
+    if (slug === "ver-todas" || slug === undefined) {
+      return roomsData.rooms;
+    }
+    return roomsData.rooms.filter(
+      (r) => r.slug.toLowerCase() == removePluralSuffix(slug),
+    );
+  };
+
   return (
-    <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="secondary"
-          role="combobox"
-          aria-expanded={open}
-          className="w-full justify-between"
-        >
-          {categories.find((category) => category.slug === value)?.label ??
-            "Select category..."}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-[370px] p-0">
-        <Command>
-          <CommandInput placeholder="Search category..." />
-          <CommandList>
-            <CommandEmpty>No category found.</CommandEmpty>
-            <CommandGroup>
-              {categories.map((category, index) => (
-                <CommandItem
-                  key={index}
-                  value={category.label}
-                  onSelect={() => handleSelectedCategory(category.slug)}
-                >
-                  <Check
-                    className={cn(
-                      "mr-2 h-4 w-4",
-                      value === category.label ? "opacity-100" : "opacity-0",
-                    )}
-                  />
-                  {category.label}
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          </CommandList>
-        </Command>
-      </PopoverContent>
-    </Popover>
+    <div className="flex w-full flex-col">
+      <Popover open={open} onOpenChange={setOpen}>
+        <PopoverTrigger asChild>
+          <Button
+            variant="secondary"
+            role="combobox"
+            aria-expanded={open}
+            className="w-full justify-between"
+          >
+            {categories.find((category) => category.slug === value)?.label ??
+              "Select category..."}
+            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-[370px] p-0">
+          <Command>
+            <CommandInput placeholder="Search category..." />
+            <CommandList>
+              <CommandEmpty>No category found.</CommandEmpty>
+              <CommandGroup>
+                {categories.map((category, index) => (
+                  <CommandItem
+                    key={index}
+                    value={category.label}
+                    onSelect={() => handleSelectedCategory(category.slug)}
+                  >
+                    <Check
+                      className={cn(
+                        "mr-2 h-4 w-4",
+                        value === category.label ? "opacity-100" : "opacity-0",
+                      )}
+                    />
+                    {category.label}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            </CommandList>
+          </Command>
+        </PopoverContent>
+      </Popover>
+      <Content className="w-full md:hidden">
+        <Filters roomsCount={filteredRoomsBySlug(value).length} />
+      </Content>
+    </div>
   );
 }
