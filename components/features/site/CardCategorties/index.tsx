@@ -2,14 +2,14 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
-import { CategoryItem } from "@/components/features/page/home/Categories/categories";
 import { Locale } from "@/i18n-config";
+import { CategoryInterface } from "@/types"; // Adjust the path to where CategoryItem is defined
 
 export function CardCategory({
-  category: { title, Icon, totalUnits, maxGuestsPerUnit, slug },
+  category: { label, Icon, totalUnits, maxGuestsPerUnit, slug },
   lang,
 }: {
-  category: CategoryItem;
+  category: CategoryInterface;
   lang: Locale;
 }) {
   return (
@@ -17,7 +17,7 @@ export function CardCategory({
       <div className="flex items-center justify-between p-3">
         <div>
           <h3 className="mb-2 text-sm font-bold uppercase text-foreground">
-            {title}
+            {label}
           </h3>
           <div className="flex items-center justify-start gap-4 text-xs">
             <p className="text-xs text-muted-foreground">

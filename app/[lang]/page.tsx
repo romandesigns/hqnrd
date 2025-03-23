@@ -24,7 +24,7 @@ export default async function Page(props: {
 }) {
   const params = await props.params;
   const { lang } = params;
-  await delay(10000);
+  await delay(2500);
   return (
     <ClientLayout lang={lang}>
       <Header lang={lang} />
