@@ -56,3 +56,16 @@ export enum RoomCategory {
 export enum checkOutTime {
   time = "11:30 AM",
 }
+
+declare namespace JSX {
+  interface IntrinsicElements {
+    "l-mirage": React.DetailedHTMLProps<
+      React.HTMLAttributes<HTMLElement>,
+      HTMLElement
+    > & {
+      size?: string;
+      speed?: string;
+      color?: string;
+    };
+  }
+}

@@ -4,7 +4,7 @@ import { parseISO } from "date-fns";
 import { newBookingZodValidationSchema } from "@/utils/zodValidation/bookingSchema";
 
 // New booking interface
-export interface newBookingInterface {
+export interface CreateNewBookingInterface {
   adultsCount: number;
   childrensCount: number;
   checkIn: Date;
@@ -17,7 +17,7 @@ export interface newBookingInterface {
 
 export const newBookingAction = async (prevState: any, formData: FormData) => {
   // Parsing  payload with Inconming FormData
-  const payload: newBookingInterface = {
+  const payload: CreateNewBookingInterface = {
     adultsCount: Number(formData.get("adultsCount")),
     childrensCount: Number(formData.get("childrensCount")),
     checkIn: parseISO(formData.get("checkIn") as string),
@@ -40,7 +40,7 @@ export const newBookingAction = async (prevState: any, formData: FormData) => {
           errors && errors[0] ? errors[0] : "Invalid input",
         ]),
     );
-    console.log(errors);
+
     return errors;
   }
 

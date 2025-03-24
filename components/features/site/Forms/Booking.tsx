@@ -20,6 +20,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { BiSolidMessageSquareError } from "@/components/icons";
+import { Loader } from "../Loader";
 
 export const Booking = ({
   lang,
@@ -35,6 +36,8 @@ export const Booking = ({
     { key: string; message: unknown }[]
   >([]);
   const initialState = {};
+
+  // Default values shown
 
   //@ts-ignore
   const [state, formAction, pending] = useActionState(
@@ -160,7 +163,7 @@ export const Booking = ({
             type="submit"
             disabled={pending}
           >
-            Add Booking
+            {pending ? <Loader /> : "Book Now"}
           </Button>
         </div>
       </Form>

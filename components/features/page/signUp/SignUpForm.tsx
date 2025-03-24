@@ -11,40 +11,37 @@ import Form from "next/form";
 import Link from "next/link";
 import { DateTimePicker } from "../../site/DateTimePicker";
 import { createUserAction } from "@/utils/actions/userActions";
+import SubmitButton from "@/components/ui/SubmitButton";
+import { DateAndTimePicker } from "@/components/ui/DateAndTimePicker";
 
 export function SignUpForm({ lang }: { lang: Locale }) {
-  const [date12, setDate12] = React.useState<Date | undefined>(undefined);
   const [step, setStep] = React.useState(0);
 
   return (
-    <Form
-      action={createUserAction}
-      className="flex flex-col gap-2 [--margin-bottom:0.5rem]"
-    >
+    <Form className="flex flex-col gap-2 [--margin-bottom:0.5rem]">
       {/*User Details*/}
       <div className={step === 0 ? "block" : "hidden"}>
         <div className="mb-[var(--margin-bottom)] flex items-center justify-center gap-2">
           <Label className="mb-2 flex-1" htmlFor="name">
             <FormLabel label="Nombre" />
-            <Input type="name" name="firstName" id="name" />
+            <Input type="text" name="name" id="name" />
           </Label>
-          <Label className="mb-2 flex-1" htmlFor="lasName">
+          <Label className="mb-2 flex-1" htmlFor="lastName">
             <FormLabel label="Apellido" />
-            <Input type="name" name="lasName" id="lasName" />
+            <Input type="text" name="lastName" id="lastName" />
           </Label>
         </div>
         <Label className="mb-[var(--margin-bottom)] flex-1 gap-2" htmlFor="dob">
-          <FormLabel label="Date of Birth" />
-          <DateTimePicker
-            hourCycle={12}
-            value={date12}
-            onChange={setDate12}
-            locale={lang === "es" ? es : enUS}
-            placeholder="--/--/----"
+          <DateAndTimePicker
+            lang={lang}
             granularity="day"
+            icon="calendar"
+            hideIcon={true}
+            label="Date of Birth"
             displayFormat={{ hour12: "MM/dd/yyyy" }}
-            className="hover:bg-transparent"
             inputName="dob"
+            align="start"
+            sideOffset={-180}
           />
         </Label>
         <div className={"my-[var(--margin-bottom)] gap-2 py-2"}>
@@ -80,7 +77,7 @@ export function SignUpForm({ lang }: { lang: Locale }) {
         </Label>
         <Label className="mb-1 flex-1" htmlFor="confirmPassword">
           <FormLabel label="Confirm Password" />
-          <Input type="password" name="password" id="confirmPassword" />
+          <Input type="password" name="confirmPassword" id="confirmPassword" />
         </Label>
       </div>
 
@@ -89,7 +86,7 @@ export function SignUpForm({ lang }: { lang: Locale }) {
           <Button
             type="submit"
             size="full"
-            className="my-2"
+            className="my-2 py-2"
             onClick={() => setStep(step + 1)}
           >
             Next
@@ -101,13 +98,13 @@ export function SignUpForm({ lang }: { lang: Locale }) {
               variant="secondary"
               onClick={() => setStep(step - 1)}
               size="full"
-              className="my-2"
+              className="my-2 py-2"
             >
               Previous
             </Button>
-            <Button type="submit" size="full" className="my-2">
-              Next
-            </Button>
+            <SubmitButton className="my-2" action={createUserAction}>
+              <span>Submit</span>
+            </SubmitButton>
           </div>
         )}
       </div>

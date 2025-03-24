@@ -24,7 +24,7 @@ interface LayoutProps {
 export default async function AuthLayout({ children, params }: LayoutProps) {
   const { lang } = await params;
   return (
-    <Section className="flex min-h-screen w-full items-stretch justify-stretch border border-red-500 p-2 max-[769px]:h-screen min-[769px]:items-center min-[769px]:justify-center">
+    <Section className="flex min-h-screen w-full items-stretch justify-stretch p-2 max-[769px]:h-screen min-[769px]:items-center min-[769px]:justify-center">
       <Content className="grid h-full grid-cols-1 gap-4 bg-muted/5 max-[769px]:max-w-[30rem] min-[769px]:grid-cols-[1fr_0.6fr] min-[769px]:p-4 lg:max-w-[80rem]">
         <article className="hidden aspect-[1/1] flex-1 min-[769px]:block">
           <figure className="relative h-full w-full overflow-hidden rounded-br-3xl rounded-tl-3xl">

@@ -32,6 +32,7 @@
     "cmdk": "1.0.0",
     "date-fns": "^4.1.0",
     "delay": "^6.0.0",
+    "ldrs": "^1.1.2",
     "libphonenumber-js": "^1.12.6",
     "lucide-react": "^0.473.0",
     "motion": "^12.5.0",
