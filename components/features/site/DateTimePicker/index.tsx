@@ -794,7 +794,6 @@ const DateTimePicker = React.forwardRef<
       value ?? undefined,
     );
 
-    console.log(sideOffset);
     /**
      * Handle date selection while enforcing minDate and maxDate constraints.
      */

@@ -53,7 +53,7 @@ export default async function Page({
             <div className="md:max-w-auto flex w-full max-w-6xl items-center justify-center md:w-auto md:flex-col md:justify-between">
               {/* <Button></Button> */}
               <ReservationDialogForm
-                className="w-full max-w-lg md:hidden"
+                className="w-full max-w-md md:hidden"
                 lang={lang}
                 unitNumber={Number(roomUnitNumber)}
                 unitCategory={roomCategory}
@@ -91,11 +91,11 @@ export default async function Page({
             <Media />
           </article>
           <aside className="hidden pt-4 md:block">
-            <div className="md:sticky md:top-[15rem]">
+            <div className="top-52 py-8 md:sticky">
               <h4 className="inline-block translate-x-4 translate-y-4 rounded-md border-4 border-background bg-secondary p-2 px-6 text-2xl font-bold">
                 2,350$ / Night
               </h4>
-              <div className="rounded-md bg-secondary/50 px-4">
+              <div className="rounded-md bg-secondary/50 px-4 py-6">
                 <Booking
                   lang={lang}
                   unitNumber={Number(roomUnitNumber)}
