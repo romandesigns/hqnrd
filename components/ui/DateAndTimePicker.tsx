@@ -16,6 +16,9 @@ export function DateAndTimePicker({
   minDate,
   inputName,
   displayFormat,
+  time,
+  align,
+  sideOffset,
 }: {
   lang: Locale;
   hideIcon?: boolean;
@@ -25,6 +28,9 @@ export function DateAndTimePicker({
   minDate?: Date;
   inputName: string;
   displayFormat?: { hour12: string };
+  time?: string;
+  align?: "start" | "center" | "end";
+  sideOffset?: number;
 }) {
   const [date12, setDate12] = React.useState<Date | undefined>(undefined);
 
@@ -51,6 +57,9 @@ export function DateAndTimePicker({
         minDate={minDate}
         displayFormat={displayFormat}
         inputName={inputName}
+        time={time}
+        align={align}
+        sideOffset={sideOffset}
       />
     </Label>
   );

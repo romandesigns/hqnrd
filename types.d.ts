@@ -43,3 +43,16 @@ export interface Room {
     roomGallery: string[];
   };
 }
+
+export enum RoomCategory {
+  BASICA = "basica",
+  STANDAR = "standar",
+  EJECUTIVA = "ejecutiva",
+  FAMILIAR = "familiar",
+  DOBLE = "doble",
+  DOBLE_CAMA = "doble-cama",
+}
+
+export enum checkOutTime {
+  time = "11:30 AM",
+}

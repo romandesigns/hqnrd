@@ -79,3 +79,4 @@ export { AiOutlineYoutube } from "react-icons/ai";
 export { CgSmartHomeRefrigerator } from "react-icons/cg";
 export { BsHouseDoor, BsFillHouseDoorFill } from "react-icons/bs";
 export { GrClone } from "react-icons/gr";
+export { BiSolidMessageSquareError } from "react-icons/bi";
