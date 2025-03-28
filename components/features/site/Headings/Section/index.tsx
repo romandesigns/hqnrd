@@ -16,7 +16,7 @@ export function HeadingSection({
   description,
   showBorders = false,
   className,
-  postTitleClassName
+  postTitleClassName,
 }: {
   title?: string;
   description?: string;
@@ -41,7 +41,12 @@ export function HeadingSection({
         {showBorders && <div className="h-[0.10rem] w-1/5 bg-foreground/25" />}
       </div>
       {description && (
-        <small className={cn(`font-medium text-muted-foreground post_title`, postTitleClassName)}>
+        <small
+          className={cn(
+            `md:text-md post_title text-xs font-medium text-muted-foreground`,
+            postTitleClassName,
+          )}
+        >
           {description}
         </small>
       )}

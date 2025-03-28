@@ -13,8 +13,9 @@ import { DateTimePicker } from "../../site/DateTimePicker";
 import { createUserAction } from "@/utils/actions/userActions";
 import SubmitButton from "@/components/ui/SubmitButton";
 import { DateAndTimePicker } from "@/components/ui/DateAndTimePicker";
+import { PhoneInputDefault } from "@/components/ui/phone-example/phone-input-default";
 
-export function SignUpForm({ lang }: { lang: Locale }) {
+export function InstitutionSignUpForm({ lang }: { lang: Locale }) {
   const [step, setStep] = React.useState(0);
 
   return (
@@ -22,47 +23,34 @@ export function SignUpForm({ lang }: { lang: Locale }) {
       {/*User Details*/}
       <div className={step === 0 ? "block" : "hidden"}>
         <div className="mb-[var(--margin-bottom)] flex items-center justify-center gap-2">
-          <Label className="mb-2 flex-1" htmlFor="name">
-            <FormLabel label="Nombre" />
-            <Input type="text" name="name" id="name" />
+          <Label className="mb-2 flex-1" htmlFor="institutionName">
+            <FormLabel label="Instituion Name" />
+            <Input type="text" name="institutionName" id="institutionName" />
           </Label>
-          <Label className="mb-2 flex-1" htmlFor="lastName">
-            <FormLabel label="Apellido" />
-            <Input type="text" name="lastName" id="lastName" />
+          <Label className="mb-2 flex-1" htmlFor="registeredInstitutionName">
+            <FormLabel label="Registered Name" />
+            <Input
+              type="text"
+              name="registeredInstitutionName"
+              id="registeredInstitutionName"
+            />
           </Label>
         </div>
-        <Label className="mb-[var(--margin-bottom)] flex-1 gap-2" htmlFor="dob">
-          <DateAndTimePicker
-            lang={lang}
-            granularity="day"
-            icon="calendar"
-            hideIcon={true}
-            label="Date of Birth"
-            displayFormat={{ hour12: "MM/dd/yyyy" }}
-            inputName="dob"
-            align="start"
-            sideOffset={-180}
-          />
-        </Label>
-        <div className={"my-[var(--margin-bottom)] gap-2 py-2"}>
-          <FormLabel label="Sex" />
-          <RadioGroup name="sex" className={"flex items-center justify-start"}>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="male" id="r1" />
-              <Label htmlFor="r1">Male</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="female" id="r2" />
-              <Label htmlFor="r2">Female</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="otro" id="r3" />
-              <Label htmlFor="r3">Other</Label>
-            </div>
-          </RadioGroup>
+        <div className="mb-[var(--margin-bottom)] flex items-center justify-center gap-2">
+          <Label className="mb-2 flex-1" htmlFor="rnc">
+            <FormLabel label="RNC (Optional)" />
+            <Input type="text" name="rnc" id="rnc" />
+          </Label>
+        </div>
+        <div className="mb-[var(--margin-bottom)] flex items-center justify-center gap-2">
+          <Label className="mb-2 flex-1" htmlFor="address">
+            <FormLabel label="Address" />
+            <Input type="text" name="address" id="address" />
+          </Label>
         </div>
       </div>
       <div className={step === 1 ? "block" : "hidden"}>
+        {/* <PhoneInputDefault /> */}
         {/*Contact Details*/}
         <Label className="mb-1 flex-1" htmlFor="email">
           <FormLabel label="Email" />

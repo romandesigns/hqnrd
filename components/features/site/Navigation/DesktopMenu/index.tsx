@@ -36,10 +36,7 @@ export function DesktopMenu({ lang }: { lang: Locale }) {
       </MenuItem>
       <MenuItem>
         <Button size="sm" variant="secondary" asChild>
-          <Link
-            href={`/${lang}/auth/crear-cuenta`}
-            className="text-center font-semibold"
-          >
+          <Link href={`/${lang}/auth`} className="text-center font-semibold">
             Crear Cuenta
           </Link>
         </Button>
