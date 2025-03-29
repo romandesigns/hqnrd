@@ -10,9 +10,6 @@ import Link from "next/link";
 import React from "react";
 
 export function SignInForm({ lang }: { lang: Locale }) {
-  const [date12, setDate12] = React.useState<Date | undefined>(undefined);
-  const [step, setStep] = React.useState(0);
-
   return (
     <Form action="#" className="flex flex-col gap-4 py-4">
       <Label className="mb-2 flex-1" htmlFor="email">
@@ -43,13 +40,9 @@ export function SignInForm({ lang }: { lang: Locale }) {
       <Button size="full" className="mb-2 mt-8">
         Sign In
       </Button>
-
       <p className="py-4 text-center text-xs text-muted-foreground">
         Not registered yet?
-        <Link
-          className="ml-2 font-bold underline"
-          href={`/${lang}/auth/crear-cuenta`}
-        >
+        <Link className="ml-2 font-bold underline" href={`/${lang}/auth`}>
           Sign Up
         </Link>
       </p>

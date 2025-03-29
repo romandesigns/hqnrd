@@ -1,5 +1,7 @@
 import { SignInForm } from "@/components/features/page/signIn/SignInForm";
 import { HeadingSection } from "@/components/features/site/Headings";
+import { Content, Section } from "@/components/layout";
+import { BrandedCard } from "@/components/ui/BrandedCard";
 
 import { Locale } from "@/i18n-config";
 
@@ -13,17 +15,21 @@ export default async function Page({ params }: PageProps) {
   const { lang } = await params;
 
   return (
-    <>
-      <article className="grid grid-cols-1 grid-rows-[auto_1fr] rounded-bl-3xl rounded-tr-3xl border py-3 max-[769px]:h-full max-[769px]:p-6 min-[769px]:px-6">
-        <div className="flex h-full flex-col items-stretch justify-center">
-          <HeadingSection
-            showBorders
-            title="Inicia Session"
-            description="Crea y maneja tus propias reservas"
-          />
-          <SignInForm lang={lang} />
-        </div>
-      </article>
-    </>
+    <main className="grid min-h-dvh w-full items-center">
+      <Section className="p-4">
+        <Content className="mx-auto grid w-full max-w-[30rem] grid-cols-1 grid-rows-1 rounded-md border p-8">
+          <BrandedCard lang={lang} showHeading={false}>
+            <div className="flex h-full flex-col items-stretch justify-center">
+              <HeadingSection
+                showBorders
+                title="Inicia Session"
+                description="Inicia session para reservar y administrar tus reservas"
+              />
+              <SignInForm lang={lang} />
+            </div>
+          </BrandedCard>
+        </Content>
+      </Section>
+    </main>
   );
 }

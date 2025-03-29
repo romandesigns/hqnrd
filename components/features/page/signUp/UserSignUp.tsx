@@ -8,7 +8,7 @@ import { PhoneInputField } from "@/components/ui/PhoneInput";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import SubmitButton from "@/components/ui/SubmitButton";
 import { Locale } from "@/i18n-config";
-import { createUserAction } from "@/utils/actions/userActions";
+import { createUserAccountAction } from "@/utils/actions/userActions";
 import { CountryCode } from "libphonenumber-js";
 import Form from "next/form";
 import Link from "next/link";
@@ -103,7 +103,7 @@ export function UserSignUpForm({
         className="hidden"
         name="accountType"
         readOnly
-        defaultValue="user"
+        defaultValue="personal"
       />
       <div className={"py-2.5"}>
         {step === 0 && (
@@ -126,7 +126,7 @@ export function UserSignUpForm({
             >
               Previous
             </Button>
-            <SubmitButton className="my-2" action={createUserAction}>
+            <SubmitButton className="my-2" action={createUserAccountAction}>
               <span>Submit</span>
             </SubmitButton>
           </div>

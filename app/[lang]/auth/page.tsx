@@ -24,10 +24,10 @@ async function Page({ params }: PageProps) {
                 Personal
               </Link>
               <Link
-                href={`/${lang}/auth/crear-cuenta/institucion`}
+                href={`/${lang}/auth/crear-cuenta/empresa`}
                 className="flex flex-1 items-center justify-center rounded-md border py-12 md:aspect-square"
               >
-                Institucion
+                Empresa
               </Link>
             </div>
           </BrandedCard>

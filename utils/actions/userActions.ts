@@ -16,7 +16,7 @@ interface CreateUserInterface {
   accountType: string;
 }
 
-export const createUserAction = async (formData: FormData) => {
+export const createUserAccountAction = async (formData: FormData) => {
   // Parsing  payload with Inconming FormData
   const payload: CreateUserInterface = {
     name: formData.get("name") as string,

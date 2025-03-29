@@ -1,9 +1,9 @@
 import { UserSignUpForm } from "@/components/features/page/signUp/UserSignUp";
 import { HeadingSection } from "@/components/features/site/Headings";
 import { BrandedCard } from "@/components/ui/BrandedCard";
-import { headers } from "next/headers";
 import { Locale } from "@/i18n-config";
 import { CountryCode } from "libphonenumber-js";
+import { headers } from "next/headers";
 
 interface PageProps {
   params: Promise<{
@@ -30,7 +30,7 @@ export default async function Page({ params }: PageProps) {
           <HeadingSection
             className="my-8"
             showBorders={true}
-            title="Crear Cuenta Personal"
+            title="Cuenta Personal"
             description="Registrate para tomar full control de tus reservaciones"
           />
           <UserSignUpForm

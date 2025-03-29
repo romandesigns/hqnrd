@@ -6,13 +6,13 @@ import { Label } from "@/components/ui/label";
 import { PhoneInputField } from "@/components/ui/PhoneInput";
 import SubmitButton from "@/components/ui/SubmitButton";
 import { Locale } from "@/i18n-config";
-import { createCompanyAccountAction } from "@/utils/actions/createCompanyAction";
+import { createCompanyAccountAction } from "@/utils/actions/companyAction";
 import { CountryCode } from "libphonenumber-js";
 import Form from "next/form";
 import Link from "next/link";
 import React from "react";
 
-export function InstitutionSignUp({
+export function CompanySignUpForm({
   lang,
   defaultCountry,
 }: {
@@ -82,7 +82,7 @@ export function InstitutionSignUp({
         className="hidden"
         name="accountType"
         readOnly
-        defaultValue="user"
+        defaultValue="business"
       />
       <div className={"py-2.5"}>
         {step === 0 && (
