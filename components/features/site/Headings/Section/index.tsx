@@ -43,7 +43,7 @@ export function HeadingSection({
       {description && (
         <small
           className={cn(
-            `md:text-md post_title text-xs font-medium text-muted-foreground`,
+            `md:text-md post_title text-center text-xs font-medium text-muted-foreground`,
             postTitleClassName,
           )}
         >

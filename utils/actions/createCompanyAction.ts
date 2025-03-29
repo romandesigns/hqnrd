@@ -1,13 +1,13 @@
 "use server";
 import { parseISO } from "date-fns";
-import { CreateUserZodValidationSchema } from "../zodValidation/newBookingZodValidationSchema";
+import { CreateCompanyZodValidationSchema } from "../zodValidation/createCompanyZodValidationSchema";
 
 // New booking interface
-interface CreateUserInterface {
+interface CreateCompanyAccountInterface {
   name: string;
-  lastName: string;
-  dob: Date;
-  sex: string;
+  registeredName: string;
+  rnc: Date;
+  address: string;
   email: string;
   phone: string;
   phoneCountryCode: string;
@@ -16,13 +16,13 @@ interface CreateUserInterface {
   accountType: string;
 }
 
-export const createUserAction = async (formData: FormData) => {
+export const createCompanyAccountAction = async (formData: FormData) => {
   // Parsing  payload with Inconming FormData
-  const payload: CreateUserInterface = {
+  const payload: CreateCompanyAccountInterface = {
     name: formData.get("name") as string,
-    lastName: formData.get("lastName") as string,
-    dob: parseISO(formData.get("dob") as string),
-    sex: formData.get("sex") as string,
+    registeredName: formData.get("registeredName") as string,
+    rnc: parseISO(formData.get("rnc") as string),
+    address: formData.get("address") as string,
     email: formData.get("email") as string,
     phone: formData.get("phone") as string,
     phoneCountryCode: formData.get("phoneCountryCode") as string,
@@ -32,7 +32,7 @@ export const createUserAction = async (formData: FormData) => {
   };
 
   // Validating payload data
-  const validatePayload = CreateUserZodValidationSchema.safeParse(payload);
+  const validatePayload = CreateCompanyZodValidationSchema.safeParse(payload);
   if (!validatePayload.success) {
     const { fieldErrors } = validatePayload.error.flatten();
     const payloadKeys = Object.keys(payload);

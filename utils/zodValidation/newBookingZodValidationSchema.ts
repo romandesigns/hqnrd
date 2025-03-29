@@ -32,8 +32,11 @@ export const CreateUserZodValidationSchema = z
       .refine(isLegalAdult, { message: "User must be at least 18 years old" }),
     sex: z.enum([Sex.MALE, Sex.FEMALE, Sex.OTHER]),
     email: z.string().email(),
+    phone: z.string({ message: "Phone number is required" }),
+    phoneCountryCode: z.string(),
     password: z.string().min(6),
     confirmPassword: z.string().min(6),
+    accountType: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Password confirmation does not match",

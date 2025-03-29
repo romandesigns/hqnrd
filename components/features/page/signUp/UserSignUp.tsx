@@ -1,24 +1,30 @@
 "use client";
-import React from "react";
 import { FormLabel } from "@/components/features";
 import { Button } from "@/components/ui/button";
+import { DateAndTimePicker } from "@/components/ui/DateAndTimePicker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { PhoneInputField } from "@/components/ui/PhoneInput";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import SubmitButton from "@/components/ui/SubmitButton";
 import { Locale } from "@/i18n-config";
-import { enUS, es } from "date-fns/locale";
+import { createUserAction } from "@/utils/actions/userActions";
+import { CountryCode } from "libphonenumber-js";
 import Form from "next/form";
 import Link from "next/link";
-import { DateTimePicker } from "../../site/DateTimePicker";
-import { createUserAction } from "@/utils/actions/userActions";
-import SubmitButton from "@/components/ui/SubmitButton";
-import { DateAndTimePicker } from "@/components/ui/DateAndTimePicker";
+import React from "react";
 
-export function UserSignUpForm({ lang }: { lang: Locale }) {
+export function UserSignUpForm({
+  lang,
+  defaultCountry,
+}: {
+  lang: Locale;
+  defaultCountry: CountryCode;
+}) {
   const [step, setStep] = React.useState(0);
 
   return (
-    <Form className="flex flex-col gap-2 self-center [--margin-bottom:0.5rem]">
+    <Form className="flex flex-col gap-6 self-center px-4 [--margin-bottom:0.5rem]">
       {/*User Details*/}
       <div className={step === 0 ? "block" : "hidden"}>
         <div className="mb-[var(--margin-bottom)] flex items-center justify-center gap-2">
@@ -31,6 +37,7 @@ export function UserSignUpForm({ lang }: { lang: Locale }) {
             <Input type="text" name="lastName" id="lastName" />
           </Label>
         </div>
+
         <Label className="mb-[var(--margin-bottom)] flex-1 gap-2" htmlFor="dob">
           <DateAndTimePicker
             lang={lang}
@@ -44,6 +51,7 @@ export function UserSignUpForm({ lang }: { lang: Locale }) {
             sideOffset={-180}
           />
         </Label>
+
         <div className={"my-[var(--margin-bottom)] gap-2 py-2"}>
           <FormLabel label="Sex" />
           <RadioGroup name="sex" className={"flex items-center justify-start"}>
@@ -62,25 +70,41 @@ export function UserSignUpForm({ lang }: { lang: Locale }) {
           </RadioGroup>
         </div>
       </div>
-      <div className={step === 1 ? "block" : "hidden"}>
+
+      <div
+        className={
+          step === 1
+            ? "flex w-full flex-col items-center justify-center gap-2"
+            : "hidden"
+        }
+      >
         {/*Contact Details*/}
-        <Label className="mb-1 flex-1" htmlFor="email">
+        <Label className="mb-1 w-full" htmlFor="email">
           <FormLabel label="Email" />
           <Input type="email" name="email" id="email" />
         </Label>
+        <Label className="mb-1 w-full" htmlFor="email">
+          <FormLabel label="Phone Number" />
+          <PhoneInputField defaultCountry={defaultCountry as CountryCode} />
+        </Label>
         <Label
-          className="my-[var(--margin-bottom)] block flex-1 gap-2"
+          className="my-[var(--margin-bottom)] block w-full gap-2"
           htmlFor="password"
         >
           <FormLabel label="Password" />
           <Input type="password" name="password" id="password" />
         </Label>
-        <Label className="mb-1 flex-1" htmlFor="confirmPassword">
+        <Label className="mb-1 w-full" htmlFor="confirmPassword">
           <FormLabel label="Confirm Password" />
           <Input type="password" name="confirmPassword" id="confirmPassword" />
         </Label>
       </div>
-
+      <Input
+        className="hidden"
+        name="accountType"
+        readOnly
+        defaultValue="user"
+      />
       <div className={"py-2.5"}>
         {step === 0 && (
           <Button
