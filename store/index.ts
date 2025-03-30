@@ -1,9 +1,9 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import { mobileNavBarInitialState } from "./initialStates";
-import { MobileNavBarPropTypes } from "./interface";
+import { MobileNavigationInterface, ReservationInterface } from "./interface";
 
-export interface CombinedStore extends MobileNavBarPropTypes {}
+export interface CombinedStore extends MobileNavigationInterface {}
 
 // Create Combined Store
 export const useCombinedStore = create<CombinedStore>()(
