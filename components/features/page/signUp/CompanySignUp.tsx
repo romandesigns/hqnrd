@@ -11,6 +11,7 @@ import { CountryCode } from "libphonenumber-js";
 import Form from "next/form";
 import Link from "next/link";
 import React from "react";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 export function CompanySignUpForm({
   lang,
@@ -23,32 +24,62 @@ export function CompanySignUpForm({
 
   return (
     <Form className="flex w-full flex-col gap-6 self-center px-2 [--margin-bottom:0.5rem]">
-      {/*User Details*/}
-      <div className={step === 0 ? "flex flex-col" : "hidden"}>
-        <div className="mb-[var(--margin-bottom)] flex w-full flex-1 flex-col items-center justify-center gap-2 lg:flex-row">
-          <Label className="mb-2 block w-full" htmlFor="name">
-            <FormLabel label="Nombre de Empresa" />
-            <Input type="text" name="name" id="name" />
+      <div
+        className={
+          step === 0
+            ? "flex w-full flex-col items-center justify-center gap-2"
+            : "hidden"
+        }
+      >
+        {/*User Details*/}
+        <div className={step === 0 ? "flex w-full flex-col" : "hidden"}>
+          <div className="mb-[var(--margin-bottom)] flex w-full flex-1 flex-col items-center justify-center gap-2 lg:flex-row">
+            <Label className="mb-2 block w-full" htmlFor="name">
+              <FormLabel label="Nombre de Empresa" />
+              <Input type="text" name="name" id="name" />
+            </Label>
+            <Label className="mb-2 block w-full" htmlFor="registeredName">
+              <FormLabel label="Nombre Registrado de Empresa" />
+              <Input type="text" name="registeredName" id="registeredName" />
+            </Label>
+          </div>
+          <Label
+            className="mb-[var(--margin-bottom)] mr-auto block w-2/4"
+            htmlFor="rnc"
+          >
+            <FormLabel label="RNC (Optional)" />
+            <Input type="text" name="rnc" id="rnc" />
           </Label>
-          <Label className="mb-2 block w-full" htmlFor="registeredName">
-            <FormLabel label="Nombre Registrado de Empresa" />
-            <Input type="text" name="registeredName" id="registeredName" />
+          <Label
+            className="mb-[var(--margin-bottom)] mt-2 w-full"
+            htmlFor="address"
+          >
+            <FormLabel label="Address" />
+            <Input type="text" name="address" id="businessType" />
           </Label>
         </div>
-        <Label
-          className="mb-[var(--margin-bottom)] mr-auto block w-2/4"
-          htmlFor="rnc"
-        >
-          <FormLabel label="RNC (Optional)" />
-          <Input type="text" name="rnc" id="rnc" />
-        </Label>
-        <Label
-          className="mb-[var(--margin-bottom)] mt-2 w-full"
-          htmlFor="address"
-        >
-          <FormLabel label="Address" />
-          <Input type="text" name="address" id="businessType" />
-        </Label>
+        <div className={"my-[var(--margin-bottom)] w-full gap-2 py-2"}>
+          <FormLabel label="Select company type:" />
+          <RadioGroup
+            name="sex"
+            className={
+              "mt-6 grid w-full grid-cols-1 grid-rows-3 justify-start gap-4 lg:grid-cols-2 lg:grid-rows-2"
+            }
+          >
+            <div className="flex w-full items-center space-x-2">
+              <RadioGroupItem value="male" id="r1" />
+              <Label htmlFor="r1">Public Company</Label>
+            </div>
+            <div className="flex w-full items-center space-x-2">
+              <RadioGroupItem value="female" id="r2" />
+              <Label htmlFor="r2">Private Company (No Receipt)</Label>
+            </div>
+            <div className="flex w-full items-center space-x-2 lg:col-start-1 lg:col-end-3">
+              <RadioGroupItem value="otro" id="r3" />
+              <Label htmlFor="r3">Private Company (With Receipt)</Label>
+            </div>
+          </RadioGroup>
+        </div>
       </div>
       <div
         className={
