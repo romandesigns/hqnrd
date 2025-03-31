@@ -312,9 +312,7 @@ export const Booking = ({
                         </td>
                       </tr>
                       <tr>
-                        <th className="bg-secondary p-2 pr-4">
-                          Reservaion Fees
-                        </th>
+                        <th className="bg-secondary p-2 pr-4">Reservation</th>
                         <td className="text-md border border-secondary pl-2 font-bold">
                           {differenceInCalendarDays(checkOutDate, checkInDate)}{" "}
                           * {pricePerNight} ={" "}
@@ -337,9 +335,7 @@ export const Booking = ({
                         </td>
                       </tr>
                       <tr>
-                        <th className="bg-secondary p-2 pr-4">
-                          Applicable Discount
-                        </th>
+                        <th className="bg-secondary p-2 pr-4">Discount</th>
                         <td className="text-md border border-secondary pl-2 font-bold">
                           {differenceInCalendarDays(checkOutDate, checkInDate)}{" "}
                           * {pricePerNight} ={" "}
@@ -370,7 +366,10 @@ export const Booking = ({
                       </Button>
                       <Button className="flex-1">Pay</Button>
                     </div>
-                    <div className="mt-4 text-right">
+                    <div className="mt-4 space-x-4 text-right">
+                      <small className="cursor-pointer text-muted-foreground hover:underline">
+                        Update
+                      </small>
                       <small className="cursor-pointer text-red-500 hover:underline">
                         Remove
                       </small>

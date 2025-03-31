@@ -74,9 +74,13 @@ export function CompanySignUpForm({
               <RadioGroupItem value="female" id="r2" />
               <Label htmlFor="r2">Private Company (No Receipt)</Label>
             </div>
-            <div className="flex w-full items-center space-x-2 lg:col-start-1 lg:col-end-3">
+            <div className="flex w-full items-center space-x-2">
               <RadioGroupItem value="otro" id="r3" />
-              <Label htmlFor="r3">Private Company (With Receipt)</Label>
+              <Label htmlFor="r3">Private Company (Receipt)</Label>
+            </div>
+            <div className="flex w-full items-center space-x-2">
+              <RadioGroupItem value="ong" id="r4" />
+              <Label htmlFor="r4">ONG</Label>
             </div>
           </RadioGroup>
         </div>
