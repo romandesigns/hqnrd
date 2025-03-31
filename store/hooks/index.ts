@@ -11,14 +11,3 @@ export function useMobileNavigation() {
     })),
   );
 }
-
-// Reservations
-export function useReservation() {
-  return useCombinedStore(
-    useShallow((state) => ({
-      createReservation: state.isOpen,
-      updateReservation: state.toggleMobileNavigation,
-      deleteReservatation: state.autoCloseNavigation,
-    })),
-  );
-}

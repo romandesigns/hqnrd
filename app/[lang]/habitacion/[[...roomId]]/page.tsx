@@ -100,6 +100,7 @@ export default async function Page({
                   lang={lang}
                   unitNumber={Number(roomUnitNumber)}
                   unitCategory={roomCategory}
+                  pricePerNight={room.pricePerNight}
                 />
               </div>
             </div>

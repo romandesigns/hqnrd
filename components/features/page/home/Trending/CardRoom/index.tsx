@@ -104,7 +104,7 @@ export function CardRoom({ lang, room }: { lang: Locale; room: Room }) {
         <div className="my-2">
           <Button size="full" className="font-semibold" asChild>
             <Link href={`/${lang}/habitacion/${room.slug}/${room.unitNumber}`}>
-              View Rooms
+              View Details
             </Link>
           </Button>
         </div>

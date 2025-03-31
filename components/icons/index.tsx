@@ -50,6 +50,7 @@ export {
   MdCoffeeMaker,
   MdBed,
   MdHotel,
+  MdDiscount,
 } from "react-icons/md";
 export {
   TbAirConditioning,
