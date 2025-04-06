@@ -1,4 +1,8 @@
-import { reservationStore } from "./slices/reservation";
-import { defaultInitState } from "./slices/reservation";
+import {
+  createReservatationStore,
+  initReservationStore,
+} from "./slices/reservation";
 
-export const reservationStoreState = reservationStore(defaultInitState);
+export const reservationStoreState = createReservatationStore(
+  initReservationStore(),
+);

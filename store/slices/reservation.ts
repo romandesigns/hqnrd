@@ -23,10 +23,12 @@ export type ReservationStore = ReservationActions & {
   reservations: ReservationState[];
 };
 
-export const defaultInitState: ReservationState[] = [];
+export const initReservationStore = (): ReservationState[] => {
+  return [];
+};
 
-export const reservationStore = (
-  initState: ReservationState[] = defaultInitState,
+export const createReservatationStore = (
+  initState: ReservationState[] = initReservationStore(),
 ) => {
   return createStore<ReservationStore>()(
     devtools(
@@ -36,7 +38,6 @@ export const reservationStore = (
 
           addReservation: (payload) =>
             set((state) => {
-              console.log(payload);
               const exists = state.reservations.some(
                 (r) => r.unit === payload.unit,
               );

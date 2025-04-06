@@ -10,7 +10,6 @@ import { Surrounding } from "@/components/features/page/home/Surrounding";
 import { ClientLayout } from "@/components/layout/container";
 import { Locale } from "@/i18n-config";
 import roomsData from "@/public/assets/mocked_data/rooms.json";
-import { CounterComponent } from "../CounterComponent";
 
 /**
  * Asynchronous function component that renders the main page layout.
@@ -28,7 +27,6 @@ export default async function Page(props: {
     <ClientLayout lang={lang}>
       <Header lang={lang} />
       <main className="grid min-h-screen grid-rows-[auto_1fr_auto] items-center justify-items-start gap-20 p-2 !pt-0 pb-20 font-[family-name:var(--font-family)] md:gap-40 md:p-5 lg:p-20">
-        <CounterComponent />
         <ReservationSearchBox lang={lang} />
         <Testimonials lang={lang} />
         <Discounts />

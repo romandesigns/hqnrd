@@ -5,7 +5,7 @@ import "@/styles/globals.css";
 import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { CounterStoreProvider } from "@/providers/Counter";
+import { ReservationStoreProvider } from "@/providers/ReservationProvider";
 
 export const metadata: Metadata = {
   title: "Hotel Quinto Nivel RD",
@@ -39,7 +39,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
       suppressHydrationWarning
     >
       <body className={`${poppins.className} subpixel-antialiased`}>
-        <CounterStoreProvider>
+        <ReservationStoreProvider>
           <ScrollArea className="h-[100vh] rounded-md border">
             <ThemeProvider
               attribute="class"
@@ -50,7 +50,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
               {children}
             </ThemeProvider>
           </ScrollArea>
-        </CounterStoreProvider>
+        </ReservationStoreProvider>
       </body>
     </html>
   );
