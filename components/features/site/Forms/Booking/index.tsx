@@ -45,6 +45,10 @@ export const Booking = ({
     time = "11:30 AM",
   }
 
+  // Check if there are any errors in the form state
+  // and display them in an alert dialog
+  // This will be triggered when the form state changes
+  // and the error messages are updated
   React.useMemo(() => {
     const displayFormErrors = () => {
       const errorArray = Object.entries(state || {}).map(([key, message]) => ({
@@ -59,6 +63,10 @@ export const Booking = ({
     };
     displayFormErrors();
   }, [state]);
+
+  // Check if the room is already booked
+  // and set the booked reservations state
+  // This will be triggered when the unit number changes
 
   const checkIfRoomIsBooked = React.useCallback(
     (unitNumber: number, reservations: ReservationState[]) => {
@@ -87,6 +95,7 @@ export const Booking = ({
     const formData = new FormData(e.target as HTMLFormElement);
     const formValues = Object.fromEntries(formData.entries());
     const checkResult = checkIfRoomIsBooked(unitNumber, reservations);
+
     if (!checkResult) {
       addReservation({
         adults: Number(formValues.adultsCount),
@@ -96,6 +105,7 @@ export const Booking = ({
         bookingMessage: formValues.checkInMessage as string,
         unit: unitNumber,
         roomType: unitCategory,
+        pricePerNight: pricePerNight,
       });
     }
   };

@@ -14,6 +14,7 @@ import data from "@/public/assets/mocked_data/rooms.json";
 import { removePluralSuffix } from "@/utils/formatter/pluralSuffixCleaner";
 import { notFound, redirect } from "next/navigation";
 import { ReservationDialogForm } from "./ReservationDialogForm";
+import { convertToLocaleString } from "@/utils/computeFees";
 
 export default async function Page({
   params,
@@ -45,7 +46,7 @@ export default async function Page({
           </div>
           <div className="flex flex-col items-center justify-center md:flex-row md:justify-between">
             <div className="mb-4 flex flex-col items-center justify-center gap-x-2 md:flex-1 md:items-start md:justify-start lg:mb-0">
-              <p className="font-bold">Unit 201</p>
+              <p className="font-bold">Unit {room.unitNumber}</p>
               <h2 className="text-3xl font-black uppercase leading-6 md:text-5xl md:font-black">
                 Doble Cama
               </h2>
@@ -93,7 +94,7 @@ export default async function Page({
           <aside className="hidden pt-4 md:block">
             <div className="top-52 py-8 md:sticky">
               <h4 className="inline-block translate-x-4 translate-y-4 rounded-md border-4 border-background bg-secondary p-2 px-6 text-2xl font-bold">
-                2,350$ / Night
+                {convertToLocaleString(room.pricePerNight, lang)} / Night
               </h4>
               <div className="rounded-md bg-secondary/50 px-4 py-6">
                 <Booking
