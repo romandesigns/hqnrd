@@ -60,7 +60,7 @@ export const getCurrencyLocale = (lang: Locale) => {
 };
 
 /** Formatea un número como string con moneda local */
-export const convertToLocaleString = (amount: number, lang: Locale) => {
+export const convertToLocaleString = (amount: number = 0, lang: Locale) => {
   const { locale, currency } = getCurrencyLocale(lang);
   return amount
     .toLocaleString(locale, {
@@ -98,23 +98,31 @@ export const checkIfDiscountIsApplicable = (totalDays: number): number => {
  * - Total final con descuento
  * - Depósito de reservación (mitad del total con descuento)
  */
+
 export const getPriceWithDiscount = (
   totalDays: number,
   pricePerNight: number,
 ): {
-  discountAmount: number;
-  finalTotal: number;
-  reservationDeposit: number;
+  discountedAmount: number;
+  totalAmountAfterDiscount: number;
+  depositeAmountAfterDiscount: number;
 } => {
   const discountPercentage = checkIfDiscountIsApplicable(totalDays);
+  if (discountPercentage === 0)
+    return {
+      discountedAmount: 0,
+      totalAmountAfterDiscount: 0,
+      depositeAmountAfterDiscount: 0,
+    };
   const total = getTotalFees(pricePerNight, totalDays);
-  const discountAmount = (total * discountPercentage) / 100;
-  const finalTotal = total - discountAmount;
-  const reservationDeposit = finalTotal / 2;
+  const discountedAmount = (total * discountPercentage) / 100;
+  const totalAmountAfterDiscount = total - discountedAmount;
+  const depositeAmountAfterDiscount = totalAmountAfterDiscount / 2;
 
   return {
-    discountAmount: Math.round(discountAmount * 100) / 100,
-    finalTotal: Math.round(finalTotal * 100) / 100,
-    reservationDeposit: Math.round(reservationDeposit * 100) / 100,
+    discountedAmount: Math.round(discountedAmount * 100) / 100,
+    totalAmountAfterDiscount: Math.round(totalAmountAfterDiscount * 100) / 100,
+    depositeAmountAfterDiscount:
+      Math.round(depositeAmountAfterDiscount * 100) / 100,
   };
 };

@@ -11,10 +11,10 @@ import { Button } from "@/components/ui/button";
 import { GoBack } from "@/components/ui/goBack";
 import { Locale } from "@/i18n-config";
 import data from "@/public/assets/mocked_data/rooms.json";
+import { convertToLocaleString } from "@/utils/computeFees";
 import { removePluralSuffix } from "@/utils/formatter/pluralSuffixCleaner";
 import { notFound, redirect } from "next/navigation";
 import { ReservationDialogForm } from "./ReservationDialogForm";
-import { convertToLocaleString } from "@/utils/computeFees";
 
 export default async function Page({
   params,

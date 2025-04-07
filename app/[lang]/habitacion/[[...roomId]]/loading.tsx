@@ -4,6 +4,7 @@ import { ClientLayout, Content, Section } from "@/components/layout/container";
 import { featuresList } from "@/components/features/page/Room/Features/items";
 import { amenities } from "@/components/features/page/Room/Amenities/ameneties";
 import { headers } from "next/headers";
+import { Locale } from "@/i18n-config";
 /* Features Skeleton */
 function SkeletonFeatures() {
   return (
@@ -98,10 +99,9 @@ function SkeletonBooking() {
 export default async function LoadingRoom() {
   const h = await headers();
   const lang = h.get("accept-language") || "en";
-  console.log(lang);
 
   return (
-    <ClientLayout>
+    <ClientLayout lang={lang as Locale}>
       {/* Header component */}
       <header className="hqnrd-frosty-bg">
         <Content className="p-6 px-2 lg:py-2 lg:pt-8">

@@ -1,13 +1,12 @@
 "use client";
 import { Locale } from "@/i18n-config";
-import { reservationStoreState } from "@/store/reservationStore";
+import { useReservatationStore } from "@/providers/ReservationProvider";
 import { ReservationState } from "@/store/slices/reservation";
 import { newBookingAction as createBooking } from "@/utils/actions/bookingActions";
 import React, { useActionState } from "react";
-import { useStore } from "zustand";
 import { Alert } from "./Alert";
-import { FormInput } from "./FormInput";
 import { FormDisplayData } from "./FormDisplayData";
+import { FormInput } from "./FormInput";
 
 export const Booking = ({
   lang,
@@ -21,9 +20,8 @@ export const Booking = ({
   pricePerNight: number;
 }) => {
   const [open, setOpen] = React.useState(false);
-  const [bookedReservations, setBookedReservations] = React.useState<
-    ReservationState[]
-  >([]);
+  const [bookedReservation, setBookedReservation] =
+    React.useState<ReservationState>({});
 
   const [errorMessages, setErrorMessages] = React.useState<
     { key: string; message: unknown }[]
@@ -36,10 +34,16 @@ export const Booking = ({
     initialState,
   );
 
-  const { addReservation, reservations } = useStore(
-    reservationStoreState,
-    (state) => state,
-  );
+  // const { addReservation, reservations } = useStore(
+  //   reservationStoreState,
+  //   (state) => state,
+  // );
+
+  const { reservations, addReservation } = useReservatationStore((state) => ({
+    reservations: state.reservations,
+    addReservation: state.addReservation,
+    removeAllReservations: state.removeAllReservations,
+  }));
 
   enum checkOutTime {
     time = "11:30 AM",
@@ -70,16 +74,13 @@ export const Booking = ({
 
   const checkIfRoomIsBooked = React.useCallback(
     (unitNumber: number, reservations: ReservationState[]) => {
-      const bookedReservations = reservations.filter((reservation) => {
-        return reservation.unit === unitNumber;
-      });
-      if (bookedReservations.length > 0) {
+      if (Object.entries(bookedReservation).length > 0) {
         // setErrorMessages((prev) => [
         //   ...prev,
         //   { key: "unitNumber", message: "Room is already booked" },
         // ]);
         // setOpen(true);
-        setBookedReservations(bookedReservations);
+        setBookedReservation(bookedReservation);
         return true;
       }
     },
@@ -89,6 +90,17 @@ export const Booking = ({
   React.useMemo(() => {
     checkIfRoomIsBooked(unitNumber, reservations);
   }, [unitNumber]);
+
+  React.useEffect(() => {
+    const booked = reservations.filter(
+      (reservation) => reservation.unit === unitNumber,
+    );
+    if (booked.length > 0) {
+      setBookedReservation(booked[0]);
+    } else {
+      setBookedReservation({});
+    }
+  }, [reservations.length, unitNumber]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -106,6 +118,7 @@ export const Booking = ({
         unit: unitNumber,
         roomType: unitCategory,
         pricePerNight: pricePerNight,
+        lang: lang,
       });
     }
   };
@@ -117,7 +130,7 @@ export const Booking = ({
         setOpen={setOpen}
         setErrorMessages={setErrorMessages}
       />
-      {!bookedReservations.length ? (
+      {Object.keys(bookedReservation).length === 0 ? (
         <FormInput
           lang={lang}
           handleSubmit={handleSubmit}
@@ -128,11 +141,7 @@ export const Booking = ({
           pricePerNight={pricePerNight}
         />
       ) : (
-        <FormDisplayData
-          bookedReservations={bookedReservations}
-          pricePerNight={pricePerNight}
-          lang={lang}
-        />
+        <FormDisplayData bookedReservation={bookedReservation} lang={lang} />
       )}
     </>
   );

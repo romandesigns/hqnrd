@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ModeToggle } from "../../ModeToggle";
 import { ToggleNavigationBtn } from "../shared/ToggleNavBtn";
 import { MenuItem } from "./MenuItem";
+import { CartBookings } from "@/components/features/page/shared/CartBookings";
 
 /**
  * Renders the desktop navigation menu for the site.
@@ -45,9 +46,7 @@ export function DesktopMenu({ lang }: { lang: Locale }) {
         <ModeToggle />
       </MenuItem>
       <MenuItem className="max-md:block">
-        <Button size="icon" variant="ghost">
-          <FaList />
-        </Button>
+        <CartBookings variant="outline" />
       </MenuItem>
       <MenuItem className="block md:hidden">
         <ToggleNavigationBtn />

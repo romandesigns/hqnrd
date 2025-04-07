@@ -1,11 +1,12 @@
 // src/stores/counter-store.ts
-import { createStore } from "zustand/vanilla";
-import { persist, devtools } from "zustand/middleware";
+import { Locale } from "@/i18n-config";
 import {
   checkDateDifference,
   checkIfDiscountIsApplicable,
   getPriceWithDiscount,
 } from "@/utils/computeFees";
+import { devtools, persist } from "zustand/middleware";
+import { createStore } from "zustand/vanilla";
 
 export type ReservationState = {
   adults: number;
@@ -15,6 +16,7 @@ export type ReservationState = {
   roomType: string;
   bookingMessage: string;
   unit: number;
+  lang: Locale;
 
   // Reservation fees
   pricePerNight: number;
@@ -31,6 +33,7 @@ export type ReservationState = {
 const calculateReservationMeta = (payload: ReservationState) => {
   const { checkInDate, checkOutDate } = payload;
   if (!checkInDate || !checkOutDate) return payload;
+
   const { days } = checkDateDifference(checkInDate, checkOutDate);
   const discountPercentage = checkIfDiscountIsApplicable(days);
   const {
@@ -38,12 +41,15 @@ const calculateReservationMeta = (payload: ReservationState) => {
     totalAmountAfterDiscount,
     depositeAmountAfterDiscount,
   } = getPriceWithDiscount(days, payload.pricePerNight);
+
   return {
     ...payload,
     totalDays: days,
-    discountPercentage,
+    discountPercentage, // ← número crudo
     discountedAmount,
     totalAmountAfterDiscount,
+    totalAmount: payload.pricePerNight * days,
+    deposite: (payload.pricePerNight * days) / 2,
     depositeAmountAfterDiscount,
   };
 };
@@ -79,9 +85,9 @@ export const createReservatationStore = (
               );
               if (exists) return state;
 
-              const enrichedPayload = calculateReservationMeta(payload);
+              const newReservation = calculateReservationMeta(payload);
               return {
-                reservations: [...state.reservations, enrichedPayload],
+                reservations: [...state.reservations, newReservation],
               };
             }),
 

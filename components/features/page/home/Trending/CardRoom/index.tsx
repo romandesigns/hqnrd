@@ -12,6 +12,7 @@ import { Locale } from "@/i18n-config";
 import Image from "next/image";
 import Link from "next/link";
 import { Room } from "@/types";
+import { BookedStatus } from "./BookedStatus";
 
 export function CardRoom({ lang, room }: { lang: Locale; room: Room }) {
   return (
@@ -44,6 +45,7 @@ export function CardRoom({ lang, room }: { lang: Locale; room: Room }) {
           <div className="absolute bottom-0 right-0 z-[2] rounded-tl-md bg-muted p-2 px-4 text-sm font-bold">
             {room.pricePerNight}$ / Night
           </div>
+          <BookedStatus unitNumber={room.unitNumber} />
           <Image
             src="/assets/images/home/header/HQNRD-first-featured-image.webp"
             alt="random image"
