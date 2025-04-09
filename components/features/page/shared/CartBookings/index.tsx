@@ -14,6 +14,8 @@ import {
 } from "@/components/ui/sheet";
 import { FaList } from "@/components/icons";
 import { BookingsCounter } from "./BookingsCounter";
+import { CardBooking } from "./CardBooking";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export function CartBookings({ variant }: { variant: ButtonProps["variant"] }) {
   return (
@@ -30,40 +32,38 @@ export function CartBookings({ variant }: { variant: ButtonProps["variant"] }) {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>Rooms Added</SheetTitle>
-          <SheetDescription>
-            Review and manage your selected rooms before checking out.
+          <SheetTitle className="text-left">
+            Rooms Added{" "}
+            <span className="ml-2 rounded-full bg-muted px-4 text-sm">8</span>
+          </SheetTitle>
+          <SheetDescription className="flex gap-4 text-left text-xs">
+            <p>
+              Deposite:{" "}
+              <span className="ml-2 font-bold text-primary">8,205</span>
+            </p>
+            <p>
+              Total: <span className="ml-2 font-bold text-primary">4,105</span>
+            </p>
           </SheetDescription>
         </SheetHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input
-              id="name"
-              defaultValue="Pedro Duarte"
-              className="col-span-3"
-              readOnly
-            />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input
-              id="username"
-              defaultValue="@peduarte"
-              className="col-span-3"
-              readOnly
-            />
+        <div className="@container mt-2 h-[calc(100%-8rem)]">
+          <ScrollArea className="h-full rounded-md">
+            {Array.from({ length: 25 }).map((_, i) => (
+              <CardBooking key={i} />
+            ))}
+          </ScrollArea>
+        </div>
+        <div className="!lg:flex-col flex w-full flex-col rounded-md border p-2 pt-0">
+          <div className="py-2 text-center text-xs font-bold">Make Payment</div>
+          <div className="grid grid-cols-2 gap-2">
+            <Button type="submit" size="sm">
+              Deposite
+            </Button>
+            <Button type="submit" size="sm">
+              Full Amount
+            </Button>
           </div>
         </div>
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
-          </SheetClose>
-        </SheetFooter>
       </SheetContent>
     </Sheet>
   );

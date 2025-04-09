@@ -40,7 +40,7 @@ export default async function Page({
   return (
     <ClientLayout lang={lang}>
       <header className="hqnrd-frosty-bg">
-        <Content className="p-6 px-2 lg:py-2 lg:pt-8">
+        <Content className="p-6 px-2 lg:py-2">
           <div className="py-3">
             <GoBack variant="outline" />
           </div>
