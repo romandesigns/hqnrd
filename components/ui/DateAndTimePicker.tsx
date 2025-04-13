@@ -19,6 +19,7 @@ export function DateAndTimePicker({
   time,
   align,
   sideOffset,
+  defaultValue,
 }: {
   lang: Locale;
   hideIcon?: boolean;
@@ -31,8 +32,11 @@ export function DateAndTimePicker({
   time?: string;
   align?: "start" | "center" | "end";
   sideOffset?: number;
+  defaultValue?: Date | null;
 }) {
-  const [date12, setDate12] = React.useState<Date | undefined>(undefined);
+  const [date12, setDate12] = React.useState<Date | undefined>(
+    defaultValue || undefined,
+  );
 
   return (
     <Label className="!m-0 flex-1" htmlFor="date">

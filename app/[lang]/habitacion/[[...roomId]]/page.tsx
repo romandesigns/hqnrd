@@ -48,16 +48,15 @@ export default async function Page({
             <div className="mb-4 flex flex-col items-center justify-center gap-x-2 md:flex-1 md:items-start md:justify-start lg:mb-0">
               <p className="font-bold">Unit {room.unitNumber}</p>
               <h2 className="text-3xl font-black uppercase leading-6 md:text-5xl md:font-black">
-                Doble Cama
+                {room.category}
               </h2>
             </div>
             <div className="md:max-w-auto flex w-full max-w-6xl items-center justify-center md:w-auto md:flex-col md:justify-between">
-              {/* <Button></Button> */}
               <ReservationDialogForm
                 className="w-full max-w-md md:hidden"
                 lang={lang}
                 unitNumber={Number(roomUnitNumber)}
-                unitCategory={roomCategory}
+                unitCategory={room.category}
               />
               <ContactWidget
                 lang={lang}
@@ -93,10 +92,10 @@ export default async function Page({
           </article>
           <aside className="hidden pt-4 md:block">
             <div className="top-52 py-8 md:sticky">
-              <h4 className="inline-block translate-x-4 translate-y-4 rounded-md border-4 border-background bg-secondary p-2 px-6 text-2xl font-bold">
+              <h4 className="inline-block translate-x-4 translate-y-4 rounded-md border-4 border-background bg-secondary p-2 px-6 pl-4 text-2xl font-bold">
                 {convertToLocaleString(room.pricePerNight, lang)} / Night
               </h4>
-              <div className="rounded-md bg-secondary/50 px-4 py-6">
+              <div className="rounded-md bg-secondary/50 px-2 py-6">
                 <Booking
                   lang={lang}
                   unitNumber={Number(roomUnitNumber)}

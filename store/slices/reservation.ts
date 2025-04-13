@@ -8,7 +8,10 @@ import {
 import { devtools, persist } from "zustand/middleware";
 import { createStore } from "zustand/vanilla";
 
+export type ReservationStatusTypes = "added" | "updated" | "removed";
+
 export type ReservationState = {
+  status: ReservationStatusTypes;
   adults: number;
   children: number;
   checkInDate: Date | null;
@@ -30,9 +33,11 @@ export type ReservationState = {
 };
 
 //  For internal use only
-const calculateReservationMeta = (payload: ReservationState) => {
+const calculateReservationMeta = (
+  payload: ReservationState,
+): ReservationState => {
   const { checkInDate, checkOutDate } = payload;
-  if (!checkInDate || !checkOutDate) return payload;
+  if (!checkInDate || !checkOutDate) return { ...payload, status: "added" };
 
   const { days } = checkDateDifference(checkInDate, checkOutDate);
   const discountPercentage = checkIfDiscountIsApplicable(days);
@@ -51,6 +56,7 @@ const calculateReservationMeta = (payload: ReservationState) => {
     totalAmount: payload.pricePerNight * days,
     deposite: (payload.pricePerNight * days) / 2,
     depositeAmountAfterDiscount,
+    status: "added",
   };
 };
 
@@ -59,6 +65,8 @@ export type ReservationActions = {
   updateReservation: (payload: ReservationState) => void;
   removeReservation: (unit: number) => void;
   removeAllReservations: () => void;
+  changeMode: (unit: number, status: ReservationStatusTypes) => void;
+  removeBooking: (unit: number) => void;
 };
 
 export type ReservationStore = ReservationActions & {
@@ -102,6 +110,21 @@ export const createReservatationStore = (
             }),
 
           removeReservation: (unit) =>
+            set((state) => ({
+              reservations: state.reservations.filter((r) => r.unit !== unit),
+            })),
+
+          changeMode: (unit, status) =>
+            set((state) => {
+              console.log(unit, status);
+              return {
+                reservations: state.reservations.map((r) => {
+                  return r.unit === unit ? { ...r, status } : r;
+                }),
+              };
+            }),
+
+          removeBooking: (unit) =>
             set((state) => ({
               reservations: state.reservations.filter((r) => r.unit !== unit),
             })),

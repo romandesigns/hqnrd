@@ -1,9 +1,5 @@
 "use client";
-import React from "react";
-import { mirage } from "ldrs";
+import { Mirage } from "ldrs/react";
+import "ldrs/react/Ring.css";
 
-export function Loader() {
-  mirage.register();
-  // @ts-ignore
-  return <l-mirage size="60" speed="2.5" color="black" />;
-}
+export const Loader = () => <Mirage size={50} speed={1.5} />;

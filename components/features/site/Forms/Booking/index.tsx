@@ -1,12 +1,31 @@
 "use client";
+
 import { Locale } from "@/i18n-config";
 import { useReservatationStore } from "@/providers/ReservationProvider";
 import { ReservationState } from "@/store/slices/reservation";
 import { newBookingAction as createBooking } from "@/utils/actions/bookingActions";
-import React, { useActionState } from "react";
+import React, { useActionState, useEffect, useState, useCallback } from "react";
 import { Alert } from "./Alert";
 import { FormDisplayData } from "./FormDisplayData";
 import { FormInput } from "./FormInput";
+import { isBefore, isToday } from "date-fns";
+
+type FormInputProps = {
+  adultsCount: string;
+  checkIn: string;
+  checkInMessage: string;
+  checkOut: string;
+  childrensCount: string;
+  unitCategory: string;
+  unitNumber: string;
+};
+
+export type ErrorPropTypes = {
+  key: string;
+  heading?: string;
+  message: React.ReactNode;
+  type?: "error" | "warning" | "info" | "success" | "default";
+};
 
 export const Booking = ({
   lang,
@@ -19,96 +38,135 @@ export const Booking = ({
   unitCategory: string;
   pricePerNight: number;
 }) => {
-  const [open, setOpen] = React.useState(false);
-  const [bookedReservation, setBookedReservation] =
-    React.useState<ReservationState>({});
+  const [errorOpen, setErrorOpen] = useState(false);
+  const [displayReservationInfo, setDisplayReservationInfo] = useState(false);
+  const [bookedReservation, setBookedReservation] = useState<ReservationState>(
+    {} as ReservationState,
+  );
+  const [errorMessages, setErrorMessages] = useState<ErrorPropTypes[]>([]);
+  const initialState: Record<string, unknown> = {};
 
-  const [errorMessages, setErrorMessages] = React.useState<
-    { key: string; message: unknown }[]
-  >([]);
-
-  //@ts-ignore
-  const initialState = {};
   const [state, formAction, pending] = useActionState(
     createBooking,
     initialState,
   );
 
-  // const { addReservation, reservations } = useStore(
-  //   reservationStoreState,
-  //   (state) => state,
-  // );
-
-  const { reservations, addReservation } = useReservatationStore((state) => ({
-    reservations: state.reservations,
-    addReservation: state.addReservation,
-    removeAllReservations: state.removeAllReservations,
-  }));
+  const { reservations, addReservation, updateReservation } =
+    useReservatationStore((state) => ({
+      reservations: state.reservations,
+      addReservation: state.addReservation,
+      updateReservation: state.updateReservation,
+    }));
 
   enum checkOutTime {
     time = "11:30 AM",
   }
 
-  // Check if there are any errors in the form state
-  // and display them in an alert dialog
-  // This will be triggered when the form state changes
-  // and the error messages are updated
-  React.useMemo(() => {
-    const displayFormErrors = () => {
-      const errorArray = Object.entries(state || {}).map(([key, message]) => ({
-        key,
-        message,
-      }));
-
-      if (errorArray.length > 0) {
-        setErrorMessages(errorArray);
-        setOpen(true);
-      }
-    };
-    displayFormErrors();
+  // Trigger alert if errors are returned in state
+  useEffect(() => {
+    const errorArray = Object.entries(state || {}).map(([key, message]) => ({
+      key,
+      message: message as React.ReactNode,
+    }));
+    if (errorArray.length > 0) {
+      setErrorMessages(errorArray);
+      setErrorOpen(true);
+    }
   }, [state]);
 
-  // Check if the room is already booked
-  // and set the booked reservations state
-  // This will be triggered when the unit number changes
-
-  const checkIfRoomIsBooked = React.useCallback(
+  // Detect if a room is already booked
+  const checkIfRoomIsBooked = useCallback(
     (unitNumber: number, reservations: ReservationState[]) => {
-      if (Object.entries(bookedReservation).length > 0) {
-        // setErrorMessages((prev) => [
-        //   ...prev,
-        //   { key: "unitNumber", message: "Room is already booked" },
-        // ]);
-        // setOpen(true);
-        setBookedReservation(bookedReservation);
-        return true;
-      }
+      return reservations.some(
+        (reservation) => reservation.unit === unitNumber,
+      );
     },
-    [unitNumber],
+    [],
   );
 
-  React.useMemo(() => {
-    checkIfRoomIsBooked(unitNumber, reservations);
-  }, [unitNumber]);
-
-  React.useEffect(() => {
-    const booked = reservations.filter(
+  // Set bookedReservation whenever reservations or unitNumber change
+  useEffect(() => {
+    const booked = reservations.find(
       (reservation) => reservation.unit === unitNumber,
     );
-    if (booked.length > 0) {
-      setBookedReservation(booked[0]);
-    } else {
-      setBookedReservation({});
-    }
-  }, [reservations.length, unitNumber]);
+    setBookedReservation(booked ?? {});
+  }, [reservations, unitNumber]);
+
+  // const validateDatesInput = useCallback(
+  //   (checkInDate: Date, checkOutDate: Date) => {
+  //     const currentDate = new Date();
+  //     const checkIn = new Date(checkInDate);
+  //     const checkOut = new Date(checkOutDate);
+  //     const isValidCheckIn = checkIn >= currentDate;
+  //     const isValidCheckOut = checkOut > checkIn;
+  //     const isValid = isValidCheckIn && isValidCheckOut;
+  //     if (!isValid) {
+  //       setErrorMessages([
+  //         { key: "unitNumber", message: "Invalid check-in or check-out date." },
+  //       ]);
+  //       setErrorOpen(true);
+  //     }
+  //     return isValid;
+  //   },
+  //   [setErrorMessages, setErrorOpen],
+  // );
+
+  const checkFieldsFormValues = useCallback(
+    (reservation: FormInputProps) => {
+      const { checkIn, checkOut, adultsCount } = reservation;
+      // Check for the number of adults
+      if (Number(adultsCount) < 1) {
+        setErrorMessages([
+          {
+            key: "invalidAdultsCount",
+            type: "warning",
+            heading: "Adults Count",
+            message: "Enter the number of adults.",
+          },
+        ]);
+        setErrorOpen(true);
+        return;
+      }
+      if (isBefore(new Date(checkOut), new Date(checkIn))) {
+        setErrorMessages([
+          {
+            key: "invalidDates",
+            type: "warning",
+            heading: "Invalid Dates",
+            message: "Check-out date must be after check-in date.",
+          },
+        ]);
+        setErrorOpen(true);
+        return;
+      }
+
+      console.log(errorMessages);
+
+      // const currentDate = new Date();
+      // const checkIn = new Date(checkInDate);
+      // const checkOut = new Date(checkOutDate);
+      // const isValidCheckIn = checkIn >= currentDate;
+      // const isValidCheckOut = checkOut > checkIn;
+      // const isValid = isValidCheckIn && isValidCheckOut;
+      // if (!isValid) {
+      //   setErrorMessages([
+      //     { key: "unitNumber", message: "Invalid check-in or check-out date." },
+      //   ]);
+      //   setErrorOpen(true);
+      // }
+      // return isValid;
+    },
+    [setErrorMessages, setErrorOpen],
+  );
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
     const formValues = Object.fromEntries(formData.entries());
-    const checkResult = checkIfRoomIsBooked(unitNumber, reservations);
 
-    if (!checkResult) {
+    const validation = checkFieldsFormValues(formValues as FormInputProps);
+    const alreadyBooked = checkIfRoomIsBooked(unitNumber, reservations);
+    if (!alreadyBooked && errorMessages.length === 0) {
       addReservation({
         adults: Number(formValues.adultsCount),
         children: Number(formValues.childrensCount),
@@ -119,18 +177,47 @@ export const Booking = ({
         roomType: unitCategory,
         pricePerNight: pricePerNight,
         lang: lang,
+        status: "added",
       });
+    } else if (
+      alreadyBooked &&
+      errorMessages.length === 0 &&
+      bookedReservation.status === "updated"
+    ) {
+      updateReservation({
+        adults: Number(formValues.adultsCount),
+        children: Number(formValues.childrensCount),
+        checkInDate: new Date(formValues.checkIn as string),
+        checkOutDate: new Date(formValues.checkOut as string),
+        bookingMessage: formValues.checkInMessage as string,
+        unit: unitNumber,
+        roomType: unitCategory,
+        pricePerNight: pricePerNight,
+        lang: lang,
+        status: "added",
+      });
+    } else {
+      setErrorMessages([
+        {
+          key: "roomBooked",
+          heading: "Room Already Booked",
+          message: "You already added this room to your cart.",
+        },
+      ]);
+      setErrorOpen(true);
     }
   };
 
+  console.log(bookedReservation);
   return (
     <>
       <Alert
         errorMessages={errorMessages}
-        setOpen={setOpen}
+        setErrorOpen={setErrorOpen}
         setErrorMessages={setErrorMessages}
       />
-      {Object.keys(bookedReservation).length === 0 ? (
+      {console.log(!checkIfRoomIsBooked(unitNumber, reservations))}
+      {!checkIfRoomIsBooked(unitNumber, reservations) && !errorOpen && (
         <FormInput
           lang={lang}
           handleSubmit={handleSubmit}
@@ -139,10 +226,29 @@ export const Booking = ({
           unitCategory={unitCategory}
           pending={pending}
           pricePerNight={pricePerNight}
+          bookedReservation={bookedReservation}
         />
-      ) : (
+      )}
+      {displayReservationInfo && (
         <FormDisplayData bookedReservation={bookedReservation} lang={lang} />
       )}
+
+      {/* {Object.keys(bookedReservation).length === 0 ||
+      bookedReservation.status === "updated" ||
+      errorMessages.length > 0 ? (
+        <FormInput
+          lang={lang}
+          handleSubmit={handleSubmit}
+          checkOutTime={checkOutTime}
+          unitNumber={unitNumber}
+          unitCategory={unitCategory}
+          pending={pending}
+          pricePerNight={pricePerNight}
+          bookedReservation={bookedReservation}
+        />
+      ) : errorMessages.length === 0 && bookedReservation.status === "added" ? (
+        <FormDisplayData bookedReservation={bookedReservation} lang={lang} />
+      ) : null} */}
     </>
   );
 };

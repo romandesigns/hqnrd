@@ -63,7 +63,7 @@ export const getCurrencyLocale = (lang: Locale) => {
 export const convertToLocaleString = (amount: number = 0, lang: Locale) => {
   const { locale, currency } = getCurrencyLocale(lang);
   return amount
-    .toLocaleString(locale, {
+    ?.toLocaleString(locale, {
       style: "currency",
       currency,
     })

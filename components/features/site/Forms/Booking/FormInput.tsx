@@ -1,12 +1,24 @@
-import React from "react";
+import { Button } from "@/components/ui/button";
 import { DateAndTimePicker } from "@/components/ui/DateAndTimePicker";
 import { InputNumber } from "@/components/ui/form/InputNumber";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import Form from "next/form";
 import { Locale } from "@/i18n-config";
-import { Button } from "@/components/ui/button";
+import { ReservationState } from "@/store/slices/reservation";
+import Form from "next/form";
+import React from "react";
 import { Loader } from "../../Loader";
+
+type RoomFormInputProps = {
+  bookedReservation: ReservationState;
+  lang: Locale;
+  unitNumber: number;
+  unitCategory: string;
+  checkOutTime: { time: string };
+  pending: boolean;
+  pricePerNight: number;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+};
 
 export function FormInput({
   lang,
@@ -14,17 +26,10 @@ export function FormInput({
   unitCategory,
   checkOutTime,
   pending,
-  pricePerNight,
   handleSubmit,
-}: {
-  lang: Locale;
-  unitNumber: number;
-  unitCategory: string;
-  pricePerNight: number;
-  checkOutTime: { time: string };
-  pending: boolean;
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-}) {
+  pricePerNight,
+  bookedReservation,
+}: RoomFormInputProps) {
   return (
     <Form className="space-y-6 rounded-md py-8 lg:p-2" onSubmit={handleSubmit}>
       <div className="flex items-center justify-center gap-4">
@@ -34,6 +39,7 @@ export function FormInput({
           inputNumberLabel="Adults"
           iconName="FaUser"
           iconSize={13}
+          defaultValue={bookedReservation.adults}
         />
         {/* Children: Number Input*/}
         <InputNumber
@@ -41,6 +47,7 @@ export function FormInput({
           inputNumberLabel="Children"
           iconName="FaChild"
           iconSize={13}
+          defaultValue={bookedReservation.children}
         />
       </div>
       <div className="flex items-center justify-center gap-1">
@@ -56,6 +63,7 @@ export function FormInput({
           inputName="checkIn"
           align="start"
           sideOffset={-180}
+          defaultValue={bookedReservation.checkInDate}
         />
         {/* Check Out: Date Input */}
         <DateAndTimePicker
@@ -70,13 +78,18 @@ export function FormInput({
           time={checkOutTime.time}
           align="end"
           sideOffset={-180}
+          defaultValue={bookedReservation.checkOutDate}
         />
       </div>
       <div className="">
         <Label htmlFor="message" className="text-muted-foreground">
           Message (Optional)
         </Label>
-        <Textarea className="h-36" name="checkInMessage" />
+        <Textarea
+          className="h-36"
+          name="checkInMessage"
+          defaultValue={bookedReservation.bookingMessage}
+        />
         <input
           name="unitNumber"
           value={unitNumber}

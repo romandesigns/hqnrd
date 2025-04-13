@@ -14,14 +14,15 @@ export function InputNumber({
   name,
   iconName,
   iconSize,
+  defaultValue,
 }: {
   inputNumberLabel: string;
   name: string;
   iconName?: string;
   iconSize: number;
+  defaultValue?: number;
 }) {
-  const [count, setCount] = React.useState(0);
-
+  const [count, setCount] = React.useState(defaultValue || 0);
   const increment = () => setCount((prevCount) => prevCount + 1);
   const decrement = () =>
     setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));

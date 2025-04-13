@@ -9,38 +9,39 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { BiSolidMessageSquareError } from "@/components/icons";
+import { ErrorPropTypes } from ".";
 
 export function Alert({
   errorMessages,
-  setOpen,
+  setErrorOpen,
   setErrorMessages,
 }: {
-  errorMessages: { key: string; message: unknown }[];
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setErrorMessages: React.Dispatch<
-    React.SetStateAction<{ key: string; message: unknown }[]>
-  >;
+  errorMessages: ErrorPropTypes[];
+  setErrorOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setErrorMessages: React.Dispatch<React.SetStateAction<ErrorPropTypes[]>>;
 }) {
+  const { key, heading, message } = errorMessages[0] || {};
   return (
-    <AlertDialog open={errorMessages.length > 0} onOpenChange={setOpen}>
+    <AlertDialog open={errorMessages.length > 0} onOpenChange={setErrorOpen}>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle className="flex items-center justify-start gap-2 text-yellow-400">
-            <span>Error Message</span>
-            <BiSolidMessageSquareError />
-          </AlertDialogTitle>
-          <AlertDialogDescription>
-            {errorMessages.map((error) => (
-              <span key={error.key}>
-                <strong>{error.key}:</strong> {String(error.message)}
-              </span>
-            ))}
-          </AlertDialogDescription>
+          {heading && (
+            <AlertDialogTitle className="flex items-center justify-start gap-2 text-yellow-400">
+              <span>{heading}</span>
+              <BiSolidMessageSquareError />
+            </AlertDialogTitle>
+          )}
+          {message && (
+            <AlertDialogDescription>
+              <span>{message}</span>
+            </AlertDialogDescription>
+          )}
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogAction
+            className="mr-auto mt-8"
             onClick={() => {
-              setOpen(false);
+              setErrorOpen(false);
               setErrorMessages([]);
             }}
           >
