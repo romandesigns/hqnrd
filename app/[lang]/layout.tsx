@@ -6,6 +6,7 @@ import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ReservationStoreProvider } from "@/providers/ReservationProvider";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
   title: "Hotel Quinto Nivel RD",
@@ -33,25 +34,27 @@ interface LayoutProps {
 export default async function RootLayout({ children, params }: LayoutProps) {
   const { lang } = await params;
   return (
-    <html
-      lang={lang}
-      className={`scroll-smooth focus:scroll-auto ${poppins.className}`}
-      suppressHydrationWarning
-    >
-      <body className={`${poppins.className} subpixel-antialiased`}>
-        <ReservationStoreProvider>
-          <ScrollArea className="h-[100vh] rounded-md border">
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
-              {children}
-            </ThemeProvider>
-          </ScrollArea>
-        </ReservationStoreProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html
+        lang={lang}
+        className={`scroll-smooth focus:scroll-auto ${poppins.className}`}
+        suppressHydrationWarning
+      >
+        <body className={`${poppins.className} subpixel-antialiased`}>
+          <ReservationStoreProvider>
+            <ScrollArea className="h-[100vh] rounded-md border">
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange
+              >
+                {children}
+              </ThemeProvider>
+            </ScrollArea>
+          </ReservationStoreProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

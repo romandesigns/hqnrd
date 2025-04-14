@@ -2,7 +2,7 @@ import { SignInForm } from "@/components/features/page/signIn/SignInForm";
 import { HeadingSection } from "@/components/features/site/Headings";
 import { Content, Section } from "@/components/layout";
 import { BrandedCard } from "@/components/ui/BrandedCard";
-
+import { SignUp } from "@clerk/nextjs";
 import { Locale } from "@/i18n-config";
 
 interface PageProps {

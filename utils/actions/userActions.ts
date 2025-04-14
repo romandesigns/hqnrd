@@ -1,6 +1,9 @@
 "use server";
 import { parseISO } from "date-fns";
 import { CreateUserZodValidationSchema } from "../zodValidation/newBookingZodValidationSchema";
+import { clerkClient } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs";
+import { SignUpResource } from "@clerk/types";
 
 // New booking interface
 interface CreateUserInterface {
@@ -16,6 +19,13 @@ interface CreateUserInterface {
   accountType: string;
 }
 
+type SignUpPayload = {
+  email: string;
+  password: string;
+  code?: string;
+  userId?: string;
+};
+
 export const createUserAccountAction = async (formData: FormData) => {
   // Parsing  payload with Inconming FormData
   const payload: CreateUserInterface = {
@@ -30,6 +40,13 @@ export const createUserAccountAction = async (formData: FormData) => {
     confirmPassword: formData.get("confirmPassword") as string,
     accountType: formData.get("accountType") as string,
   };
+
+  const response = await clerkClient.users.createUser({
+    emailAddress: [payload.email],
+    password: payload.password,
+  });
+
+  console.log(response);
 
   // Validating payload data
   const validatePayload = CreateUserZodValidationSchema.safeParse(payload);

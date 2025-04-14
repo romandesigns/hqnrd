@@ -3,6 +3,7 @@ import type { NextRequest } from "next/server";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { i18n } from "./i18n-config";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
 function getLocale(request: NextRequest): string {
   const acceptLanguage = request.headers.get("accept-language");
@@ -12,6 +13,17 @@ function getLocale(request: NextRequest): string {
   }).languages();
   return matchLocale(languages, i18n.locales, i18n.defaultLocale);
 }
+
+const isProtectedRoute = createRouteMatcher([
+  "/dashboard(.*)",
+  "/forum(.*)",
+  "/auth(.*)",
+  "/perfil(.*)",
+]);
+
+export default clerkMiddleware(async (auth, req) => {
+  if (isProtectedRoute(req)) await auth.protect();
+});
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
@@ -23,7 +35,8 @@ export function middleware(request: NextRequest) {
 
   // Check if the pathname is missing a locale
   const pathnameIsMissingLocale = i18n.locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+    (locale) =>
+      !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   );
 
   // If no locale in the path, redirect to the localized version
@@ -37,5 +50,9 @@ export function middleware(request: NextRequest) {
 
 // Updated matcher to exclude specific paths including public assets
 export const config = {
-  matcher: ["/((?!api|_next|public|favicon.ico|assets|manifest.json).*)"],
+  matcher: [
+    "/((?!api|_next|public|favicon.ico|assets|manifest.json).*)",
+    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+    "/(api|trpc)(.*)",
+  ],
 };
