@@ -7,6 +7,7 @@ import { ReactNode } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ReservationStoreProvider } from "@/providers/ReservationProvider";
 import { ClerkProvider } from "@clerk/nextjs";
+import { esMX, enUS } from "@clerk/localizations";
 
 export const metadata: Metadata = {
   title: "Hotel Quinto Nivel RD",
@@ -34,7 +35,7 @@ interface LayoutProps {
 export default async function RootLayout({ children, params }: LayoutProps) {
   const { lang } = await params;
   return (
-    <ClerkProvider>
+    <ClerkProvider localization={lang == "es" ? esMX : enUS}>
       <html
         lang={lang}
         className={`scroll-smooth focus:scroll-auto ${poppins.className}`}
