@@ -14,41 +14,32 @@ function getLocale(request: NextRequest): string {
   return matchLocale(languages, i18n.locales, i18n.defaultLocale);
 }
 
-const isProtectedRoute = createRouteMatcher([
-  "/dashboard(.*)",
-  "/forum(.*)",
-  "/auth(.*)",
-  "/perfil(.*)",
-]);
+const isProtectedRoute = createRouteMatcher(["/perfil(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
-  if (isProtectedRoute(req)) await auth.protect();
-});
+  const pathname = req.nextUrl.pathname;
 
-export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname;
+  if (isProtectedRoute(req)) {
+    await auth.protect();
+  }
 
-  // Exclude manifest.json, favicon, and static files from localization
   if (["/manifest.json", "/favicon.ico"].includes(pathname)) {
     return NextResponse.next();
   }
 
-  // Check if the pathname is missing a locale
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) =>
       !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   );
 
-  // If no locale in the path, redirect to the localized version
   if (pathnameIsMissingLocale) {
-    const locale = getLocale(request);
-    return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
+    const locale = getLocale(req);
+    return NextResponse.redirect(new URL(`/${locale}${pathname}`, req.url));
   }
 
   return NextResponse.next();
-}
+});
 
-// Updated matcher to exclude specific paths including public assets
 export const config = {
   matcher: [
     "/((?!api|_next|public|favicon.ico|assets|manifest.json).*)",

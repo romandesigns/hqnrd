@@ -95,6 +95,10 @@ body {
     @apply shadow-[0rem_0.5rem_1rem_0rem_black];
   }
 
+  .field-error {
+    @apply block text-xs font-normal text-red-500;
+  }
+
   .hqnrd-frosty-bg {
     @apply sticky top-10 z-[2] rounded-bl-md rounded-br-md bg-background/90 p-2 px-1 backdrop-blur-xl md:p-5 lg:px-0;
   }

@@ -1,7 +1,7 @@
 import { Brand, DesktopMenu, MobileMenu } from "@/components/features";
 import { Locale } from "@/i18n-config";
 import { Content } from "../container";
-
+import { useUser } from "@clerk/nextjs";
 /**
  * Navigation component that renders the site's navigation bar.
  *
@@ -11,8 +11,9 @@ import { Content } from "../container";
  * @returns {JSX.Element} The rendered navigation component.
  */
 export function Navigation({ lang }: { lang: Locale }) {
+  const { user } = useUser();
   return (
-    <nav className="sticky inset-0 z-[3] flex items-center justify-center border-b border-background bg-background/95 backdrop-blur-lg md:bg-background/95">
+    <nav className="sticky inset-0 z-[3] flex items-center justify-center border-b border-background bg-background/95 backdrop-blur-lg md:bg-background/70">
       <Content
         className="flex items-center justify-between p-2"
         direction="horizontal"
@@ -20,9 +21,9 @@ export function Navigation({ lang }: { lang: Locale }) {
         {/* Site branding */}
         <Brand lang={lang} />
         {/* Desktop Menu */}
-        <DesktopMenu lang={lang} />
+        <DesktopMenu lang={lang} userId={user?.id} />
         {/* Mobile Menu */}
-        <MobileMenu lang={lang} />
+        <MobileMenu lang={lang} userId={user?.id} />
       </Content>
     </nav>
   );

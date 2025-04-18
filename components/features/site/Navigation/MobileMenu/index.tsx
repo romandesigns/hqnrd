@@ -5,6 +5,7 @@ import { MotionMobileNavigation } from "@/motion/MotionMobileNavigation";
 import { useMobileNavigation } from "@/store/hooks";
 import Link from "next/link";
 import { MenuItem } from "../DesktopMenu/MenuItem";
+import { SignOutButton } from "@clerk/nextjs";
 
 /**
  * MobileMenu component renders a mobile navigation menu with various menu items.
@@ -22,9 +23,14 @@ import { MenuItem } from "../DesktopMenu/MenuItem";
  * // Example usage:
  * <MobileMenu lang="es" />
  */
-export function MobileMenu({ lang }: { lang: Locale }) {
+export function MobileMenu({
+  lang,
+  userId,
+}: {
+  lang: Locale;
+  userId?: string;
+}) {
   const { isOpen, autoCloseNavigation } = useMobileNavigation();
-
   return (
     <MotionMobileNavigation
       trigger={isOpen}
@@ -56,13 +62,40 @@ export function MobileMenu({ lang }: { lang: Locale }) {
             </Button>
           </MenuItem>
           <MenuItem className="mb-5 mt-20 block">
-            <ContactWidget lang={lang} variant="ghost" btnClassNames="border-none bg-muted" />
+            <ContactWidget
+              lang={lang}
+              variant="ghost"
+              btnClassNames="border-none bg-muted"
+            />
           </MenuItem>
-          <MenuItem className="block">
-            <Button size="full" variant="default" className="py-4 text-xs">
-              Iniciar Session
-            </Button>
-          </MenuItem>
+          {userId ? (
+            <SignOutButton>
+              <Button size="sm" variant="secondary" asChild>
+                <Link
+                  href={`/${lang}/crear-cuenta`}
+                  className="text-center font-semibold"
+                >
+                  Cerrar Sesion
+                </Link>
+              </Button>
+            </SignOutButton>
+          ) : (
+            <MenuItem className="block">
+              <Button
+                size="full"
+                variant="default"
+                className="py-4 text-xs"
+                asChild
+              >
+                <Link
+                  href={`/${lang}/inicia-sesion`}
+                  className="text-center font-semibold"
+                >
+                  Inicia Sesion
+                </Link>
+              </Button>
+            </MenuItem>
+          )}
           <MenuItem className="flex items-center justify-center gap-2 text-xs">
             <p className="text-muted-foreground">No te has registrado?</p>
             <Link

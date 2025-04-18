@@ -1,11 +1,11 @@
-import { FaList } from "@/components/icons";
+import { CartBookings } from "@/components/features/page/shared/CartBookings";
 import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n-config";
 import Link from "next/link";
 import { ModeToggle } from "../../ModeToggle";
 import { ToggleNavigationBtn } from "../shared/ToggleNavBtn";
 import { MenuItem } from "./MenuItem";
-import { CartBookings } from "@/components/features/page/shared/CartBookings";
+import { SignOutButton } from "@clerk/nextjs";
 
 /**
  * Renders the desktop navigation menu for the site.
@@ -15,7 +15,14 @@ import { CartBookings } from "@/components/features/page/shared/CartBookings";
  *
  * @returns {JSX.Element} The rendered desktop menu component.
  */
-export function DesktopMenu({ lang }: { lang: Locale }) {
+
+export function DesktopMenu({
+  lang,
+  userId,
+}: {
+  lang: Locale;
+  userId?: string;
+}) {
   return (
     <ul className="flex items-start justify-center gap-3 text-xs font-medium">
       <MenuItem>
@@ -36,11 +43,39 @@ export function DesktopMenu({ lang }: { lang: Locale }) {
         </Button>
       </MenuItem>
       <MenuItem>
-        <Button size="sm" variant="secondary" asChild>
-          <Link href={`/${lang}/auth`} className="text-center font-semibold">
-            Crear Cuenta
-          </Link>
-        </Button>
+        {userId ? (
+          <span>
+            <SignOutButton>
+              <Button size="sm" variant="secondary" asChild>
+                <Link
+                  href={`/${lang}/crear-cuenta`}
+                  className="text-center font-semibold"
+                >
+                  Cerrar Sesion
+                </Link>
+              </Button>
+            </SignOutButton>
+          </span>
+        ) : (
+          <span className="flex gap-3">
+            <Button size="sm" variant="secondary" asChild>
+              <Link
+                href={`/${lang}/inicia-sesion`}
+                className="text-center font-semibold"
+              >
+                Inicia Session
+              </Link>
+            </Button>
+            <Button size="sm" variant="outline" asChild>
+              <Link
+                href={`/${lang}/crear-cuenta`}
+                className="text-center font-semibold"
+              >
+                Crear Cuenta
+              </Link>
+            </Button>
+          </span>
+        )}
       </MenuItem>
       <MenuItem className="block">
         <ModeToggle />

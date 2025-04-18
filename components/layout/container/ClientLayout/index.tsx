@@ -3,9 +3,6 @@ import { Locale } from "@/i18n-config";
 import { useMobileNavigation } from "@/store/hooks";
 import React, { useEffect } from "react";
 import { Footer, Navigation } from "../..";
-import { Header } from "@/components/features/page/rooms";
-
-import { DialogScreen } from "@/components/features/global/Dialog";
 
 /**
  * ClientLayout component that provides a layout structure for the client-side application.
