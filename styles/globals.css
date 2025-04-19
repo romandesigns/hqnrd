@@ -145,4 +145,8 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+
+  input {
+    @apply rounded-md border px-4 py-1 transition-all delay-75 duration-200 focus:outline-none focus-visible:!outline-secondary/80;
+  }
 }
