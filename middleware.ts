@@ -14,11 +14,21 @@ function getLocale(request: NextRequest): string {
   return matchLocale(languages, i18n.locales, i18n.defaultLocale);
 }
 
-const isProtectedRoute = createRouteMatcher(["/perfil(.*)"]);
+// Protect only /perfil and /api/webhooks (not all of /api)
+const isProtectedRoute = createRouteMatcher([
+  "/perfil(.*)",
+  "/api/webhooks(.*)",
+]);
 
 export default clerkMiddleware(async (auth, req) => {
   const pathname = req.nextUrl.pathname;
 
+  // ✅ Skip most /api routes EXCEPT /api/webhooks
+  if (pathname.startsWith("/api") && !pathname.startsWith("/api/webhooks")) {
+    return NextResponse.next();
+  }
+
+  // ✅ Clerk protect only if in the protected matcher
   if (isProtectedRoute(req)) {
     await auth.protect();
   }
@@ -43,7 +53,6 @@ export default clerkMiddleware(async (auth, req) => {
 export const config = {
   matcher: [
     "/((?!api|_next|public|favicon.ico|assets|manifest.json).*)",
-    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
-    "/(api|trpc)(.*)",
+    "/api/webhooks(.*)", // ✅ include explicitly
   ],
 };
