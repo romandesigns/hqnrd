@@ -40,9 +40,8 @@ export const Booking = ({
 }) => {
   const [errorOpen, setErrorOpen] = useState(false);
   const [displayReservationInfo, setDisplayReservationInfo] = useState(false);
-  const [bookedReservation, setBookedReservation] = useState<ReservationState>(
-    {} as ReservationState,
-  );
+  const [bookedReservation, setBookedReservation] =
+    useState<ReservationState | null>(null);
   const [errorMessages, setErrorMessages] = useState<ErrorPropTypes[]>([]);
   const initialState: Record<string, unknown> = {};
 
@@ -89,7 +88,7 @@ export const Booking = ({
     const booked = reservations.find(
       (reservation) => reservation.unit === unitNumber,
     );
-    setBookedReservation(booked ?? {});
+    setBookedReservation(booked ?? null);
   }, [reservations, unitNumber]);
 
   // const validateDatesInput = useCallback(
@@ -182,7 +181,7 @@ export const Booking = ({
     } else if (
       alreadyBooked &&
       errorMessages.length === 0 &&
-      bookedReservation.status === "updated"
+      bookedReservation?.status === "updated"
     ) {
       updateReservation({
         adults: Number(formValues.adultsCount),
@@ -226,11 +225,14 @@ export const Booking = ({
           unitCategory={unitCategory}
           pending={pending}
           pricePerNight={pricePerNight}
-          bookedReservation={bookedReservation}
+          bookedReservation={bookedReservation ?? ({} as ReservationState)}
         />
       )}
       {displayReservationInfo && (
-        <FormDisplayData bookedReservation={bookedReservation} lang={lang} />
+        <FormDisplayData
+          bookedReservation={bookedReservation ?? ({} as ReservationState)}
+          lang={lang}
+        />
       )}
 
       {/* {Object.keys(bookedReservation).length === 0 ||

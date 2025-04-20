@@ -40,6 +40,7 @@ export function PhoneInputForm() {
       });
       return;
     }
+    //@ts-ignore
     Toaster.success("Phone number is valid");
   }
 

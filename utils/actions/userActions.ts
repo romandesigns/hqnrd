@@ -2,7 +2,6 @@
 import { parseISO } from "date-fns";
 import { CreateUserZodValidationSchema } from "../zodValidation/newBookingZodValidationSchema";
 import { clerkClient } from "@clerk/nextjs/server";
-import { auth } from "@clerk/nextjs";
 import { SignUpResource } from "@clerk/types";
 
 // New booking interface
@@ -41,6 +40,7 @@ export const createUserAccountAction = async (formData: FormData) => {
     accountType: formData.get("accountType") as string,
   };
 
+  //@ts-ignore
   const response = await clerkClient.users.createUser({
     emailAddress: [payload.email],
     password: payload.password,

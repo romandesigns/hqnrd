@@ -23,7 +23,10 @@ export function CompanySignUpForm({
   const [step, setStep] = React.useState(0);
 
   return (
-    <Form className="flex w-full flex-col gap-6 self-center px-2 [--margin-bottom:0.5rem]">
+    <Form
+      action="#"
+      className="flex w-full flex-col gap-6 self-center px-2 [--margin-bottom:0.5rem]"
+    >
       <div
         className={
           step === 0

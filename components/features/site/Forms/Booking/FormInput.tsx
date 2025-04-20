@@ -31,7 +31,11 @@ export function FormInput({
   bookedReservation,
 }: RoomFormInputProps) {
   return (
-    <Form className="space-y-6 rounded-md py-8 lg:p-2" onSubmit={handleSubmit}>
+    <Form
+      action="#"
+      className="space-y-6 rounded-md py-8 lg:p-2"
+      onSubmit={handleSubmit}
+    >
       <div className="flex items-center justify-center gap-4">
         {/* Adults: Number Input */}
         <InputNumber

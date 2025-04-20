@@ -11,7 +11,13 @@ export default function SubmitButton({
   action: (formData: FormData) => Promise<{ [k: string]: string } | undefined>;
 }) {
   return (
-    <Button type="submit" className={`w-full ${className}`} formAction={action}>
+    <Button
+      type="submit"
+      className={`w-full ${className}`}
+      formAction={async (formData) => {
+        await action(formData);
+      }}
+    >
       {children}
     </Button>
   );

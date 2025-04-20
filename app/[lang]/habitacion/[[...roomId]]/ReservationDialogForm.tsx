@@ -43,6 +43,7 @@ export function ReservationDialogForm({
           unitNumber={unitNumber}
           unitCategory={unitCategory}
           lang={lang}
+          pricePerNight={2350}
         />
       </DialogContent>
     </Dialog>

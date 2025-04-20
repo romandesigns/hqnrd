@@ -24,7 +24,10 @@ export function UserSignUpForm({
   const [step, setStep] = React.useState(0);
 
   return (
-    <Form className="flex flex-col gap-6 self-center px-4 [--margin-bottom:0.5rem]">
+    <Form
+      action="#"
+      className="flex flex-col gap-6 self-center px-4 [--margin-bottom:0.5rem]"
+    >
       {/*User Details*/}
       <div className={step === 0 ? "block" : "hidden"}>
         <div className="mb-[var(--margin-bottom)] flex items-center justify-center gap-2">

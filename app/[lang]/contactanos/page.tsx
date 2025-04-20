@@ -48,7 +48,7 @@ export default async function Page({ params }: PageProps) {
             />
             {teams?.length > 0 ? (
               <FeaturedItems
-                itemsArray={teams}
+                itemsArray={teams as any[]}
                 teams
                 speed={6000}
                 delay={1000}

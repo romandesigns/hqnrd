@@ -62,14 +62,14 @@ export function FeaturedItems<T extends CaredReviewProps | Room>({
   const testimonialsComponent = () =>
     itemsArray.map((review, index) => (
       <SwiperSlide key={index} className="pb-10">
-        <CaredReview review={review} />
+        <CaredReview review={review as any} />
       </SwiperSlide>
     ));
 
   const trendingComponent = () =>
     itemsArray.map((room, index) => (
       <SwiperSlide key={index} className="pb-10">
-        <CardRoom lang={lang} room={room} />
+        <CardRoom lang={lang} room={room as any} />
       </SwiperSlide>
     ));
 
