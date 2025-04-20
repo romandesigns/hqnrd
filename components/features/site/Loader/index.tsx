@@ -1,5 +1,3 @@
-"use client";
-import { Mirage } from "ldrs/react";
-import "ldrs/react/Ring.css";
+import { LuLoaderCircle } from "@/components/icons";
 
-export const Loader = () => <Mirage size={50} speed={1.5} />;
+export const Loader = () => <LuLoaderCircle className="animate-spin" />;

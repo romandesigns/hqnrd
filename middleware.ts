@@ -23,7 +23,6 @@ const isProtectedRoute = createRouteMatcher([
 export default clerkMiddleware(async (auth, req) => {
   const pathname = req.nextUrl.pathname;
 
-  // ✅ Skip most /api routes EXCEPT /api/webhooks
   if (pathname.startsWith("/api") && !pathname.startsWith("/api/webhooks")) {
     return NextResponse.next();
   }

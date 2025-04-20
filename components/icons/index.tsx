@@ -33,7 +33,7 @@ export {
 } from "react-icons/fa6";
 export { FcGoogle } from "react-icons/fc";
 export { HiLocationMarker, HiMenuAlt2 } from "react-icons/hi";
-export { LuMap } from "react-icons/lu";
+export { LuMap, LuLoaderCircle } from "react-icons/lu";
 export {
   MdOutlineCoffeeMaker,
   MdOutlineMarkEmailUnread,
