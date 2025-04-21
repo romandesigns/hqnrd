@@ -63,12 +63,12 @@ export {
   TbMicrowave,
 } from "react-icons/tb";
 export { TiSocialInstagram } from "react-icons/ti";
-export { IoMdArrowRoundBack } from "react-icons/io";
+export { IoMdArrowRoundBack, IoMdCloudUpload } from "react-icons/io";
 export { GoHomeFill } from "react-icons/go";
 export { HiMiniUserGroup } from "react-icons/hi2";
 export { RiUserFill } from "react-icons/ri";
 export { HiDotsHorizontal } from "react-icons/hi";
-export { BsCameraReels } from "react-icons/bs";
+export { BsCameraReels, BsFillCameraFill } from "react-icons/bs";
 export { LiaBedSolid } from "react-icons/lia";
 export { GiWaterBottle } from "react-icons/gi";
 export { PiCouch, PiFanBold, PiTelevisionSimple } from "react-icons/pi";
