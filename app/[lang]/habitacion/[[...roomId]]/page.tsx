@@ -39,6 +39,11 @@ export default async function Page({
 
   return (
     <ClientLayout lang={lang}>
+      <div className="fixed bottom-0 left-0 right-0 top-0 z-[4] flex items-center justify-center bg-black/90 p-8 backdrop-blur-lg">
+        <div className="aspect-square h-auto w-[90vw] max-w-[60rem] rounded-md border border-background bg-background p-4 shadow-lg shadow-black/50">
+          Content here
+        </div>
+      </div>
       <header className="hqnrd-frosty-bg">
         <Content className="p-6 px-2 lg:py-2">
           <div className="py-3">
