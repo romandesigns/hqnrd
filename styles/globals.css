@@ -146,7 +146,44 @@ body {
     @apply bg-background text-foreground;
   }
 
-  input {
-    @apply rounded-md border px-4 py-1 transition-all delay-75 duration-200 focus:outline-none focus-visible:!outline-secondary/80;
+  /* Scrollbar styles only on large screens (min-width: 1024px) */
+  @media (min-width: 1024px) {
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: hsl(var(--muted-foreground)) transparent;
+    }
+
+    *::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    *::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background-color: hsl(var(--muted-foreground) / 0.3);
+      border-radius: 6px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+      transition: background-color 0.2s;
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+      background-color: hsl(var(--muted-foreground) / 0.5);
+    }
+  }
+
+  input:focus {
+    @apply ring-2 ring-secondary/80;
+  }
+
+  input:focus-visible {
+    @apply outline-none ring-2 ring-secondary/80;
+  }
+
+  input:focus-visible::placeholder {
+    @apply text-transparent;
   }
 }
