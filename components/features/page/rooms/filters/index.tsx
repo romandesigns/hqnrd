@@ -18,7 +18,7 @@ import {
 export const Filters = ({ roomsCount }: { roomsCount: number }) => (
   <div className="flex w-full items-center justify-between pt-4 md:pt-0">
     <RoomsCount roomsCount={roomsCount} />
-    <Popover>
+    {/* <Popover>
       <PopoverTrigger asChild>
         <Button size="icon" variant="outline">
           <HiDotsHorizontal />
@@ -80,6 +80,6 @@ export const Filters = ({ roomsCount }: { roomsCount: number }) => (
           </div>
         </div>
       </PopoverContent>
-    </Popover>
+    </Popover> */}
   </div>
 );

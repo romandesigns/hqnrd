@@ -16,7 +16,7 @@ export function RoomsCount({
       )}
     >
       <p className="mr-2 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-        <span>Showing</span>
+        {/* <span>Showing</span> */}
         <span className="rounded-full bg-muted-foreground px-3 font-bold text-primary-foreground">
           {roomsCount}
         </span>

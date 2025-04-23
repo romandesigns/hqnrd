@@ -13,13 +13,13 @@ export function Header({ lang }: { lang: Locale }) {
       <Content className="py-2 md:py-20">
         <section className="relative grid grid-cols-1 gap-4 md:grid-cols-2">
           <article className="relative z-[2] flex h-full w-full flex-col items-start justify-center">
-            <div className="flex w-full items-center justify-between px-2">
+            <div className="hidden w-full items-center justify-between px-2 lg:flex">
               <div>
                 <GoBack variant="outline" />
               </div>
             </div>
-            <div className="flex h-full w-full flex-col items-start justify-center p-2 md:py-8 lg:pb-0">
-              <h2 className="w-full text-center text-lg font-bold sm:text-3xl md:text-left lg:text-5xl">
+            <div className="flex h-full w-full flex-col items-start justify-center px-2 py-0 md:py-8 lg:pb-0">
+              <h2 className="hidden w-full text-center text-lg font-bold sm:text-3xl md:text-left lg:block lg:text-5xl">
                 Select your Ideal Room
               </h2>
               <p className="hidden py-2 text-xs text-muted-foreground md:block md:text-sm">
