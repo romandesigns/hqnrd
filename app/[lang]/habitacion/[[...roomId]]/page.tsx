@@ -15,8 +15,6 @@ import { convertToLocaleString } from "@/utils/computeFees";
 import { removePluralSuffix } from "@/utils/formatter/pluralSuffixCleaner";
 import { notFound, redirect } from "next/navigation";
 import { ReservationDialogForm } from "./ReservationDialogForm";
-import { headers } from "next/headers";
-import { Profile } from "@/components/features/site/Forms/Profile";
 
 export default async function Page({
   params,
@@ -39,15 +37,8 @@ export default async function Page({
     notFound();
   }
 
-  const headersList = await headers();
-  const defaultCountry = headersList
-    .get("accept-language")
-    ?.split(",")[0]
-    .split("-")[1];
-
   return (
     <ClientLayout lang={lang}>
-      <Profile defaultCountry={defaultCountry} lang={lang} />
       <header className="hqnrd-frosty-bg">
         <Content className="p-6 px-2 lg:py-2">
           <div className="py-3">

@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n-config";
 import { UploadAvatar } from "../../Cropper/UploadAvatar";
 import { UploadIDCard } from "../../Cropper/UploadIDCard";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
 
 export function Profile({
   defaultCountry,
@@ -52,7 +53,7 @@ export function Profile({
           </div>
           <Button className="w-full lg:w-36">Save</Button>
         </header>
-        <div className="grid h-full w-full grid-cols-1 grid-rows-[auto_1fr] overflow-y-auto rounded-md rounded-t-lg bg-secondary/50 lg:grid-cols-[1fr_2fr] lg:grid-rows-1 lg:py-8">
+        <div className="grid h-full w-full grid-cols-1 grid-rows-[auto_1fr] overflow-y-scroll rounded-md rounded-t-lg bg-secondary/50 px-4 lg:grid-cols-[1fr_2fr] lg:grid-rows-1 lg:overflow-auto lg:py-8">
           {/* Avatar Upload Section */}
           <div className="h-full py-2">
             <div className="relative mx-auto my-4 h-auto w-20">
@@ -79,7 +80,7 @@ export function Profile({
 
           {/* Details Section */}
           <div className="lg:px-8">
-            <Form action="" className="flex flex-col gap-y-5 p-2 lg:gap-y-7">
+            <Form action="" className="flex flex-col gap-y-7 p-2 lg:gap-y-6">
               <div className="flex w-full justify-stretch gap-2">
                 <Field label="Name" name="namme" />
                 <Field label="Last Name" name="lastName" />
