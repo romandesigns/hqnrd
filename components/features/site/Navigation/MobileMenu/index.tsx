@@ -1,7 +1,7 @@
 import { ContactWidget } from "@/components/features";
 import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n-config";
-import { MotionMobileNavigation } from "@/motion/MotionMobileNavigation";
+import MotionMobileNavigation from "@/motion/MotionMobileNavigation";
 import { useMobileNavigation } from "@/store/hooks";
 import Link from "next/link";
 import { MenuItem } from "../DesktopMenu/MenuItem";

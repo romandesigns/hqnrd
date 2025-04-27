@@ -10,6 +10,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { esMX, enUS } from "@clerk/localizations";
 import { Profile } from "@/components/features/site/Forms/Profile";
 import { headers } from "next/headers";
+import { currentUser } from "@clerk/nextjs/server";
 
 export const metadata: Metadata = {
   title: "Hotel Quinto Nivel RD",
@@ -42,6 +43,9 @@ export default async function RootLayout({ children, params }: LayoutProps) {
     ?.split(",")[0]
     .split("-")[1];
 
+  const user = await currentUser();
+  console.log(user);
+
   return (
     <ClerkProvider localization={lang == "es" ? esMX : enUS}>
       <html
@@ -59,7 +63,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
                 disableTransitionOnChange
               >
                 <>
-                  <Profile defaultCountry={defaultCountry} lang={lang} />
+                  {/* <Profile defaultCountry={defaultCountry} lang={lang} /> */}
                   {children}
                 </>
               </ThemeProvider>

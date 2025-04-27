@@ -1,14 +1,12 @@
 "use client";
-import React, { useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { HeadingSection } from "@/components/features/site/Headings";
-import Form from "next/form";
 import { Field } from "@/components/features/site/Forms/Field";
+import { HeadingSection } from "@/components/features/site/Headings";
+import { FormLabel } from "@/components/features/site/Label";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import { DateAndTimePicker } from "@/components/ui/DateAndTimePicker";
 import { Label } from "@/components/ui/label";
-import { FormLabel } from "@/components/features/site/Label";
 import { PhoneInputField } from "@/components/ui/PhoneInput";
-import { CountryCode } from "libphonenumber-js";
 import {
   Select,
   SelectContent,
@@ -18,18 +16,21 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n-config";
+import { CountryCode } from "libphonenumber-js";
+import Form from "next/form";
+import { useState } from "react";
 import { UploadAvatar } from "../../Cropper/UploadAvatar";
 import { UploadIDCard } from "../../Cropper/UploadIDCard";
-import { ScrollArea } from "@radix-ui/react-scroll-area";
 
-export function Profile({
+export async function Profile({
   defaultCountry,
   lang,
+  clerkId,
 }: {
   defaultCountry: string | undefined;
   lang: Locale;
+  clerkId: string | null;
 }) {
   const [avatarBlob, setAvatarBlob] = useState<Blob | null>(null);
   const [idCardBlob, setIdCardBlob] = useState<Blob | null>(null);
@@ -113,7 +114,7 @@ export function Profile({
 
               {/* ID Card Upload Section */}
               <div className="max-w-72">
-                <FormLabel label="State ID or Passport (Required)" />
+                <FormLabel label=" Required for quality assurance" />
                 <UploadIDCard onChange={setIdCardBlob} />
               </div>
 

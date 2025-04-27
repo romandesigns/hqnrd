@@ -42,6 +42,11 @@ export function UploadIDCard({ onChange }: { onChange: (file: Blob) => void }) {
                 {previewUrl ? "Update ID" : "Upload ID"}
               </span>
             </div>
+            {!previewUrl && (
+              <span className="absolute bottom-3 left-3 text-[0.7rem] text-muted-foreground">
+                Cedula or Passport
+              </span>
+            )}
           </div>
           <input
             type="file"

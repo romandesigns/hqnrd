@@ -14,25 +14,26 @@ export const createUser = mutation({
       email: args.email,
       profileImage: args.profileImage,
       username: args.username,
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+      isVerified: false,
+      account: {
+        role: "guest",
+        isActive: true,
+        isVerified: false,
+      },
+      settings: {
+        quietMode: false,
+      },
+      reservations: [],
+      favorites: [],
+      name: undefined,
+      lastName: undefined,
+      phoneNumber: undefined,
+      country: undefined,
+      dob: undefined,
+      physicalLimitations: { types: ["none"], otherDetails: undefined },
     });
     return user;
   },
 });
-
-// export const updateUser = mutation({
-//   args: {
-//     clerkId: v.string(),
-//     email: v.string(),
-//     profileImage: v.string(),
-//     username: v.string(),
-//   },
-//   handler: async (ctx, args) => {
-//     const user = await ctx.db.get("users", args.clerkId).update({
-//       email: args.email,
-//       profileImage: args.profileImage,
-//       username: args.username,
-//     });
-//     return user;
-//   },
-// });
-// //     return NextResponse.json({
