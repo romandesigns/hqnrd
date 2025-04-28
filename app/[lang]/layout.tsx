@@ -8,6 +8,9 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { ReservationStoreProvider } from "@/providers/ReservationProvider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { esMX, enUS } from "@clerk/localizations";
+import { headers } from "next/headers";
+import { currentUser } from "@clerk/nextjs/server";
+import { Profile } from "@/components/features/site/Forms/Profile";
 
 export const metadata: Metadata = {
   title: "Hotel Quinto Nivel RD",
@@ -34,6 +37,15 @@ interface LayoutProps {
 
 export default async function RootLayout({ children, params }: LayoutProps) {
   const { lang } = await params;
+  const headersList = await headers();
+  const defaultCountry = headersList
+    .get("accept-language")
+    ?.split(",")[0]
+    .split("-")[1];
+
+  const user = await currentUser();
+  console.log(user);
+
   return (
     <ClerkProvider localization={lang == "es" ? esMX : enUS}>
       <html
@@ -50,7 +62,10 @@ export default async function RootLayout({ children, params }: LayoutProps) {
                 enableSystem
                 disableTransitionOnChange
               >
-                {children}
+                <>
+                  <Profile defaultCountry={defaultCountry} lang={lang} />
+                  {children}
+                </>
               </ThemeProvider>
             </ScrollArea>
           </ReservationStoreProvider>

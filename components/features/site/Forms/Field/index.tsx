@@ -1,5 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 import React from "react";
 
 type FieldProps = {
@@ -44,42 +46,34 @@ export function Field({
   };
 
   return (
-    <label
-      htmlFor={name}
-      className="grid cursor-pointer gap-1.5 text-xs text-muted-foreground"
-    >
-      {label}
+    <div className="grid w-full gap-1.5 text-xs text-muted-foreground">
+      <Label htmlFor={name}>{label}</Label>
 
       {children ? (
         children
       ) : type === "textarea" ? (
         <Textarea {...commonProps} rows={4} className="rounded border p-2" />
       ) : type === "radio" && items?.length ? (
-        <div className="mt-1 flex gap-4">
+        <RadioGroup
+          name={name}
+          defaultValue={defaultValue?.toString()}
+          className="flex"
+        >
           {items.map((item, idx) => {
             const id = `${name}-${item.toLowerCase().replace(/\s+/g, "-")}`;
             return (
-              <label
-                key={idx}
-                htmlFor={id}
-                className="flex cursor-pointer items-center gap-1"
-              >
-                <input
-                  type="radio"
-                  id={id}
-                  name={name}
-                  value={item}
-                  required={required}
-                  className="accent-primary"
-                />
-                <span className="capitalize">{item}</span>
-              </label>
+              <div key={idx} className="flex items-center space-x-2">
+                <RadioGroupItem value={item} id={id} required={required} />
+                <Label htmlFor={id} className="capitalize">
+                  {item}
+                </Label>
+              </div>
             );
           })}
-        </div>
+        </RadioGroup>
       ) : (
         <Input type={type} {...commonProps} />
       )}
-    </label>
+    </div>
   );
 }
