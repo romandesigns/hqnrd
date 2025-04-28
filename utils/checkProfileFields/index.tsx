@@ -1,4 +1,3 @@
-function checkUserProfileFields(user): boolean {
-  console.log(user);
+function checkUserProfileFields(): boolean {
   return true;
 }

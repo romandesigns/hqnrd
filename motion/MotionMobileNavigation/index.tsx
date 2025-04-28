@@ -9,7 +9,7 @@ import { ToggleNavigationBtn } from "@/components/features/site/Navigation/share
 import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n-config";
 
-export function MotionMobileNavigation({
+export default function MotionMobileNavigation({
   children,
   trigger,
   className: classNames,
