@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { delay, motion, AnimatePresence } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { FaList } from "@/components/icons";
 import { Brand } from "@/components/features";
@@ -9,7 +9,7 @@ import { ToggleNavigationBtn } from "@/components/features/site/Navigation/share
 import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n-config";
 
-function MotionMobileNavigation({
+export function MotionMobileNavigation({
   children,
   trigger,
   className,
@@ -76,5 +76,3 @@ function MotionMobileNavigation({
     </AnimatePresence>
   );
 }
-
-export default MotionMobileNavigation;

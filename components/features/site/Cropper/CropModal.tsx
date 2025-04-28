@@ -1,4 +1,4 @@
-import Cropper from "react-easy-crop";
+import Cropper, { Area } from "react-easy-crop";
 import { useState } from "react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"; // ⬅ Add this
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -22,7 +22,7 @@ export function CropModal({
 }: CropModalProps) {
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
-  const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
+  const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
 
   const onCropDone = async () => {
     const croppedImage = await getCroppedImg(imageSrc, croppedAreaPixels);
