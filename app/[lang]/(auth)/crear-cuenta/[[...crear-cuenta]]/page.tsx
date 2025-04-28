@@ -1,9 +1,8 @@
 "use client";
 
 import { Content, Section } from "@/components/layout/container";
-import { SignUpForm } from "./SignUpForm";
 import { BrandedCard } from "@/components/ui/BrandedCard";
-import { HeadingSection } from "@/components/features/site/Headings";
+import { SignUpForm } from "./SignUpForm";
 
 export default function Page() {
   return (

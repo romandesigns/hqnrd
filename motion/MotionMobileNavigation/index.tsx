@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import { delay, motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { FaList } from "@/components/icons";
 import { Brand } from "@/components/features";
