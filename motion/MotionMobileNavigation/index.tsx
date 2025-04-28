@@ -12,7 +12,7 @@ import { Locale } from "@/i18n-config";
 export function MotionMobileNavigation({
   children,
   trigger,
-  className,
+  className: classNames,
   lang,
 }: {
   children: React.ReactNode;
@@ -43,7 +43,7 @@ export function MotionMobileNavigation({
   return (
     <AnimatePresence>
       <motion.div
-        className={twMerge(`${className}`)}
+        {...{ className: twMerge(`${classNames}`) }}
         initial="hidden"
         animate={trigger ? "visible" : "hidden"}
         variants={parentVariants}
@@ -65,10 +65,7 @@ export function MotionMobileNavigation({
           </ul>
         </div>
         {React.Children.map(children, (child) => (
-          <motion.div
-            variants={childVariants}
-            className="[&>div:nth-child(2)]:h-full"
-          >
+          <motion.div variants={childVariants} style={{ height: "100%" }}>
             {child}
           </motion.div>
         ))}
