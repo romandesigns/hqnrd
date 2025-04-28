@@ -174,16 +174,4 @@ body {
       background-color: hsl(var(--muted-foreground) / 0.5);
     }
   }
-
-  input:focus {
-    @apply ring-2 ring-secondary/80;
-  }
-
-  input:focus-visible {
-    @apply outline-none ring-2 ring-secondary/80;
-  }
-
-  input:focus-visible::placeholder {
-    @apply text-transparent;
-  }
 }

@@ -11,6 +11,9 @@ import { esMX, enUS } from "@clerk/localizations";
 import { Profile } from "@/components/features/site/Forms/Profile";
 import { headers } from "next/headers";
 import { currentUser } from "@clerk/nextjs/server";
+import { fetchQuery } from "convex/nextjs";
+import { preloadQuery } from "convex/nextjs";
+import { api } from "@/convex/_generated/api";
 
 export const metadata: Metadata = {
   title: "Hotel Quinto Nivel RD",
@@ -44,7 +47,11 @@ export default async function RootLayout({ children, params }: LayoutProps) {
     .split("-")[1];
 
   const user = await currentUser();
-  console.log(user);
+  const preloaded = await preloadQuery(api.users.getUser, {
+    clerkId: user?.id,
+  });
+
+  console.log(preloaded);
 
   return (
     <ClerkProvider localization={lang == "es" ? esMX : enUS}>
@@ -63,7 +70,11 @@ export default async function RootLayout({ children, params }: LayoutProps) {
                 disableTransitionOnChange
               >
                 <>
-                  {/* <Profile defaultCountry={defaultCountry} lang={lang} /> */}
+                  <Profile
+                    defaultCountry={defaultCountry}
+                    lang={lang}
+                    preloaded={preloaded}
+                  />
                   {children}
                 </>
               </ThemeProvider>

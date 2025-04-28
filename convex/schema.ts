@@ -43,7 +43,24 @@ export default defineSchema({
     }),
 
     isVerified: v.boolean(),
+    userPhotoId: v.optional(v.string()),
+    emergencyContact: v.optional(
+      v.object({
+        name: v.string(),
+        lastName: v.string(),
+        relationship: v.union(
+          v.literal("father"),
+          v.literal("mother"),
+          v.literal("sibling"),
+          v.literal("friend"),
+          v.literal("other"),
+        ),
+        phoneNumber: v.string(),
+      }),
+    ),
     account: v.object({
+      isVerified: v.boolean(),
+      isActive: v.boolean(),
       role: v.union(
         v.literal("developer"),
         v.literal("ceo"),
@@ -54,8 +71,6 @@ export default defineSchema({
         v.literal("maintenance"),
         v.literal("housekeeping"),
       ),
-      isActive: v.boolean(),
-      isVerified: v.boolean(),
     }),
   }).index("byEmail_and_clerkId", ["email", "clerkId"]),
 

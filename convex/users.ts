@@ -37,3 +37,19 @@ export const createUser = mutation({
     return user;
   },
 });
+
+export const getUser = query({
+  args: { clerkId: v.optional(v.string()) },
+  handler: async (ctx, args) => {
+    try {
+      const user = await ctx.db
+        .query("users")
+        .filter((q) => q.eq(q.field("clerkId"), args.clerkId))
+        .first();
+      return user;
+    } catch (error) {
+      console.error("Error fetching user:", error);
+      return null;
+    }
+  },
+});

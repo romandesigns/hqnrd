@@ -33,6 +33,7 @@
         "clsx": "^2.1.1",
         "cmdk": "1.0.0",
         "convex": "^1.23.0",
+        "country-data-list": "^1.4.0",
         "date-fns": "^4.1.0",
         "delay": "^6.0.0",
         "framer-motion": "10.12.16",
@@ -44,6 +45,7 @@
         "next-themes": "^0.4.6",
         "prettier-plugin-tailwindcss": "^0.6.11",
         "react": "^19.1.0",
+        "react-circle-flags": "^0.0.23",
         "react-day-picker": "^9.6.7",
         "react-dom": "^19.1.0",
         "react-easy-crop": "^5.4.1",
@@ -756,6 +758,8 @@
     "copy-task": ["copy-task@0.1.0", "", {}, "sha512-Idcf7BdeyJY8kSQodguY8jevkP8CuB22S9Hr5blRqwEyO75yuZEJQbzJ755Q9vZREnCQ5sfOIRxjZWbUq2+K0g=="],
 
     "core-util-is": ["core-util-is@1.0.3", "", {}, "sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ=="],
+
+    "country-data-list": ["country-data-list@1.4.0", "", {}, "sha512-3i1Q1onE9MaqYPdtTUzZRZJY7lBXWpud3eWXrw3ckJyvOzXcsFALiy0Z4Giksy5ECpq9ajYijMPxfRZvVP65UA=="],
 
     "cross-spawn": ["cross-spawn@7.0.6", "", { "dependencies": { "path-key": "^3.1.0", "shebang-command": "^2.0.0", "which": "^2.0.1" } }, "sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA=="],
 
@@ -1554,6 +1558,8 @@
     "randomatic": ["randomatic@3.1.1", "", { "dependencies": { "is-number": "^4.0.0", "kind-of": "^6.0.0", "math-random": "^1.0.1" } }, "sha512-TuDE5KxZ0J461RVjrJZCJc+J+zCkTb1MbH9AQUq68sMhOMcy9jLcb3BrZKgp9q9Ncltdg4QVqWrH02W2EFFVYw=="],
 
     "react": ["react@19.1.0", "", {}, "sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg=="],
+
+    "react-circle-flags": ["react-circle-flags@0.0.23", "", { "peerDependencies": { "react": "^16.0.0 || 17.x || 18.x || 19.x" } }, "sha512-J35vkTnG4Iz7cgitq/UIw4/1i8aUWEkz2Z0MQTTWycWOHKezuey5+3BPAsXNr78gYMdjSBtZWmSzQc0oEeK4oQ=="],
 
     "react-day-picker": ["react-day-picker@9.6.7", "", { "dependencies": { "@date-fns/tz": "1.2.0", "date-fns": "4.1.0", "date-fns-jalali": "4.1.0-0" }, "peerDependencies": { "react": ">=16.8.0" } }, "sha512-rCSt6X8FXQWpjykns/azRXjJk3cMSzkzGbDEXuEveFGNZgOjZULdJQ5wsu8Zfyo8ZgPBoYCBKQ5wRrgJfhJGbg=="],
 
