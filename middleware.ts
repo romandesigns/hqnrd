@@ -52,6 +52,6 @@ export default clerkMiddleware(async (auth, req) => {
 export const config = {
   matcher: [
     "/((?!api|_next|public|favicon.ico|assets|manifest.json).*)",
-    "/api/webhooks(.*)", // ✅ include explicitly
+    "/api/webhooks(.*)",
   ],
 };

@@ -1,6 +1,5 @@
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
-import { features } from "process";
 
 export default defineSchema({
   //  USERS TABLE
@@ -18,7 +17,7 @@ export default defineSchema({
     createdAt: v.number(),
     updatedAt: v.number(),
     reservations: v.array(v.id("reservations")),
-    favorites: v.array(v.id("favorites")),
+    favoriteRooms: v.array(v.id("favorites")),
 
     physicalLimitations: v.optional(
       v.object({
@@ -43,7 +42,6 @@ export default defineSchema({
     }),
 
     isVerified: v.boolean(),
-    userPhotoId: v.optional(v.string()),
     emergencyContact: v.optional(
       v.object({
         name: v.string(),

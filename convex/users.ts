@@ -26,7 +26,7 @@ export const createUser = mutation({
         quietMode: false,
       },
       reservations: [],
-      favorites: [],
+      favoriteRooms: [],
       name: undefined,
       lastName: undefined,
       phoneNumber: undefined,

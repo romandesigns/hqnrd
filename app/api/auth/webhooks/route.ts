@@ -17,14 +17,13 @@ export async function POST(req: NextRequest) {
 
     switch (eventType) {
       case "user.created": {
-        const payload = {
+        console.log("============== User created ==============");
+        await fetchMutation(api.users.createUser, {
           clerkId: evt.data.id,
           email: evt.data.email_addresses[0].email_address,
           profileImage: evt.data.image_url,
           username: evt.data.username || "n/a",
-        };
-        await fetchMutation(api.users.createUser, payload);
-
+        });
         return NextResponse.json({
           status: 200,
           message: "User info inserted",
@@ -32,6 +31,7 @@ export async function POST(req: NextRequest) {
       }
 
       case "user.updated": {
+        console.log("============== User updated ==============");
         const updatePayload = {
           clerkId: evt.data.id,
           email: evt.data.email_addresses[0].email_address,
@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
       }
 
       case "user.deleted": {
-        console.log("User deleted:", evt.data);
+        console.log("============== User deleted ==============");
         // Optional: add deletion logic here
         return NextResponse.json({
           status: 200,

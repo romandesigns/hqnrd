@@ -48,6 +48,7 @@ export type PhoneData = {
 
 interface PhoneInputProps extends React.ComponentPropsWithoutRef<"input"> {
   value?: string;
+  name?: string;
   defaultCountry?: CountryCode;
 }
 
@@ -74,6 +75,7 @@ export function PhoneInput({
   value: valueProp,
   defaultCountry = "US",
   className,
+  name = "phone",
   id,
   required = true,
   ...rest
@@ -227,7 +229,7 @@ export function PhoneInput({
         ref={inputRef}
         type="text"
         pattern="^(\+)?[0-9\s]*$"
-        name="phone"
+        name={name}
         id={id}
         className="h-9"
         placeholder="Phone"

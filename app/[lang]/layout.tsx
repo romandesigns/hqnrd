@@ -51,8 +51,6 @@ export default async function RootLayout({ children, params }: LayoutProps) {
     clerkId: user?.id,
   });
 
-  console.log(preloaded);
-
   return (
     <ClerkProvider localization={lang == "es" ? esMX : enUS}>
       <html

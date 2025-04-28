@@ -10,10 +10,14 @@ import { Input } from "./input";
 
 export function PhoneInputField({
   defaultCountry,
+  defaultValue,
+  name,
 }: {
   defaultCountry: CountryCode;
+  defaultValue?: string;
+  name?: string;
 }) {
-  const [phone, setPhone] = React.useState("");
+  const [phone, setPhone] = React.useState(defaultValue || "");
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPhone(e.target.value);
@@ -24,6 +28,7 @@ export function PhoneInputField({
     <div className="w-full space-y-8">
       <div className="flex flex-col gap-4">
         <PhoneInput
+          name={name}
           value={phone}
           onChange={handleOnChange}
           defaultCountry={defaultCountry}
