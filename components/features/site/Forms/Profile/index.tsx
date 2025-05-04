@@ -37,7 +37,7 @@ export function Profile({
 }: {
   defaultCountry: string | undefined;
   lang: Locale;
-  preloaded: Preloaded<typeof api.users.getUser>;
+  preloaded: Doc<"users">;
 }) {
   const [avatarBlob, setAvatarBlob] = useState<Blob | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
@@ -45,6 +45,8 @@ export function Profile({
   const [profile, setProfile] = useState({
     name: "",
     lastName: "",
+    email: preloaded.email,
+    username: preloaded.username,
     phoneNumber: "",
     gender: "",
     dob: "",
@@ -68,6 +70,7 @@ export function Profile({
     console.log("Form Data: ", data);
   };
 
+  console.log("Profile Data: ", preloaded);
   return (
     mnissingFields && (
       <div className="fixed bottom-0 left-0 right-0 top-0 z-[4] flex items-center justify-center bg-black/85 p-2 backdrop-blur-lg lg:p-8">
@@ -125,6 +128,24 @@ export function Profile({
                   <div className="flex w-full justify-stretch gap-2">
                     <Field label="Name" name="name" />
                     <Field label="Last Name" name="lastName" />
+                  </div>
+                  <div className="flex w-full justify-stretch gap-2">
+                    <Field
+                      className="pointer-events-none cursor-not-allowed opacity-30"
+                      label="Username"
+                      name="username"
+                      readOnly
+                      defaultValue={profile.username}
+                    />
+                  </div>
+                  <div className="flex w-full justify-stretch gap-2">
+                    <Field
+                      className="pointer-events-none cursor-not-allowed opacity-30"
+                      label="Email"
+                      name="email"
+                      readOnly
+                      defaultValue={profile.email}
+                    />
                   </div>
                   <Field
                     label="Gender"

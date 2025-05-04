@@ -8,6 +8,7 @@ export default defineSchema({
     clerkId: v.string(),
     email: v.string(),
     profileImage: v.string(),
+    photoId: v.optional(v.string()),
     username: v.string(),
     name: v.optional(v.string()),
     lastName: v.optional(v.string()),

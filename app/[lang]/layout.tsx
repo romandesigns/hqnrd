@@ -68,11 +68,14 @@ export default async function RootLayout({ children, params }: LayoutProps) {
                 disableTransitionOnChange
               >
                 <>
-                  <Profile
-                    defaultCountry={defaultCountry}
-                    lang={lang}
-                    preloaded={preloaded}
-                  />
+                  {preloaded._valueJSON && (
+                    <Profile
+                      defaultCountry={defaultCountry}
+                      lang={lang}
+                      preloaded={preloaded._valueJSON}
+                    />
+                  )}
+
                   {children}
                 </>
               </ThemeProvider>

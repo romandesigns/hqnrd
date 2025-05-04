@@ -28,6 +28,7 @@ export const createUser = mutation({
       reservations: [],
       favoriteRooms: [],
       name: undefined,
+      photoId: undefined,
       lastName: undefined,
       phoneNumber: undefined,
       country: undefined,
@@ -51,5 +52,31 @@ export const getUser = query({
       console.error("Error fetching user:", error);
       return null;
     }
+  },
+});
+
+export const generateUploadUrl = mutation({
+  handler: async (ctx) => {
+    return await ctx.storage.generateUploadUrl();
+  },
+});
+
+export const updateUserPhotoId = mutation({
+  args: {
+    userId: v.id("users"),
+    storageId: v.string(),
+    type: v.union(v.literal("profileImage"), v.literal("photoId")),
+  },
+  handler: async (ctx, args) => {
+    const user = await ctx.db.get(args.userId);
+    if (!user) {
+      throw new Error("User not found");
+    }
+    const updatePayload: Record<string, any> = {
+      updatedAt: Date.now(),
+      [args.type]: args.storageId,
+    };
+    await ctx.db.patch(args.userId, updatePayload);
+    return { success: true };
   },
 });

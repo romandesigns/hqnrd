@@ -3,6 +3,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import React from "react";
+import clsx from "clsx";
 
 type FieldProps = {
   name: string;
@@ -18,10 +19,12 @@ type FieldProps = {
     | "radio";
   placeholder?: string;
   required?: boolean;
+  readOnly?: boolean;
   autoComplete?: string;
   defaultValue?: string | number;
   items?: string[]; // For radio inputs
   children?: React.ReactNode;
+  className?: string;
 };
 
 export function Field({
@@ -34,10 +37,12 @@ export function Field({
   defaultValue,
   items,
   children,
+  className,
 }: FieldProps): React.JSX.Element {
   const commonProps = {
     id: name,
     name,
+    readOnly: false,
     placeholder,
     required,
     autoComplete,
@@ -72,7 +77,7 @@ export function Field({
           })}
         </RadioGroup>
       ) : (
-        <Input type={type} {...commonProps} />
+        <Input type={type} {...commonProps} className={clsx(className)} />
       )}
     </div>
   );
